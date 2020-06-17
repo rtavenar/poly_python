@@ -1,0 +1,9 @@
+{
+    "num_etudiant": "21300000",
+    "notes": [12, 5, 14],
+    "date_de_naissance": {
+        "jour": 1,
+        "mois": 1,
+        "annee": 1995
+    }
+}

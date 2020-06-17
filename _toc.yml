@@ -1,0 +1,12 @@
+- file: content/intro
+- file: content/struct
+- file: content/dates
+- file: content/listes
+- file: content/chaines
+- file: content/dict
+- file: content/fichiers
+- file: content/api
+- file: content/test
+- file: content/conclusion
+- header: "Corrigé des exercices"
+- file: content/solutions
