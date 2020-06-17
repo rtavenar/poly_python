@@ -111,7 +111,7 @@ print(type(contenu))
 print(contenu)
 ```
 
-On voit ici qu'il est possible d'obtenir le résultat de notre requête sous deux formes : le texte brut du résultat qui est stocké dans `reponse.text` et la version JSON de ce résultat que l'on obtient via `reponse.json()`.
+On voit ici qu'il est possible d'obtenir le résultat de notre requête sous deux formes : le texte brut du résultat qui est stocké dans `reponse.text` et la version mise en forme (sous la forme de dictionnaire ou de liste) de ce résultat que l'on obtient via `reponse.json()`.
 
 De plus, si l'on souhaite passer des paramètres à la requête HTTP (ce qui se trouvait après le symbole `?` dans les URL ci-dessus), il est possible de le fait lors de l'appel à `requests.get` :
 
