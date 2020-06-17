@@ -15,8 +15,8 @@ kernelspec:
 
 # Introduction
 
-Ce document est une tentative de polycopié associé au module de Python pour la deuxième année de licence MIASHS de l'Université de Rennes 2.
-Il est distribué librement (sous licence [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) plus précisément) et se veut évolutif, n'hésitez donc pas à faire vos remarques à son auteur dont vous trouverez le contact sur [sa page web](http://people.irisa.fr/Romain.Tavenard/).
+Ce document est le polycopié associé au module de Python pour la deuxième année de licence MIASHS de l'Université de Rennes 2.
+Il est distribué librement (sous licence [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) plus précisément) et se veut évolutif, n'hésitez donc pas à faire vos remarques à son auteur dont vous trouverez le contact sur [sa page web](https://rtavenar.github.io/).
 Ce polycopié a notamment bénéficié des apports d'Aurélie Lemaitre et d'Agnès Maunoury.
 
 Durant la lecture de ce polycopié, vous trouverez des blocs de code tels que celui-ci :
