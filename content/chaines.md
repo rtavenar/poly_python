@@ -28,7 +28,7 @@ Comme pour les listes (et peut-être même plus encore), il est fortement consei
 
 ## Conversion d'une chaîne en nombre
 
-Si une chaîne de caractères représente une valeur numérique (comme la chaîne `"10.2"`{.haskell} par exemple), on peut la transformer en un entier ou un nombre à virgule, afin de l'utiliser ensuite pour des opérations arithmétiques. On utilise pour cela les fonctions de conversion, respectivement `int` et `float`.
+Si une chaîne de caractères représente une valeur numérique (comme la chaîne `"10.2"` par exemple), on peut la transformer en un entier ou un nombre à virgule, afin de l'utiliser ensuite pour des opérations arithmétiques. On utilise pour cela les fonctions de conversion, respectivement `int` et `float`.
 
 ```{code-cell}
 s = '10.2'
