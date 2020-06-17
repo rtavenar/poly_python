@@ -138,7 +138,7 @@
             
             <div class="dropdown-buttons">
                 <!-- ipynb file if we had a myst markdown file -->
-                <a class="dropdown-buttons" href="../_sources/content/chaines.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                
                 <!-- Download raw file -->
                 <a class="dropdown-buttons" href="../_sources/content/chaines.md"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
                 <!-- Download PDF via print -->
@@ -154,17 +154,6 @@
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
-        
-        <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-            <div class="dropdown-buttons">
-                
-                <a class="binder-button" href="https://mybinder.org/v2/gh/rtavenar/poly_python/master?urlpath=tree/content/chaines.md"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="../_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
-                
-                
-                
-            </div>
-        </div>
         
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
@@ -218,7 +207,7 @@ Pour créer une chaîne de caractères, il suffit d’utiliser des guillemets, s
 <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">https://docs.python.org/3/library/stdtypes.html#string-methods</a></p>
 <div class="section" id="conversion-d-une-chaine-en-nombre">
 <h2>Conversion d’une chaîne en nombre<a class="headerlink" href="#conversion-d-une-chaine-en-nombre" title="Permalink to this headline">¶</a></h2>
-<p>Si une chaîne de caractères représente une valeur numérique (comme la chaîne <code class="docutils literal notranslate"><span class="pre">&quot;10.2&quot;</span></code>{.haskell} par exemple), on peut la transformer en un entier ou un nombre à virgule, afin de l’utiliser ensuite pour des opérations arithmétiques. On utilise pour cela les fonctions de conversion, respectivement <code class="docutils literal notranslate"><span class="pre">int</span></code> et <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<p>Si une chaîne de caractères représente une valeur numérique (comme la chaîne <code class="docutils literal notranslate"><span class="pre">&quot;10.2&quot;</span></code> par exemple), on peut la transformer en un entier ou un nombre à virgule, afin de l’utiliser ensuite pour des opérations arithmétiques. On utilise pour cela les fonctions de conversion, respectivement <code class="docutils literal notranslate"><span class="pre">int</span></code> et <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;10.2&#39;</span>
@@ -376,9 +365,6 @@ Comme pour les listes, il est possible d’indicer une chaîne de caractères en
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
