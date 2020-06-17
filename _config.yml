@@ -6,3 +6,10 @@ logo: img/logo_ur2.svg
 latex:
   latex_documents:
     targetname: book.tex
+
+repository:
+  url                       : https://github.com/rtavenar/poly_python
+  branch                    : master
+
+launch_buttons:
+  binderhub_url: "https://mybinder.org"
