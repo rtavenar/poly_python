@@ -1,0 +1,398 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Récupération de données à partir d’API web &#8212; Introduction à Python</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tester son code" href="test.html" />
+    <link rel="prev" title="Lecture et écriture de fichiers textuels" href="fichiers.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo_ur2.svg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Introduction à Python</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="intro.html">Introduction</a>
+  </li>
+  <li class="">
+    <a href="struct.html">Structures de données et structures de contrôle</a>
+  </li>
+  <li class="">
+    <a href="dates.html">Les dates</a>
+  </li>
+  <li class="">
+    <a href="listes.html">Les listes</a>
+  </li>
+  <li class="">
+    <a href="chaines.html">Les chaînes de caractères</a>
+  </li>
+  <li class="">
+    <a href="dict.html">Les dictionnaires</a>
+  </li>
+  <li class="">
+    <a href="fichiers.html">Lecture et écriture de fichiers textuels</a>
+  </li>
+  <li class="active">
+    <a href="">Récupération de données à partir d’API web</a>
+  </li>
+  <li class="">
+    <a href="test.html">Tester son code</a>
+  </li>
+  <li class="">
+    <a href="conclusion.html">Conclusion</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Corrigé des exercices</p>
+</li>
+  <li class="">
+    <a href="solutions.html">Toutes les solutions</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="../_sources/content/api.md"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#requetes-http-en-python" class="nav-link">Requêtes HTTP en Python</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#format-d-une-requete-http" class="nav-link">Format d’une requête HTTP</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#utilisation-du-module-requests" class="nav-link">Utilisation du module requests</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#exercice" class="nav-link">Exercice</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="recuperation-de-donnees-a-partir-d-api-web">
+<h1>Récupération de données à partir d’API web<a class="headerlink" href="#recuperation-de-donnees-a-partir-d-api-web" title="Permalink to this headline">¶</a></h1>
+<p>De nombreux services web fournissent des API (<em>Application Programming Interface</em>) pour mettre des données à disposition du grand public. Le principe de fonctionnement de ces API est le suivant : l’utilisateur effectue une requête sous la forme d’une requête HTTP, le service web met en forme les données correspondant à la requête et les renvoie à l’utilisateur, dans un format défini à l’avance.</p>
+<p>Voici une liste (très loin d’être exhaustive) d’API web d’accès aux données :</p>
+<ul class="simple">
+<li><p>Google Maps</p>
+<ul>
+<li><p>Directions API : permet de calculer des itinéraires ;</p></li>
+<li><p>Elevation API : permet de calculer l’altitude d’un point sur le globe terrestre ;</p></li>
+<li><p>Distance Matrix API : permet de calculer des distances entre points du globe ;</p></li>
+<li><p>Geocoding API : permet d’associer une coordonnée GPS à une adresse.</p></li>
+</ul>
+</li>
+<li><p>Twitter</p>
+<ul>
+<li><p>Twitter API : permet de récupérer des informations sur les utilisateurs du réseau et leurs <em>tweets</em>.</p></li>
+</ul>
+</li>
+<li><p>Facebook</p>
+<ul>
+<li><p>Facebook Graph API : permet de récupérer des informations sur des utilisateurs Facebook .</p></li>
+</ul>
+</li>
+<li><p>STAR (Transports en commun rennais)</p>
+<ul>
+<li><p>Horaires des bus ;</p></li>
+<li><p>Disponibilité des vélos dans les relais VéloStar.</p></li>
+</ul>
+</li>
+</ul>
+<p>Pour manipuler en Python de telles données, il faudra donc être capable :</p>
+<ol class="simple">
+<li><p>d’envoyer une requête HTTP et de récupérer le résultat ;</p></li>
+<li><p>de transformer le résultat en une variable Python facilement manipulable.</p></li>
+</ol>
+<p>Pour ce qui est du second point, la plupart des API web offrent la possibilité de récupérer les données au format JSON.
+Nous avons vu précédemment dans ce cours que ce format était facilement manipulable en Python, notamment parce qu’il est très proche de la notion de dictionnaire.
+Ce chapitre se focalise donc sur la réalisation de requêtes HTTP en Python.</p>
+<div class="section" id="requetes-http-en-python">
+<h2>Requêtes HTTP en Python<a class="headerlink" href="#requetes-http-en-python" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="format-d-une-requete-http">
+<h3>Format d’une requête HTTP<a class="headerlink" href="#format-d-une-requete-http" title="Permalink to this headline">¶</a></h3>
+<p>Dans un premier temps, étudions le format d’une requête HTTP, telle que vous en effectuez des dizaines chaque jour, par l’intermédiaire de votre navigateur web.
+Lorsque vous entrez dans la barre d’adresse de votre navigateur l’URL suivante :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://people.irisa.fr/Romain.Tavenard/index.php?page=3
+</pre></div>
+</div>
+<p>votre navigateur va envoyer une requête au serveur concerné (cette requête ne contiendra pas uniquement l’URL visée mais aussi d’autres informations sur lesquelles nous ne nous attarderons pas ici).
+Dans l’URL précédente, on distingue 4 sous parties :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">http://</span></code> indique le protocole à utiliser pour effectuer la requête (ici HTTP). Dans ce chapitre, nous ne nous intéresserons qu’aux protocoles HTTP et HTTPS (version sécurisée du protocole HTTP) ;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">people.irisa.fr</span></code> est le nom de domaine du serveur (<em>ie.</em> de la machine) à contacter pour obtenir une réponse ;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/Romain.Tavenard/index.php</span></code> indique le chemin du fichier à récupérer sur cette machine ;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?page=3</span></code> indique que l’on doit passer la valeur <code class="docutils literal notranslate"><span class="pre">3</span></code> au paramètre <code class="docutils literal notranslate"><span class="pre">page</span></code> lors de la requête.</p></li>
+</ul>
+<p>De la même façon, lors d’un appel à une API web, on spécifiera le protocole à utiliser, la machine à contacter, le chemin vers la ressource voulue et un certain nombre de paramètres qui décriront notre requête.
+Voici un exemple de requête à une API web (l’API Google Maps Directions en l’occurrence) :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&amp;destination=Montreal
+</pre></div>
+</div>
+<p>Vous pouvez copier/coller cette URL dans la barre d’adresse de votre navigateur et observer ce que vous obtenez en retour.
+Observez que le résultat de cette requête est au format JSON.
+En fait, si vous étudiez plus précisément l’URL fournie, vous verrez que c’est nous qui avons demandé à obtenir le résultat dans ce format.
+De plus, on a spécifié dans l’URL que l’on souhaitait obtenir les informations d’itinéraire pour aller de Toronto (paramètre <code class="docutils literal notranslate"><span class="pre">origin</span></code>) à Montreal (paramètre <code class="docutils literal notranslate"><span class="pre">destination</span></code>).</p>
+<p>Vous devez aussi remarquer que, en réponse à cette requête, l’API Google Maps renvoie en fait un message d’erreur.
+En effet, pour être autorisé à utiliser cette API, il faut disposer d’une clé d’API et renseigner cette clé sous la forme d’un paramètre supplémentaire (nommé <code class="docutils literal notranslate"><span class="pre">key</span></code> dans les API Google Maps par exemple).
+Ainsi, la requête précédente deviendrait :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&amp;destination=Montreal&amp;key=VOTRE_CLE
+</pre></div>
+</div>
+<p>dans laquelle vous devrez remplacer <code class="docutils literal notranslate"><span class="pre">VOTRE_CLE</span></code> par une clé que vous aurez préalablement générée et qui vous permettra d’utiliser le service web de manière authentifiée.</p>
+</div>
+<div class="section" id="utilisation-du-module-requests">
+<h3>Utilisation du module <code class="docutils literal notranslate"><span class="pre">requests</span></code><a class="headerlink" href="#utilisation-du-module-requests" title="Permalink to this headline">¶</a></h3>
+<p>La section précédente proposait un rappel sur le format des requêtes HTTP et vous avez été invités à effectuer des requêtes HTTP à l’aide de votre navigateur.
+Si maintenant on souhaite récupérer de manière automatique le résultat d’une requête HTTP pour le manipuler en Python, le plus commode est d’effectuer la requête HTTP depuis Python.
+Pour cela, on utilise le module <code class="docutils literal notranslate"><span class="pre">requests</span></code>. Ce module contient notamment une fonction <code class="docutils literal notranslate"><span class="pre">get</span></code> qui permet d’effectuer des requêtes HTTP de type GET (je vous laisse deviner le nom de la fonction qui permet d’effectuer des requêtes HTTP POST :) :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://my-json-server.typicode.com/rtavenar/fake_api/tasks&quot;</span>
+
+<span class="n">reponse</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reponse</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">contenu_txt</span> <span class="o">=</span> <span class="n">reponse</span><span class="o">.</span><span class="n">text</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">contenu_txt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">contenu</span> <span class="o">=</span> <span class="n">reponse</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">contenu</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;list&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">contenu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[{&#39;userId&#39;: 1, &#39;id&#39;: 1, &#39;title&#39;: &#39;delectus aut autem&#39;, &#39;completed&#39;: False}, {&#39;userId&#39;: 1, &#39;id&#39;: 2, &#39;title&#39;: &#39;quis ut nam facilis et officia qui&#39;, &#39;completed&#39;: False}, {&#39;userId&#39;: 1, &#39;id&#39;: 3, &#39;title&#39;: &#39;fugiat veniam minus&#39;, &#39;completed&#39;: False}, {&#39;userId&#39;: 1, &#39;id&#39;: 4, &#39;title&#39;: &#39;et porro tempora&#39;, &#39;completed&#39;: True}, {&#39;userId&#39;: 1, &#39;id&#39;: 8, &#39;title&#39;: &#39;quo adipisci enim quam ut ab&#39;, &#39;completed&#39;: True}, {&#39;userId&#39;: 3, &#39;id&#39;: 44, &#39;title&#39;: &#39;cum debitis quis accusamus doloremque ipsa natus sapiente omnis&#39;, &#39;completed&#39;: True}, {&#39;userId&#39;: 3, &#39;id&#39;: 45, &#39;title&#39;: &#39;velit soluta adipisci molestias reiciendis harum&#39;, &#39;completed&#39;: False}, {&#39;userId&#39;: 3, &#39;id&#39;: 46, &#39;title&#39;: &#39;vel voluptatem repellat nihil placeat corporis&#39;, &#39;completed&#39;: False}]
+</pre></div>
+</div>
+</div>
+</div>
+<p>On voit ici qu’il est possible d’obtenir le résultat de notre requête sous deux formes : le texte brut du résultat qui est stocké dans <code class="docutils literal notranslate"><span class="pre">reponse.text</span></code> et la version JSON de ce résultat que l’on obtient via <code class="docutils literal notranslate"><span class="pre">reponse.json()</span></code>.</p>
+<p>De plus, si l’on souhaite passer des paramètres à la requête HTTP (ce qui se trouvait après le symbole <code class="docutils literal notranslate"><span class="pre">?</span></code> dans les URL ci-dessus), il est possible de le fait lors de l’appel à <code class="docutils literal notranslate"><span class="pre">requests.get</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://my-json-server.typicode.com/rtavenar/fake_api/tasks&quot;</span>
+
+<span class="n">reponse</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="s2">&quot;userId=3&quot;</span><span class="p">)</span>
+<span class="n">contenu</span> <span class="o">=</span> <span class="n">reponse</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">contenu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[{&#39;userId&#39;: 3, &#39;id&#39;: 44, &#39;title&#39;: &#39;cum debitis quis accusamus doloremque ipsa natus sapiente omnis&#39;, &#39;completed&#39;: True}, {&#39;userId&#39;: 3, &#39;id&#39;: 45, &#39;title&#39;: &#39;velit soluta adipisci molestias reiciendis harum&#39;, &#39;completed&#39;: False}, {&#39;userId&#39;: 3, &#39;id&#39;: 46, &#39;title&#39;: &#39;vel voluptatem repellat nihil placeat corporis&#39;, &#39;completed&#39;: False}]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Le code ci-dessus correspond ainsi à ce que vous obtiendriez dans votre navigateur en entrant l’URL <a class="reference external" href="http://my-json-server.typicode.com/rtavenar/fake_api/tasks?userId=3">http://my-json-server.typicode.com/rtavenar/fake_api/tasks?userId=3</a>.</p>
+<p>En pratique, dans de nombreux cas, des modules Python existent pour permettre d’utiliser les API grand public sans avoir à gérer les requêtes HTTP directement.
+C’est par exemple le cas des modules <a class="reference external" href="http://docs.tweepy.org/en/latest/"><code class="docutils literal notranslate"><span class="pre">tweepy</span></code></a> (pour l’API Twitter) ou <a class="reference external" href="https://graphh.readthedocs.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">graphh</span></code></a> (qui permet d’accéder à l’API GraphHopper qui est un équivalent libre de Google Maps)<a class="footnote-reference brackets" href="#graphh" id="id1">1</a>.</p>
+</div>
+</div>
+<div class="section" id="exercice">
+<h2>Exercice<a class="headerlink" href="#exercice" title="Permalink to this headline">¶</a></h2>
+<p><strong>Exercice 8.1</strong>
+Écrivez une fonction qui prenne en entrée une liste de <code class="docutils literal notranslate"><span class="pre">userId</span></code> et affiche l’ensemble des entrées de l’API <a class="reference external" href="http://my-json-server.typicode.com/rtavenar/fake_api/tasks">http://my-json-server.typicode.com/rtavenar/fake_api/tasks</a> pour lesquelles l’attribut <code class="docutils literal notranslate"><span class="pre">completed</span></code> vaut <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="graphh"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Notez que le module <code class="docutils literal notranslate"><span class="pre">graphh</span></code> a été développé par d’anciens étudiants de Licence 2 et Licence 3 MIASHS de l’Université de Rennes 2.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="fichiers.html" title="previous page">Lecture et écriture de fichiers textuels</a>
+    <a class='right-next' id="next-link" href="test.html" title="next page">Tester son code</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Romain Tavenard<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

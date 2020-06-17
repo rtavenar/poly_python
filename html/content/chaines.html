@@ -1,0 +1,465 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Les chaînes de caractères &#8212; Introduction à Python</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Les dictionnaires" href="dict.html" />
+    <link rel="prev" title="Les listes" href="listes.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo_ur2.svg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Introduction à Python</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="intro.html">Introduction</a>
+  </li>
+  <li class="">
+    <a href="struct.html">Structures de données et structures de contrôle</a>
+  </li>
+  <li class="">
+    <a href="dates.html">Les dates</a>
+  </li>
+  <li class="">
+    <a href="listes.html">Les listes</a>
+  </li>
+  <li class="active">
+    <a href="">Les chaînes de caractères</a>
+  </li>
+  <li class="">
+    <a href="dict.html">Les dictionnaires</a>
+  </li>
+  <li class="">
+    <a href="fichiers.html">Lecture et écriture de fichiers textuels</a>
+  </li>
+  <li class="">
+    <a href="api.html">Récupération de données à partir d’API web (TODO)</a>
+  </li>
+  <li class="">
+    <a href="test.html">Tester son code</a>
+  </li>
+  <li class="">
+    <a href="conclusion.html">Conclusion</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Corrigé des exercices</p>
+</li>
+  <li class="">
+    <a href="solutions.html">Toutes les solutions</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="../_sources/content/chaines.md"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#conversion-d-une-chaine-en-nombre" class="nav-link">Conversion d’une chaîne en nombre</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#analogie-avec-les-listes" class="nav-link">Analogie avec les listes</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#principales-methodes-de-la-classe-str" class="nav-link">Principales méthodes de la classe str</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#exercices" class="nav-link">Exercices</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="les-chaines-de-caracteres">
+<h1>Les chaînes de caractères<a class="headerlink" href="#les-chaines-de-caracteres" title="Permalink to this headline">¶</a></h1>
+<p>Nous nous intéressons maintenant à un autre type de données particulier du langage Python : les chaînes de caractères (type <code class="docutils literal notranslate"><span class="pre">str</span></code>).
+Pour créer une chaîne de caractères, il suffit d’utiliser des guillemets, simples ou doubles (les deux sont équivalents) :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;abc&quot;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s1">&#39;bde&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Comme pour les listes (et peut-être même plus encore), il est fortement conseillé de se reporter à l’aide en ligne dédiée lorsque vous avez des doutes sur la manipulation de chaînes de caractères :
+<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">https://docs.python.org/3/library/stdtypes.html#string-methods</a></p>
+<div class="section" id="conversion-d-une-chaine-en-nombre">
+<h2>Conversion d’une chaîne en nombre<a class="headerlink" href="#conversion-d-une-chaine-en-nombre" title="Permalink to this headline">¶</a></h2>
+<p>Si une chaîne de caractères représente une valeur numérique (comme la chaîne <code class="docutils literal notranslate"><span class="pre">&quot;10.2&quot;</span></code>{.haskell} par exemple), on peut la transformer en un entier ou un nombre à virgule, afin de l’utiliser ensuite pour des opérations arithmétiques. On utilise pour cela les fonctions de conversion, respectivement <code class="docutils literal notranslate"><span class="pre">int</span></code> et <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;10.2&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>10.2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span> <span class="o">==</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>12.2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;10&#39;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="analogie-avec-les-listes">
+<h2>Analogie avec les listes<a class="headerlink" href="#analogie-avec-les-listes" title="Permalink to this headline">¶</a></h2>
+<p>Les chaînes de caractères se manipulent en partie comme des listes.
+On peut ainsi obtenir la taille d’une chaîne de caractères à l’aide de la fonction <code class="docutils literal notranslate"><span class="pre">len</span></code>, ou accéder à la <span class="math notranslate nohighlight">\(i\)</span>-ème lettre d’une chaîne de caractères avec la notation <code class="docutils literal notranslate"><span class="pre">s[i]</span></code>.
+Comme pour les listes, il est possible d’indicer une chaîne de caractères en partant de la fin, en utilisant des indices négatifs :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;abcdef&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>a
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>f
+</pre></div>
+</div>
+</div>
+</div>
+<p>De même, on peut sélectionner des sous-parties de chaînes de caractères à partir des indices de début et de fin de la sélection. Comme pour les listes, l’indice de fin correspond au premier élément exclu de la sélection :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;abcdef&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>cd
+</pre></div>
+</div>
+</div>
+</div>
+<p>Comme pour les listes, on peut concaténer deux chaînes de caractères à l’aide de l’opérateur <code class="docutils literal notranslate"><span class="pre">+</span></code> ou répéter une chaîne de caractères avec l’opérateur <code class="docutils literal notranslate"><span class="pre">*</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;ab&quot;</span> <span class="o">+</span> <span class="p">(</span><span class="s1">&#39;cde&#39;</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>abcdecdecde
+</pre></div>
+</div>
+</div>
+</div>
+<p>On peut également tester la présence d’une sous-chaîne de caractères dans une chaîne avec le mot-clé <code class="docutils literal notranslate"><span class="pre">in</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;abcde&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="ow">in</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bcd&quot;</span> <span class="ow">in</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bCd&quot;</span> <span class="ow">in</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Attention.</strong>
+Toutefois, l’analogie entre listes et chaînes de caractères est loin d’être parfaite.
+Par exemple, on peut accéder au <span class="math notranslate nohighlight">\(i\)</span>-ème élément d’une chaîne de caractères en lecture, mais pas en écriture.
+Si <code class="docutils literal notranslate"><span class="pre">s</span></code> est une chaîne de caractères, on ne peut pas exécuter <code class="docutils literal notranslate"><span class="pre">s[2]</span> <span class="pre">=</span> <span class="pre">&quot;c&quot;</span></code> par exemple.</p>
+</div>
+<div class="section" id="principales-methodes-de-la-classe-str">
+<h2>Principales méthodes de la classe <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#principales-methodes-de-la-classe-str" title="Permalink to this headline">¶</a></h2>
+<p>La liste de méthodes de la classe <code class="docutils literal notranslate"><span class="pre">str</span></code> qui suit n’est pas exhaustive, il est conseillé de consulter l’aide en ligne de Python pour plus d’informations.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ch.count(sub)</span></code>: Retourne le nombre d’occurrences de <code class="docutils literal notranslate"><span class="pre">sub</span></code> dans <code class="docutils literal notranslate"><span class="pre">ch</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch.endswith(suffix)</span></code>: Retourne <code class="docutils literal notranslate"><span class="pre">True</span></code> si <code class="docutils literal notranslate"><span class="pre">ch</span></code> se termine par <code class="docutils literal notranslate"><span class="pre">suffix</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch.startswith(prefix)</span></code>: Retourne <code class="docutils literal notranslate"><span class="pre">True</span></code> si <code class="docutils literal notranslate"><span class="pre">ch</span></code> commence par <code class="docutils literal notranslate"><span class="pre">prefix</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch.find(sub)</span></code>: Retourne l’indice du début de la première occurrence de <code class="docutils literal notranslate"><span class="pre">sub</span></code> dans <code class="docutils literal notranslate"><span class="pre">ch</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch.rfind(sub)</span></code>: Retourne l’indice du début de la dernière occurrence de <code class="docutils literal notranslate"><span class="pre">sub</span></code> dans <code class="docutils literal notranslate"><span class="pre">ch</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch.islower()</span></code>: Retourne <code class="docutils literal notranslate"><span class="pre">True</span></code> si <code class="docutils literal notranslate"><span class="pre">ch</span></code> est constituée uniquement de caractères minuscules</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch.isupper()</span></code>: Retourne <code class="docutils literal notranslate"><span class="pre">True</span></code> si <code class="docutils literal notranslate"><span class="pre">ch</span></code> est constituée uniquement de caractères majuscules</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch.isnumeric()</span></code>: Retourne <code class="docutils literal notranslate"><span class="pre">True</span></code> si <code class="docutils literal notranslate"><span class="pre">ch</span></code> est constituée uniquement de chiffres</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch.lower()</span></code>: Retourne la version minuscule de <code class="docutils literal notranslate"><span class="pre">ch</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch.upper()</span></code>: Retourne la version majuscule de <code class="docutils literal notranslate"><span class="pre">ch</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch.replace(old,</span> <span class="pre">new)</span></code>: Retourne une copie de <code class="docutils literal notranslate"><span class="pre">ch</span></code> dans laquelle toutes les occurrences de <code class="docutils literal notranslate"><span class="pre">old</span></code> ont été remplacées par <code class="docutils literal notranslate"><span class="pre">new</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch.split(sep=None)</span></code>: Retourne une liste contenant des morceaux de <code class="docutils literal notranslate"><span class="pre">ch</span></code> découpée à chaque occurrence de <code class="docutils literal notranslate"><span class="pre">sep</span></code> (par défaut, la chaîne est decoupée à chaque espace ou retour à la ligne)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch.strip()</span></code>: Retourne une version “nettoyée” de <code class="docutils literal notranslate"><span class="pre">ch</span></code> dans laquelle on a enlevé tous les espaces en début et en fin de chaîne</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch.format(...)</span></code>: Remplace les caractères <code class="docutils literal notranslate"><span class="pre">{}</span></code> dans la chaîne <code class="docutils literal notranslate"><span class="pre">ch</span></code> par le contenu des variables passées en argument (voir <a class="reference external" href="#anchor-format">ici</a> pour un exemple d’utilisation)</p></li>
+</ul>
+</div>
+<div class="section" id="exercices">
+<h2>Exercices<a class="headerlink" href="#exercices" title="Permalink to this headline">¶</a></h2>
+<p><strong>Exercice 5.1</strong>
+Écrivez une fonction qui prenne en argument deux chaînes de caractères <code class="docutils literal notranslate"><span class="pre">s</span></code> et <code class="docutils literal notranslate"><span class="pre">prefix</span></code> et retourne le nombre de mots de la chaîne <code class="docutils literal notranslate"><span class="pre">s</span></code> qui débutent par la chaîne <code class="docutils literal notranslate"><span class="pre">prefix</span></code>.</p>
+<p><strong>Exercice 5.2</strong>
+Écrivez une fonction qui prenne en argument deux chaînes de caractères <code class="docutils literal notranslate"><span class="pre">s</span></code> et <code class="docutils literal notranslate"><span class="pre">mot_cible</span></code> et retourne le nombre d’occurrences du mot <code class="docutils literal notranslate"><span class="pre">mot_cible</span></code> dans la chaîne <code class="docutils literal notranslate"><span class="pre">s</span></code> en ne tenant pas compte de la casse.</p>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="listes.html" title="previous page">Les listes</a>
+    <a class='right-next' id="next-link" href="dict.html" title="next page">Les dictionnaires</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Romain Tavenard<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

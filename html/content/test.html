@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tester son code &#8212; Introduction à Python</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Conclusion" href="conclusion.html" />
+    <link rel="prev" title="Récupération de données à partir d’API web (TODO)" href="api.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo_ur2.svg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Introduction à Python</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="intro.html">Introduction</a>
+  </li>
+  <li class="">
+    <a href="struct.html">Structures de données et structures de contrôle</a>
+  </li>
+  <li class="">
+    <a href="dates.html">Les dates</a>
+  </li>
+  <li class="">
+    <a href="listes.html">Les listes</a>
+  </li>
+  <li class="">
+    <a href="chaines.html">Les chaînes de caractères</a>
+  </li>
+  <li class="">
+    <a href="dict.html">Les dictionnaires</a>
+  </li>
+  <li class="">
+    <a href="fichiers.html">Lecture et écriture de fichiers textuels</a>
+  </li>
+  <li class="">
+    <a href="api.html">Récupération de données à partir d’API web (TODO)</a>
+  </li>
+  <li class="active">
+    <a href="">Tester son code</a>
+  </li>
+  <li class="">
+    <a href="conclusion.html">Conclusion</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Corrigé des exercices</p>
+</li>
+  <li class="">
+    <a href="solutions.html">Toutes les solutions</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="../_sources/content/test.md"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#les-erreurs-en-python" class="nav-link">Les erreurs en Python</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#les-tests-unitaires" class="nav-link">Les tests unitaires</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#le-developpement-pilote-par-les-tests" class="nav-link">Le développement piloté par les tests</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#exercice" class="nav-link">Exercice</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="tester-son-code">
+<h1>Tester son code<a class="headerlink" href="#tester-son-code" title="Permalink to this headline">¶</a></h1>
+<p>Dans ce document, nous avons jusqu’à présent supposé que tout se passait bien, que votre code ne retournait jamais d’erreur et qu’il ne contenait jamais de <em>bug</em>.
+Quel que soit votre niveau d’expertise en Python, ces deux hypothèses sont peu réalistes.
+Nous allons donc nous intéresser maintenant aux moyens de vérifier si votre code fait bien ce qu’on attend de lui et de mieux comprendre son comportement lorsque ce n’est pas le cas.</p>
+<div class="section" id="les-erreurs-en-python">
+<h2>Les erreurs en Python<a class="headerlink" href="#les-erreurs-en-python" title="Permalink to this headline">¶</a></h2>
+<p>Étudions ce qu’il se passe lors de l’exécution du code suivant :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;12&quot;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Nous obtenons la sortie suivante :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;[...]&quot;, line 2, in &lt;module&gt;
+    y = x + 2
+TypeError: Can&#39;t convert &#39;int&#39; object to str implicitly
+</pre></div>
+</div>
+<p>Ce type de message d’erreur ne doit pas vous effrayer, il est là pour vous aider.
+Il vous fournit de précieuses informations :</p>
+<ol class="simple">
+<li><p>l’erreur se produit à la ligne 2 de votre script Python ;</p></li>
+<li><p>le problème est que Python ne peut pas convertir un objet de type <code class="docutils literal notranslate"><span class="pre">int</span></code> en chaîne de caractères (<code class="docutils literal notranslate"><span class="pre">str</span></code>) de manière implicite.</p></li>
+</ol>
+<p>Reste à se demander pourquoi, dans le cas présent, Python voudrait transformer un entier en chaîne de caractères.
+Pour le comprendre, rendons-nous à la ligne 2 de notre script et décortiquons-la.
+Dans cette ligne (<code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">2</span></code>), deux opérations sont effectuées :</p>
+<ul class="simple">
+<li><p>la première consiste à effectuer l’opération <code class="docutils literal notranslate"><span class="pre">+</span></code> entre les opérandes <code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">2</span></code> ;</p></li>
+<li><p>la seconde consiste à assigner le résultat de l’opération à la variable <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></li>
+</ul>
+<p>Nous avons vu dans ce document que Python savait effectuer l’opération <code class="docutils literal notranslate"><span class="pre">+</span></code> avec des opérandes de types variés (nombre <code class="docutils literal notranslate"><span class="pre">+</span></code> nombre, liste <code class="docutils literal notranslate"><span class="pre">+</span></code> liste, chaîne de caractères <code class="docutils literal notranslate"><span class="pre">+</span></code> chaîne de caractères, et il en existe d’autres).
+Intéressons-nous ici au type des opérandes considérées.
+La variable <code class="docutils literal notranslate"><span class="pre">x</span></code> telle que définie à la ligne 1 est de type chaîne de caractères.
+La valeur <code class="docutils literal notranslate"><span class="pre">2</span></code> est de type entier.
+Il se trouve que Python n’a pas défini d’addition entre chaîne de caractères et entier et c’est pour cela que l’on obtient une erreur.
+Plus précisément, l’interpréteur Python nous dit : “si je pouvais convertir la valeur entière en chaîne de caractères à la volée, je pourrais faire l’opération <code class="docutils literal notranslate"><span class="pre">+</span></code> qui serait alors une concaténation, mais je ne me permets pas de le faire tant que vous ne l’avez pas écrit de manière explicite”.</p>
+<p>Maintenant que nous avons compris le sens de ce <em>bug</em>, il nous reste à le corriger.
+Si nous souhaitons faire la somme du nombre 12 (stocké sous forme de chaîne de caractères dans la variable <code class="docutils literal notranslate"><span class="pre">x</span></code>) et de la valeur 2, nous écrivons :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;12&quot;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>et l’addition s’effectue alors correctement entre deux valeurs numériques.</p>
+</div>
+<div class="section" id="les-tests-unitaires">
+<h2>Les tests unitaires<a class="headerlink" href="#les-tests-unitaires" title="Permalink to this headline">¶</a></h2>
+<p>Pour pouvoir être sûr du code que vous écrivez, il faut l’avoir testé sur un ensemble d’exemples qui vous semble refléter l’ensemble des cas de figures auxquels votre programme pourra être confronté.
+Or, cela représente un nombre de cas de figures très important dès lors que l’on commence à écrire des programmes un tant soit peu complexes.
+Ainsi, il est hautement recommandé de découper son code en fonctions de tailles raisonnables et qui puissent être testées indépendamment.
+Les tests associés à chacune de ces fonctions sont appelés <strong>tests unitaires</strong>.</p>
+<p>Tout d’abord, en mettant en place de tels tests, vous pourrez détecter rapidement un éventuel <em>bug</em> dans votre code et ainsi gagner beaucoup de temps de développement. De plus, vous pourrez également vous assurer que les modifications ultérieures de votre code ne modifient pas son comportement pour les cas testés.
+En effet, lorsque l’on ajoute une fonctionnalité à un programme informatique, il faut avant toute choses s’assurer que celle-ci ne cassera pas le bon fonctionnement du programme dans les cas classiques d’utilisation pour lesquels il avait été à l’origine conçu.</p>
+<p>Prenons maintenant un exemple concret.
+Supposons que l’on souhaite écrire une fonction <code class="docutils literal notranslate"><span class="pre">bissextile</span></code> capable de dire si une année est bissextile ou non.
+En se renseignant sur <a class="reference external" href="https://fr.wikipedia.org/wiki/Ann%C3%A9e_bissextile">le sujet</a>, on apprend qu’une année est bissextile si :</p>
+<ul class="simple">
+<li><p>si elle est divisible par 4 et non divisible par 100, ou</p></li>
+<li><p>si elle est divisible par 400.</p></li>
+</ul>
+<p>On en déduit un ensemble de tests adaptés :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">bissextile</span><span class="p">(</span><span class="mi">2004</span><span class="p">))</span>  <span class="c1"># True car divisible par 4 et non par 100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bissextile</span><span class="p">(</span><span class="mi">1900</span><span class="p">))</span>  <span class="c1"># False car divisible par 100 et non par 400</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bissextile</span><span class="p">(</span><span class="mi">2000</span><span class="p">))</span>  <span class="c1"># True car divisible par 400</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bissextile</span><span class="p">(</span><span class="mi">1999</span><span class="p">))</span>  <span class="c1"># False car divisible ni par 4 ni par 100</span>
+</pre></div>
+</div>
+<p>On peut alors vérifier que le comportement de notre fonction <code class="docutils literal notranslate"><span class="pre">bissextile</span></code> est bien conforme à ce qui est attendu.</p>
+</div>
+<div class="section" id="le-developpement-pilote-par-les-tests">
+<h2>Le développement piloté par les tests<a class="headerlink" href="#le-developpement-pilote-par-les-tests" title="Permalink to this headline">¶</a></h2>
+<p>Le développement piloté par les tests (ou <em>Test-Driven Development</em>) est une technique de programmation qui consiste à rédiger les tests unitaires de votre programme avant même de rédiger le programme lui-même.</p>
+<p>L’intérêt de cette façon de faire est qu’elle vous obligera à réfléchir aux différents cas d’utilisation d’une fonction avant de commencer à la coder.
+De plus, une fois ces différents cas identifiés, il est probable que la structure globale de la fonction à coder vous apparaisse plus clairement.</p>
+<p>Si l’on reprend l’exemple de la fonction <code class="docutils literal notranslate"><span class="pre">bissextile</span></code> citée plus haut, on voit assez clairement qu’une fois que l’on a rédigé l’ensemble de tests, la fonction sera simple à coder et reprendra les différents cas considérés pour les tests:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bissextile</span><span class="p">(</span><span class="n">annee</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">annee</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">annee</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">elif</span> <span class="n">annee</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercice">
+<h2>Exercice<a class="headerlink" href="#exercice" title="Permalink to this headline">¶</a></h2>
+<p><strong>Exercice 9.1</strong>
+En utilisant les méthodes de développement préconisées dans ce chapitre, rédigez le code et les tests d’un programme permettant de déterminer le lendemain d’une date fournie sous la forme de trois entiers (jour, mois, année).</p>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="api.html" title="previous page">Récupération de données à partir d’API web (TODO)</a>
+    <a class='right-next' id="next-link" href="conclusion.html" title="next page">Conclusion</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Romain Tavenard<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
