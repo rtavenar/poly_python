@@ -31,7 +31,7 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Récupération de données à partir d’API web (TODO)" href="api.html" />
+    <link rel="next" title="Récupération de données à partir d’API web" href="api.html" />
     <link rel="prev" title="Les dictionnaires" href="dict.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -89,7 +89,7 @@
     <a href="">Lecture et écriture de fichiers textuels</a>
   </li>
   <li class="">
-    <a href="api.html">Récupération de données à partir d’API web (TODO)</a>
+    <a href="api.html">Récupération de données à partir d’API web</a>
   </li>
   <li class="">
     <a href="test.html">Tester son code</a>
@@ -138,7 +138,7 @@
             
             <div class="dropdown-buttons">
                 <!-- ipynb file if we had a myst markdown file -->
-                
+                <a class="dropdown-buttons" href="../_sources/content/fichiers.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
                 <!-- Download raw file -->
                 <a class="dropdown-buttons" href="../_sources/content/fichiers.md"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
                 <!-- Download PDF via print -->
@@ -154,6 +154,17 @@
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+            <div class="dropdown-buttons">
+                
+                <a class="binder-button" href="https://mybinder.org/v2/gh/rtavenar/poly_python/master?urlpath=tree/content/fichiers.md"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="../_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
+                
+                
+                
+            </div>
+        </div>
         
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
@@ -669,7 +680,7 @@ Vous pourrez vous aider pour cela de la documentation du sous-module <code class
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="dict.html" title="previous page">Les dictionnaires</a>
-    <a class='right-next' id="next-link" href="api.html" title="next page">Récupération de données à partir d’API web (TODO)</a>
+    <a class='right-next' id="next-link" href="api.html" title="next page">Récupération de données à partir d’API web</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
