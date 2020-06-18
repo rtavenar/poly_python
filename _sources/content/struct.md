@@ -92,6 +92,9 @@ Les noms de variable en Python sont sensibles à la casse, ainsi les variables `
 mavariable = 12
 maVariable = 15
 print(mavariable)
+```
+
+```{code-cell}
 print(maVariable)
 ```
 
@@ -111,6 +114,9 @@ Ainsi, voici le résultat de l'exécution suivante :
 ```{code-cell}
 x = 2
 print(x)
+```
+
+```{code-cell}
 x = 3.9 * x * (1 - x)
 print(x)
 ```
@@ -380,14 +386,18 @@ Les trois appels suivants sont équivalents :
 
 ```{code-cell}
 affiche_infos_personne(80, 180)
+```
+
+```{code-cell}
 affiche_infos_personne(taille=180, poids=80)
+```
+
+```{code-cell}
 affiche_infos_personne(poids=80, taille=180)
 ```
 
 Notons qu'il est alors possible d'interchanger l'ordre des arguments lors de l'appel d'une fonction si on précise leur nom.
 Évidemment, pour que cela soit vraiment utile, il est hautement recommandé d'utiliser des **noms d'arguments explicites** lors de la définition de vos fonctions.
-
-+++
 
 #### Argument(s) optionnel(s) d'une fonction
 
@@ -398,8 +408,17 @@ Par exemple, la fonction `print` dispose de plusieurs arguments facultatifs, com
 
 ```{code-cell}
 print("La vie est belle")
+```
+
+```{code-cell}
 print("Life is beautiful")
+```
+
+```{code-cell}
 print("La vie est belle", end="--")
+```
+
+```{code-cell}
 print("Life is beautiful", end="*-*")
 ```
 
@@ -432,8 +451,17 @@ Le code suivant charge le module en mémoire puis fait appel à certaines de ses
 import math
 
 print(math.sin(0))
+```
+
+```{code-cell}
 print(math.pi)
+```
+
+```{code-cell}
 print(math.cos(2 * math.pi))
+```
+
+```{code-cell}
 print(math.sqrt(2))
 ```
 

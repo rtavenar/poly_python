@@ -215,6 +215,10 @@
         </li>
     
         <li class="nav-item toc-entry toc-h2">
+            <a href="#bonus-utilisation-de-with" class="nav-link">Bonus : utilisation de with</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
             <a href="#exercices" class="nav-link">Exercices</a>
         </li>
     
@@ -642,6 +646,39 @@ Pour cela, on utilisera la syntaxe suivante :</p>
 </div>
 <p>La fonction <code class="docutils literal notranslate"><span class="pre">path.join</span></code> du module <code class="docutils literal notranslate"><span class="pre">os</span></code> permet d’obtenir le chemin complet vers le fichier à partir du nom du répertoire dans lequel il se trouve et du nom du fichier isolé.
 Il est préférable d’utiliser cette fonction plutôt que d’effectuer la concaténation des chaînes de caractères correspondantes car la forme des chemins complets dépend du système d’exploitation utilisé, ce que gère intelligemment <code class="docutils literal notranslate"><span class="pre">path.join</span></code>.</p>
+</div>
+<div class="section" id="bonus-utilisation-de-with">
+<h2>Bonus : utilisation de <code class="docutils literal notranslate"><span class="pre">with</span></code><a class="headerlink" href="#bonus-utilisation-de-with" title="Permalink to this headline">¶</a></h2>
+<p>Il existe en Python un moyen très efficace de maîtriser la durée de vie d’une variable : il s’agit de la directive <code class="docutils literal notranslate"><span class="pre">with</span></code>, dont la syntaxe est la suivante :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">EXPRESSION</span> <span class="k">as</span> <span class="n">VARIABLE</span><span class="p">:</span>
+    <span class="n">BLOC_DE_CODE</span>
+</pre></div>
+</div>
+<p>Le code ci-dessus signifie que l’on va créer une variable <code class="docutils literal notranslate"><span class="pre">VARIABLE</span></code> qui va stocker la valeur de retour de <code class="docutils literal notranslate"><span class="pre">EXPRESSION</span></code> (<a class="reference external" href="https://docs.python.org/2.5/whatsnew/pep-343.html">ceci n’est pas tout à fait exact</a>, mais dans l’exemple qui nous intéresse, cela revient au même), puis le code situé dans <code class="docutils literal notranslate"><span class="pre">BLOC_DE_CODE</span></code> sera exécuté et à la fin de ce bloc de code, <code class="docutils literal notranslate"><span class="pre">VARIABLE</span></code> sera détruite.</p>
+<p>Cette syntaxe peut s’avérer fort utile lorsque l’on manipule des fichiers, parce que les pointeurs de fichiers, lorsqu’ils sont détruits, ferment automatiquement le fichier en question, et il n’est donc pas nécessaire de faire appel à la méthode <code class="docutils literal notranslate"><span class="pre">.close()</span></code> explicitement.</p>
+<p>On pourra donc écrire :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;simple.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">texte</span> <span class="ow">in</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">texte</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>1;2;3;4;5
+
+a;b;c;d;e
+
+xx;xx;xx;xx;xx
+
+0.4;0.5;0.7;0.8;0.9
+
+</pre></div>
+</div>
+</div>
+</div>
+<p>et le fichier sera tout de même fermé correctement dès que l’on sortira du bloc <code class="docutils literal notranslate"><span class="pre">with</span></code>.</p>
 </div>
 <div class="section" id="exercices">
 <h2>Exercices<a class="headerlink" href="#exercices" title="Permalink to this headline">¶</a></h2>

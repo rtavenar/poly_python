@@ -30,6 +30,8 @@ y = f(3 * x + 2)
 print(y)
 ```
 
+Le bloc situé sous le code correspond à la sortie générée dans le terminal par le code en question.
+
 Dans ce document, nous allons donc nous intéresser au langage Python.
 Pour tester les exemples présentés au fil de ce document ou réaliser les exercices proposés, vous aurez deux possibilités.
 La première consiste à ouvrir une **console Python**, à l'aide de la commande suivante (si vous êtes sous Unix, en supposant que le symbole `$` corresponde au prompt de votre _shell_) :

@@ -177,6 +177,16 @@
         </li>
     
         <li class="nav-item toc-entry toc-h2">
+            <a href="#formatage-des-chaines-de-caracteres" class="nav-link">Formatage des chaînes de caractères</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#pour-aller-plus-loin-les-f-strings" class="nav-link">Pour aller plus loin : les f-strings</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
             <a href="#exercices" class="nav-link">Exercices</a>
         </li>
     
@@ -415,8 +425,120 @@ Si <code class="docutils literal notranslate"><span class="pre">s</span></code> 
 <li><p><code class="docutils literal notranslate"><span class="pre">ch.replace(old,</span> <span class="pre">new)</span></code>: Retourne une copie de <code class="docutils literal notranslate"><span class="pre">ch</span></code> dans laquelle toutes les occurrences de <code class="docutils literal notranslate"><span class="pre">old</span></code> ont été remplacées par <code class="docutils literal notranslate"><span class="pre">new</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ch.split(sep=None)</span></code>: Retourne une liste contenant des morceaux de <code class="docutils literal notranslate"><span class="pre">ch</span></code> découpée à chaque occurrence de <code class="docutils literal notranslate"><span class="pre">sep</span></code> (par défaut, la chaîne est decoupée à chaque espace ou retour à la ligne)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ch.strip()</span></code>: Retourne une version “nettoyée” de <code class="docutils literal notranslate"><span class="pre">ch</span></code> dans laquelle on a enlevé tous les espaces en début et en fin de chaîne</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ch.format(...)</span></code>: Remplace les caractères <code class="docutils literal notranslate"><span class="pre">{}</span></code> dans la chaîne <code class="docutils literal notranslate"><span class="pre">ch</span></code> par le contenu des variables passées en argument (voir <a class="reference external" href="#anchor-format">ici</a> pour un exemple d’utilisation)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch.format(...)</span></code>: Remplace les caractères <code class="docutils literal notranslate"><span class="pre">{}</span></code> dans la chaîne <code class="docutils literal notranslate"><span class="pre">ch</span></code> par le contenu des variables passées en argument</p></li>
 </ul>
+</div>
+<div class="section" id="formatage-des-chaines-de-caracteres">
+<h2>Formatage des chaînes de caractères<a class="headerlink" href="#formatage-des-chaines-de-caracteres" title="Permalink to this headline">¶</a></h2>
+<p>Lorsque l’on souhaite ajouter, dans une chaîne de caractères, du contenu stocké dans une variable, on pourra utiliser la méthode format listée ci-dessus.</p>
+<p>Commençons par un exemple :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">prenom</span> <span class="o">=</span> <span class="s2">&quot;Micheline&quot;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> a </span><span class="si">{}</span><span class="s2"> ans&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prenom</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Micheline a 12 ans
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ainsi, la méthode <code class="docutils literal notranslate"><span class="pre">.format()</span></code> recherche dans la chaîne de caractères les <code class="docutils literal notranslate"><span class="pre">{}</span></code> et les remplace par les valeurs des variables fournies.
+Il est possible de maîtriser plus finement la mise en forme de ces variables, et même de les nommer (ce qui peut s’avérer très utile si la chaîne de caractères est longue et inclut de nombreuses variables).</p>
+<p>Voici quelques exemples :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">age_enfant</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">prenom_enfant</span> <span class="o">=</span> <span class="s2">&quot;Micheline&quot;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{prenom}</span><span class="s2"> a </span><span class="si">{age}</span><span class="s2"> ans&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prenom</span><span class="o">=</span><span class="n">prenom_enfant</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">age_enfant</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Micheline a 12 ans
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">age_enfant</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">prenom_enfant</span> <span class="o">=</span> <span class="s2">&quot;Micheline&quot;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{prenom}</span><span class="s2"> a </span><span class="si">{age:.3f}</span><span class="s2"> ans&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prenom</span><span class="o">=</span><span class="n">prenom_enfant</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">age_enfant</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Micheline a 12.000 ans
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vous trouverez une présentation plus exhaustive de ces questions dans la <a class="reference external" href="https://docs.python.org/fr/3.5/library/string.html#format-string-syntax">documentation Python sur ce point</a>.</p>
+<div class="section" id="pour-aller-plus-loin-les-f-strings">
+<h3>Pour aller plus loin : les f-strings<a class="headerlink" href="#pour-aller-plus-loin-les-f-strings" title="Permalink to this headline">¶</a></h3>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="tip admonition">
+<p class="admonition-title">Pour info</p>
+<p>Les f-strings existent en Python depuis la version 3.6.</p>
+</div>
+</div>
+<p>Il existe une autre façon de mettre en forme les chaînes de caractères, qui consiste en l’utilisation de f-strings.
+Pour définir une f-string, il suffit d’ajouter un f avant la chaîne de caractères :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Ceci est une f-string&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Ceci est une f-string
+</pre></div>
+</div>
+</div>
+</div>
+<p>Jusqu’ici, rien de bien révolutionnaire.
+Mais ces f-strings deviennent fort pratiques dès lors que l’on souhaite ajouter des données issues de variables précédemment définies :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">prenom</span> <span class="o">=</span> <span class="s2">&quot;Micheline&quot;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prenom</span><span class="si">}</span><span class="s2"> a </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> ans&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Micheline a 12 ans
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cette syntaxe est beaucoup plus concise que ce que l’on pouvait avoir en utilisant la méthode <code class="docutils literal notranslate"><span class="pre">.format()</span></code>.
+On peut même effectuer des calculs à la volée dans les f-strings :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">age_chat</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Ce chat a </span><span class="si">{</span><span class="n">age_chat</span><span class="si">}</span><span class="s2"> ans, ce qui lui fait </span><span class="si">{</span><span class="n">age_chat</span> <span class="o">*</span> <span class="mi">6</span><span class="si">}</span><span class="s2"> ans en âge équivalent humain&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Ce chat a 12 ans, ce qui lui fait 72 ans en âge équivalent humain
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="exercices">
 <h2>Exercices<a class="headerlink" href="#exercices" title="Permalink to this headline">¶</a></h2>

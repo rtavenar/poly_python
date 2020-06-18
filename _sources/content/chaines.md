@@ -128,7 +128,80 @@ La liste de méthodes de la classe `str` qui suit n'est pas exhaustive, il est c
 * `ch.replace(old, new)`: Retourne une copie de `ch` dans laquelle toutes les occurrences de `old` ont été remplacées par `new`
 * `ch.split(sep=None)`: Retourne une liste contenant des morceaux de `ch` découpée à chaque occurrence de `sep` (par défaut, la chaîne est decoupée à chaque espace ou retour à la ligne)
 * `ch.strip()`: Retourne une version "nettoyée" de `ch` dans laquelle on a enlevé tous les espaces en début et en fin de chaîne
-* `ch.format(...)`: Remplace les caractères `{}` dans la chaîne `ch` par le contenu des variables passées en argument (voir [ici](#anchor-format) pour un exemple d'utilisation)
+* `ch.format(...)`: Remplace les caractères `{}` dans la chaîne `ch` par le contenu des variables passées en argument
+
+## Formatage des chaînes de caractères
+
+Lorsque l'on souhaite ajouter, dans une chaîne de caractères, du contenu stocké dans une variable, on pourra utiliser la méthode format listée ci-dessus.
+
+Commençons par un exemple :
+
+```{code-cell}
+age = 12
+prenom = "Micheline"
+s = "{} a {} ans".format(prenom, age)
+print(s)
+```
+
+Ainsi, la méthode `.format()` recherche dans la chaîne de caractères les `{}` et les remplace par les valeurs des variables fournies.
+Il est possible de maîtriser plus finement la mise en forme de ces variables, et même de les nommer (ce qui peut s'avérer très utile si la chaîne de caractères est longue et inclut de nombreuses variables).
+
+Voici quelques exemples :
+
+```{code-cell}
+age_enfant = 12
+prenom_enfant = "Micheline"
+s = "{prenom} a {age} ans".format(prenom=prenom_enfant, age=age_enfant)
+print(s)
+```
+
+```{code-cell}
+age_enfant = 12
+prenom_enfant = "Micheline"
+s = "{prenom} a {age:.3f} ans".format(prenom=prenom_enfant, age=age_enfant)
+print(s)
+```
+
+
+Vous trouverez une présentation plus exhaustive de ces questions dans la [documentation Python sur ce point](https://docs.python.org/fr/3.5/library/string.html#format-string-syntax).
+
+### Pour aller plus loin : les f-strings
+
+````{margin}
+```{admonition} Pour info
+  :class: tip
+Les f-strings existent en Python depuis la version 3.6.
+```
+````
+
+Il existe une autre façon de mettre en forme les chaînes de caractères, qui consiste en l'utilisation de f-strings.
+Pour définir une f-string, il suffit d'ajouter un f avant la chaîne de caractères :
+
+```{code-cell}
+s = f"Ceci est une f-string"
+print(s)
+```
+
+Jusqu'ici, rien de bien révolutionnaire.
+Mais ces f-strings deviennent fort pratiques dès lors que l'on souhaite ajouter des données issues de variables précédemment définies :
+
+```{code-cell}
+age = 12
+prenom = "Micheline"
+s = f"{prenom} a {age} ans"
+print(s)
+```
+
+Cette syntaxe est beaucoup plus concise que ce que l'on pouvait avoir en utilisant la méthode `.format()`.
+On peut même effectuer des calculs à la volée dans les f-strings :
+
+```{code-cell}
+age_chat = 12
+s = f"Ce chat a {age_chat} ans, ce qui lui fait {age_chat * 6} ans en âge équivalent humain"
+print(s)
+```
+
+
 
 ## Exercices
 

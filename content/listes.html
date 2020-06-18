@@ -236,6 +236,10 @@
             <a href="#bonus-listes-en-comprehension" class="nav-link">Bonus : listes en compréhension</a>
         </li>
     
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#super-bonus-le-parcours-simultane-de-plusieurs-listes" class="nav-link">Super Bonus : le parcours simultané de plusieurs listes</a>
+        </li>
+    
     </ul>
 </nav>
 
@@ -672,9 +676,6 @@ On peut souhaiter :</p>
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>5 est dans l
 </pre></div>
 </div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -752,7 +753,10 @@ On peut souhaiter :</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>5 12
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span> 12
 </pre></div>
 </div>
 </div>
@@ -851,6 +855,71 @@ On peut également appliquer un filtre sur les éléments de la liste de départ
 </div>
 </div>
 <p>Ici, on n’a considéré que les entiers pairs.</p>
+</div>
+<div class="section" id="super-bonus-le-parcours-simultane-de-plusieurs-listes">
+<h2>Super Bonus : le parcours simultané de plusieurs listes<a class="headerlink" href="#super-bonus-le-parcours-simultane-de-plusieurs-listes" title="Permalink to this headline">¶</a></h2>
+<p>Il peut arriver que l’on ait à parcourir simultanément plusieurs listes.
+Par exemple, supposons que l’on ait une liste stockant les prénoms d’enfants d’une classe et une autre liste contenant leurs noms.
+Si l’on veut afficher les noms et prénoms de ces enfants, on peut effectuer un parcours par indice :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prenoms</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Jeanne&quot;</span><span class="p">,</span> <span class="s2">&quot;Anne&quot;</span><span class="p">,</span> <span class="s2">&quot;Camille&quot;</span><span class="p">]</span>
+<span class="n">noms</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Papin&quot;</span><span class="p">,</span> <span class="s2">&quot;Bakayoko&quot;</span><span class="p">,</span> <span class="s2">&quot;Drogba&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">prenoms</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">prenoms</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">noms</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Jeanne Papin
+Anne Bakayoko
+Camille Drogba
+</pre></div>
+</div>
+</div>
+</div>
+<p>On peut aussi se dire que, en toute logique, on n’a pas réellement besoin ici d’accéder aux indices des éléments et que l’on voudrait juste effectuer un parcours simultané des deux listes.
+C’est ce que permet la fonction <code class="docutils literal notranslate"><span class="pre">zip()</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prenoms</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Jeanne&quot;</span><span class="p">,</span> <span class="s2">&quot;Anne&quot;</span><span class="p">,</span> <span class="s2">&quot;Camille&quot;</span><span class="p">]</span>
+<span class="n">noms</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Papin&quot;</span><span class="p">,</span> <span class="s2">&quot;Bakayoko&quot;</span><span class="p">,</span> <span class="s2">&quot;Drogba&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">prenoms</span><span class="p">,</span> <span class="n">noms</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Jeanne Papin
+Anne Bakayoko
+Camille Drogba
+</pre></div>
+</div>
+</div>
+</div>
+<p>On peut même parcourir plus de deux listes simultanément :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prenoms</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Jeanne&quot;</span><span class="p">,</span> <span class="s2">&quot;Anne&quot;</span><span class="p">,</span> <span class="s2">&quot;Camille&quot;</span><span class="p">]</span>
+<span class="n">noms</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Papin&quot;</span><span class="p">,</span> <span class="s2">&quot;Bakayoko&quot;</span><span class="p">,</span> <span class="s2">&quot;Drogba&quot;</span><span class="p">]</span>
+<span class="n">ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">prenoms</span><span class="p">,</span> <span class="n">noms</span><span class="p">,</span> <span class="n">ages</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Jeanne Papin 12
+Anne Bakayoko 11
+Camille Drogba 12
+</pre></div>
+</div>
+</div>
+</div>
+<p>Bien entendu, pour pouvoir utiliser <code class="docutils literal notranslate"><span class="pre">zip()</span></code>, il faut que les listes soient de même taille.</p>
 </div>
 </div>
 
