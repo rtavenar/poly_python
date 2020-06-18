@@ -23,7 +23,7 @@ Durant la lecture de ce polycopié, vous trouverez des blocs de code tels que ce
 
 ```{code-cell}
 def f(v):
-	return v ** 2
+    return v ** 2
 
 x = 5
 y = f(3 * x + 2)
