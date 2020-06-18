@@ -360,7 +360,7 @@ with EXPRESSION as VARIABLE:
     BLOC_DE_CODE
 ```
 
-Le code ci-dessus signifie que l'on va créer une variable `VARIABLE` qui va stocker la valeur de retour de `EXPRESSION` ([ceci n'est pas tout à fait exact](https://docs.python.org/2.5/whatsnew/pep-343.html), mais dans l'exemple qui nous intéresse, cela revient au même), puis le code situé dans `BLOC_DE_CODE` sera exécuté et à la fin de ce bloc de code, `VARIABLE` sera détruite.
+Le code ci-dessus signifie que l'on va créer une variable `VARIABLE` qui va stocker la valeur de retour de `EXPRESSION` ([ceci n'est pas tout à fait exact](https://docs.python.org/2.5/whatsnew/pep-343.html), mais dans l'exemple qui nous intéresse, cela revient au même), puis le code situé dans `BLOC_DE_CODE` sera exécuté et, à la fin de ce bloc de code, `VARIABLE` sera détruite.
 
 Cette syntaxe peut s'avérer fort utile lorsque l'on manipule des fichiers, parce que les pointeurs de fichiers, lorsqu'ils sont détruits, ferment automatiquement le fichier en question, et il n'est donc pas nécessaire de faire appel à la méthode `.close()` explicitement.
 
