@@ -373,3 +373,42 @@ print(l)
 ```
 
 Ici, on n'a considéré que les entiers pairs.
+
+## Super Bonus : le parcours simultané de plusieurs listes
+
+Il peut arriver que l'on ait à parcourir simultanément plusieurs listes.
+Par exemple, supposons que l'on ait une liste stockant les prénoms d'enfants d'une classe et une autre liste contenant leurs noms.
+Si l'on veut afficher les noms et prénoms de ces enfants, on peut effectuer un parcours par indice :
+
+```{code-cell}
+prenoms = ["Jeanne", "Anne", "Camille"]
+noms = ["Papin", "Bakayoko", "Drogba"]
+
+for i in range(len(prenoms)):
+    print(prenoms[i], noms[i])
+```
+
+On peut aussi se dire que, en toute logique, on n'a pas réellement besoin ici d'accéder aux indices des éléments et que l'on voudrait juste effectuer un parcours simultané des deux listes.
+C'est ce que permet la fonction `zip()` :
+
+```{code-cell}
+prenoms = ["Jeanne", "Anne", "Camille"]
+noms = ["Papin", "Bakayoko", "Drogba"]
+
+for p, n in zip(prenoms, noms):
+    print(p, n)
+```
+
+On peut même parcourir plus de deux listes simultanément :
+
+```{code-cell}
+prenoms = ["Jeanne", "Anne", "Camille"]
+noms = ["Papin", "Bakayoko", "Drogba"]
+ages = [12, 11, 12]
+
+for p, n, a in zip(prenoms, noms, ages):
+    print(p, n, a)
+```
+
+
+Bien entendu, pour pouvoir utiliser `zip()`, il faut que les listes soient de même taille.

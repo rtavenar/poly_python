@@ -17,7 +17,7 @@ kernelspec:
 
 Ce document est le polycopié associé au module de Python pour la deuxième année de licence MIASHS de l'Université de Rennes 2.
 Il est distribué librement (sous licence [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) plus précisément) et se veut évolutif, n'hésitez donc pas à faire vos remarques à son auteur dont vous trouverez le contact sur [sa page web](https://rtavenar.github.io/).
-Ce polycopié a notamment bénéficié des apports d'Aurélie Lemaitre et d'Agnès Maunoury.
+Ce polycopié a notamment bénéficié des apports d'Aurélie Lemaitre, d'Agnès Maunoury et de Jean-Christophe Burnel.
 
 Durant la lecture de ce polycopié, vous trouverez des blocs de code tels que celui-ci :
 
@@ -29,6 +29,8 @@ x = 5
 y = f(3 * x + 2)
 print(y)
 ```
+
+Le bloc situé sous le code correspond à la sortie générée dans le terminal par le code en question.
 
 Dans ce document, nous allons donc nous intéresser au langage Python.
 Pour tester les exemples présentés au fil de ce document ou réaliser les exercices proposés, vous aurez deux possibilités.

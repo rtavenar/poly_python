@@ -351,6 +351,29 @@ for nom_fichier in os.listdir(repertoire):
 La fonction `path.join` du module `os` permet d'obtenir le chemin complet vers le fichier à partir du nom du répertoire dans lequel il se trouve et du nom du fichier isolé.
 Il est préférable d'utiliser cette fonction plutôt que d'effectuer la concaténation des chaînes de caractères correspondantes car la forme des chemins complets dépend du système d'exploitation utilisé, ce que gère intelligemment `path.join`.
 
+## Bonus : utilisation de `with`
+
+Il existe en Python un moyen très efficace de maîtriser la durée de vie d'une variable : il s'agit de la directive `with`, dont la syntaxe est la suivante :
+
+```
+with EXPRESSION as VARIABLE:
+    BLOC_DE_CODE
+```
+
+Le code ci-dessus signifie que l'on va créer une variable `VARIABLE` qui va stocker la valeur de retour de `EXPRESSION` ([ceci n'est pas tout à fait exact](https://docs.python.org/2.5/whatsnew/pep-343.html), mais dans l'exemple qui nous intéresse, cela revient au même), puis le code situé dans `BLOC_DE_CODE` sera exécuté et, à la fin de ce bloc de code, `VARIABLE` sera détruite.
+
+Cette syntaxe peut s'avérer fort utile lorsque l'on manipule des fichiers, parce que les pointeurs de fichiers, lorsqu'ils sont détruits, ferment automatiquement le fichier en question, et il n'est donc pas nécessaire de faire appel à la méthode `.close()` explicitement.
+
+On pourra donc écrire :
+
+```{code-cell}
+with open("simple.csv", "r") as fp:
+    for texte in fp.readlines():
+        print(texte)
+```
+
+et le fichier sera tout de même fermé correctement dès que l'on sortira du bloc `with`.
+
 ## Exercices
 
 **Exercice 7.1**
