@@ -1,5 +1,12 @@
 # Tester son code
 
+```{admonition} Pour info
+  :class: tip
+
+  Il existe en Python des outils dédiés au test de programmes.
+  Toutefois, ce chapitre ne traite pas de l'utilisation de ces outils, mais plutôt de l'intérêt des tests en général.
+```
+
 Dans ce document, nous avons jusqu'à présent supposé que tout se passait bien, que votre code ne retournait jamais d'erreur et qu'il ne contenait jamais de _bug_.
 Quel que soit votre niveau d'expertise en Python, ces deux hypothèses sont peu réalistes.
 Nous allons donc nous intéresser maintenant aux moyens de vérifier si votre code fait bien ce qu'on attend de lui et de mieux comprendre son comportement lorsque ce n'est pas le cas.
@@ -100,3 +107,14 @@ def bissextile(annee):
 
 **Exercice 9.1**
 En utilisant les méthodes de développement préconisées dans ce chapitre, rédigez le code et les tests d'un programme permettant de déterminer le lendemain d'une date fournie sous la forme de trois entiers (jour, mois, année).
+
+**Exercice 9.2**
+Proposez une ré-écriture de la fonction bissextile ci-dessus qui tienne en une ligne de la forme :
+
+```python
+def bissextile(annee):
+    return CONDITION_COMPLEXE
+```
+
+où `CONDITION_COMPLEXE` est un booléen calculé à partir de la valeur de `annee`.
+Assurez-vous que cette nouvelle fonction passe bien les tests énoncés ci-dessus.

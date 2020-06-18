@@ -338,3 +338,15 @@ print(lendemain(12, 2, 2010))  # 13, 2, 2010
 print(lendemain(28, 2, 2010))  #  1, 3, 2010
 print(lendemain(31, 12, 2010)) #  1, 1, 2011
 ```
+
+## Exercice 9.2
+
+```{code-cell}
+def bissextile(annee):
+    return (annee % 4 == 0 and annee % 100 != 0) or (annee % 400 == 0)
+
+print(bissextile(2004))  # True car divisible par 4 et non par 100
+print(bissextile(1900))  # False car divisible par 100 et non par 400
+print(bissextile(2000))  # True car divisible par 400
+print(bissextile(1999))  # False car divisible ni par 4 ni par 100
+```
