@@ -113,9 +113,7 @@ for cle, valeur in mon_dico.items():
 
 ## Exercices
 
-+++
-
-**Exercice 6.1**
+````{admonition} **Exercice 6.1**
 Écrivez une fonction qui compte le nombre d'occurrences de chacun des mots d'une chaîne de caractères et retourne le résultat sous forme de dictionnaire :
 
 ```
@@ -124,5 +122,11 @@ print(compte_occurrences("la vie est belle c'est la vie"))
 # [Sortie] {"c'est": 1, 'la': 2, 'belle': 1, 'est': 1, 'vie': 2}
 ```
 
-**Exercice 6.2**
+[{ref}`Corrigé <ex6.1_sol>`]
+````
+
+```{admonition} **Exercice 6.2**
 Écrivez une fonction qui retourne la somme des *valeurs* d'un dictionnaire fourni en argument.
+
+[{ref}`Corrigé <ex6.2_sol>`]
+```

@@ -113,7 +113,7 @@ print(contenu)
 
 On voit ici qu'il est possible d'obtenir le résultat de notre requête sous deux formes : le texte brut du résultat qui est stocké dans `reponse.text` et la version mise en forme (sous la forme de dictionnaire ou de liste) de ce résultat que l'on obtient via `reponse.json()`.
 
-De plus, si l'on souhaite passer des paramètres à la requête HTTP (ce qui se trouvait après le symbole `?` dans les URL ci-dessus), il est possible de le fait lors de l'appel à `requests.get` :
+De plus, si l'on souhaite passer des paramètres à la requête HTTP (ce qui se trouvait après le symbole `?` dans les URL ci-dessus), il est possible de le faire lors de l'appel à `requests.get` :
 
 ```{code-cell}
 import requests
@@ -134,5 +134,8 @@ C'est par exemple le cas des modules [`tweepy`](http://docs.tweepy.org/en/latest
 
 ## Exercice
 
-**Exercice 8.1**
+```{admonition} **Exercice 8.1**
 Écrivez une fonction qui prenne en entrée une liste de `userId` et affiche l'ensemble des entrées de l'API <http://my-json-server.typicode.com/rtavenar/fake_api/tasks> pour lesquelles l'attribut `completed` vaut `True`.
+
+[{ref}`Corrigé <ex8.1_sol>`]
+```

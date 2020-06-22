@@ -102,13 +102,16 @@ def bissextile(annee):
         return False
 ```
 
-## Exercice
+## Exercices
 
 
-**Exercice 9.1**
+```{admonition} **Exercice 9.1**
 En utilisant les méthodes de développement préconisées dans ce chapitre, rédigez le code et les tests d'un programme permettant de déterminer le lendemain d'une date fournie sous la forme de trois entiers (jour, mois, année).
 
-**Exercice 9.2**
+[{ref}`Corrigé <ex9.1_sol>`]
+```
+
+````{admonition} **Exercice 9.2**
 Proposez une ré-écriture de la fonction bissextile ci-dessus qui tienne en une ligne de la forme :
 
 ```python
@@ -118,3 +121,6 @@ def bissextile(annee):
 
 où `CONDITION_COMPLEXE` est un booléen calculé à partir de la valeur de `annee`.
 Assurez-vous que cette nouvelle fonction passe bien les tests énoncés ci-dessus.
+
+[{ref}`Corrigé <ex9.2_sol>`]
+````

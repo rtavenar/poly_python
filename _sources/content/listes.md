@@ -29,7 +29,7 @@ Il existe toutefois une différence majeure entre listes et itérables : nous ve
 Toutefois, si l'on a un itérable `iterable`, il est possible de le transformer en liste simplement à l'aide de la fonction `list` :
 
 ```
-l = list(iterable)
+liste = list(iterable)
 ```
 
 ## Création de liste
@@ -54,9 +54,9 @@ Heureusement, il existe des fonctions qui permettent de créer de telles listes.
 Par exemple, la fonction `range(a, b)` retourne un itérable contenant les entiers de `a` (inclus) à `b` (exclu) :
 
 ```{code-cell}
-l = range(1, 10)     # l = [1, 2, 3, ..., 9]
-l = range(10)        # l = [0, 1, 2, ..., 9]
-l = range(0, 10, 2)  # l = [0, 2, 4, ..., 8]
+it = range(1, 10)     # it = [1, 2, 3, ..., 9]
+it = range(10)        # it = [0, 1, 2, ..., 9]
+it = range(0, 10, 2)  # it = [0, 2, 4, ..., 8]
 ```
 
 On remarque que, si l'on ne donne qu'un argument à la fonction `range`, l'itérable retourné débute à l'entier 0.
@@ -67,33 +67,33 @@ Si, au contraire, on passe un troisième argument à la fonction `range`, cet ar
 Pour accéder au $i$-ème élément d'une liste, on utilise la syntaxe :
 
 ```
-l[i]
+liste[i]
 ```
 
 Attention, toutefois, le premier indice d'une liste est 0, on a donc :
 
 ```{code-cell}
-l = [1, 5, 7]
-print(l[1])
+liste = [1, 5, 7]
+print(liste[1])
 ```
 
 ```{code-cell}
-print(l[0])
+print(liste[0])
 ```
 
 On peut également accéder au dernier élément d'une liste en demandant l'élément d'indice `-1` :
 
 ```{code-cell}
-l = [1, 5, 7]
-print(l[-1])
+liste = [1, 5, 7]
+print(liste[-1])
 ```
 
 ```{code-cell}
-print(l[-2])
+print(liste[-2])
 ```
 
 ```{code-cell}
-print(l[-3])
+print(liste[-3])
 ```
 
 De la même façon, on peut accéder au deuxième élément en partant de la fin _via_ l'indice `-2`, _etc._
@@ -103,31 +103,31 @@ Ainsi, pour une liste de taille $n$, les valeurs d'indice valides sont les entie
 Il est également à noter que l'accès aux éléments d'une liste peut se faire en lecture (lire l'élément stocké à l'indice `i`) comme en écriture (modifier l'élément stocké à l'indice `i`) :
 
 ```{code-cell}
-l = [1, 5, 7]
-print(l[1])
+liste = [1, 5, 7]
+print(liste[1])
 ```
 
 ```{code-cell}
-l[1] = 2
-print(l)
+liste[1] = 2
+print(liste)
 ```
 
-Enfin, on peut accéder à une sous-partie d'une liste à l'aide de la syntaxe `l[d:f]` où  `d` est l'indice de début et `f` est l'indice de fin (exclu). Ainsi, on a :
+Enfin, on peut accéder à une sous-partie d'une liste à l'aide de la syntaxe `liste[d:f]` où  `d` est l'indice de début et `f` est l'indice de fin (exclu). Ainsi, on a :
 
 ```{code-cell}
-l = [1, 5, 7, 8, 0, 9, 8]
-print(l[2:4])
+liste = [1, 5, 7, 8, 0, 9, 8]
+print(liste[2:4])
 ```
 
 Lorsque l'on utilise cette syntaxe, si l'on omet l'indice de début, la sélection commence au début de la liste et si l'on omet l'indice de fin, elle s'étend jusqu'à la fin de la liste :
 
 ```{code-cell}
-l = [1, 5, 7, 8, 0, 9, 8]
-print(l[:3])
+liste = [1, 5, 7, 8, 0, 9, 8]
+print(liste[:3])
 ```
 
 ```{code-cell}
-print(l[5:])
+print(liste[5:])
 ```
 
 ## Parcours d'une liste
@@ -148,8 +148,8 @@ Quel que soit le parcours de liste utilisé, il est fortement déconseillé de s
 Pour parcourir les éléments d'une liste, on utilise une boucle `for` :
 
 ```{code-cell}
-l = [1, 5, 7]
-for elem in l:
+liste = [1, 5, 7]
+for elem in liste:
     print(elem)
 ```
 
@@ -162,8 +162,8 @@ On sait que les indices d'une liste sont les entiers compris entre 0 (inclus) et
 On va donc utiliser la fonction `range` pour cela :
 
 ```{code-cell}
-l = [1, 5, 7]
-n = len(l)  # n = 3 ici
+liste = [1, 5, 7]
+n = len(liste)  # n = 3 ici
 for i in range(n):
     print(i)
 ```
@@ -174,19 +174,22 @@ Dans certains cas, enfin, on a besoin de manipuler simultanément les indices d'
 Cela se fait à l'aide de la fonction `enumerate` :
 
 ```{code-cell}
-l = [1, 5, 7]
-for i, elem in enumerate(l):
+liste = [1, 5, 7]
+for i, elem in enumerate(liste):
     print(i, elem)
 ```
 
-On a donc ici une boucle `for` pour laquelle, à chaque itération, on met à jour les variables `i` (qui contient l'indice courant) et `elem` (qui contient l'élément se trouvant à l'indice `i` dans la liste `l`).
+On a donc ici une boucle `for` pour laquelle, à chaque itération, on met à jour les variables `i` (qui contient l'indice courant) et `elem` (qui contient l'élément se trouvant à l'indice `i` dans la liste `liste`).
 
 Pour tous ces parcours de listes, il est conseillé d'utiliser des noms de variables pertinents, afin de limiter les confusions dans la nature des éléments manipulés. Par exemple, on pourra utiliser `i` ou `j` pour noter des indices, mais on préfèrera `elem` ou `val` pour désigner les éléments de la liste.
 
 ### Exercice
 
-**Exercice 4.1**
+```{admonition} **Exercice 4.1**
 Écrivez une fonction en Python qui permette de calculer l'argmax d'une liste, c'est-à-dire l'indice auquel est stockée la valeur maximale de la liste.
+
+[{ref}`Corrigé <ex4.1_sol>`]
+```
 
 ## Manipulations de listes
 
@@ -204,14 +207,14 @@ Pour l'instant, sachez que les méthodes sont des fonctions spécifiques à cert
 L'appel de ces méthodes est un peu particulier, comme vous pouvez le remarquer dans ce qui suit :
 
 ```{code-cell}
-l = [1, 5, 7]
-l.append(2)
-print(l)
+liste = [1, 5, 7]
+liste.append(2)
+print(liste)
 ```
 
 ```{code-cell}
-l.insert(2, 0)  # insère la valeur 0 à l'indice 2
-print(l)
+liste.insert(2, 0)  # insère la valeur 0 à l'indice 2
+print(liste)
 ```
 
 ### Suppression d'élément
@@ -223,32 +226,32 @@ On peut souhaiter :
 * supprimer la première occurrence d'une valeur donnée dans la liste à l'aide de la méthode `remove`.
 
 ```{code-cell}
-l = [1, 5, 7]
-l.pop(1)  # l'élément d'indice 1 est le deuxième élément de la liste !
-print(l)
+liste = [1, 5, 7]
+liste.pop(1)  # l'élément d'indice 1 est le deuxième élément de la liste !
+print(liste)
 ```
 
 ```{code-cell}
-l.pop()  # par défaut, supprime le dernier élément de la liste
-print(l)
+liste.pop()  # par défaut, supprime le dernier élément de la liste
+print(liste)
 ```
 
 ```{code-cell}
-l = [7, 5, 1]
-l.remove(1) # supprime la première occurence de 1 dans la liste
-print(l)
+liste = [7, 5, 1]
+liste.remove(1) # supprime la première occurence de 1 dans la liste
+print(liste)
 ```
 
 On peut noter que la méthode `pop` retourne la valeur supprimée, ce qui peut s'avérer utile :
 
 ```{code-cell}
-l = [1, 5, 7]
-v = l.pop(1)
+liste = [1, 5, 7]
+v = liste.pop(1)
 print(v)
 ```
 
 ```{code-cell}
-print(l)
+print(liste)
 ```
 
 ### Recherche d'élément
@@ -256,16 +259,16 @@ print(l)
 Pour trouver l'indice de la première occurrence d'une valeur dans une liste, on utilisera la méthode `index` :
 
 ```{code-cell}
-l = [1, 5, 7]
-print(l.index(7))
+liste = [1, 5, 7]
+print(liste.index(7))
 ```
 
 Si l'on ne cherche pas à connaître la position d'une valeur dans une liste mais simplement à savoir si une valeur est présente dans la liste, on peut utiliser le mot-clé `in` :
 
 ```{code-cell}
-l = [1, 5, 7]
-if 5 in l:
-    print("5 est dans l")
+liste = [1, 5, 7]
+if 5 in liste:
+    print("5 est dans liste")
 ```
 
 ### Création de listes composites
@@ -273,18 +276,18 @@ if 5 in l:
 On peut également concaténer deux listes (c'est-à-dire mettre bout à bout leur contenu) à l'aide de l'opérateur `+` :
 
 ```{code-cell}
-l1 = [1, 5, 7]
-l2 = [3, 4]
-l = l1 + l2
-print(l)
+liste1 = [1, 5, 7]
+liste2 = [3, 4]
+liste = liste1 + liste2
+print(liste)
 ```
 
 Dans le même esprit, l'opérateur `*` peut aussi être utilisé pour des listes :
 
 ```{code-cell}
-l1 = [1, 5]
-l2 = 3 * l1
-print(l2)
+liste1 = [1, 5]
+liste2 = 3 * liste1
+print(liste2)
 ```
 
 Bien entendu, vu le sens de cet opérateur, on ne peut multiplier une liste que par un entier.
@@ -294,18 +297,40 @@ Bien entendu, vu le sens de cet opérateur, on ne peut multiplier une liste que 
 Enfin, on peut trier les éléments contenus dans une liste à l'aide de la fonction `sorted` :
 
 ```{code-cell}
-l = [4, 5, 2]
-l2 = sorted(l)
-print(l2)
+liste = [4, 5, 2]
+liste2 = sorted(liste)
+print(liste2)
 ```
+
+Il est à noter que l'on peut trier une liste dès lors que celle-ci contient des éléments du même type (ou de types assimilables, par exemple des valeurs numériques, entières ou flottantes) à partir du moment où une relation d'ordre est définie sur ce type.
+On peut donc par exemple trier des listes de chaînes de caractères :
+
+```{code-cell}
+liste = ["a", "c", "zzz"]
+print(sorted(liste))
+```
+
+Sachant que les émoticones sont des caractères comme les autres, on peut ainsi (enfin) obtenir une réponse à un problème vieux comme le monde :
+
+```{code-cell}
+liste = ["🐔", "🥚"]
+print(sorted(liste))
+```
+
 
 ### Exercices
 
-**Exercice 4.2**
+```{admonition} **Exercice 4.2**
 Écrivez une fonction qui prenne deux listes en entrée et retourne l'intersection des deux listes (c'est-à-dire une liste contenant tous les éléments présents dans les deux listes).
 
-**Exercice 4.3**
+[{ref}`Corrigé <ex4.2_sol>`]
+```
+
+```{admonition} **Exercice 4.3**
 Écrivez une fonction qui prenne deux listes en entrée et retourne l'union des deux listes (c'est-à-dire une liste contenant tous les éléments présents dans au moins une des deux listes) sans doublon.
+
+[{ref}`Corrigé <ex4.3_sol>`]
+```
 
 ## Copie de liste
 
@@ -322,26 +347,26 @@ Cela ne se passe pas de la même façon pour les listes.
 En effet, si `l` est une liste, lorsque l'on écrit :
 
 ```{code-cell}
-l2 = l
+liste2 = liste
 ```
 
-on ne recopie pas le contenu de `l` dans `l2`, mais on crée une variable `l2` qui va "pointer" vers la même position dans la mémoire de votre ordinateur que `l`.
-La différence peut sembler mince, mais cela signifie que si l'on modifie `l` même après l'instruction `l2 = l`, la modification sera répercutée sur `l2` :
+on ne recopie pas le contenu de `liste` dans `liste2`, mais on crée une variable `liste2` qui va "pointer" vers la même position dans la mémoire de votre ordinateur que `liste`.
+La différence peut sembler mince, mais cela signifie que si l'on modifie `liste` même après l'instruction `liste2 = liste`, la modification sera répercutée sur `liste2` :
 
 ```{code-cell}
-l = [1, 5, 7]
-l2 = l
-l[1] = 2
-print(l, l2)
+liste = [1, 5, 7]
+liste2 = liste
+liste[1] = 2
+print(liste, liste2)
 ```
 
 Lorsque l'on souhaite éviter ce comportement, il faut effectuer une copie explicite de liste, à l'aide par exemple de la fonction `list` :
 
 ```{code-cell}
-l = [1, 5, 7]
-l2 = list(l)
-l[1] = 2
-print(l, l2)
+liste = [1, 5, 7]
+liste2 = list(liste)
+liste[1] = 2
+print(liste, liste2)
 ```
 
 ## Bonus : listes en compréhension
@@ -352,24 +377,24 @@ Le code qui suit présente deux façons équivalentes de créer une telle liste 
 
 ```{code-cell}
 # Façon "classique"
-l = []
+liste = []
 for i in range(10):
-    l.append(i ** 2)
-print(l)
+    liste.append(i ** 2)
+print(liste)
 ```
 
 ```{code-cell}
 # En utilisant les listes en compréhension
-l = [i ** 2 for i in range(10)]
-print(l)
+liste = [i ** 2 for i in range(10)]
+print(liste)
 ```
 
 On remarque que la syntaxe de liste en compréhension est plus compacte.
 On peut également appliquer un filtre sur les éléments de la liste de départ (ici `range(10)`) à considérer à l'aide du mot-clé `if` :
 
 ```{code-cell}
-l = [i ** 2 for i in range(10) if i % 2 == 0]
-print(l)
+liste = [i ** 2 for i in range(10) if i % 2 == 0]
+print(liste)
 ```
 
 Ici, on n'a considéré que les entiers pairs.

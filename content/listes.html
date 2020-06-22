@@ -261,7 +261,7 @@ Il n’est pas nécessaire que tous les éléments d’une liste soient du même
 <p>Dans la suite, nous parlerons de listes, qui est un type de données bien spécifique en Python. Toutefois, une grande partie de notre propos pourra se transposer à l’ensemble des itérables en Python (c’est-à-dire l’ensemble des objets Python dont on peut parcourir les éléments un à un).</p>
 <p>Il existe toutefois une différence majeure entre listes et itérables : nous verrons dans la suite de ce chapitre que l’on peut accéder au <span class="math notranslate nohighlight">\(i\)</span>-ème élément d’une liste simplement, alors que ce n’est généralement pas possible pour un itérable (pour ce dernier, il faudra parcourir l’ensemble de ses éléments et s’arrêter lorsque l’on est effectivement rendu au <span class="math notranslate nohighlight">\(i\)</span>-ème).</p>
 <p>Toutefois, si l’on a un itérable <code class="docutils literal notranslate"><span class="pre">iterable</span></code>, il est possible de le transformer en liste simplement à l’aide de la fonction <code class="docutils literal notranslate"><span class="pre">list</span></code> :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -295,9 +295,9 @@ Heureusement, il existe des fonctions qui permettent de créer de telles listes.
 Par exemple, la fonction <code class="docutils literal notranslate"><span class="pre">range(a,</span> <span class="pre">b)</span></code> retourne un itérable contenant les entiers de <code class="docutils literal notranslate"><span class="pre">a</span></code> (inclus) à <code class="docutils literal notranslate"><span class="pre">b</span></code> (exclu) :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>     <span class="c1"># l = [1, 2, 3, ..., 9]</span>
-<span class="n">l</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>        <span class="c1"># l = [0, 1, 2, ..., 9]</span>
-<span class="n">l</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># l = [0, 2, 4, ..., 8]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">it</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>     <span class="c1"># it = [1, 2, 3, ..., 9]</span>
+<span class="n">it</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>        <span class="c1"># it = [0, 1, 2, ..., 9]</span>
+<span class="n">it</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># it = [0, 2, 4, ..., 8]</span>
 </pre></div>
 </div>
 </div>
@@ -308,14 +308,14 @@ Si, au contraire, on passe un troisième argument à la fonction <code class="do
 <div class="section" id="acces-aux-elements-d-une-liste">
 <h2>Accès aux éléments d’une liste<a class="headerlink" href="#acces-aux-elements-d-une-liste" title="Permalink to this headline">¶</a></h2>
 <p>Pour accéder au <span class="math notranslate nohighlight">\(i\)</span>-ème élément d’une liste, on utilise la syntaxe :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Attention, toutefois, le premier indice d’une liste est 0, on a donc :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -327,7 +327,7 @@ Si, au contraire, on passe un troisième argument à la fonction <code class="do
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -340,8 +340,8 @@ Si, au contraire, on passe un troisième argument à la fonction <code class="do
 <p>On peut également accéder au dernier élément d’une liste en demandant l’élément d’indice <code class="docutils literal notranslate"><span class="pre">-1</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -353,7 +353,7 @@ Si, au contraire, on passe un troisième argument à la fonction <code class="do
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -365,7 +365,7 @@ Si, au contraire, on passe un troisième argument à la fonction <code class="do
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -380,8 +380,8 @@ Si, au contraire, on passe un troisième argument à la fonction <code class="do
 <p>Il est également à noter que l’accès aux éléments d’une liste peut se faire en lecture (lire l’élément stocké à l’indice <code class="docutils literal notranslate"><span class="pre">i</span></code>) comme en écriture (modifier l’élément stocké à l’indice <code class="docutils literal notranslate"><span class="pre">i</span></code>) :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -393,8 +393,8 @@ Si, au contraire, on passe un troisième argument à la fonction <code class="do
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -404,11 +404,11 @@ Si, au contraire, on passe un troisième argument à la fonction <code class="do
 </div>
 </div>
 </div>
-<p>Enfin, on peut accéder à une sous-partie d’une liste à l’aide de la syntaxe <code class="docutils literal notranslate"><span class="pre">l[d:f]</span></code> où  <code class="docutils literal notranslate"><span class="pre">d</span></code> est l’indice de début et <code class="docutils literal notranslate"><span class="pre">f</span></code> est l’indice de fin (exclu). Ainsi, on a :</p>
+<p>Enfin, on peut accéder à une sous-partie d’une liste à l’aide de la syntaxe <code class="docutils literal notranslate"><span class="pre">liste[d:f]</span></code> où  <code class="docutils literal notranslate"><span class="pre">d</span></code> est l’indice de début et <code class="docutils literal notranslate"><span class="pre">f</span></code> est l’indice de fin (exclu). Ainsi, on a :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -421,8 +421,8 @@ Si, au contraire, on passe un troisième argument à la fonction <code class="do
 <p>Lorsque l’on utilise cette syntaxe, si l’on omet l’indice de début, la sélection commence au début de la liste et si l’on omet l’indice de fin, elle s’étend jusqu’à la fin de la liste :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -434,7 +434,7 @@ Si, au contraire, on passe un troisième argument à la fonction <code class="do
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">5</span><span class="p">:])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">[</span><span class="mi">5</span><span class="p">:])</span>
 </pre></div>
 </div>
 </div>
@@ -461,8 +461,8 @@ Quel que soit le parcours de liste utilisé, il est fortement déconseillé de s
 <p>Pour parcourir les éléments d’une liste, on utilise une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -484,8 +484,8 @@ On sait que les indices d’une liste sont les entiers compris entre 0 (inclus) 
 On va donc utiliser la fonction <code class="docutils literal notranslate"><span class="pre">range</span></code> pour cela :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>  <span class="c1"># n = 3 ici</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>  <span class="c1"># n = 3 ici</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
@@ -506,8 +506,8 @@ On va donc utiliser la fonction <code class="docutils literal notranslate"><span
 Cela se fait à l’aide de la fonction <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">elem</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">elem</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">elem</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -520,13 +520,16 @@ Cela se fait à l’aide de la fonction <code class="docutils literal notranslat
 </div>
 </div>
 </div>
-<p>On a donc ici une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> pour laquelle, à chaque itération, on met à jour les variables <code class="docutils literal notranslate"><span class="pre">i</span></code> (qui contient l’indice courant) et <code class="docutils literal notranslate"><span class="pre">elem</span></code> (qui contient l’élément se trouvant à l’indice <code class="docutils literal notranslate"><span class="pre">i</span></code> dans la liste <code class="docutils literal notranslate"><span class="pre">l</span></code>).</p>
+<p>On a donc ici une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> pour laquelle, à chaque itération, on met à jour les variables <code class="docutils literal notranslate"><span class="pre">i</span></code> (qui contient l’indice courant) et <code class="docutils literal notranslate"><span class="pre">elem</span></code> (qui contient l’élément se trouvant à l’indice <code class="docutils literal notranslate"><span class="pre">i</span></code> dans la liste <code class="docutils literal notranslate"><span class="pre">liste</span></code>).</p>
 <p>Pour tous ces parcours de listes, il est conseillé d’utiliser des noms de variables pertinents, afin de limiter les confusions dans la nature des éléments manipulés. Par exemple, on pourra utiliser <code class="docutils literal notranslate"><span class="pre">i</span></code> ou <code class="docutils literal notranslate"><span class="pre">j</span></code> pour noter des indices, mais on préfèrera <code class="docutils literal notranslate"><span class="pre">elem</span></code> ou <code class="docutils literal notranslate"><span class="pre">val</span></code> pour désigner les éléments de la liste.</p>
 </div>
 <div class="section" id="exercice">
 <h3>Exercice<a class="headerlink" href="#exercice" title="Permalink to this headline">¶</a></h3>
-<p><strong>Exercice 4.1</strong>
-Écrivez une fonction en Python qui permette de calculer l’argmax d’une liste, c’est-à-dire l’indice auquel est stockée la valeur maximale de la liste.</p>
+<div class="admonition-exercice-4-1 admonition">
+<p class="admonition-title"><strong>Exercice 4.1</strong></p>
+<p>Écrivez une fonction en Python qui permette de calculer l’argmax d’une liste, c’est-à-dire l’indice auquel est stockée la valeur maximale de la liste.</p>
+<p>[<a class="reference internal" href="solutions.html#ex4-1-sol"><span class="std std-ref">Corrigé</span></a>]</p>
+</div>
 </div>
 </div>
 <div class="section" id="manipulations-de-listes">
@@ -544,9 +547,9 @@ Pour l’instant, sachez que les méthodes sont des fonctions spécifiques à ce
 L’appel de ces méthodes est un peu particulier, comme vous pouvez le remarquer dans ce qui suit :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-<span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -558,8 +561,8 @@ L’appel de ces méthodes est un peu particulier, comme vous pouvez le remarque
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># insère la valeur 0 à l&#39;indice 2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># insère la valeur 0 à l&#39;indice 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -580,9 +583,9 @@ On peut souhaiter :</p>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-<span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># l&#39;élément d&#39;indice 1 est le deuxième élément de la liste !</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">liste</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># l&#39;élément d&#39;indice 1 est le deuxième élément de la liste !</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -594,8 +597,8 @@ On peut souhaiter :</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>  <span class="c1"># par défaut, supprime le dernier élément de la liste</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>  <span class="c1"># par défaut, supprime le dernier élément de la liste</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -607,9 +610,9 @@ On peut souhaiter :</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">l</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># supprime la première occurence de 1 dans la liste</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">liste</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># supprime la première occurence de 1 dans la liste</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -622,8 +625,8 @@ On peut souhaiter :</p>
 <p>On peut noter que la méthode <code class="docutils literal notranslate"><span class="pre">pop</span></code> retourne la valeur supprimée, ce qui peut s’avérer utile :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-<span class="n">v</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">liste</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -636,7 +639,7 @@ On peut souhaiter :</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -652,8 +655,8 @@ On peut souhaiter :</p>
 <p>Pour trouver l’indice de la première occurrence d’une valeur dans une liste, on utilisera la méthode <code class="docutils literal notranslate"><span class="pre">index</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -666,14 +669,14 @@ On peut souhaiter :</p>
 <p>Si l’on ne cherche pas à connaître la position d’une valeur dans une liste mais simplement à savoir si une valeur est présente dans la liste, on peut utiliser le mot-clé <code class="docutils literal notranslate"><span class="pre">in</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-<span class="k">if</span> <span class="mi">5</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5 est dans l&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="k">if</span> <span class="mi">5</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5 est dans liste&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>5 est dans l
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>5 est dans liste
 </pre></div>
 </div>
 </div>
@@ -684,10 +687,10 @@ On peut souhaiter :</p>
 <p>On peut également concaténer deux listes (c’est-à-dire mettre bout à bout leur contenu) à l’aide de l’opérateur <code class="docutils literal notranslate"><span class="pre">+</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-<span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">l</span> <span class="o">=</span> <span class="n">l1</span> <span class="o">+</span> <span class="n">l2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">liste2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">liste</span> <span class="o">=</span> <span class="n">liste1</span> <span class="o">+</span> <span class="n">liste2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -700,9 +703,9 @@ On peut souhaiter :</p>
 <p>Dans le même esprit, l’opérateur <code class="docutils literal notranslate"><span class="pre">*</span></code> peut aussi être utilisé pour des listes :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="n">l2</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">l1</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">liste2</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">liste1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -719,9 +722,9 @@ On peut souhaiter :</p>
 <p>Enfin, on peut trier les éléments contenus dans une liste à l’aide de la fonction <code class="docutils literal notranslate"><span class="pre">sorted</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="n">l2</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">liste2</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -731,13 +734,48 @@ On peut souhaiter :</p>
 </div>
 </div>
 </div>
+<p>Il est à noter que l’on peut trier une liste dès lors que celle-ci contient des éléments du même type (ou de types assimilables, par exemple des valeurs numériques, entières ou flottantes) à partir du moment où une relation d’ordre est définie sur ce type.
+On peut donc par exemple trier des listes de chaînes de caractères :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;zzz&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">liste</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;c&#39;, &#39;zzz&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sachant que les émoticones sont des caractères comme les autres, on peut ainsi (enfin) obtenir une réponse à un problème vieux comme le monde :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;🐔&quot;</span><span class="p">,</span> <span class="s2">&quot;🥚&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">liste</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;🐔&#39;, &#39;🥚&#39;]
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="exercices">
 <h3>Exercices<a class="headerlink" href="#exercices" title="Permalink to this headline">¶</a></h3>
-<p><strong>Exercice 4.2</strong>
-Écrivez une fonction qui prenne deux listes en entrée et retourne l’intersection des deux listes (c’est-à-dire une liste contenant tous les éléments présents dans les deux listes).</p>
-<p><strong>Exercice 4.3</strong>
-Écrivez une fonction qui prenne deux listes en entrée et retourne l’union des deux listes (c’est-à-dire une liste contenant tous les éléments présents dans au moins une des deux listes) sans doublon.</p>
+<div class="admonition-exercice-4-2 admonition">
+<p class="admonition-title"><strong>Exercice 4.2</strong></p>
+<p>Écrivez une fonction qui prenne deux listes en entrée et retourne l’intersection des deux listes (c’est-à-dire une liste contenant tous les éléments présents dans les deux listes).</p>
+<p>[<a class="reference internal" href="solutions.html#ex4-2-sol"><span class="std std-ref">Corrigé</span></a>]</p>
+</div>
+<div class="admonition-exercice-4-3 admonition">
+<p class="admonition-title"><strong>Exercice 4.3</strong></p>
+<p>Écrivez une fonction qui prenne deux listes en entrée et retourne l’union des deux listes (c’est-à-dire une liste contenant tous les éléments présents dans au moins une des deux listes) sans doublon.</p>
+<p>[<a class="reference internal" href="solutions.html#ex4-3-sol"><span class="std std-ref">Corrigé</span></a>]</p>
+</div>
 </div>
 </div>
 <div class="section" id="copie-de-liste">
@@ -753,10 +791,7 @@ On peut souhaiter :</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>5
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span> 12
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>5 12
 </pre></div>
 </div>
 </div>
@@ -765,19 +800,19 @@ On peut souhaiter :</p>
 En effet, si <code class="docutils literal notranslate"><span class="pre">l</span></code> est une liste, lorsque l’on écrit :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l2</span> <span class="o">=</span> <span class="n">l</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste2</span> <span class="o">=</span> <span class="n">liste</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>on ne recopie pas le contenu de <code class="docutils literal notranslate"><span class="pre">l</span></code> dans <code class="docutils literal notranslate"><span class="pre">l2</span></code>, mais on crée une variable <code class="docutils literal notranslate"><span class="pre">l2</span></code> qui va “pointer” vers la même position dans la mémoire de votre ordinateur que <code class="docutils literal notranslate"><span class="pre">l</span></code>.
-La différence peut sembler mince, mais cela signifie que si l’on modifie <code class="docutils literal notranslate"><span class="pre">l</span></code> même après l’instruction <code class="docutils literal notranslate"><span class="pre">l2</span> <span class="pre">=</span> <span class="pre">l</span></code>, la modification sera répercutée sur <code class="docutils literal notranslate"><span class="pre">l2</span></code> :</p>
+<p>on ne recopie pas le contenu de <code class="docutils literal notranslate"><span class="pre">liste</span></code> dans <code class="docutils literal notranslate"><span class="pre">liste2</span></code>, mais on crée une variable <code class="docutils literal notranslate"><span class="pre">liste2</span></code> qui va “pointer” vers la même position dans la mémoire de votre ordinateur que <code class="docutils literal notranslate"><span class="pre">liste</span></code>.
+La différence peut sembler mince, mais cela signifie que si l’on modifie <code class="docutils literal notranslate"><span class="pre">liste</span></code> même après l’instruction <code class="docutils literal notranslate"><span class="pre">liste2</span> <span class="pre">=</span> <span class="pre">liste</span></code>, la modification sera répercutée sur <code class="docutils literal notranslate"><span class="pre">liste2</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-<span class="n">l2</span> <span class="o">=</span> <span class="n">l</span>
-<span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">l2</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">liste2</span> <span class="o">=</span> <span class="n">liste</span>
+<span class="n">liste</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">liste2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -790,10 +825,10 @@ La différence peut sembler mince, mais cela signifie que si l’on modifie <cod
 <p>Lorsque l’on souhaite éviter ce comportement, il faut effectuer une copie explicite de liste, à l’aide par exemple de la fonction <code class="docutils literal notranslate"><span class="pre">list</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-<span class="n">l2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-<span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">l2</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">liste2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
+<span class="n">liste</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">liste2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -812,10 +847,10 @@ Le code qui suit présente deux façons équivalentes de créer une telle liste 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Façon &quot;classique&quot;</span>
-<span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">liste</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -828,8 +863,8 @@ Le code qui suit présente deux façons équivalentes de créer une telle liste 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># En utilisant les listes en compréhension</span>
-<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -843,8 +878,8 @@ Le code qui suit présente deux façons équivalentes de créer une telle liste 
 On peut également appliquer un filtre sur les éléments de la liste de départ (ici <code class="docutils literal notranslate"><span class="pre">range(10)</span></code>) à considérer à l’aide du mot-clé <code class="docutils literal notranslate"><span class="pre">if</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -892,7 +927,10 @@ C’est ce que permet la fonction <code class="docutils literal notranslate"><sp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Jeanne Papin
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Jeanne
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span> Papin
 Anne Bakayoko
 Camille Drogba
 </pre></div>

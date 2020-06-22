@@ -205,8 +205,14 @@ print(s)
 
 ## Exercices
 
-**Exercice 5.1**
+```{admonition} **Exercice 5.1**
 Écrivez une fonction qui prenne en argument deux chaînes de caractères `s` et `prefix` et retourne le nombre de mots de la chaîne `s` qui débutent par la chaîne `prefix`.
 
-**Exercice 5.2**
+[{ref}`Corrigé <ex5.1_sol>`]
+```
+
+```{admonition} **Exercice 5.2**
 Écrivez une fonction qui prenne en argument deux chaînes de caractères `s` et `mot_cible` et retourne le nombre d'occurrences du mot `mot_cible` dans la chaîne `s` en ne tenant pas compte de la casse.
+
+[{ref}`Corrigé <ex5.2_sol>`]
+```

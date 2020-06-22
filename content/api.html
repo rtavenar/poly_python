@@ -326,7 +326,7 @@ Pour cela, on utilise le module <code class="docutils literal notranslate"><span
 </div>
 </div>
 <p>On voit ici qu’il est possible d’obtenir le résultat de notre requête sous deux formes : le texte brut du résultat qui est stocké dans <code class="docutils literal notranslate"><span class="pre">reponse.text</span></code> et la version mise en forme (sous la forme de dictionnaire ou de liste) de ce résultat que l’on obtient via <code class="docutils literal notranslate"><span class="pre">reponse.json()</span></code>.</p>
-<p>De plus, si l’on souhaite passer des paramètres à la requête HTTP (ce qui se trouvait après le symbole <code class="docutils literal notranslate"><span class="pre">?</span></code> dans les URL ci-dessus), il est possible de le fait lors de l’appel à <code class="docutils literal notranslate"><span class="pre">requests.get</span></code> :</p>
+<p>De plus, si l’on souhaite passer des paramètres à la requête HTTP (ce qui se trouvait après le symbole <code class="docutils literal notranslate"><span class="pre">?</span></code> dans les URL ci-dessus), il est possible de le faire lors de l’appel à <code class="docutils literal notranslate"><span class="pre">requests.get</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
@@ -352,8 +352,11 @@ C’est par exemple le cas des modules <a class="reference external" href="http:
 </div>
 <div class="section" id="exercice">
 <h2>Exercice<a class="headerlink" href="#exercice" title="Permalink to this headline">¶</a></h2>
-<p><strong>Exercice 8.1</strong>
-Écrivez une fonction qui prenne en entrée une liste de <code class="docutils literal notranslate"><span class="pre">userId</span></code> et affiche l’ensemble des entrées de l’API <a class="reference external" href="http://my-json-server.typicode.com/rtavenar/fake_api/tasks">http://my-json-server.typicode.com/rtavenar/fake_api/tasks</a> pour lesquelles l’attribut <code class="docutils literal notranslate"><span class="pre">completed</span></code> vaut <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="admonition-exercice-8-1 admonition">
+<p class="admonition-title"><strong>Exercice 8.1</strong></p>
+<p>Écrivez une fonction qui prenne en entrée une liste de <code class="docutils literal notranslate"><span class="pre">userId</span></code> et affiche l’ensemble des entrées de l’API <a class="reference external" href="http://my-json-server.typicode.com/rtavenar/fake_api/tasks">http://my-json-server.typicode.com/rtavenar/fake_api/tasks</a> pour lesquelles l’attribut <code class="docutils literal notranslate"><span class="pre">completed</span></code> vaut <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>[<a class="reference internal" href="solutions.html#ex8-1-sol"><span class="std std-ref">Corrigé</span></a>]</p>
+</div>
 <hr class="docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="graphh"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
