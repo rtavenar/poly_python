@@ -15,6 +15,7 @@ kernelspec:
 
 # Toutes les solutions
 
+(ex2.1_sol)=
 ## Exercice 2.1
 
 ```{code-cell}
@@ -27,6 +28,7 @@ else :
 	print("l'eau est sous forme gazeuse")
 ```
 
+(ex2.2_sol)=
 ## Exercice 2.2
 
 * Version avec utilisation du modulo
@@ -51,19 +53,21 @@ while(i<n):
 	i+=2
 ```
 
+(ex2.3_sol)=
 ## Exercice 2.3
 
 ```{code-cell}
 import math
 
-def aire_equi(l):
-    base = l
-    hauteur = l * math.sin(math.pi / 3)
+def aire_equi(long):
+    base = long
+    hauteur = long * math.sin(math.pi / 3)
     return base * hauteur / 2
 
 print(aire_equi(1.))
 ```
 
+(ex2.4_sol)=
 ## Exercice 2.4
 
 * Version itérative (avec une boucle)
@@ -91,6 +95,7 @@ affiche_u_n()
 
 Ici, on a fixé une valeur par défaut à l'argument `u`{.python} correspondant à l'initialisation de la suite, pour que l'appel initial se fasse comme pour la version itérative de la fonction (`affiche_u_n()`{.python})
 
+(ex3.1_sol)=
 ## Exercice 3.1
 
 ```{code-cell}
@@ -110,6 +115,7 @@ else:
     print("Le second intervalle est le plus grand.")
 ```
 
+(ex3.2_sol)=
 ## Exercice 3.2
 
 ```{code-cell}
@@ -127,6 +133,7 @@ for annee in range(2010, 2031):
         print(annee, "n'est pas bissextile")
 ```
 
+(ex4.1_sol)=
 ## Exercice 4.1
 
 ```{code-cell}
@@ -145,32 +152,35 @@ def argmax(liste):
 print(argmax([1, 6, 2, 4]))
 ```
 
+(ex4.2_sol)=
 ## Exercice 4.2
 
 ```{code-cell}
-def intersection(l1, l2):
-    l_intersection = []
-    for elem in l1:
-        if elem in l2:
-            l_intersection.append(elem)
-    return l_intersection
+def intersection(liste1, liste2):
+    liste_intersection = []
+    for elem in liste1:
+        if elem in liste2:
+            liste_intersection.append(elem)
+    return liste_intersection
 
 print(intersection([1, 6, 2, 4], [2, 7, 6]))
 ```
 
+(ex4.3_sol)=
 ## Exercice 4.3
 
 ```{code-cell}
-def union_sans_doublon(l1, l2):
-    l_union = []
-    for elem in l1 + l2:
-        if elem not in l_union:
-            l_union.append(elem)
-    return l_union
+def union_sans_doublon(liste1, liste2):
+    liste_union = []
+    for elem in liste1 + liste2:
+        if elem not in liste_union:
+            liste_union.append(elem)
+    return liste_union
 
 print(union_sans_doublon([1, 6, 2, 4], [2, 7, 6, 2]))
 ```
 
+(ex5.1_sol)=
 ## Exercice 5.1
 
 ```{code-cell}
@@ -184,6 +194,7 @@ def compte_prefix(s, prefix):
 print(compte_prefix("la vie est belle au bord du lac", "la"))
 ```
 
+(ex5.2_sol)=
 ## Exercice 5.2
 
 ```{code-cell}
@@ -196,6 +207,7 @@ def compte_sans_casse(s, mot_cible):
     return compteur
 ```
 
+(ex6.1_sol)=
 ## Exercice 6.1
 
 ```{code-cell}
@@ -208,6 +220,7 @@ def compte_occurrences(s):
 print(compte_occurrences("la vie est belle c'est la vie"))
 ```
 
+(ex6.2_sol)=
 ## Exercice 6.2
 
 ```{code-cell}
@@ -220,6 +233,7 @@ def somme_valeurs(d):
 print(somme_valeurs({"a": 12, "zz": 1.5, "AAA": 0}))
 ```
 
+(ex7.1_sol)=
 ## Exercice 7.1
 
 ```
@@ -242,6 +256,7 @@ def nb_lignes_repertoire(repertoire):
 nb_lignes_repertoire(".")
 ```
 
+(ex7.2_sol)=
 ## Exercice 7.2
 
 ```
@@ -257,6 +272,7 @@ def compte_fichiers(repertoire):
 print(compte_fichiers("."))
 ```
 
+(ex8.1_sol)=
 ## Exercice 8.1
 
 * Solution 1
@@ -291,6 +307,7 @@ def affiche_api(liste_userId):
 affiche_api([1, 3])
 ```
 
+(ex9.1_sol)=
 ## Exercice 9.1
 
 ```{code-cell}
@@ -339,6 +356,7 @@ print(lendemain(28, 2, 2010))  #  1, 3, 2010
 print(lendemain(31, 12, 2010)) #  1, 1, 2011
 ```
 
+(ex9.2_sol)=
 ## Exercice 9.2
 
 ```{code-cell}

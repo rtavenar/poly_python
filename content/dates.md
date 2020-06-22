@@ -182,6 +182,14 @@ print(d3 + intervalle_de_temps)
 
 ## Exercices
 
-**Exercice 3.1** S'est-il écoulé plus de temps (i) entre le 2 Janvier 1920 à 7h32 et le 4 Mars 1920 à 5h53 ou bien (ii) entre le 30 Décembre 1999 à 17h12 et le 1er Mars 2000 à 15h53 ?
+```{admonition} **Exercice 3.1**
+S'est-il écoulé plus de temps (i) entre le 2 Janvier 1920 à 7h32 et le 4 Mars 1920 à 5h53 ou bien (ii) entre le 30 Décembre 1999 à 17h12 et le 1er Mars 2000 à 15h53 ?
 
-**Exercice 3.2** À l'aide des fonctions du module `datetime` vues plus haut, affichez, pour chaque année civile comprise entre 2010 et 2030, si elle est bissextile ou non.
+[{ref}`Corrigé <ex3.1_sol>`]
+```
+
+```{admonition} **Exercice 3.2**
+À l'aide des fonctions du module `datetime` vues plus haut, affichez, pour chaque année civile comprise entre 2010 et 2030, si elle est bissextile ou non.
+
+[{ref}`Corrigé <ex3.2_sol>`]
+```
