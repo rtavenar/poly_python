@@ -204,16 +204,24 @@ Nous allons donc nous intéresser maintenant aux moyens de vérifier si votre co
 <div class="section" id="les-erreurs-en-python">
 <h2>Les erreurs en Python<a class="headerlink" href="#les-erreurs-en-python" title="Permalink to this headline">¶</a></h2>
 <p>Étudions ce qu’il se passe lors de l’exécution du code suivant :</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;12&quot;</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
 </pre></div>
 </div>
-<p>Nous obtenons la sortie suivante :</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;[...]&quot;, line 2, in &lt;module&gt;
-    y = x + 2
-TypeError: Can&#39;t convert &#39;int&#39; object to str implicitly
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">da7bce8adec9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;12&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
 </pre></div>
+</div>
+</div>
 </div>
 <p>Ce type de message d’erreur ne doit pas vous effrayer, il est là pour vous aider.
 Il vous fournit de précieuses informations :</p>
