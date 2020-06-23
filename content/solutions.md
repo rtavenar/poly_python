@@ -20,9 +20,9 @@ kernelspec:
 
 ```{code-cell}
 t = -5
-if t<=0:
+if t <= 0:
 	print("l'eau est sous forme solide")
-elif t<100:
+elif t < 100:
 	print("l'eau est sous forme liquide")
 else :
 	print("l'eau est sous forme gazeuse")
@@ -34,10 +34,10 @@ else :
 * Version avec utilisation du modulo
 
 ```{code-cell}
-n=8
-i=0
-while(i<n):
-	if i%2!=0:
+n = 8
+i = 0
+while(i < n):
+	if i % 2 != 0:
 		print(i)
 	i+=1
 
@@ -46,11 +46,11 @@ while(i<n):
 * Version sans utilisation du modulo
 
 ```{code-cell}
-n=8
-i=1
-while(i<n):
+n = 8
+i = 1
+while(i < n):
 	print(i)
-	i+=2
+	i += 2
 ```
 
 (ex2.3_sol)=
@@ -205,6 +205,18 @@ def compte_sans_casse(s, mot_cible):
         if mot.lower() == mot_cible_minuscules:
             compteur += 1
     return compteur
+```
+
+(ex5.3_sol)=
+## Exercice 5.3
+
+```{code-cell}
+def affiche_liste(liste):
+    for i, elt in enumerate(listent):
+        print(f"L'entier d'indice {i:2n} est |{elt:12n}|")
+
+listent = [1, 12, 123, 1234, 12345, 123456, 1234567, 12345678, 123456789, 1234567890, 12345678901]
+affiche_liste(listent)
 ```
 
 (ex6.1_sol)=

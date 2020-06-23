@@ -15,8 +15,15 @@ kernelspec:
 
 # Les listes
 
-En Python, les listes stockent des séquences d'éléments.
-Il n'est pas nécessaire que tous les éléments d'une liste soient du même type, même si dans les exemples que nous considérerons, ce sera souvent le cas.
+```{admonition} Définition
+
+Une liste est une collection ordonnée de valeurs.
+Dans une liste, chaque valeur occupe une position bien définie que l'on repère par un entier appelé **indice**.
+La première valeur est associée à l'indice 0, la seconde à l'indice 1, _etc._
+Une liste a une longueur (_i.e._ un nombre d'éléments) finie, ainsi la liste vide a pour longueur 0.
+```
+
+En Python, il n'est pas nécessaire que tous les éléments d'une liste soient du même type, même si dans les exemples que nous considérerons, ce sera souvent le cas.
 
 On peut trouver des informations précieuses sur le sujet des listes dans l'aide en ligne de Python disponible à l'adresse : <https://docs.python.org/3/tutorial/datastructures.html>.
 
@@ -32,6 +39,7 @@ Toutefois, si l'on a un itérable `iterable`, il est possible de le transformer 
 liste = list(iterable)
 ```
 
+(creation-liste)=
 ## Création de liste
 
 Pour créer une liste contenant des éléments définis (par exemple la liste contenant les entiers 1, 5 et 7), il est possible d'utiliser la syntaxe suivante :
@@ -130,6 +138,7 @@ print(liste[:3])
 print(liste[5:])
 ```
 
+(parcours-liste)=
 ## Parcours d'une liste
 
 Lorsque l'on parcourt une liste, on peut vouloir accéder :
@@ -170,7 +179,7 @@ for i in range(n):
 
 ### Parcours par éléments et indices
 
-Dans certains cas, enfin, on a besoin de manipuler simultanément les indices d'une listes et les éléments associés.
+Dans certains cas, enfin, on a besoin de manipuler simultanément les indices d'une liste et les éléments associés.
 Cela se fait à l'aide de la fonction `enumerate` :
 
 ```{code-cell}
@@ -187,6 +196,7 @@ Pour tous ces parcours de listes, il est conseillé d'utiliser des noms de varia
 
 ```{admonition} **Exercice 4.1**
 Écrivez une fonction en Python qui permette de calculer l'argmax d'une liste, c'est-à-dire l'indice auquel est stockée la valeur maximale de la liste.
+Si cette valeur maximale est présente plusieurs fois dans la liste, on retournera l'indice de sa première occurrence.
 
 [{ref}`Corrigé <ex4.1_sol>`]
 ```
@@ -237,8 +247,8 @@ print(liste)
 ```
 
 ```{code-cell}
-liste = [7, 5, 1]
-liste.remove(1) # supprime la première occurence de 1 dans la liste
+liste = [7, 1, 5, 1]
+liste.remove(1) # supprime la première occurrence de 1 dans la liste
 print(liste)
 ```
 

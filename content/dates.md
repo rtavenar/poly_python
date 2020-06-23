@@ -43,26 +43,26 @@ import datetime  # Cette commande doit se trouver en début de fichier
 
 # [...] (ici, du code concernant autre chose si besoin)
 
-d = datetime.datetime(2019, 8, 27, 17, 23)
+d = datetime.datetime(2020, 8, 27, 17, 23)
 print(d)
 ```
 
 ```{code-cell}
-d = datetime.datetime(2019, 8, 27, 17, 23, 32)
+d = datetime.datetime(2020, 8, 27, 17, 23, 32)
 print(d)
 ```
 
 ```{code-cell}
-d = datetime.datetime(2019, 8, 27)
+d = datetime.datetime(2020, 8, 27)
 print(d)
 ```
 
-Les opérateurs de comparaison vus au chapitre précédent (`<`, `>`, `<=`, `>=`, `==`) fonctionnent de manière naturelle avec ce type de données :
+Les opérateurs de comparaison vus au chapitre précédent (`<`, `>`, `<=`, `>=`, `==`, `!=`) fonctionnent de manière naturelle avec ce type de données :
 
 ```{code-cell}
-d1 = datetime.datetime(2019, 8, 27, 17, 23)
-d2 = datetime.datetime(2019, 8, 27, 17, 28)
-d3 = datetime.datetime(2019, 8, 27, 17, 23)
+d1 = datetime.datetime(2020, 8, 27, 17, 23)
+d2 = datetime.datetime(2020, 8, 27, 17, 28)
+d3 = datetime.datetime(2020, 8, 27, 17, 23)
 print(d1 < d2)
 ```
 
@@ -86,7 +86,7 @@ date_actuelle = datetime.datetime.now()
 Si l'on souhaite transformer une date en chaîne de caractères (par exemple pour l'afficher), on peut lui appliquer la fonction `str` :
 
 ```{code-cell}
-print(str(datetime.datetime(2019, 8, 27)))
+print(str(datetime.datetime(2020, 8, 27)))
 ```
 
 Dans ce cas, on ne peut pas gérer la façon dont se fait cette transformation.
@@ -115,7 +115,7 @@ Une liste de ces codes est disponible sur [la page d'aide du module `datetime`](
 Vous pouvez vous référer aux exemples ci-dessous pour mieux comprendre le fonctionnement de la fonction `strftime` :
 
 ```{code-cell}
-d = datetime.datetime(2019, 8, 27, 17, 23)
+d = datetime.datetime(2020, 8, 27, 17, 23)
 
 print(d.strftime("%d-%m-%Y, %H:%M"))
 ```
@@ -132,8 +132,19 @@ print(d.strftime("%H:%M"))
 print(d.strftime("%d/%m/%Y %Hh%M"))
 ```
 
+````{margin}
+```{admonition} Attention !
+  :class: warning
+
+Attention aux confusions possibles entre `datetime.strftime` et `datetime.strptime` :
+
+* `datetime.strftime` : le `f` signifie _format_, il s'agit donc de mettre en forme une date, selon un format donné, dans une chaîne de caractères
+* `datetime.strptime` : le `p` signifie _parse_ (en anglais), il s'agit donc de reconnaître une date dans une chaîne de caractères et de retourner la date en question
+```
+````
+
 Il est également possible d'effectuer l'opération inverse (lire une date contenue dans une chaîne de caractères, étant donné un format connu).
-Cela se fait avec la fonction `datetime.strptime` (attention aux confusions possibles entre `strftime` et `datetime.strptime`) :
+Cela se fait avec la fonction `datetime.strptime` :
 
 ```
 d1 = datetime.datetime.strptime(chaine_a_lire, format)
@@ -142,8 +153,41 @@ d1 = datetime.datetime.strptime(chaine_a_lire, format)
 Voici deux exemples d'utilisation de cette fonction :
 
 ```{code-cell}
-d1 = datetime.datetime.strptime("2019/8/27, 17:23", "%Y/%m/%d, %H:%M")
-d2 = datetime.datetime.strptime("27-08-2019", "%d-%m-%Y")
+d1 = datetime.datetime.strptime("2020/8/27, 17:23", "%Y/%m/%d, %H:%M")
+d2 = datetime.datetime.strptime("27-08-2020", "%d-%m-%Y")
+```
+
+## Attributs des objets `datetime`
+
+Lorsque l'on définit une date de type `datetime.datetime`, on peut accéder à certains de ses attributs directement :
+
+```{code-cell}
+d1 = datetime.datetime.strptime("2020/8/27, 17:23", "%Y/%m/%d, %H:%M")
+print(d1)
+```
+
+```{code-cell}
+print(d1.year)
+```
+
+```{code-cell}
+print(d1.month)
+```
+
+```{code-cell}
+print(d1.day)
+```
+
+```{code-cell}
+print(d1.hour)
+```
+
+```{code-cell}
+print(d1.minute)
+```
+
+```{code-cell}
+print(d1.second)
 ```
 
 ## Calcul de temps écoulé
@@ -152,8 +196,8 @@ On peut ensuite souhaiter calculer la différence entre deux dates.
 Le résultat de cette opération est une **durée**, représentée en Python par le type `timedelta` (lui aussi défini dans le module `datetime`).
 
 ```{code-cell}
-d1 = datetime.datetime(2019, 8, 27, 17, 23)
-d2 = datetime.datetime(2019, 8, 27, 17, 28)
+d1 = datetime.datetime(2020, 8, 27, 17, 23)
+d2 = datetime.datetime(2020, 8, 27, 17, 28)
 intervalle_de_temps = d1 - d2
 print(type(intervalle_de_temps))
 ```
@@ -162,8 +206,8 @@ Très souvent, il est utile pour manipuler une durée de la convertir en un nomb
 Cela se fait à l'aide de la commande :
 
 ```{code-cell}
-d1 = datetime.datetime(2019, 8, 27, 17, 23)
-d2 = datetime.datetime(2019, 8, 27, 17, 28)
+d1 = datetime.datetime(2020, 8, 27, 17, 23)
+d2 = datetime.datetime(2020, 8, 27, 17, 28)
 intervalle_de_temps = d1 - d2
 print(intervalle_de_temps.total_seconds())
 ```
@@ -173,9 +217,9 @@ On remarque ici que l'intervalle obtenu est négatif, ce qui était prévisible 
 Notez enfin que l'on peut tout à fait ajouter une durée à une date :
 
 ```{code-cell}
-d1 = datetime.datetime(2019, 8, 27, 17, 23)
-d2 = datetime.datetime(2019, 8, 27, 17, 28)
-d3 = datetime.datetime(2019, 8, 27, 18, 00)
+d1 = datetime.datetime(2020, 8, 27, 17, 23)
+d2 = datetime.datetime(2020, 8, 27, 17, 28)
+d3 = datetime.datetime(2020, 8, 27, 18, 00)
 intervalle_de_temps = d2 - d1
 print(d3 + intervalle_de_temps)
 ```

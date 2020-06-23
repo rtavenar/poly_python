@@ -303,6 +303,13 @@ Pour information, si vous vous retrouvez dans un tel cas, vous pourrez interromp
 
 #### Boucles `for`
 
+```{admonition} Information
+  :class: tip
+
+Si vous avez appris à programmer dans un autre langage que Python, il est possible que vous ayez été habitué(e) à ce que les boucles `for` soient utilisées pour itérer sur des entiers (par exemple les indices des éléments d'une liste).
+En Python, le principe de base est légèrement différent : par défaut, on itère sur les éléments d'une liste. Vous verrez dans le chapitre de ce polycopié dédié aux listes {ref}`comment faire lorsque l'on souhaite itérer sur les indices <parcours-liste>`.
+```
+
 Le second type de boucle repose en Python sur l'utilisation de listes (ou, plus généralement, d'itérables) dont nous reparlerons plus en détail dans la suite de cet ouvrage.
 Sachez pour le moment qu'une liste est un ensemble ordonné d'éléments.
 On peut alors exécuter une série d'instructions pour toutes les valeurs d'une liste :
@@ -314,6 +321,23 @@ print("Fin de la boucle")
 ```
 
 Cette syntaxe revient à définir une variable `x` qui prendra successivement pour valeur chacune des valeurs de la liste `[1, 5, 7]` dans l'ordre et à exécuter le code de la boucle (ici, un appel à la fonction `print`) pour cette valeur de la variable `x`.
+
+Il est fréquent d'avoir à itérer sur les `n` premiers entiers.
+Cela peut se faire à l'aide de la fonction `range` (qui est abordée plus en détail dans {ref}`la section de ce cours sur les listes <creation-liste>`) :
+
+```{code-cell}
+for i in range(1, 10):
+    print(i)
+```
+
+```{admonition} Quelle boucle choisir ?
+  :class: tip
+
+Lorsque l'on débute la programmation en Python, il peut être difficile de choisir, pour un problème donné, entre les boucles `for` et `while` présentées ici.
+De manière générale, dès lors que l'on souhaite parcourir les éléments d'une liste ou d'un dictionnaire, on utilisera la boucle `for`.
+De même, si l'on connait à l'avance le nombre d'itérations que l'on souhaite effectuer, on utilisera une boucle `for` (couplée avec un appel à la fonction `range`).
+Comme son nom l'indique, la boucle `while` sera utilisée dès lors que l'on souhaite répéter une action **tant qu'** une condition est vérifiée.
+```
 
 ### Fonctions
 
@@ -337,6 +361,8 @@ if x == y:
 else:
     print("types différents")
 ```
+
+En pratique, dans un programme, on aura recours à la définition de fonctions pour décomposer un problème global en sous-problèmes, chaque sous-problème étant géré par une fonction qui pourra elle-même, au besoin, faire appel à d'autres fonctions.
 
 #### Définition d'une fonction
 

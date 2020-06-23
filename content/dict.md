@@ -28,6 +28,13 @@ mon_dico = {"a" : 123, "z" : 7, "bbb" : None}
 print(mon_dico)
 ```
 
+Ainsi, un dictionnaire vide sera créé comme suit :
+
+```{code-cell}
+mon_dico = {}
+print(mon_dico)
+```
+
 On remarque ici que l'ordre dans lequel on a entré des paires clé-valeur n'est pas conservé lors de l'affichage.
 
 ## Modification du contenu d'un dictionnaire
@@ -111,6 +118,24 @@ for cle, valeur in mon_dico.items():
     print(cle, valeur)
 ```
 
+````{admonition} Liste ou dictionnaire ?
+  :class: tip
+
+Lorsque l'on doit stocker des séries de valeurs, on a donc plusieurs choix, et notamment, on peut utiliser une liste ou un dictionnaire.
+En pratique, on utilisera un dictionnaire dès lors que l'on souhaitera mettre en évidence une correspondance entre clés et valeurs, comme dans l'exemple suivant dans lequel on **associe** à chaque numéro étudiant un entier (pouvant représenter une note, un nombre de photocopies restantes auorisées, ou autre) :
+
+```
+{"2170000": 13, "2180000": 23}
+```
+
+Si l'on souhaite stocker une **série ordonnée de valeurs**, on préférera l'utilisation d'une liste, comme dans ce qui suit pour une liste de prénoms :
+
+```
+["Chloé", "Ali", "Margot", "Antoine"]
+```
+
+````
+
 ## Exercices
 
 ````{admonition} **Exercice 6.1**
@@ -126,7 +151,7 @@ print(compte_occurrences("la vie est belle c'est la vie"))
 ````
 
 ```{admonition} **Exercice 6.2**
-Écrivez une fonction qui retourne la somme des *valeurs* d'un dictionnaire fourni en argument.
+Écrivez une fonction qui retourne la somme des *valeurs* d'un dictionnaire fourni en argument, en supposant que toutes les valeurs stockées dans ce dictionnaire soient numériques.
 
 [{ref}`Corrigé <ex6.2_sol>`]
 ```
