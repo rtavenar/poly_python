@@ -1,3 +1,18 @@
+---
+jupytext:
+  cell_metadata_filter: -all
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: '0.8'
+    jupytext_version: 1.5.0
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Tester son code
 
 ```{admonition} Pour info
@@ -14,17 +29,11 @@ Nous allons donc nous intéresser maintenant aux moyens de vérifier si votre co
 ## Les erreurs en Python
 
 Étudions ce qu'il se passe lors de l'exécution du code suivant :
-```
+
+```{code-cell}
+:tags: ["raises-exception"]
 x = "12"
 y = x + 2
-```
-
-Nous obtenons la sortie suivante :
-```bash
-Traceback (most recent call last):
-  File "[...]", line 2, in <module>
-    y = x + 2
-TypeError: Can't convert 'int' object to str implicitly
 ```
 
 Ce type de message d'erreur ne doit pas vous effrayer, il est là pour vous aider.
