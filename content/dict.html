@@ -31,7 +31,7 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lecture et écriture de fichiers textuels" href="fichiers.html" />
+    <link rel="next" title="Interaction avec des fichiers" href="fichiers.html" />
     <link rel="prev" title="Les chaînes de caractères" href="chaines.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -86,7 +86,7 @@
     <a href="">Les dictionnaires</a>
   </li>
   <li class="">
-    <a href="fichiers.html">Lecture et écriture de fichiers textuels</a>
+    <a href="fichiers.html">Interaction avec des fichiers</a>
   </li>
   <li class="">
     <a href="api.html">Récupération de données à partir d’API web</a>
@@ -222,6 +222,20 @@ Notamment, ces clés ne sont pas nécessairement des entiers, on utilisera en ef
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;a&#39;: 123, &#39;z&#39;: 7, &#39;bbb&#39;: None}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ainsi, un dictionnaire vide sera créé comme suit :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mon_dico</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_dico</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{}
 </pre></div>
 </div>
 </div>
@@ -381,6 +395,18 @@ bbb None
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Liste ou dictionnaire ?</p>
+<p>Lorsque l’on doit stocker des séries de valeurs, on a donc plusieurs choix, et notamment, on peut utiliser une liste ou un dictionnaire.
+En pratique, on utilisera un dictionnaire dès lors que l’on souhaitera mettre en évidence une correspondance entre clés et valeurs, comme dans l’exemple suivant dans lequel on <strong>associe</strong> à chaque numéro étudiant un entier (pouvant représenter une note, un nombre de photocopies restantes auorisées, ou autre) :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;2170000&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span> <span class="s2">&quot;2180000&quot;</span><span class="p">:</span> <span class="mi">23</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Si l’on souhaite stocker une <strong>série ordonnée de valeurs</strong>, on préférera l’utilisation d’une liste, comme dans ce qui suit pour une liste de prénoms :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;Chloé&quot;</span><span class="p">,</span> <span class="s2">&quot;Ali&quot;</span><span class="p">,</span> <span class="s2">&quot;Margot&quot;</span><span class="p">,</span> <span class="s2">&quot;Antoine&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="exercices">
@@ -397,7 +423,7 @@ bbb None
 </div>
 <div class="admonition-exercice-6-2 admonition">
 <p class="admonition-title"><strong>Exercice 6.2</strong></p>
-<p>Écrivez une fonction qui retourne la somme des <em>valeurs</em> d’un dictionnaire fourni en argument.</p>
+<p>Écrivez une fonction qui retourne la somme des <em>valeurs</em> d’un dictionnaire fourni en argument, en supposant que toutes les valeurs stockées dans ce dictionnaire soient numériques.</p>
 <p>[<a class="reference internal" href="solutions.html#ex6-2-sol"><span class="std std-ref">Corrigé</span></a>]</p>
 </div>
 </div>
@@ -413,7 +439,7 @@ bbb None
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="chaines.html" title="previous page">Les chaînes de caractères</a>
-    <a class='right-next' id="next-link" href="fichiers.html" title="next page">Lecture et écriture de fichiers textuels</a>
+    <a class='right-next' id="next-link" href="fichiers.html" title="next page">Interaction avec des fichiers</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

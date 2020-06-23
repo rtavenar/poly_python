@@ -32,7 +32,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Tester son code" href="test.html" />
-    <link rel="prev" title="Lecture et écriture de fichiers textuels" href="fichiers.html" />
+    <link rel="prev" title="Interaction avec des fichiers" href="fichiers.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -86,7 +86,7 @@
     <a href="dict.html">Les dictionnaires</a>
   </li>
   <li class="">
-    <a href="fichiers.html">Lecture et écriture de fichiers textuels</a>
+    <a href="fichiers.html">Interaction avec des fichiers</a>
   </li>
   <li class="active">
     <a href="">Récupération de données à partir d’API web</a>
@@ -263,13 +263,34 @@ Ainsi, la requête précédente deviendrait :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&amp;destination=Montreal&amp;key=VOTRE_CLE
 </pre></div>
 </div>
-<p>dans laquelle vous devrez remplacer <code class="docutils literal notranslate"><span class="pre">VOTRE_CLE</span></code> par une clé que vous aurez préalablement générée et qui vous permettra d’utiliser le service web de manière authentifiée.</p>
+<p>dans laquelle vous devrez remplacer <code class="docutils literal notranslate"><span class="pre">VOTRE_CLE</span></code> par une clé que vous aurez préalablement générée et qui vous permettra d’utiliser le service web de manière authentifiée.
+Pour créer une clef d’API, il faut se rendre sur l’interface développeur de l’API concernée (<a class="reference external" href="https://developers.google.com/maps/documentation/directions/start?hl=fr">ici</a> pour l’API <em>Google Maps Directions</em> par exemple).</p>
 </div>
 <div class="section" id="utilisation-du-module-requests">
 <h3>Utilisation du module <code class="docutils literal notranslate"><span class="pre">requests</span></code><a class="headerlink" href="#utilisation-du-module-requests" title="Permalink to this headline">¶</a></h3>
+<div class="tip admonition">
+<p class="admonition-title">Les requêtes HTTP en (très) bref</p>
+<p>Dans le protocole HTTP, il existe plusieurs types de requêtes pour réaliser l’échange entre le client et le serveur.
+En particulier les requêtes de type GET sont très utilisées lorsque le client demande une ressource au serveur.
+Il s’agit d’une requête de téléchargement d’un document.
+Il est possible de transmettre des paramètres pour filtrer la réponse ; dans ce cas, les paramètres seront transférés “en clair” (dans l’URL utilisée pour la requête).</p>
+<p>Les requêtes de type POST permettent comme GET de télécharger un document du serveur vers le client mais avec un plus de sophistication : les paramètres sont masqués et il est possible de demander de mettre à jour des données sur le serveur à l’occasion de la requête.</p>
+<p>Il existe d’autres requêtes HTTP que nous ne détaillons pas ici.</p>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="tip admonition">
+<p class="admonition-title">Installer un paquet Python</p>
+<p>Le module <code class="docutils literal notranslate"><span class="pre">requests</span></code> ne fait pas partie de la librairie standard en Python.
+Il faut donc l’installer avant de pouvoir l’utiliser.
+Pour ce faire, on peut utiliser le gestionnaire de paquets <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<p>Si vous utilisez l’IDE PyCharm, vous pourrez trouver une documentation <a class="reference external" href="https://www.jetbrains.com/help/pycharm/installing-uninstalling-and-upgrading-packages.html">à cette adresse</a> concernant la marche à suivre pour installer un module via votre éditeur directement.</p>
+</div>
+</div>
 <p>La section précédente proposait un rappel sur le format des requêtes HTTP et vous avez été invités à effectuer des requêtes HTTP à l’aide de votre navigateur.
 Si maintenant on souhaite récupérer de manière automatique le résultat d’une requête HTTP pour le manipuler en Python, le plus commode est d’effectuer la requête HTTP depuis Python.
-Pour cela, on utilise le module <code class="docutils literal notranslate"><span class="pre">requests</span></code>. Ce module contient notamment une fonction <code class="docutils literal notranslate"><span class="pre">get</span></code> qui permet d’effectuer des requêtes HTTP de type GET (je vous laisse deviner le nom de la fonction qui permet d’effectuer des requêtes HTTP POST :) :</p>
+Pour cela, on utilise le module <code class="docutils literal notranslate"><span class="pre">requests</span></code>.
+Ce module contient notamment une fonction <code class="docutils literal notranslate"><span class="pre">get</span></code> qui permet d’effectuer des requêtes HTTP de type GET (je vous laisse deviner le nom de la fonction qui permet d’effectuer des requêtes HTTP POST :) :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
@@ -286,6 +307,28 @@ Pour cela, on utilise le module <code class="docutils literal notranslate"><span
 </pre></div>
 </div>
 </div>
+</div>
+<p>On voit ici que l’on a reçu une réponse de code 200, ce qui signifie que la requête s’est déroulée correctement.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Codes de retour HTTP</p>
+<p>Voici quelques codes de retour de requêtes HTTP qui peuvent vous être utiles :</p>
+<ul class="simple">
+<li><p>20x : la transaction s’est bien déroulée</p>
+<ul>
+<li><p><em>ex.</em> 200 : la requête s’est effectuée correctement</p></li>
+</ul>
+</li>
+<li><p>40x : erreur “due au client”</p>
+<ul>
+<li><p><em>ex.</em> 404 : page non trouvée</p></li>
+</ul>
+</li>
+<li><p>50x : erreur “due au serveur”</p>
+<ul>
+<li><p><em>ex.</em> 504 : Temps imparti écoulé</p></li>
+</ul>
+</li>
+</ul>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -375,7 +418,7 @@ C’est par exemple le cas des modules <a class="reference external" href="http:
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="fichiers.html" title="previous page">Lecture et écriture de fichiers textuels</a>
+    <a class='left-prev' id="prev-link" href="fichiers.html" title="previous page">Interaction avec des fichiers</a>
     <a class='right-next' id="next-link" href="test.html" title="next page">Tester son code</a>
 
     </div>

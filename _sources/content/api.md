@@ -81,12 +81,39 @@ https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=
 ```
 
 dans laquelle vous devrez remplacer `VOTRE_CLE` par une clé que vous aurez préalablement générée et qui vous permettra d'utiliser le service web de manière authentifiée.
+Pour créer une clef d'API, il faut se rendre sur l'interface développeur de l'API concernée ([ici](https://developers.google.com/maps/documentation/directions/start?hl=fr) pour l'API _Google Maps Directions_ par exemple).
 
 ### Utilisation du module `requests`
 
+```{admonition} Les requêtes HTTP en (très) bref
+  :class: tip
+
+Dans le protocole HTTP, il existe plusieurs types de requêtes pour réaliser l'échange entre le client et le serveur.
+En particulier les requêtes de type GET sont très utilisées lorsque le client demande une ressource au serveur.
+Il s'agit d'une requête de téléchargement d'un document.
+Il est possible de transmettre des paramètres pour filtrer la réponse ; dans ce cas, les paramètres seront transférés "en clair" (dans l'URL utilisée pour la requête).
+
+Les requêtes de type POST permettent comme GET de télécharger un document du serveur vers le client mais avec un plus de sophistication : les paramètres sont masqués et il est possible de demander de mettre à jour des données sur le serveur à l'occasion de la requête.
+
+Il existe d'autres requêtes HTTP que nous ne détaillons pas ici.
+```
+
+````{margin}
+```{admonition} Installer un paquet Python
+  :class: tip
+
+Le module `requests` ne fait pas partie de la librairie standard en Python.
+Il faut donc l'installer avant de pouvoir l'utiliser.
+Pour ce faire, on peut utiliser le gestionnaire de paquets `pip`.
+
+Si vous utilisez l'IDE PyCharm, vous pourrez trouver une documentation [à cette adresse](https://www.jetbrains.com/help/pycharm/installing-uninstalling-and-upgrading-packages.html) concernant la marche à suivre pour installer un module via votre éditeur directement.
+```
+````
+
 La section précédente proposait un rappel sur le format des requêtes HTTP et vous avez été invités à effectuer des requêtes HTTP à l'aide de votre navigateur.
 Si maintenant on souhaite récupérer de manière automatique le résultat d'une requête HTTP pour le manipuler en Python, le plus commode est d'effectuer la requête HTTP depuis Python.
-Pour cela, on utilise le module `requests`. Ce module contient notamment une fonction `get` qui permet d'effectuer des requêtes HTTP de type GET (je vous laisse deviner le nom de la fonction qui permet d'effectuer des requêtes HTTP POST :) :
+Pour cela, on utilise le module `requests`.
+Ce module contient notamment une fonction `get` qui permet d'effectuer des requêtes HTTP de type GET (je vous laisse deviner le nom de la fonction qui permet d'effectuer des requêtes HTTP POST :) :
 
 ```{code-cell}
 import requests
@@ -95,6 +122,20 @@ url = "http://my-json-server.typicode.com/rtavenar/fake_api/tasks"
 
 reponse = requests.get(url)
 print(reponse)
+```
+
+On voit ici que l'on a reçu une réponse de code 200, ce qui signifie que la requête s'est déroulée correctement.
+
+```{admonition} Codes de retour HTTP
+  :class: tip, dropdown
+
+Voici quelques codes de retour de requêtes HTTP qui peuvent vous être utiles :
+* 20x : la transaction s'est bien déroulée
+  * _ex._ 200 : la requête s'est effectuée correctement
+* 40x : erreur "due au client"
+  * _ex._ 404 : page non trouvée
+* 50x : erreur "due au serveur"
+  * _ex._ 504 : Temps imparti écoulé
 ```
 
 ```{code-cell}

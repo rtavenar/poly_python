@@ -86,7 +86,7 @@
     <a href="dict.html">Les dictionnaires</a>
   </li>
   <li class="">
-    <a href="fichiers.html">Lecture et écriture de fichiers textuels</a>
+    <a href="fichiers.html">Interaction avec des fichiers</a>
   </li>
   <li class="">
     <a href="api.html">Récupération de données à partir d’API web</a>
@@ -655,6 +655,11 @@ Pour information, si vous vous retrouvez dans un tel cas, vous pourrez interromp
 </div>
 <div class="section" id="boucles-for">
 <h4>Boucles <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#boucles-for" title="Permalink to this headline">¶</a></h4>
+<div class="tip admonition">
+<p class="admonition-title">Information</p>
+<p>Si vous avez appris à programmer dans un autre langage que Python, il est possible que vous ayez été habitué(e) à ce que les boucles <code class="docutils literal notranslate"><span class="pre">for</span></code> soient utilisées pour itérer sur des entiers (par exemple les indices des éléments d’une liste).
+En Python, le principe de base est légèrement différent : par défaut, on itère sur les éléments d’une liste. Vous verrez dans le chapitre de ce polycopié dédié aux listes <a class="reference internal" href="listes.html#parcours-liste"><span class="std std-ref">comment faire lorsque l’on souhaite itérer sur les indices</span></a>.</p>
+</div>
 <p>Le second type de boucle repose en Python sur l’utilisation de listes (ou, plus généralement, d’itérables) dont nous reparlerons plus en détail dans la suite de cet ouvrage.
 Sachez pour le moment qu’une liste est un ensemble ordonné d’éléments.
 On peut alors exécuter une série d’instructions pour toutes les valeurs d’une liste :</p>
@@ -676,6 +681,36 @@ Fin de la boucle
 </div>
 </div>
 <p>Cette syntaxe revient à définir une variable <code class="docutils literal notranslate"><span class="pre">x</span></code> qui prendra successivement pour valeur chacune des valeurs de la liste <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">5,</span> <span class="pre">7]</span></code> dans l’ordre et à exécuter le code de la boucle (ici, un appel à la fonction <code class="docutils literal notranslate"><span class="pre">print</span></code>) pour cette valeur de la variable <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>Il est fréquent d’avoir à itérer sur les <code class="docutils literal notranslate"><span class="pre">n</span></code> premiers entiers.
+Cela peut se faire à l’aide de la fonction <code class="docutils literal notranslate"><span class="pre">range</span></code> (qui est abordée plus en détail dans <a class="reference internal" href="listes.html#creation-liste"><span class="std std-ref">la section de ce cours sur les listes</span></a>) :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Quelle boucle choisir ?</p>
+<p>Lorsque l’on débute la programmation en Python, il peut être difficile de choisir, pour un problème donné, entre les boucles <code class="docutils literal notranslate"><span class="pre">for</span></code> et <code class="docutils literal notranslate"><span class="pre">while</span></code> présentées ici.
+De manière générale, dès lors que l’on souhaite parcourir les éléments d’une liste ou d’un dictionnaire, on utilisera la boucle <code class="docutils literal notranslate"><span class="pre">for</span></code>.
+De même, si l’on connait à l’avance le nombre d’itérations que l’on souhaite effectuer, on utilisera une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> (couplée avec un appel à la fonction <code class="docutils literal notranslate"><span class="pre">range</span></code>).
+Comme son nom l’indique, la boucle <code class="docutils literal notranslate"><span class="pre">while</span></code> sera utilisée dès lors que l’on souhaite répéter une action <strong>tant qu’</strong> une condition est vérifiée.</p>
+</div>
 </div>
 </div>
 <div class="section" id="fonctions">
@@ -714,6 +749,7 @@ D’autres fonctions, comme <code class="docutils literal notranslate"><span cla
 </div>
 </div>
 </div>
+<p>En pratique, dans un programme, on aura recours à la définition de fonctions pour décomposer un problème global en sous-problèmes, chaque sous-problème étant géré par une fonction qui pourra elle-même, au besoin, faire appel à d’autres fonctions.</p>
 <div class="section" id="definition-d-une-fonction">
 <h4>Définition d’une fonction<a class="headerlink" href="#definition-d-une-fonction" title="Permalink to this headline">¶</a></h4>
 <p>Lorsqu’un ensemble d’instructions est susceptible d’être utilisé à plusieurs occasions dans un ou plusieurs programmes, il est recommandé de l’isoler au sein d’une fonction.

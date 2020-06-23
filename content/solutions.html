@@ -85,7 +85,7 @@
     <a href="dict.html">Les dictionnaires</a>
   </li>
   <li class="">
-    <a href="fichiers.html">Lecture et écriture de fichiers textuels</a>
+    <a href="fichiers.html">Interaction avec des fichiers</a>
   </li>
   <li class="">
     <a href="api.html">Récupération de données à partir d’API web</a>
@@ -208,6 +208,10 @@
         </li>
     
         <li class="nav-item toc-entry toc-h2">
+            <a href="#exercice-5-3" class="nav-link">Exercice 5.3</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
             <a href="#exercice-6-1" class="nav-link">Exercice 6.1</a>
         </li>
     
@@ -253,9 +257,9 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
-<span class="k">if</span> <span class="n">t</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">t</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
 	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l&#39;eau est sous forme solide&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">t</span><span class="o">&lt;</span><span class="mi">100</span><span class="p">:</span>
+<span class="k">elif</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
 	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l&#39;eau est sous forme liquide&quot;</span><span class="p">)</span>
 <span class="k">else</span> <span class="p">:</span>
 	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l&#39;eau est sous forme gazeuse&quot;</span><span class="p">)</span>
@@ -276,10 +280,10 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">8</span>
-<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
-<span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">):</span>
-	<span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="mi">2</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
 		<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 	<span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
 </pre></div>
@@ -299,11 +303,11 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">8</span>
-<span class="n">i</span><span class="o">=</span><span class="mi">1</span>
-<span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">):</span>
 	<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-	<span class="n">i</span><span class="o">+=</span><span class="mi">2</span>
+	<span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span>
 </pre></div>
 </div>
 </div>
@@ -568,6 +572,36 @@
         <span class="k">if</span> <span class="n">mot</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">mot_cible_minuscules</span><span class="p">:</span>
             <span class="n">compteur</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">compteur</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercice-5-3">
+<span id="ex5-3-sol"></span><h2>Exercice 5.3<a class="headerlink" href="#exercice-5-3" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">affiche_liste</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">elt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">listent</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;L&#39;entier d&#39;indice </span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">2n</span><span class="si">}</span><span class="s2"> est |</span><span class="si">{</span><span class="n">elt</span><span class="si">:</span><span class="s2">12n</span><span class="si">}</span><span class="s2">|&quot;</span><span class="p">)</span>
+
+<span class="n">listent</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">1234</span><span class="p">,</span> <span class="mi">12345</span><span class="p">,</span> <span class="mi">123456</span><span class="p">,</span> <span class="mi">1234567</span><span class="p">,</span> <span class="mi">12345678</span><span class="p">,</span> <span class="mi">123456789</span><span class="p">,</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="mi">12345678901</span><span class="p">]</span>
+<span class="n">affiche_liste</span><span class="p">(</span><span class="n">listent</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>L&#39;entier d&#39;indice  0 est |           1|
+L&#39;entier d&#39;indice  1 est |          12|
+L&#39;entier d&#39;indice  2 est |         123|
+L&#39;entier d&#39;indice  3 est |        1234|
+L&#39;entier d&#39;indice  4 est |       12345|
+L&#39;entier d&#39;indice  5 est |      123456|
+L&#39;entier d&#39;indice  6 est |     1234567|
+L&#39;entier d&#39;indice  7 est |    12345678|
+L&#39;entier d&#39;indice  8 est |   123456789|
+L&#39;entier d&#39;indice  9 est |  1234567890|
+L&#39;entier d&#39;indice 10 est | 12345678901|
 </pre></div>
 </div>
 </div>

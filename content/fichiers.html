@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Lecture et écriture de fichiers textuels &#8212; Introduction à Python</title>
+    <title>Interaction avec des fichiers &#8212; Introduction à Python</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -86,7 +86,7 @@
     <a href="dict.html">Les dictionnaires</a>
   </li>
   <li class="active">
-    <a href="">Lecture et écriture de fichiers textuels</a>
+    <a href="">Interaction avec des fichiers</a>
   </li>
   <li class="">
     <a href="api.html">Récupération de données à partir d’API web</a>
@@ -165,53 +165,67 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#lecture-de-fichiers-textuels" class="nav-link">Lecture de fichiers textuels</a><ul class="nav section-nav flex-column">
+            <a href="#manipulation-de-fichiers-en-python-avec-le-module-os" class="nav-link">Manipulation de fichiers en Python avec le module os</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#lecture-et-ecriture-de-fichiers-textuels" class="nav-link">Lecture et écriture de fichiers textuels</a><ul class="nav section-nav flex-column">
                 
         <li class="nav-item toc-entry toc-h3">
+            <a href="#qu-est-ce-qu-un-fichier-textuel" class="nav-link">Qu’est-ce qu’un fichier textuel ?</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#encodage-des-fichiers" class="nav-link">Encodage des fichiers</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#lecture-de-fichiers-textuels" class="nav-link">Lecture de fichiers textuels</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
             <a href="#fichiers-textuels-generiques" class="nav-link">Fichiers textuels génériques</a>
         </li>
     
-        <li class="nav-item toc-entry toc-h3">
+        <li class="nav-item toc-entry toc-h4">
             <a href="#fichiers-comma-separated-values-csv" class="nav-link">Fichiers Comma-Separated Values (CSV)</a><ul class="nav section-nav flex-column">
                 
-        <li class="nav-item toc-entry toc-h4">
+        <li class="nav-item toc-entry toc-h5">
             <a href="#cas-des-fichiers-a-en-tete" class="nav-link">Cas des fichiers à en-tête</a>
         </li>
     
-        <li class="nav-item toc-entry toc-h4">
+        <li class="nav-item toc-entry toc-h5">
             <a href="#un-peu-de-magie" class="nav-link">Un peu de magie…</a>
         </li>
     
             </ul>
         </li>
     
-        <li class="nav-item toc-entry toc-h3">
+        <li class="nav-item toc-entry toc-h4">
             <a href="#fichiers-javascript-object-notation-json" class="nav-link">Fichiers JavaScript Object Notation (JSON)</a>
         </li>
     
             </ul>
         </li>
     
-        <li class="nav-item toc-entry toc-h2">
+        <li class="nav-item toc-entry toc-h3">
             <a href="#ecriture-de-fichiers-textuels" class="nav-link">Écriture de fichiers textuels</a><ul class="nav section-nav flex-column">
                 
-        <li class="nav-item toc-entry toc-h3">
+        <li class="nav-item toc-entry toc-h4">
             <a href="#id2" class="nav-link">Fichiers textuels génériques</a>
         </li>
     
-        <li class="nav-item toc-entry toc-h3">
+        <li class="nav-item toc-entry toc-h4">
             <a href="#fichiers-csv" class="nav-link">Fichiers CSV</a>
         </li>
     
-        <li class="nav-item toc-entry toc-h3">
+        <li class="nav-item toc-entry toc-h4">
             <a href="#fichiers-json" class="nav-link">Fichiers JSON</a>
         </li>
     
             </ul>
         </li>
     
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#manipulation-de-fichiers-en-python-avec-le-module-os" class="nav-link">Manipulation de fichiers en Python avec le module os</a>
+            </ul>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
@@ -233,10 +247,99 @@
         
               <div>
                 
-  <div class="section" id="lecture-et-ecriture-de-fichiers-textuels">
-<h1>Lecture et écriture de fichiers textuels<a class="headerlink" href="#lecture-et-ecriture-de-fichiers-textuels" title="Permalink to this headline">¶</a></h1>
-<p>Dans ce chapitre, nous nous intéressons à la lecture/écriture de fichiers textuels par un programme Python.
-Un premier élément qu’il est nécessaire de maîtriser pour lire ou écrire des fichiers textuels est la notion d’encodage.
+  <div class="section" id="interaction-avec-des-fichiers">
+<h1>Interaction avec des fichiers<a class="headerlink" href="#interaction-avec-des-fichiers" title="Permalink to this headline">¶</a></h1>
+<p>Dans ce chapitre, nous allons présenter des outils de manipulation de fichiers en Python.
+Un fichier est une unité logique d’informations placée sur une mémoire secondaire (un disque dur, une clef USB, <em>etc.</em>).</p>
+<p>Quand vous consultez une dossier à l’aide de votre gestionnaire de fichiers, ce dossier peut comprendre plusieurs fichiers.
+En accédant depuis un programme Python au contenu de fichiers de données, on va pouvoir alimenter le programme avec des données provenant d’un fichier de données indépendant du programme (et non plus seulement des données écrites en dur dans le programmes ou saisies par l’utilisateur directement).</p>
+<div class="section" id="manipulation-de-fichiers-en-python-avec-le-module-os">
+<h2>Manipulation de fichiers en Python avec le module <code class="docutils literal notranslate"><span class="pre">os</span></code><a class="headerlink" href="#manipulation-de-fichiers-en-python-avec-le-module-os" title="Permalink to this headline">¶</a></h2>
+<p>Lorsque l’on lit ou écrit des fichiers, il est fréquent de vouloir répéter la même opération sur plusieurs fichiers, par exemple sur tous les fichiers avec l’extension <code class="docutils literal notranslate"><span class="pre">&quot;.txt&quot;</span></code> d’un répertoire donné.
+Pour ce faire, on peut utiliser en Python le module <code class="docutils literal notranslate"><span class="pre">os</span></code> qui propose un certain nombre de fonctions standard de manipulation de fichiers.
+On utilisera notamment la fonction <code class="docutils literal notranslate"><span class="pre">listdir</span></code> de ce module qui permet de lister l’ensemble des fichiers et sous-répertoires contenus dans un répertoire donné :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">for</span> <span class="n">nom_fichier</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;donnees&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nom_fichier</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>machin.csv
+truc.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>La fonction <code class="docutils literal notranslate"><span class="pre">listdir</span></code> peut prendre indifféremment un chemin absolu ou relatif (dans notre exemple, il s’agit d’un chemin relatif qui pointe sur le sous-répertoire <code class="docutils literal notranslate"><span class="pre">&quot;donnees&quot;</span></code> contenu dans le répertoire de travail courant du programme).</p>
+<p>Si vous exécutez le code ci-dessus et que votre répertoire <code class="docutils literal notranslate"><span class="pre">&quot;donnees&quot;</span></code> n’est pas vide, vous remarquerez que le nom du fichier stocké dans la variable <code class="docutils literal notranslate"><span class="pre">nom_fichier</span></code> ne contient pas le chemin vers ce fichier.
+Or, si l’on souhaite ensuite ouvrir ce fichier (que ce soit en lecture ou en écriture), il faudra bien spécifier ce chemin.
+Pour cela, on utilisera la syntaxe suivante :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">repertoire</span> <span class="o">=</span> <span class="s2">&quot;donnees&quot;</span>
+<span class="k">for</span> <span class="n">nom_fichier</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">repertoire</span><span class="p">):</span>
+    <span class="n">nom_complet_fichier</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">repertoire</span><span class="p">,</span> <span class="n">nom_fichier</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nom_fichier</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nom_complet_fichier</span><span class="p">)</span>
+    <span class="c1"># Ouverture et traitement du fichier dont le nom est contenu dans</span>
+    <span class="c1"># nom_complet_fichier</span>
+</pre></div>
+</div>
+<p>La fonction <code class="docutils literal notranslate"><span class="pre">path.join</span></code> du module <code class="docutils literal notranslate"><span class="pre">os</span></code> permet d’obtenir le chemin complet vers le fichier à partir du nom du répertoire dans lequel il se trouve et du nom du fichier isolé.
+Il est préférable d’utiliser cette fonction plutôt que d’effectuer la concaténation des chaînes de caractères correspondantes car la forme des chemins complets dépend du système d’exploitation utilisé, ce que gère intelligemment <code class="docutils literal notranslate"><span class="pre">path.join</span></code>.</p>
+</div>
+<div class="section" id="lecture-et-ecriture-de-fichiers-textuels">
+<h2>Lecture et écriture de fichiers textuels<a class="headerlink" href="#lecture-et-ecriture-de-fichiers-textuels" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="qu-est-ce-qu-un-fichier-textuel">
+<h3>Qu’est-ce qu’un fichier textuel ?<a class="headerlink" href="#qu-est-ce-qu-un-fichier-textuel" title="Permalink to this headline">¶</a></h3>
+<p>Dans ce qui suit, nous traiterons uniquement de la lecture de fichiers textuels.
+Pour faire simple, nous appellerons dans ce qui suit “fichier textuel” tout fichier dont le contenu est lisible en clair en ouvrant le fichier avec un éditeur de fichiers bruts (comme Notepad++ sous windows, ou gedit sous linux).
+Pour se faire une idée, nous pouvons (sous unix) utiliser la commande <code class="docutils literal notranslate"><span class="pre">head</span></code> qui permet d’afficher le début d’un fichier :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!head entete.csv
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>NOM;PRENOM;AGE
+Lemarchand;John;23
+Trias;Anne;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Et si l’on avait cherché à lire le contenu d’un fichier non textuel, on aurait obtenu quelque chose du type :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!head /usr/bin/python
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<pre class="output stream literal-block">������H__PAGEZERO�__TEXT__text__TEXTp�p�__stubs__TEXT0H0�__stub_helper__TEXTx�x�__cstring__TEXT�__unwind_info__TEXT�H��__DATA_CONST__got__DATA_CONST�__DATA__la_symbol_ptr__DATA`__data__DATA` ` H__LINKEDIT0P0�K&quot;�000HP0�810p13P�2/usr/lib/dyld��9E�N?:�����H2
+
+,*}(�pX/System/Library/Frameworks/Python.framework/Versions/2.7/Python8d/usr/lib/libSystem.B.dylib&amp;h1)p14�GUH��H��0�E��}�H�u��uH�E�H�E�H�M�H�H�E�H�E�H��H�E��~H�u�L�E�H�OL�1҉�H�ǉU�H��H�M��H�U�H�5D�UԿ�E�D���I�UH��H��PH��H��H�u��!���H�E���H�}��8H�E�H�E�H&lt;H���H�E�H�}��H�E��H������H�}�H�u��H�M�HM�H������H�M�1�H�M�H;M��E��H�E����/�U��E����H�E�H����H�E�����H�E�HH�E�H�E����.�H�E�HH�E�H������H�}�H�5��H�M�H�M�H�E�H��P]�f�UH��H��0H�}�f�E�H�}���E����M؉���H�5�1����H�U�H�E��E�H�}�H�u�H�M�������H�5�1���H�E�H;E��'H�?H�8H�5�1Ɉ��r��E��_�E��&#64;f�E�H�}��u��k�E��'�MЉ���H�5w1���H��0]��%��%��%��%��%��%��%��%��%��%��%��%�L��AS�%��h�����h�����h#�����h1�����h&lt;����hH����hW����he����hx����h�����h�����h��x���posix_spawn: %sResources/Python.app/Contents/MacOS/Pythonposix_spawnattr_intposix_spawnattr_setbinprefposix_spawnattr_setbinpref failed to copy
+posix_spawnattr_setflagsp4414������������#\&#64;_Py_InitializeQr�&#64;___stderrp�&#64;_environ�&#64;dyld_stub_binder�s&#64;___error�s&#64;___strcpy_chk�s&#64;_dladdr�s&#64;_err�s &#64;_exit�s(&#64;_fprintf�s0&#64;_malloc�s8&#64;_posix_spawn�s&#64;&#64;_posix_spawnattr_init�sH&#64;_posix_spawnattr_setbinpref_np�sP&#64;_posix_spawnattr_setflags�sX&#64;_strlen�__mh_execute_header����&lt;BEa'0;IQZ_env�����	
+	
+__mh_execute_header_Py_Initialize___error___stderrp___strcpy_chk_dladdr_environ_err_exit_fprintf_malloc_posix_spawn_posix_spawnattr_init_posix_spawnattr_setbinpref_np_posix_spawnattr_setflags_strlendyld_stub_binderradr://5614542���5$&amp;j���04
+com.apple.python2z�)���ń1�M�p���L�?�:t������E���aH���+֬#�*9!Y%I�.K�}ҭ��Xo��f����kOX�|�|z�ڽ�H�,�W��rc{�NBl��'���3��P��&gt;A=R�&quot;o�.��&amp;[[vS������9���8�5o�&lt;}���D��0com.apple.python2���0�	*�H����0�10	`�He0�	*�H����0�0���!0	*�H��0b10	UUS10U
+
+Apple Inc.1&amp;0$UApple Certification Authority10UApple Root CA0111024173941Z261024173941Z010	UUS10U
+
+</pre>
+</div>
+</div>
+<p>En effet, le fichier situé à l’adresse <code class="docutils literal notranslate"><span class="pre">/usr/bin/python</span></code> sur l’ordinateur qui a généré ce polycopié est un fichier binaire qui, s’il contient bien des morceaux qui semblent correspondre à du texte en clair, ne se résume pas à cela.</p>
+<p>Dans ce chapitre, nous ne nous intéressons donc pas à ce dernier type de fichiers mais nous nous concentrerons sur la lecture/écriture de fichiers textuels par un programme Python.</p>
+</div>
+<div class="section" id="encodage-des-fichiers">
+<h3>Encodage des fichiers<a class="headerlink" href="#encodage-des-fichiers" title="Permalink to this headline">¶</a></h3>
+<p>Un premier élément qu’il est nécessaire de maîtriser pour lire ou écrire des fichiers textuels est la notion d’encodage.
 Il faut savoir qu’il existe plusieurs façons d’encoder un texte.
 Nous nous focaliserons ici sur les deux encodages que vous êtes les plus susceptibles de rencontrer (mais sachez qu’il en existe bien d’autres) :</p>
 <ul class="simple">
@@ -249,8 +352,9 @@ Au contraire, s’il est possible que vous utilisiez de tels caractères, il fau
 Si votre programme doit lire un fichier, il faudra donc vous assurer de l’encodage associé à ce fichier (en l’ouvrant par exemple avec un éditeur de texte qui soit suffisamment avancé pour vous fournir cette information).
 Si vous écrivez un programme qui écrit un fichier, il faudra vous poser la question de l’utilisation future qui sera faite de ce fichier : s’il est amené à être ouvert par un autre utilisateur, il serait pertinent de vous demander quel encodage sera le moins problématique pour cet utilisateur, par exemple.</p>
 <p>Si vous n’avez pas de contrainte extérieure pour ce qui est de l’encodage, vous utiliserez l’encodage UTF-8 par défaut.</p>
+</div>
 <div class="section" id="lecture-de-fichiers-textuels">
-<h2>Lecture de fichiers textuels<a class="headerlink" href="#lecture-de-fichiers-textuels" title="Permalink to this headline">¶</a></h2>
+<h3>Lecture de fichiers textuels<a class="headerlink" href="#lecture-de-fichiers-textuels" title="Permalink to this headline">¶</a></h3>
 <p>Ce que nous appelons lecture de fichiers textuels en Python consiste à copier le contenu d’un fichier dans une (ou plusieurs) chaîne(s) de caractères.
 Cela implique deux étapes en Python :</p>
 <ol class="simple">
@@ -264,8 +368,10 @@ En supposant que le nom du fichier à ouvrir soit stocké sous forme de chaîne 
 </div>
 <p>Le second argument (<code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code>) indique que le fichier doit être ouvert en mode <em>read</em>, donc en lecture.</p>
 <div class="section" id="fichiers-textuels-generiques">
-<h3>Fichiers textuels génériques<a class="headerlink" href="#fichiers-textuels-generiques" title="Permalink to this headline">¶</a></h3>
-<p>Une fois le fichier ouvert en lecture, on peut le lire ligne par ligne à l’aide de la boucle suivante :</p>
+<h4>Fichiers textuels génériques<a class="headerlink" href="#fichiers-textuels-generiques" title="Permalink to this headline">¶</a></h4>
+<p>Nous appelons ici “fichier textuel générique” un fichier dont le contenu n’a pas de structure particulière (par opposition aux fichiers CSV ou JSON présentés plus bas, par exemple).
+C’est le cas par exemple de fichiers contenant du texte libre.
+Ces fichiers, une fois ouverts en lecture, peuvent être lus ligne par ligne à l’aide de la boucle suivante :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">nom_fichier</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ligne</span><span class="p">)</span>
@@ -274,9 +380,9 @@ En supposant que le nom du fichier à ouvrir soit stocké sous forme de chaîne 
 <p>Ici, la variable <code class="docutils literal notranslate"><span class="pre">ligne</span></code>, de type chaîne de caractères, contiendra successivement le texte de chacune des lignes du fichier considéré.</p>
 </div>
 <div class="section" id="fichiers-comma-separated-values-csv">
-<h3>Fichiers <em>Comma-Separated Values</em> (CSV)<a class="headerlink" href="#fichiers-comma-separated-values-csv" title="Permalink to this headline">¶</a></h3>
+<h4>Fichiers <em>Comma-Separated Values</em> (CSV)<a class="headerlink" href="#fichiers-comma-separated-values-csv" title="Permalink to this headline">¶</a></h4>
 <p>Les fichiers <em>Comma-Separated Values</em> (CSV) permettent de stocker des données organisées sous la forme de tableaux dans des fichiers textuels.
-À l’origine, ces fichiers étaient organisées par ligne et au sein de chaque ligne les cellules du tableau (correspondant aux différentes colonnes) étaient séparées par des virgules (d’où le nom de ce type de fichiers).
+À l’origine, ces fichiers étaient organisés par ligne et au sein de chaque ligne les cellules du tableau (correspondant aux différentes colonnes) étaient séparées par des virgules (d’où le nom de ce type de fichiers).
 Aujourd’hui, la définition de ce format (<a class="reference external" href="https://tools.ietf.org/html/rfc4180">lien</a>) est plus générale que cela et différents délimiteurs sont acceptés.
 Pour manipuler ces fichiers, il existe en Python un module dédié, appelé <code class="docutils literal notranslate"><span class="pre">csv</span></code>.
 Ce module contient notamment une fonction <code class="docutils literal notranslate"><span class="pre">reader</span></code> permettant de simplifier la lecture de fichiers CSV.
@@ -333,7 +439,7 @@ Fin de ligne
 <p>On remarque ici que, contrairement au cas de fichiers textuels génériques, la variable de boucle <code class="docutils literal notranslate"><span class="pre">ligne</span></code> n’est plus une chaîne de caractères mais une liste de chaînes de caractères.
 Les éléments de cette liste sont les cellules du tableau représenté par le fichier CSV.</p>
 <div class="section" id="cas-des-fichiers-a-en-tete">
-<h4>Cas des fichiers à en-tête<a class="headerlink" href="#cas-des-fichiers-a-en-tete" title="Permalink to this headline">¶</a></h4>
+<h5>Cas des fichiers à en-tête<a class="headerlink" href="#cas-des-fichiers-a-en-tete" title="Permalink to this headline">¶</a></h5>
 <p>Souvent, les fichiers CSV comprennent une première ligne d’en-tête, comme dans l’exemple suivant :</p>
 <div class="highlight-csv notranslate"><div class="highlight"><pre><span></span>NOM;PRENOM;AGE
 Lemarchand;John;23
@@ -375,7 +481,7 @@ AGE
 </div>
 </div>
 <div class="section" id="un-peu-de-magie">
-<h4>Un peu de magie…<a class="headerlink" href="#un-peu-de-magie" title="Permalink to this headline">¶</a></h4>
+<h5>Un peu de magie…<a class="headerlink" href="#un-peu-de-magie" title="Permalink to this headline">¶</a></h5>
 <p>Dans certains cas, on ne sait pas à l’avance quel délimiteur est utilisé pour le fichier CSV à lire. On peut demander au module CSV de deviner le <em>dialecte</em><a class="footnote-reference brackets" href="#dialect" id="id1">1</a> d’un fichier en lisant le début de ce fichier.
 Dans ce cas, la lecture du fichier se fera en 4 étapes :</p>
 <ol class="simple">
@@ -439,7 +545,7 @@ Fin de ligne
 </div>
 </div>
 <div class="section" id="fichiers-javascript-object-notation-json">
-<h3>Fichiers <em>JavaScript Object Notation</em> (JSON)<a class="headerlink" href="#fichiers-javascript-object-notation-json" title="Permalink to this headline">¶</a></h3>
+<h4>Fichiers <em>JavaScript Object Notation</em> (JSON)<a class="headerlink" href="#fichiers-javascript-object-notation-json" title="Permalink to this headline">¶</a></h4>
 <p>Les fichiers <em>JavaScript Object Notation</em> (JSON) permettent de stocker des données structurées (par exemple avec une organisation hiérarchique). Un document JSON s’apparente à un dictionnaire en Python (à la nuance près que les clés d’un document JSON sont forcément des chaînes de caractères).
 Voici un exemple de document JSON :</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -523,8 +629,8 @@ Voici un exemple de document JSON :</p>
 </div>
 </div>
 <div class="section" id="ecriture-de-fichiers-textuels">
-<h2>Écriture de fichiers textuels<a class="headerlink" href="#ecriture-de-fichiers-textuels" title="Permalink to this headline">¶</a></h2>
-<p>Ce que nous apellons écriture de fichiers textuels en Python consiste à copier le contenu d’une (ou plusieurs) chaîne(s) de caractères dans un fichier.
+<h3>Écriture de fichiers textuels<a class="headerlink" href="#ecriture-de-fichiers-textuels" title="Permalink to this headline">¶</a></h3>
+<p>Ce que nous appellons écriture de fichiers textuels en Python consiste à copier le contenu d’une (ou plusieurs) chaîne(s) de caractères dans un fichier.
 Cela implique trois étapes en Python :</p>
 <ol class="simple">
 <li><p>ouvrir le fichier en écriture ;</p></li>
@@ -549,7 +655,7 @@ Si l’on souhaite au contraire ajouter du texte à la fin d’un fichier exista
 <p>Il est à noter que l’on peut, dans certains cas, se dispenser de fermer explicitement le fichier.
 Par exemple, si notre code est inclus dans un script Python, dès la fin de l’exécution du script, tous les fichiers ouverts en écriture par le script sont automatiquement fermés.</p>
 <div class="section" id="id2">
-<h3>Fichiers textuels génériques<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h4>Fichiers textuels génériques<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <p>Pour ajouter du contenu à un fichier pointé par la variable <code class="docutils literal notranslate"><span class="pre">fp</span></code>, il suffit ensuite d’utiliser la méthode <code class="docutils literal notranslate"><span class="pre">write</span></code> :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;La vie est belle</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
@@ -557,7 +663,7 @@ Par exemple, si notre code est inclus dans un script Python, dès la fin de l’
 <p>Notez que, contrairement à la fonction <code class="docutils literal notranslate"><span class="pre">print</span></code> à laquelle vous êtes habitué, la méthode <code class="docutils literal notranslate"><span class="pre">write</span></code> ne rajoute pas de caractère de fin de ligne après la chaîne de caractères passée en argument, il faut donc inclure ce caractère <code class="docutils literal notranslate"><span class="pre">&quot;\n&quot;</span></code> à la fin de la chaîne de caractères passée en argument, si vous souhaitez inclure un retour à la ligne.</p>
 </div>
 <div class="section" id="fichiers-csv">
-<h3>Fichiers CSV<a class="headerlink" href="#fichiers-csv" title="Permalink to this headline">¶</a></h3>
+<h4>Fichiers CSV<a class="headerlink" href="#fichiers-csv" title="Permalink to this headline">¶</a></h4>
 <p>Le module <code class="docutils literal notranslate"><span class="pre">csv</span></code> déjà cité plus haut contient également une fonction <code class="docutils literal notranslate"><span class="pre">writer</span></code> permettant de simplifier l’écriture de fichiers CSV.
 La syntaxe d’utilisation de cette fonction est la suivante :</p>
 <div class="cell docutils container">
@@ -582,7 +688,7 @@ La syntaxe d’utilisation de cette fonction est la suivante :</p>
 Le retour à la ligne est écrit directement par la méthode <code class="docutils literal notranslate"><span class="pre">writerow</span></code>, vous n’avez pas à vous en occuper.</p>
 </div>
 <div class="section" id="fichiers-json">
-<h3>Fichiers JSON<a class="headerlink" href="#fichiers-json" title="Permalink to this headline">¶</a></h3>
+<h4>Fichiers JSON<a class="headerlink" href="#fichiers-json" title="Permalink to this headline">¶</a></h4>
 <p>Le module <code class="docutils literal notranslate"><span class="pre">json</span></code> déjà cité plus haut contient également une fonction <code class="docutils literal notranslate"><span class="pre">dump</span></code> permettant d’écrire le contenu d’un dictionnaire (ou d’une liste de dictionnaires) dans un fichier JSON.
 La syntaxe d’utilisation de cette fonction est la suivante :</p>
 <div class="cell docutils container">
@@ -608,44 +714,6 @@ La syntaxe d’utilisation de cette fonction est la suivante :</p>
 <p>Vous pouvez vous référer à <a class="reference external" href="https://docs.python.org/fr/3/library/json.html#basic-usage">la documentation de cette fonction</a> pour maîtriser plus finement la mise en forme du contenu du fichier de sortie.</p>
 </div>
 </div>
-<div class="section" id="manipulation-de-fichiers-en-python-avec-le-module-os">
-<h2>Manipulation de fichiers en Python avec le module <code class="docutils literal notranslate"><span class="pre">os</span></code><a class="headerlink" href="#manipulation-de-fichiers-en-python-avec-le-module-os" title="Permalink to this headline">¶</a></h2>
-<p>Lorsque l’on lit ou écrit des fichiers, il est fréquent de vouloir répéter la même opération sur plusieurs fichiers, par exemple sur tous les fichiers avec l’extension <code class="docutils literal notranslate"><span class="pre">&quot;.txt&quot;</span></code> d’un répertoire donné.
-Pour ce faire, on peut utiliser en Python le module <code class="docutils literal notranslate"><span class="pre">os</span></code> qui propose un certain nombre de fonctions standard de manipulation de fichiers.
-On utilisera notamment la fonction <code class="docutils literal notranslate"><span class="pre">listdir</span></code> de ce module qui permet de lister l’ensemble des fichiers et sous-répertoires contenus dans un répertoire donné :</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-
-<span class="k">for</span> <span class="n">nom_fichier</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;donnees&quot;</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">nom_fichier</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>machin.csv
-truc.txt
-</pre></div>
-</div>
-</div>
-</div>
-<p>La fonction <code class="docutils literal notranslate"><span class="pre">listdir</span></code> peut prendre indifféremment un chemin absolu ou relatif (dans notre exemple, il s’agit d’un chemin relatif qui pointe sur le sous-répertoire <code class="docutils literal notranslate"><span class="pre">&quot;donnees&quot;</span></code> contenu dans le répertoire de travail courant du programme).</p>
-<p>Si vous exécutez le code ci-dessus et que votre répertoire <code class="docutils literal notranslate"><span class="pre">&quot;donnees&quot;</span></code> n’est pas vide, vous remarquerez que le nom du fichier stocké dans la variable <code class="docutils literal notranslate"><span class="pre">nom_fichier</span></code> ne contient pas le chemin vers ce fichier.
-Or, si l’on souhaite ensuite ouvrir ce fichier (que ce soit en lecture ou en écriture), il faudra bien spécifier ce chemin.
-Pour cela, on utilisera la syntaxe suivante :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-
-<span class="n">repertoire</span> <span class="o">=</span> <span class="s2">&quot;donnees&quot;</span>
-<span class="k">for</span> <span class="n">nom_fichier</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">repertoire</span><span class="p">):</span>
-    <span class="n">nom_complet_fichier</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">repertoire</span><span class="p">,</span> <span class="n">nom_fichier</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">nom_fichier</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">nom_complet_fichier</span><span class="p">)</span>
-    <span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">nom_complet_fichier</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
-    <span class="c1"># [...]</span>
-</pre></div>
-</div>
-<p>La fonction <code class="docutils literal notranslate"><span class="pre">path.join</span></code> du module <code class="docutils literal notranslate"><span class="pre">os</span></code> permet d’obtenir le chemin complet vers le fichier à partir du nom du répertoire dans lequel il se trouve et du nom du fichier isolé.
-Il est préférable d’utiliser cette fonction plutôt que d’effectuer la concaténation des chaînes de caractères correspondantes car la forme des chemins complets dépend du système d’exploitation utilisé, ce que gère intelligemment <code class="docutils literal notranslate"><span class="pre">path.join</span></code>.</p>
 </div>
 <div class="section" id="bonus-utilisation-de-with">
 <h2>Bonus : utilisation de <code class="docutils literal notranslate"><span class="pre">with</span></code><a class="headerlink" href="#bonus-utilisation-de-with" title="Permalink to this headline">¶</a></h2>

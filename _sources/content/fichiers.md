@@ -13,9 +13,72 @@ kernelspec:
   name: python3
 ---
 
-# Lecture et écriture de fichiers textuels
+# Interaction avec des fichiers
 
-Dans ce chapitre, nous nous intéressons à la lecture/écriture de fichiers textuels par un programme Python.
+Dans ce chapitre, nous allons présenter des outils de manipulation de fichiers en Python.
+Un fichier est une unité logique d'informations placée sur une mémoire secondaire (un disque dur, une clef USB, _etc._).
+
+Quand vous consultez une dossier à l'aide de votre gestionnaire de fichiers, ce dossier peut comprendre plusieurs fichiers.
+En accédant depuis un programme Python au contenu de fichiers de données, on va pouvoir alimenter le programme avec des données provenant d'un fichier de données indépendant du programme (et non plus seulement des données écrites en dur dans le programmes ou saisies par l'utilisateur directement).
+
+## Manipulation de fichiers en Python avec le module `os`
+
+Lorsque l'on lit ou écrit des fichiers, il est fréquent de vouloir répéter la même opération sur plusieurs fichiers, par exemple sur tous les fichiers avec l'extension `".txt"` d'un répertoire donné.
+Pour ce faire, on peut utiliser en Python le module `os` qui propose un certain nombre de fonctions standard de manipulation de fichiers.
+On utilisera notamment la fonction `listdir` de ce module qui permet de lister l'ensemble des fichiers et sous-répertoires contenus dans un répertoire donné :
+
+```{code-cell}
+import os
+
+for nom_fichier in os.listdir("donnees"):
+    print(nom_fichier)
+```
+
+La fonction `listdir` peut prendre indifféremment un chemin absolu ou relatif (dans notre exemple, il s'agit d'un chemin relatif qui pointe sur le sous-répertoire `"donnees"` contenu dans le répertoire de travail courant du programme).
+
+Si vous exécutez le code ci-dessus et que votre répertoire `"donnees"` n'est pas vide, vous remarquerez que le nom du fichier stocké dans la variable `nom_fichier` ne contient pas le chemin vers ce fichier.
+Or, si l'on souhaite ensuite ouvrir ce fichier (que ce soit en lecture ou en écriture), il faudra bien spécifier ce chemin.
+Pour cela, on utilisera la syntaxe suivante :
+
+```
+import os
+
+repertoire = "donnees"
+for nom_fichier in os.listdir(repertoire):
+    nom_complet_fichier = os.path.join(repertoire, nom_fichier)
+    print(nom_fichier)
+    print(nom_complet_fichier)
+    # Ouverture et traitement du fichier dont le nom est contenu dans
+    # nom_complet_fichier
+```
+
+La fonction `path.join` du module `os` permet d'obtenir le chemin complet vers le fichier à partir du nom du répertoire dans lequel il se trouve et du nom du fichier isolé.
+Il est préférable d'utiliser cette fonction plutôt que d'effectuer la concaténation des chaînes de caractères correspondantes car la forme des chemins complets dépend du système d'exploitation utilisé, ce que gère intelligemment `path.join`.
+
+## Lecture et écriture de fichiers textuels
+
+### Qu'est-ce qu'un fichier textuel ?
+
+Dans ce qui suit, nous traiterons uniquement de la lecture de fichiers textuels.
+Pour faire simple, nous appellerons dans ce qui suit "fichier textuel" tout fichier dont le contenu est lisible en clair en ouvrant le fichier avec un éditeur de fichiers bruts (comme Notepad++ sous windows, ou gedit sous linux).
+Pour se faire une idée, nous pouvons (sous unix) utiliser la commande `head` qui permet d'afficher le début d'un fichier :
+
+```{code-cell}
+!head entete.csv
+```
+
+Et si l'on avait cherché à lire le contenu d'un fichier non textuel, on aurait obtenu quelque chose du type :
+
+```{code-cell}
+!head /usr/bin/python
+```
+
+En effet, le fichier situé à l'adresse `/usr/bin/python` sur l'ordinateur qui a généré ce polycopié est un fichier binaire qui, s'il contient bien des morceaux qui semblent correspondre à du texte en clair, ne se résume pas à cela.
+
+Dans ce chapitre, nous ne nous intéressons donc pas à ce dernier type de fichiers mais nous nous concentrerons sur la lecture/écriture de fichiers textuels par un programme Python.
+
+### Encodage des fichiers
+
 Un premier élément qu'il est nécessaire de maîtriser pour lire ou écrire des fichiers textuels est la notion d'encodage.
 Il faut savoir qu'il existe plusieurs façons d'encoder un texte.
 Nous nous focaliserons ici sur les deux encodages que vous êtes les plus susceptibles de rencontrer (mais sachez qu'il en existe bien d'autres) :
@@ -31,7 +94,7 @@ Si vous écrivez un programme qui écrit un fichier, il faudra vous poser la que
 
 Si vous n'avez pas de contrainte extérieure pour ce qui est de l'encodage, vous utiliserez l'encodage UTF-8 par défaut.
 
-## Lecture de fichiers textuels
+### Lecture de fichiers textuels
 
 Ce que nous appelons lecture de fichiers textuels en Python consiste à copier le contenu d'un fichier dans une (ou plusieurs) chaîne(s) de caractères.
 Cela implique deux étapes en Python :
@@ -48,9 +111,11 @@ fp = open(nom_fichier, "r", encoding="utf-8")
 
 Le second argument (`"r"`) indique que le fichier doit être ouvert en mode _read_, donc en lecture.
 
-### Fichiers textuels génériques
+#### Fichiers textuels génériques
 
-Une fois le fichier ouvert en lecture, on peut le lire ligne par ligne à l'aide de la boucle suivante :
+Nous appelons ici "fichier textuel générique" un fichier dont le contenu n'a pas de structure particulière (par opposition aux fichiers CSV ou JSON présentés plus bas, par exemple).
+C'est le cas par exemple de fichiers contenant du texte libre.
+Ces fichiers, une fois ouverts en lecture, peuvent être lus ligne par ligne à l'aide de la boucle suivante :
 
 ```
 fp = open(nom_fichier, "r", encoding="utf-8")
@@ -60,10 +125,10 @@ for ligne in fp.readlines():
 
 Ici, la variable `ligne`, de type chaîne de caractères, contiendra successivement le texte de chacune des lignes du fichier considéré.
 
-### Fichiers _Comma-Separated Values_ (CSV)
+#### Fichiers _Comma-Separated Values_ (CSV)
 
 Les fichiers _Comma-Separated Values_ (CSV) permettent de stocker des données organisées sous la forme de tableaux dans des fichiers textuels.
-À l'origine, ces fichiers étaient organisées par ligne et au sein de chaque ligne les cellules du tableau (correspondant aux différentes colonnes) étaient séparées par des virgules (d'où le nom de ce type de fichiers).
+À l'origine, ces fichiers étaient organisés par ligne et au sein de chaque ligne les cellules du tableau (correspondant aux différentes colonnes) étaient séparées par des virgules (d'où le nom de ce type de fichiers).
 Aujourd'hui, la définition de ce format ([lien](https://tools.ietf.org/html/rfc4180)) est plus générale que cela et différents délimiteurs sont acceptés.
 Pour manipuler ces fichiers, il existe en Python un module dédié, appelé `csv`.
 Ce module contient notamment une fonction `reader` permettant de simplifier la lecture de fichiers CSV.
@@ -90,7 +155,7 @@ for ligne in csv.reader(fp, delimiter=";"):
 On remarque ici que, contrairement au cas de fichiers textuels génériques, la variable de boucle `ligne` n'est plus une chaîne de caractères mais une liste de chaînes de caractères.
 Les éléments de cette liste sont les cellules du tableau représenté par le fichier CSV.
 
-#### Cas des fichiers à en-tête
+##### Cas des fichiers à en-tête
 
 Souvent, les fichiers CSV comprennent une première ligne d'en-tête, comme dans l'exemple suivant :
 
@@ -119,7 +184,7 @@ for ligne in csv.DictReader(fp, delimiter=";"):
     print("--Fin de ligne--")
 ```
 
-#### Un peu de magie...
+##### Un peu de magie...
 
 Dans certains cas, on ne sait pas à l'avance quel délimiteur est utilisé pour le fichier CSV à lire. On peut demander au module CSV de deviner le _dialecte_[^dialect] d'un fichier en lisant le début de ce fichier.
 Dans ce cas, la lecture du fichier se fera en 4 étapes :
@@ -154,7 +219,7 @@ for ligne in csv.reader(fp, dialect=dialecte): # Étape 4.
 
 [^dialect]: Le _dialecte_ d'un fichier CSV définit, en fait, bien plus que le caractère de séparation des cellules, comme décrit dans [ce document](https://tools.ietf.org/html/rfc4180).
 
-### Fichiers _JavaScript Object Notation_ (JSON)
+#### Fichiers _JavaScript Object Notation_ (JSON)
 
 Les fichiers _JavaScript Object Notation_ (JSON) permettent de stocker des données structurées (par exemple avec une organisation hiérarchique). Un document JSON s'apparente à un dictionnaire en Python (à la nuance près que les clés d'un document JSON sont forcément des chaînes de caractères).
 Voici un exemple de document JSON :
@@ -226,9 +291,9 @@ d = json.loads(ch)  # loads : load (from) string
 print(d)
 ```
 
-## Écriture de fichiers textuels
+### Écriture de fichiers textuels
 
-Ce que nous apellons écriture de fichiers textuels en Python consiste à copier le contenu d'une (ou plusieurs) chaîne(s) de caractères dans un fichier.
+Ce que nous appellons écriture de fichiers textuels en Python consiste à copier le contenu d'une (ou plusieurs) chaîne(s) de caractères dans un fichier.
 Cela implique trois étapes en Python :
 
 1. ouvrir le fichier en écriture ;
@@ -260,7 +325,7 @@ fp.close()
 Il est à noter que l'on peut, dans certains cas, se dispenser de fermer explicitement le fichier.
 Par exemple, si notre code est inclus dans un script Python, dès la fin de l'exécution du script, tous les fichiers ouverts en écriture par le script sont automatiquement fermés.
 
-### Fichiers textuels génériques
+#### Fichiers textuels génériques
 
 Pour ajouter du contenu à un fichier pointé par la variable `fp`, il suffit ensuite d'utiliser la méthode `write` :
 
@@ -270,7 +335,7 @@ fp.write("La vie est belle\n")
 
 Notez que, contrairement à la fonction `print` à laquelle vous êtes habitué, la méthode `write` ne rajoute pas de caractère de fin de ligne après la chaîne de caractères passée en argument, il faut donc inclure ce caractère `"\n"` à la fin de la chaîne de caractères passée en argument, si vous souhaitez inclure un retour à la ligne.
 
-### Fichiers CSV
+#### Fichiers CSV
 
 Le module `csv` déjà cité plus haut contient également une fonction `writer` permettant de simplifier l'écriture de fichiers CSV.
 La syntaxe d'utilisation de cette fonction est la suivante :
@@ -293,7 +358,7 @@ fp.close()
 La méthode `writerow` prend donc une liste en argument et écrit dans le fichier les éléments de cette liste, séparés par le délimiteur `";"` spécifié lors de l'appel à la fonction `writer`.
 Le retour à la ligne est écrit directement par la méthode `writerow`, vous n'avez pas à vous en occuper.
 
-### Fichiers JSON
+#### Fichiers JSON
 
 Le module `json` déjà cité plus haut contient également une fonction `dump` permettant d'écrire le contenu d'un dictionnaire (ou d'une liste de dictionnaires) dans un fichier JSON.
 La syntaxe d'utilisation de cette fonction est la suivante :
@@ -316,40 +381,6 @@ fp.close()
 ```
 
 Vous pouvez vous référer à [la documentation de cette fonction](https://docs.python.org/fr/3/library/json.html#basic-usage) pour maîtriser plus finement la mise en forme du contenu du fichier de sortie.
-
-## Manipulation de fichiers en Python avec le module `os`
-
-Lorsque l'on lit ou écrit des fichiers, il est fréquent de vouloir répéter la même opération sur plusieurs fichiers, par exemple sur tous les fichiers avec l'extension `".txt"` d'un répertoire donné.
-Pour ce faire, on peut utiliser en Python le module `os` qui propose un certain nombre de fonctions standard de manipulation de fichiers.
-On utilisera notamment la fonction `listdir` de ce module qui permet de lister l'ensemble des fichiers et sous-répertoires contenus dans un répertoire donné :
-
-```{code-cell}
-import os
-
-for nom_fichier in os.listdir("donnees"):
-    print(nom_fichier)
-```
-
-La fonction `listdir` peut prendre indifféremment un chemin absolu ou relatif (dans notre exemple, il s'agit d'un chemin relatif qui pointe sur le sous-répertoire `"donnees"` contenu dans le répertoire de travail courant du programme).
-
-Si vous exécutez le code ci-dessus et que votre répertoire `"donnees"` n'est pas vide, vous remarquerez que le nom du fichier stocké dans la variable `nom_fichier` ne contient pas le chemin vers ce fichier.
-Or, si l'on souhaite ensuite ouvrir ce fichier (que ce soit en lecture ou en écriture), il faudra bien spécifier ce chemin.
-Pour cela, on utilisera la syntaxe suivante :
-
-```
-import os
-
-repertoire = "donnees"
-for nom_fichier in os.listdir(repertoire):
-    nom_complet_fichier = os.path.join(repertoire, nom_fichier)
-    print(nom_fichier)
-    print(nom_complet_fichier)
-    fp = open(nom_complet_fichier, "r", encoding="utf-8")
-    # [...]
-```
-
-La fonction `path.join` du module `os` permet d'obtenir le chemin complet vers le fichier à partir du nom du répertoire dans lequel il se trouve et du nom du fichier isolé.
-Il est préférable d'utiliser cette fonction plutôt que d'effectuer la concaténation des chaînes de caractères correspondantes car la forme des chemins complets dépend du système d'exploitation utilisé, ce que gère intelligemment `path.join`.
 
 ## Bonus : utilisation de `with`
 

@@ -162,7 +162,6 @@ s = "{prenom} a {age:.3f} ans".format(prenom=prenom_enfant, age=age_enfant)
 print(s)
 ```
 
-
 Vous trouverez une présentation plus exhaustive de ces questions dans la [documentation Python sur ce point](https://docs.python.org/fr/3.5/library/string.html#format-string-syntax).
 
 ### Pour aller plus loin : les f-strings
@@ -201,6 +200,38 @@ s = f"Ce chat a {age_chat} ans, ce qui lui fait {age_chat * 6} ans en âge équi
 print(s)
 ```
 
+En utilisant f-strings et options de formatage, on peut obtenir des sorties alignées avec un code relativement succinct comme dans les exemples suivants :
+
+```{code-cell}
+# Exemple 1 : alignement
+# Syntaxe : {variable : alignement largeur}
+# Alignement < gauche | > droite | ^ centré|
+ville = "Rennes"
+print(f"La ville de {ville:<10} est en Bretagne.")
+print(f"La ville de {ville:>10} est en Bretagne.")
+print(f"La ville de {ville:^10} est en Bretagne.")
+```
+
+```{code-cell}
+# Exemple 2 : Affichage des entiers
+# Syntaxe : {variable : largeur symbole}
+# le symbole d (digit) ou n (numeric) représente un entier
+vils = ["Rennes", "Chantepie", "Noyal-sur-Vilaine"]
+pops = [215346, 10445, 5820 ]
+for v, p in zip(vils, pops):
+    print(f"A {v:<17} : il y a {p:7n} habitants." )
+```
+
+```{code-cell}
+# Exemple 3 : Affichage des nombres ayant une partie décimale
+# Syntaxe : {variable : longtotale.longdeci f}
+# Remarque le nombre affiché est arrondi (et non tronqué)
+x, y =10/3, 25/7
+for longdeci in range(5):
+    print(f"Avec {longdeci} décimales, le 1er nombre est |{x:7.{longdeci}f}| le second est|{y:7.{longdeci}f}|")
+```
+
+
 
 
 ## Exercices
@@ -216,3 +247,26 @@ print(s)
 
 [{ref}`Corrigé <ex5.2_sol>`]
 ```
+
+````{admonition} **Exercice 5.3**
+Écrivez une fonction qui prenne en argument une liste d'entiers et l'affiche sous le format suivant :
+
+```text
+L'entier d'indice  0 est |           1|
+L'entier d'indice  1 est |          12|
+L'entier d'indice  2 est |         123|
+L'entier d'indice  3 est |        1234|
+L'entier d'indice  4 est |       12345|
+L'entier d'indice  5 est |      123456|
+L'entier d'indice  6 est |     1234567|
+L'entier d'indice  7 est |    12345678|
+L'entier d'indice  8 est |   123456789|
+L'entier d'indice  9 est |  1234567890|
+L'entier d'indice 10 est | 12345678901|
+```
+
+Cet affichage correspond à la liste
+`[1, 12, 123, 1234, 12345, 123456, 1234567, 12345678, 123456789, 1234567890, 12345678901]`
+
+[{ref}`Corrigé <ex5.3_sol>`]
+````
