@@ -6,6 +6,7 @@ logo: img/logo_ur2.svg
 latex:
   latex_documents:
     targetname: book.tex
+  latex_engine: xelatex
 
 # repository:
 #   url                       : https://github.com/rtavenar/poly_python
