@@ -6,7 +6,7 @@
   - file: content/listes
   - file: content/chaines
   - file: content/dict
-  - file: content/fichiers
+  - file: content/fichiers_latex
   - file: content/api
   - file: content/test
   - file: content/conclusion

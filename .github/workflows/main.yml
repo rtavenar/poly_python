@@ -31,7 +31,7 @@ jobs:
     - name: Install python packages
       run: |
         pip install -r requirements.txt
-    
+
     # Install the latex things to create the pdf
     - name: install latex dependencies
       run: |
@@ -40,9 +40,10 @@ jobs:
     - name: Build the html-book
       run: |
         jupyter-book build .
-        
+
     - name: Build the pdf book
       run: |
+        mv _toc_latex.yml _toc.yml
         jupyter-book build . --builder pdflatex
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
@@ -50,7 +51,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_build/html
-    
+
     # This next step moves, renames and commits the created pdf
     - name: Commit and rename pdf
       run: |
