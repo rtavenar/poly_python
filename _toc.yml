@@ -16,3 +16,4 @@
 - part: "Téléchargement"
   chapters:
   - url: https://github.com/rtavenar/poly_python/raw/master/book.pdf
+    title: "Version PDF"
