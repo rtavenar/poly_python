@@ -2,9 +2,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Toutes les solutions &#8212; Introduction à Python</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
@@ -13,9 +14,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -23,12 +25,17 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/mystnb.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Conclusion" href="conclusion.html" />
@@ -64,45 +71,78 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="intro.html">Introduction</a>
-  </li>
-  <li class="">
-    <a href="struct.html">Structures de données et structures de contrôle</a>
-  </li>
-  <li class="">
-    <a href="dates.html">Les dates</a>
-  </li>
-  <li class="">
-    <a href="listes.html">Les listes</a>
-  </li>
-  <li class="">
-    <a href="chaines.html">Les chaînes de caractères</a>
-  </li>
-  <li class="">
-    <a href="dict.html">Les dictionnaires</a>
-  </li>
-  <li class="">
-    <a href="fichiers.html">Interaction avec des fichiers</a>
-  </li>
-  <li class="">
-    <a href="api.html">Récupération de données à partir d’API web</a>
-  </li>
-  <li class="">
-    <a href="test.html">Tester son code</a>
-  </li>
-  <li class="">
-    <a href="conclusion.html">Conclusion</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Corrigé des exercices</p>
-</li>
-  <li class="active">
-    <a href="">Toutes les solutions</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Contenu du livre
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="struct.html">
+   Structures de données et structures de contrôle
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dates.html">
+   Les dates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="listes.html">
+   Les listes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chaines.html">
+   Les chaînes de caractères
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dict.html">
+   Les dictionnaires
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fichiers.html">
+   Interaction avec des fichiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="api.html">
+   Récupération de données à partir d’API web
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="test.html">
+   Tester son code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conclusion.html">
+   Conclusion
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Corrigé des exercices
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Toutes les solutions
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -125,124 +165,170 @@
     </div>
     <div class="col pl-2 topbar-main">
         
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
             <i class="fas fa-bars"></i>
             <i class="fas fa-arrow-left"></i>
             <i class="fas fa-arrow-up"></i>
         </button>
         
         <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
 
-            
-            <div class="dropdown-buttons">
-                <!-- ipynb file if we had a myst markdown file -->
-                
-                <!-- Download raw file -->
-                <a class="dropdown-buttons" href="../_sources/content/solutions.md"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
-                <!-- Download PDF via print -->
-                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-            </div>
-            
-        </div>
-
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/content/solutions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/solutions.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
         <!-- Source interaction buttons -->
-        
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/solutions.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
         
     </div>
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
 </div>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercice-2-1" class="nav-link">Exercice 2.1</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercice-2-2" class="nav-link">Exercice 2.2</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercice-2-3" class="nav-link">Exercice 2.3</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercice-2-4" class="nav-link">Exercice 2.4</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercice-3-1" class="nav-link">Exercice 3.1</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercice-3-2" class="nav-link">Exercice 3.2</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercice-4-1" class="nav-link">Exercice 4.1</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercice-4-2" class="nav-link">Exercice 4.2</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercice-4-3" class="nav-link">Exercice 4.3</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercice-5-1" class="nav-link">Exercice 5.1</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercice-5-2" class="nav-link">Exercice 5.2</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercice-5-3" class="nav-link">Exercice 5.3</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercice-6-1" class="nav-link">Exercice 6.1</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercice-6-2" class="nav-link">Exercice 6.2</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercice-7-1" class="nav-link">Exercice 7.1</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercice-7-2" class="nav-link">Exercice 7.2</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercice-8-1" class="nav-link">Exercice 8.1</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercice-9-1" class="nav-link">Exercice 9.1</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercice-9-2" class="nav-link">Exercice 9.2</a>
-        </li>
-    
-    </ul>
-</nav>
+    </div>
 
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-2-1">
+   Exercice 2.1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-2-2">
+   Exercice 2.2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-2-3">
+   Exercice 2.3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-2-4">
+   Exercice 2.4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-3-1">
+   Exercice 3.1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-3-2">
+   Exercice 3.2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-4-1">
+   Exercice 4.1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-4-2">
+   Exercice 4.2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-4-3">
+   Exercice 4.3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-5-1">
+   Exercice 5.1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-5-2">
+   Exercice 5.2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-5-3">
+   Exercice 5.3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-6-1">
+   Exercice 6.1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-6-2">
+   Exercice 6.2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-7-1">
+   Exercice 7.1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-7-2">
+   Exercice 7.2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-8-1">
+   Exercice 8.1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-9-1">
+   Exercice 9.1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-9-2">
+   Exercice 9.2
+  </a>
+ </li>
+</ul>
 
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -256,7 +342,7 @@
 <span id="ex2-1-sol"></span><h2>Exercice 2.1<a class="headerlink" href="#exercice-2-1" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
 <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
 	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l&#39;eau est sous forme solide&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
@@ -267,7 +353,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>l&#39;eau est sous forme solide
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>l&#39;eau est sous forme solide
 </pre></div>
 </div>
 </div>
@@ -280,7 +366,7 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">8</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">8</span>
 <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">):</span>
 	<span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
@@ -290,7 +376,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 3
 5
 7
@@ -303,7 +389,7 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">8</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">8</span>
 <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">):</span>
 	<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -312,7 +398,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 3
 5
 7
@@ -325,7 +411,7 @@
 <span id="ex2-3-sol"></span><h2>Exercice 2.3<a class="headerlink" href="#exercice-2-3" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
 <span class="k">def</span> <span class="nf">aire_equi</span><span class="p">(</span><span class="n">long</span><span class="p">):</span>
     <span class="n">base</span> <span class="o">=</span> <span class="n">long</span>
@@ -337,7 +423,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.4330127018922193
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4330127018922193
 </pre></div>
 </div>
 </div>
@@ -350,7 +436,7 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">affiche_u_n</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">affiche_u_n</span><span class="p">():</span>
     <span class="n">u</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="k">while</span> <span class="n">u</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
@@ -361,7 +447,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 4
 16
 256
@@ -374,7 +460,7 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">affiche_u_n</span><span class="p">(</span><span class="n">u</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">affiche_u_n</span><span class="p">(</span><span class="n">u</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">u</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
         <span class="n">affiche_u_n</span><span class="p">(</span><span class="n">u</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
@@ -384,7 +470,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 4
 16
 256
@@ -398,7 +484,7 @@
 <span id="ex3-1-sol"></span><h2>Exercice 3.1<a class="headerlink" href="#exercice-3-1" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 
 <span class="n">interv1_date1</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1920</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
 <span class="n">interv1_date2</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1920</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">53</span><span class="p">)</span>
@@ -416,7 +502,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Le second intervalle est le plus grand.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le second intervalle est le plus grand.
 </pre></div>
 </div>
 </div>
@@ -426,7 +512,7 @@
 <span id="ex3-2-sol"></span><h2>Exercice 3.2<a class="headerlink" href="#exercice-3-2" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 
 <span class="n">duree_annee_normale</span> <span class="o">=</span> <span class="mi">365</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
 
@@ -442,7 +528,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>2010 n&#39;est pas bissextile
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2010 n&#39;est pas bissextile
 2011 n&#39;est pas bissextile
 2012 est bissextile
 2013 n&#39;est pas bissextile
@@ -472,7 +558,7 @@
 <span id="ex4-1-sol"></span><h2>Exercice 4.1<a class="headerlink" href="#exercice-4-1" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">argmax</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">argmax</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
     <span class="n">i_max</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="c1"># On initialise elem_max à une valeur</span>
     <span class="c1"># qui n&#39;est clairement pas le max</span>
@@ -489,7 +575,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -499,7 +585,7 @@
 <span id="ex4-2-sol"></span><h2>Exercice 4.2<a class="headerlink" href="#exercice-4-2" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">intersection</span><span class="p">(</span><span class="n">liste1</span><span class="p">,</span> <span class="n">liste2</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">intersection</span><span class="p">(</span><span class="n">liste1</span><span class="p">,</span> <span class="n">liste2</span><span class="p">):</span>
     <span class="n">liste_intersection</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">liste1</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">liste2</span><span class="p">:</span>
@@ -511,7 +597,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[6, 2]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 2]
 </pre></div>
 </div>
 </div>
@@ -521,7 +607,7 @@
 <span id="ex4-3-sol"></span><h2>Exercice 4.3<a class="headerlink" href="#exercice-4-3" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">union_sans_doublon</span><span class="p">(</span><span class="n">liste1</span><span class="p">,</span> <span class="n">liste2</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">union_sans_doublon</span><span class="p">(</span><span class="n">liste1</span><span class="p">,</span> <span class="n">liste2</span><span class="p">):</span>
     <span class="n">liste_union</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">liste1</span> <span class="o">+</span> <span class="n">liste2</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">elem</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">liste_union</span><span class="p">:</span>
@@ -533,7 +619,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[1, 6, 2, 4, 7]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 6, 2, 4, 7]
 </pre></div>
 </div>
 </div>
@@ -543,7 +629,7 @@
 <span id="ex5-1-sol"></span><h2>Exercice 5.1<a class="headerlink" href="#exercice-5-1" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compte_prefix</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">prefix</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compte_prefix</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">prefix</span><span class="p">):</span>
     <span class="n">compteur</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">mot</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
         <span class="k">if</span> <span class="n">mot</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">prefix</span><span class="p">):</span>
@@ -555,7 +641,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -565,7 +651,7 @@
 <span id="ex5-2-sol"></span><h2>Exercice 5.2<a class="headerlink" href="#exercice-5-2" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compte_sans_casse</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">mot_cible</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compte_sans_casse</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">mot_cible</span><span class="p">):</span>
     <span class="n">compteur</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">mot_cible_minuscules</span> <span class="o">=</span> <span class="n">mot_cible</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">mot</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
@@ -581,7 +667,7 @@
 <span id="ex5-3-sol"></span><h2>Exercice 5.3<a class="headerlink" href="#exercice-5-3" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">affiche_liste</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">affiche_liste</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">elt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">listent</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;L&#39;entier d&#39;indice </span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">2n</span><span class="si">}</span><span class="s2"> est |</span><span class="si">{</span><span class="n">elt</span><span class="si">:</span><span class="s2">12n</span><span class="si">}</span><span class="s2">|&quot;</span><span class="p">)</span>
 
@@ -591,7 +677,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>L&#39;entier d&#39;indice  0 est |           1|
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L&#39;entier d&#39;indice  0 est |           1|
 L&#39;entier d&#39;indice  1 est |          12|
 L&#39;entier d&#39;indice  2 est |         123|
 L&#39;entier d&#39;indice  3 est |        1234|
@@ -611,7 +697,7 @@ L&#39;entier d&#39;indice 10 est | 12345678901|
 <span id="ex6-1-sol"></span><h2>Exercice 6.1<a class="headerlink" href="#exercice-6-1" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compte_occurrences</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compte_occurrences</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">mot</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
         <span class="n">d</span><span class="p">[</span><span class="n">mot</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">mot</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
@@ -622,7 +708,7 @@ L&#39;entier d&#39;indice 10 est | 12345678901|
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;la&#39;: 2, &#39;vie&#39;: 2, &#39;est&#39;: 1, &#39;belle&#39;: 1, &quot;c&#39;est&quot;: 1}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;la&#39;: 2, &#39;vie&#39;: 2, &#39;est&#39;: 1, &#39;belle&#39;: 1, &quot;c&#39;est&quot;: 1}
 </pre></div>
 </div>
 </div>
@@ -632,7 +718,7 @@ L&#39;entier d&#39;indice 10 est | 12345678901|
 <span id="ex6-2-sol"></span><h2>Exercice 6.2<a class="headerlink" href="#exercice-6-2" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">somme_valeurs</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">somme_valeurs</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
         <span class="n">s</span> <span class="o">+=</span> <span class="n">v</span>
@@ -643,7 +729,7 @@ L&#39;entier d&#39;indice 10 est | 12345678901|
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>13.5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.5
 </pre></div>
 </div>
 </div>
@@ -693,7 +779,7 @@ L&#39;entier d&#39;indice 10 est | 12345678901|
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="k">def</span> <span class="nf">affiche_api</span><span class="p">(</span><span class="n">liste_userId</span><span class="p">):</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://my-json-server.typicode.com/rtavenar/fake_api/tasks&quot;</span>
@@ -708,7 +794,7 @@ L&#39;entier d&#39;indice 10 est | 12345678901|
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;userId&#39;: 1, &#39;id&#39;: 4, &#39;title&#39;: &#39;et porro tempora&#39;, &#39;completed&#39;: True}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;userId&#39;: 1, &#39;id&#39;: 4, &#39;title&#39;: &#39;et porro tempora&#39;, &#39;completed&#39;: True}
 {&#39;userId&#39;: 1, &#39;id&#39;: 8, &#39;title&#39;: &#39;quo adipisci enim quam ut ab&#39;, &#39;completed&#39;: True}
 {&#39;userId&#39;: 3, &#39;id&#39;: 44, &#39;title&#39;: &#39;cum debitis quis accusamus doloremque ipsa natus sapiente omnis&#39;, &#39;completed&#39;: True}
 </pre></div>
@@ -720,7 +806,7 @@ L&#39;entier d&#39;indice 10 est | 12345678901|
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="k">def</span> <span class="nf">affiche_api</span><span class="p">(</span><span class="n">liste_userId</span><span class="p">):</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://my-json-server.typicode.com/rtavenar/fake_api/tasks&quot;</span>
@@ -735,7 +821,7 @@ L&#39;entier d&#39;indice 10 est | 12345678901|
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;userId&#39;: 1, &#39;id&#39;: 4, &#39;title&#39;: &#39;et porro tempora&#39;, &#39;completed&#39;: True}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;userId&#39;: 1, &#39;id&#39;: 4, &#39;title&#39;: &#39;et porro tempora&#39;, &#39;completed&#39;: True}
 {&#39;userId&#39;: 1, &#39;id&#39;: 8, &#39;title&#39;: &#39;quo adipisci enim quam ut ab&#39;, &#39;completed&#39;: True}
 {&#39;userId&#39;: 3, &#39;id&#39;: 44, &#39;title&#39;: &#39;cum debitis quis accusamus doloremque ipsa natus sapiente omnis&#39;, &#39;completed&#39;: True}
 </pre></div>
@@ -747,7 +833,7 @@ L&#39;entier d&#39;indice 10 est | 12345678901|
 <span id="ex9-1-sol"></span><h2>Exercice 9.1<a class="headerlink" href="#exercice-9-1" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bissextile</span><span class="p">(</span><span class="n">annee</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bissextile</span><span class="p">(</span><span class="n">annee</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">annee</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">annee</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">elif</span> <span class="n">annee</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -794,8 +880,10 @@ L&#39;entier d&#39;indice 10 est | 12345678901|
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>True
-False
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 True
 False
 31
@@ -814,7 +902,7 @@ False
 <span id="ex9-2-sol"></span><h2>Exercice 9.2<a class="headerlink" href="#exercice-9-2" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bissextile</span><span class="p">(</span><span class="n">annee</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bissextile</span><span class="p">(</span><span class="n">annee</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">annee</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">annee</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">annee</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">bissextile</span><span class="p">(</span><span class="mi">2004</span><span class="p">))</span>  <span class="c1"># True car divisible par 4 et non par 100</span>
@@ -825,7 +913,7 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 False
 True
 False
@@ -836,6 +924,25 @@ False
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

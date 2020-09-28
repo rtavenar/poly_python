@@ -38,8 +38,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Récupération de données à partir d’API web" href="api.html" />
-    <link rel="prev" title="Les dictionnaires" href="dict.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -84,7 +82,7 @@
   Contenu du livre
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="struct.html">
    Structures de données et structures de contrôle
@@ -110,8 +108,8 @@
    Les dictionnaires
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="fichiers.html">
    Interaction avec des fichiers
   </a>
  </li>
@@ -183,11 +181,11 @@
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         <a class="dropdown-buttons"
-            href="../_sources/content/fichiers.ipynb"><button type="button"
+            href="../_sources/content/fichiers_latex.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/content/fichiers.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/content/fichiers_latex.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -211,7 +209,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/fichiers.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/fichiers_latex.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -414,28 +412,7 @@ Trias;Anne;
 </div>
 </div>
 </div>
-<p>Et si l’on avait cherché à lire le contenu d’un fichier non textuel, on aurait obtenu quelque chose du type :</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head /usr/bin/python
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<pre class="output stream literal-block">ELF&gt;п&#64;h�7&#64;8	&#64;&#64;&#64;&#64;��888�c0�c0�r0�rP�rP�tЯ	p�0p�Pp�P&#64;&#64;TTTDDP�td��+��+��+4�4�Q�tdR�td�r0�rP�rPPP/lib64/ld-linux-x86-64.so.2GNUGNU+�?�:�ȵ��푕0=`^��E�G�B�YdI��(&lt;�4�3 )_���*���2a����9؎
-A�&#64;����zB�D��&amp;*�Qa7�QG�&#64;�(&quot; ��a1�&#64;8$ĸ�0����!D�&#64;�R
-��P`�d0�F,�b9&lt;��LFp�DON.��(�&quot;�  &amp;`�HhS�G�(&#64;a`�� F��ɠJ���iD&lt;�8�`P��p�(��µ��&#64;[w&#64;&#64;H$�M	���Ӷ�H�q�&#64;
-Q��DTH��&#64;4&#64;���([&#64; �B-#P�� ��8��ЅB�&#64;� B	1ЀVP�Z&lt;� �����H�����X�A���KbP&#64;�P�&#64;0�6�	B&#64;�
-�0B(!��HH&#64;���%D$Da#z��0(��`&quot;&#64;9H�2
-�w	A d&#64;�4ɳ0��[�9�xA�P 	Bh���0���p��CA�UMd�(T��BAu�B��0a!|��b&#64;�H���!$�`�q	P��&#64;p�i`��$!Q��0�%RF��?��+��F��h`$Ȟ&quot;CdkD`C &quot;hT&#64;�a�q &#64;��Hq$Q��&#64;��&quot;x���*�4���B����&#64;�����pA �H&#64;)B�	��$��$$��&quot; &#64;a�`&#64;�&amp;J13���5DN(:�&quot;P���[�����&#64;�&quot;�� �Gh$�����B�$ �D���� �(���m�h�&#64;HD	�!4s�&#64;�h$�&#64;&#64;�1E&#64;A�$��M�Az�C�P�&#64;!&#64;�&#64;A� ��V�!2qH��!\�&#64; #��&quot;�%H�&quot;������D!ِ��$�&#64;
-1,�V:&quot;�ш���9 ��JX$�ȃ�P#$�b��mEGHIKNPQRSUVXY\]^_`abcefghiklstuvwyz|}~�����������������������������������������������������������������������	
-!#$&amp;),12457:;&lt;?BCDHJNQRTUWYZ[\^_`acefgikmnoprswyz{|}~��������������������������������������������������������������������������	
-!&quot;$')*-./35678&lt;=?ABCEFHIKMNOPSVYZ[]aeghijklpsvxz{|����������������������������������������������������������������������������	
-#$%')*+,.024579:;&#64;ABFHJMORSTUWXZ\_bdefghjknopruvwxy|������������������������������������������������������������������������
-</pre>
-</div>
-</div>
-<p>En effet, le fichier situé à l’adresse <code class="docutils literal notranslate"><span class="pre">/usr/bin/python</span></code> sur l’ordinateur qui a généré ce polycopié est un fichier binaire qui, s’il contient bien des morceaux qui semblent correspondre à du texte en clair, ne se résume pas à cela.</p>
+<p>Et si l’on avait cherché à lire le contenu d’un fichier non textuel, on aurait obtenu des caractères spéciaux ne pouvant être interprétés comme du texte.</p>
 <p>Dans ce chapitre, nous ne nous intéressons donc pas à ce dernier type de fichiers mais nous nous concentrerons sur la lecture/écriture de fichiers textuels par un programme Python.</p>
 </div>
 <div class="section" id="encodage-des-fichiers">
@@ -898,8 +875,6 @@ Vous pourrez vous aider pour cela de la documentation du sous-module <code class
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="dict.html" title="previous page">Les dictionnaires</a>
-    <a class='right-next' id="next-link" href="api.html" title="next page">Récupération de données à partir d’API web</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

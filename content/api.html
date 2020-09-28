@@ -2,9 +2,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Récupération de données à partir d’API web &#8212; Introduction à Python</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
@@ -13,9 +14,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -23,12 +25,17 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/mystnb.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Tester son code" href="test.html" />
@@ -65,45 +72,78 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="intro.html">Introduction</a>
-  </li>
-  <li class="">
-    <a href="struct.html">Structures de données et structures de contrôle</a>
-  </li>
-  <li class="">
-    <a href="dates.html">Les dates</a>
-  </li>
-  <li class="">
-    <a href="listes.html">Les listes</a>
-  </li>
-  <li class="">
-    <a href="chaines.html">Les chaînes de caractères</a>
-  </li>
-  <li class="">
-    <a href="dict.html">Les dictionnaires</a>
-  </li>
-  <li class="">
-    <a href="fichiers.html">Interaction avec des fichiers</a>
-  </li>
-  <li class="active">
-    <a href="">Récupération de données à partir d’API web</a>
-  </li>
-  <li class="">
-    <a href="test.html">Tester son code</a>
-  </li>
-  <li class="">
-    <a href="conclusion.html">Conclusion</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Corrigé des exercices</p>
-</li>
-  <li class="">
-    <a href="solutions.html">Toutes les solutions</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Contenu du livre
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="struct.html">
+   Structures de données et structures de contrôle
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dates.html">
+   Les dates
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="listes.html">
+   Les listes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chaines.html">
+   Les chaînes de caractères
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dict.html">
+   Les dictionnaires
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fichiers.html">
+   Interaction avec des fichiers
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Récupération de données à partir d’API web
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="test.html">
+   Tester son code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conclusion.html">
+   Conclusion
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Corrigé des exercices
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="solutions.html">
+   Toutes les solutions
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -126,66 +166,102 @@
     </div>
     <div class="col pl-2 topbar-main">
         
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
             <i class="fas fa-bars"></i>
             <i class="fas fa-arrow-left"></i>
             <i class="fas fa-arrow-up"></i>
         </button>
         
         <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
 
-            
-            <div class="dropdown-buttons">
-                <!-- ipynb file if we had a myst markdown file -->
-                
-                <!-- Download raw file -->
-                <a class="dropdown-buttons" href="../_sources/content/api.md"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
-                <!-- Download PDF via print -->
-                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-            </div>
-            
-        </div>
-
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/content/api.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/api.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
         <!-- Source interaction buttons -->
-        
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/api.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
         
     </div>
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
 </div>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#requetes-http-en-python" class="nav-link">Requêtes HTTP en Python</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#format-d-une-requete-http" class="nav-link">Format d’une requête HTTP</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#utilisation-du-module-requests" class="nav-link">Utilisation du module requests</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#exercice" class="nav-link">Exercice</a>
-        </li>
-    
-    </ul>
-</nav>
+    </div>
 
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#requetes-http-en-python">
+   Requêtes HTTP en Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#format-d-une-requete-http">
+     Format d’une requête HTTP
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#utilisation-du-module-requests">
+     Utilisation du module
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       requests
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice">
+   Exercice
+  </a>
+ </li>
+</ul>
 
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -293,7 +369,7 @@ Pour cela, on utilise le module <code class="docutils literal notranslate"><span
 Ce module contient notamment une fonction <code class="docutils literal notranslate"><span class="pre">get</span></code> qui permet d’effectuer des requêtes HTTP de type GET (je vous laisse deviner le nom de la fonction qui permet d’effectuer des requêtes HTTP POST :) :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://my-json-server.typicode.com/rtavenar/fake_api/tasks&quot;</span>
 
@@ -303,7 +379,7 @@ Ce module contient notamment une fonction <code class="docutils literal notransl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
 </pre></div>
 </div>
 </div>
@@ -332,38 +408,38 @@ Ce module contient notamment une fonction <code class="docutils literal notransl
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">contenu_txt</span> <span class="o">=</span> <span class="n">reponse</span><span class="o">.</span><span class="n">text</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contenu_txt</span> <span class="o">=</span> <span class="n">reponse</span><span class="o">.</span><span class="n">text</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">contenu_txt</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">contenu</span> <span class="o">=</span> <span class="n">reponse</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contenu</span> <span class="o">=</span> <span class="n">reponse</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">contenu</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;list&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;list&#39;&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">contenu</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">contenu</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[{&#39;userId&#39;: 1, &#39;id&#39;: 1, &#39;title&#39;: &#39;delectus aut autem&#39;, &#39;completed&#39;: False}, {&#39;userId&#39;: 1, &#39;id&#39;: 2, &#39;title&#39;: &#39;quis ut nam facilis et officia qui&#39;, &#39;completed&#39;: False}, {&#39;userId&#39;: 1, &#39;id&#39;: 3, &#39;title&#39;: &#39;fugiat veniam minus&#39;, &#39;completed&#39;: False}, {&#39;userId&#39;: 1, &#39;id&#39;: 4, &#39;title&#39;: &#39;et porro tempora&#39;, &#39;completed&#39;: True}, {&#39;userId&#39;: 1, &#39;id&#39;: 8, &#39;title&#39;: &#39;quo adipisci enim quam ut ab&#39;, &#39;completed&#39;: True}, {&#39;userId&#39;: 3, &#39;id&#39;: 44, &#39;title&#39;: &#39;cum debitis quis accusamus doloremque ipsa natus sapiente omnis&#39;, &#39;completed&#39;: True}, {&#39;userId&#39;: 3, &#39;id&#39;: 45, &#39;title&#39;: &#39;velit soluta adipisci molestias reiciendis harum&#39;, &#39;completed&#39;: False}, {&#39;userId&#39;: 3, &#39;id&#39;: 46, &#39;title&#39;: &#39;vel voluptatem repellat nihil placeat corporis&#39;, &#39;completed&#39;: False}]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;userId&#39;: 1, &#39;id&#39;: 1, &#39;title&#39;: &#39;delectus aut autem&#39;, &#39;completed&#39;: False}, {&#39;userId&#39;: 1, &#39;id&#39;: 2, &#39;title&#39;: &#39;quis ut nam facilis et officia qui&#39;, &#39;completed&#39;: False}, {&#39;userId&#39;: 1, &#39;id&#39;: 3, &#39;title&#39;: &#39;fugiat veniam minus&#39;, &#39;completed&#39;: False}, {&#39;userId&#39;: 1, &#39;id&#39;: 4, &#39;title&#39;: &#39;et porro tempora&#39;, &#39;completed&#39;: True}, {&#39;userId&#39;: 1, &#39;id&#39;: 8, &#39;title&#39;: &#39;quo adipisci enim quam ut ab&#39;, &#39;completed&#39;: True}, {&#39;userId&#39;: 3, &#39;id&#39;: 44, &#39;title&#39;: &#39;cum debitis quis accusamus doloremque ipsa natus sapiente omnis&#39;, &#39;completed&#39;: True}, {&#39;userId&#39;: 3, &#39;id&#39;: 45, &#39;title&#39;: &#39;velit soluta adipisci molestias reiciendis harum&#39;, &#39;completed&#39;: False}, {&#39;userId&#39;: 3, &#39;id&#39;: 46, &#39;title&#39;: &#39;vel voluptatem repellat nihil placeat corporis&#39;, &#39;completed&#39;: False}]
 </pre></div>
 </div>
 </div>
@@ -372,7 +448,7 @@ Ce module contient notamment une fonction <code class="docutils literal notransl
 <p>De plus, si l’on souhaite passer des paramètres à la requête HTTP (ce qui se trouvait après le symbole <code class="docutils literal notranslate"><span class="pre">?</span></code> dans les URL ci-dessus), il est possible de le faire lors de l’appel à <code class="docutils literal notranslate"><span class="pre">requests.get</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://my-json-server.typicode.com/rtavenar/fake_api/tasks&quot;</span>
 
@@ -383,7 +459,7 @@ Ce module contient notamment une fonction <code class="docutils literal notransl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[{&#39;userId&#39;: 3, &#39;id&#39;: 44, &#39;title&#39;: &#39;cum debitis quis accusamus doloremque ipsa natus sapiente omnis&#39;, &#39;completed&#39;: True}, {&#39;userId&#39;: 3, &#39;id&#39;: 45, &#39;title&#39;: &#39;velit soluta adipisci molestias reiciendis harum&#39;, &#39;completed&#39;: False}, {&#39;userId&#39;: 3, &#39;id&#39;: 46, &#39;title&#39;: &#39;vel voluptatem repellat nihil placeat corporis&#39;, &#39;completed&#39;: False}]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;userId&#39;: 3, &#39;id&#39;: 44, &#39;title&#39;: &#39;cum debitis quis accusamus doloremque ipsa natus sapiente omnis&#39;, &#39;completed&#39;: True}, {&#39;userId&#39;: 3, &#39;id&#39;: 45, &#39;title&#39;: &#39;velit soluta adipisci molestias reiciendis harum&#39;, &#39;completed&#39;: False}, {&#39;userId&#39;: 3, &#39;id&#39;: 46, &#39;title&#39;: &#39;vel voluptatem repellat nihil placeat corporis&#39;, &#39;completed&#39;: False}]
 </pre></div>
 </div>
 </div>
@@ -409,6 +485,25 @@ C’est par exemple le cas des modules <a class="reference external" href="http:
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
