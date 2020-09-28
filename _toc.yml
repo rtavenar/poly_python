@@ -13,3 +13,6 @@
 - part: "Corrigé des exercices"
   chapters:
   - file: content/solutions
+- part: "Téléchargement"
+  chapters:
+  - url: https://github.com/rtavenar/poly_python/raw/master/book.pdf
