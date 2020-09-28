@@ -35,7 +35,7 @@ jobs:
     # Install the latex things to create the pdf
     - name: install latex dependencies
       run: |
-        sudo apt-get install texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk
+        sudo apt-get install texlive-latex-recommended texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra texlive-xetex latexmk 
     # Build the html version of the book
     - name: Build the html-book
       run: |
@@ -43,8 +43,7 @@ jobs:
 
     - name: Build the pdf book
       run: |
-        mv _toc_latex.yml _toc.yml
-        jupyter-book build . --builder pdflatex
+        jupyter-book build . --builder pdflatex --toc _toc_latex.yml
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.6.1
