@@ -154,7 +154,12 @@ Voici deux exemples d'utilisation de cette fonction :
 
 ```{code-cell}
 d1 = datetime.datetime.strptime("2020/8/27, 17:23", "%Y/%m/%d, %H:%M")
+print(d1)
+```
+
+```{code-cell}
 d2 = datetime.datetime.strptime("27-08-2020", "%d-%m-%Y")
+print(d2)
 ```
 
 ## Attributs des objets `datetime`
@@ -200,6 +205,13 @@ d1 = datetime.datetime(2020, 8, 27, 17, 23)
 d2 = datetime.datetime(2020, 8, 27, 17, 28)
 intervalle_de_temps = d1 - d2
 print(type(intervalle_de_temps))
+```
+
+Une autre façon de créer une durée au format `timedelta` est d'utiliser la fonction du même nom :
+
+```{code-cell}
+duree = datetime.timedelta(weeks=0, days=10, hours=3, minutes=10, seconds=23)
+print(duree)
 ```
 
 Très souvent, il est utile pour manipuler une durée de la convertir en un nombre de secondes et de manipuler ce nombre ensuite.

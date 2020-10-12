@@ -174,7 +174,7 @@ On va donc utiliser la fonction `range` pour cela :
 liste = [1, 5, 7]
 n = len(liste)  # n = 3 ici
 for i in range(n):
-    print(i)
+    print(i, liste[i])
 ```
 
 ### Parcours par éléments et indices
@@ -213,7 +213,7 @@ Pour insérer un nouvel élément dans une liste, on peut :
 * insérer un élément à l'indice `i` de la liste à l'aide de la méthode `insert`.
 
 Comme vous pouvez le remarquer, il est ici question de méthodes et non plus de fonctions.
-Pour l'instant, sachez que les méthodes sont des fonctions spécifiques à certains objets, comme les listes par exemples.
+Pour l'instant, sachez que les méthodes sont des fonctions spécifiques à certains objets, comme les listes par exemple.
 L'appel de ces méthodes est un peu particulier, comme vous pouvez le remarquer dans ce qui suit :
 
 ```{code-cell}
@@ -316,7 +316,7 @@ Il est à noter que l'on peut trier une liste dès lors que celle-ci contient de
 On peut donc par exemple trier des listes de chaînes de caractères :
 
 ```{code-cell}
-liste = ["a", "c", "zzz"]
+liste = ["a", "zzz", "c"]
 print(sorted(liste))
 ```
 
@@ -354,7 +354,7 @@ print(a, b)
 ```
 
 Cela ne se passe pas de la même façon pour les listes.
-En effet, si `l` est une liste, lorsque l'on écrit :
+En effet, si `liste` est une liste, lorsque l'on écrit :
 
 ```{code-cell}
 liste2 = liste

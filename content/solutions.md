@@ -159,7 +159,7 @@ print(argmax([1, 6, 2, 4]))
 def intersection(liste1, liste2):
     liste_intersection = []
     for elem in liste1:
-        if elem in liste2:
+        if elem in liste2 and not elem in liste_intersection:
             liste_intersection.append(elem)
     return liste_intersection
 
