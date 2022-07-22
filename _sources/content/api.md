@@ -177,6 +177,40 @@ C'est par exemple le cas des modules [`tweepy`](http://docs.tweepy.org/en/latest
 
 ```{admonition} **Exercice 8.1**
 Écrivez une fonction qui prenne en entrée une liste de `userId` et affiche l'ensemble des entrées de l'API <http://my-json-server.typicode.com/rtavenar/fake_api/tasks> pour lesquelles l'attribut `completed` vaut `True`.
-
-[{ref}`Corrigé <ex8.1_sol>`]
 ```
+
+````{admonition} Solution
+:class: tip, dropdown
+
+* Solution 1
+
+```python
+import requests
+
+def affiche_api(liste_userId):
+    url = "http://my-json-server.typicode.com/rtavenar/fake_api/tasks"
+    contenu = requests.get(url)
+    list_taches = contenu.json()
+    for tache in list_taches:
+        if tache["completed"] and tache["userId"] in liste_userId:
+            print(tache)
+
+affiche_api([1, 3])
+```
+
+* Solution 2 : en utilisant les paramètres d'URL
+
+```python
+import requests
+
+def affiche_api(liste_userId):
+    url = "http://my-json-server.typicode.com/rtavenar/fake_api/tasks"
+    contenu = requests.get(url, params="completed=true")
+    list_taches = contenu.json()
+    for tache in list_taches:
+        if tache["userId"] in liste_userId:
+            print(tache)
+
+affiche_api([1, 3])
+```
+````

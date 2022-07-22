@@ -159,7 +159,7 @@ Les éléments de cette liste sont les cellules du tableau représenté par le f
 
 Souvent, les fichiers CSV comprennent une première ligne d'en-tête, comme dans l'exemple suivant :
 
-```csv
+```
 NOM;PRENOM;AGE
 Lemarchand;John;23
 Trias;Anne;
@@ -407,15 +407,52 @@ et le fichier sera tout de même fermé correctement dès que l'on sortira du bl
 
 ## Exercices
 
-```{admonition} **Exercice 7.1**
+```{admonition} Exercice 7.1
 Écrivez une fonction qui affiche, pour chaque fichier d'extension `".txt"` d'un répertoire passé en argument, le nom du fichier ainsi que son nombre de lignes.
-
-[{ref}`Corrigé <ex7.1_sol>`]
 ```
 
-```{admonition} **Exercice 7.2**
+````{admonition} Solution
+:class: tip, dropdown
+
+```python
+import os
+
+def nb_lignes(nom_fichier):
+    n = 0
+    fp = open(nom_fichier, "r")
+    for ligne in fp.readlines():
+        n += 1
+    return n
+
+def nb_lignes_repertoire(repertoire):
+    for nom_fichier in os.listdir(repertoire):
+        if nom_fichier.endswith(".txt"):
+            nom_complet_fichier = os.path.join(repertoire, nom_fichier)
+            n = nb_lignes(nom_complet_fichier)
+            print(nom_complet_fichier, n)
+
+nb_lignes_repertoire(".")
+```
+````
+
+```{admonition} Exercice 7.2
 Écrivez une fonction qui retourne le nombre de fichiers présents dans un répertoire dont le nom est passé en argument.
 Vous pourrez vous aider pour cela de la documentation du sous-module `path` du module `os` ([lien](https://docs.python.org/3.5/library/os.path.html)).
-
-[{ref}`Corrigé <ex7.2_sol>`]
 ```
+
+````{admonition} Solution
+:class: tip, dropdown
+
+```python
+import os
+
+def compte_fichiers(repertoire):
+    compteur = 0
+    for f in os.listdir(repertoire):
+        if os.path.isfile(os.path.join(repertoire, f)):
+            compteur += 1
+    return compteur
+
+print(compte_fichiers("."))
+```
+````

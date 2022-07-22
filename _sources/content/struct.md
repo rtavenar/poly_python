@@ -266,6 +266,36 @@ Pour utiliser ces structures conditionnelles, il est important de maîtriser les
 
 Il est notamment important de remarquer que, lorsque l'on souhaite tester l'égalité entre deux valeurs, l'opérateur à utiliser est `==` et non `=` (qui sert à affecter une valeur à une variable).
 
+(ex2.1)=
+#### Exercice
+
+```{admonition} Exercice 2.1 : Température de l'eau
+Écrivez une expression conditionnelle, qui à partir d'une température d'eau stockée dans une variable `t` affiche dans le terminal si l'eau à cette température est à l'état liquide, solide ou gazeux.
+```
+
+<div id="pad_2.1" class="pad"></div>
+<script>
+    Pythonpad('pad_2.1', 
+              {'id': '2.1', 
+               'title': 'Testez votre solution ici', 
+               'src': 't = -3\n# Complétez ce code'})
+</script>
+
+
+````{admonition} Solution
+:class: tip, dropdown
+
+```python
+t = -5
+if t <= 0:
+	print("l'eau est sous forme solide")
+elif t < 100:
+	print("l'eau est sous forme liquide")
+else :
+	print("l'eau est sous forme gazeuse")
+```
+````
+
 ### Boucles
 
 Il existe, en Python comme dans une grande majorité des langages de programmation, deux types de boucles :
@@ -338,6 +368,46 @@ De manière générale, dès lors que l'on souhaite parcourir les éléments d'u
 De même, si l'on connait à l'avance le nombre d'itérations que l'on souhaite effectuer, on utilisera une boucle `for` (couplée avec un appel à la fonction `range`).
 Comme son nom l'indique, la boucle `while` sera utilisée dès lors que l'on souhaite répéter une action **tant qu'** une condition est vérifiée.
 ```
+
+(ex2.2)=
+#### Exercice
+
+```{admonition} Exercice 2.2 : Nombres impairs
+Écrivez une boucle permettant d'afficher tous les nombres impairs inférieurs à une valeur `n` initialement fixée.
+```
+
+<div id="pad_2.2" class="pad"></div>
+<script>
+    Pythonpad('pad_2.2', 
+              {'id': '2.2', 
+               'title': 'Testez votre solution ici', 
+               'src': 'n = 20\n# Complétez ce code'})
+</script>
+
+````{admonition} Solution
+:class: tip, dropdown
+
+* Version avec utilisation du modulo
+
+```python
+n = 8
+i = 0
+while(i < n):
+    if i % 2 != 0:
+        print(i)
+    i+=1
+```
+
+* Version sans utilisation du modulo
+
+```python
+n = 8
+i = 1
+while(i < n):
+    print(i)
+    i += 2
+```
+````
 
 ### Fonctions
 
@@ -463,6 +533,83 @@ def f(x, y=0, z):
     return x - 2 * y + z
 ```
 
+(ex2.3)=
+### Exercices 
+
+```{admonition} Exercice 2.3 : Triangle équilatéral
+Écrivez une fonction en Python qui prenne en argument une longueur `long` et retourne l'aire du triangle équilatéral de côté `long`.
+```
+
+<div id="pad_2.3" class="pad"></div>
+<script>
+    Pythonpad('pad_2.3', 
+              {'id': '2.3', 
+               'title': 'Testez votre solution ici', 
+               'src': '# Complétez ce code'})
+</script>
+
+````{admonition} Solution
+:class: tip, dropdown
+
+```python
+import math
+
+def aire_equi(long):
+    base = long
+    hauteur = long * math.sin(math.pi / 3)
+    return base * hauteur / 2
+
+print(aire_equi(1.))
+```
+````
+
+```{admonition} Exercice 2.4 : Suite récurrente
+:name: ex2.4
+Écrivez une fonction en Python qui affiche tous les termes plus petits que 1000 de la suite $(u_n)$ définie comme :
+
+$$
+\begin{array}{rcc}u_0 & = & 2 \\
+\forall n \geq 1, \, u_n & = & u_{n-1}^2\end{array}
+$$
+```
+
+<div id="pad_2.4" class="pad"></div>
+<script>
+    Pythonpad('pad_2.4', 
+              {'id': '2.4', 
+               'title': 'Testez votre solution ici', 
+               'src': '# Complétez ce code'})
+</script>
+
+````{admonition} Solution
+:class: tip, dropdown
+
+* Version itérative (avec une boucle)
+
+```python
+def affiche_u_n():
+    u = 2
+    while u < 1000:
+        print(u)
+        u = u ** 2
+
+affiche_u_n()
+```
+
+* Version récursive (avec des appels de fonction)
+
+```python
+def affiche_u_n(u=2):
+    if u < 1000:
+        print(u)
+        affiche_u_n(u ** 2)
+
+affiche_u_n()
+```
+
+Ici, on a fixé une valeur par défaut à l'argument `u` correspondant à l'initialisation de la suite, pour que l'appel initial se fasse comme pour la version itérative de la fonction (`affiche_u_n()`).
+````
+
 ## Les modules en Python
 
 Jusqu'à présent, nous avons utilisé des fonctions (comme `print`) issues de la librairie standard de Python.
@@ -494,33 +641,9 @@ print(math.sqrt(2))
 Vous remarquerez ici que l'instruction d'import du module se trouve nécessairement avant les instructions faisant référence aux fonctions et variables de ce module, faute de quoi ces dernières ne seraient pas définies.
 De manière générale, vous prendrez la bonne habitude d'écrire les instructions d'import en tout début de vos fichiers Python, pour éviter tout souci.
 
-## Exercices
+## Liste des exercices de ce chapitre
 
-```{admonition} **Exercice 2.1**
-Écrivez une expression conditionnelle, qui à partir d'une température d'eau stockée dans une variable `t` affiche dans le terminal si l'eau à cette température est à l'état liquide, solide ou gazeux.
-
-[{ref}`Corrigé <ex2.1_sol>`]
-```
-
-```{admonition} **Exercice 2.2**
-Écrivez une boucle permettant d'afficher tous les chiffres impairs inférieurs à une valeur `n` initialement fixée.
-
-[{ref}`Corrigé <ex2.2_sol>`]
-```
-
-```{admonition} **Exercice 2.3**
-Écrivez une fonction en Python qui prenne en argument une longueur `long` et retourne l'aire du triangle équilatéral de côté `long`.
-
-[{ref}`Corrigé <ex2.3_sol>`]
-```
-
-```{admonition} **Exercice 2.4**
-Écrivez une fonction en Python qui affiche tous les termes plus petits que 1000 de la suite $(u_n)$ définie comme :
-
-$$
-\begin{array}{rcc}u_0 & = & 2 \\
-\forall n \geq 1, \, u_n & = & u_{n-1}^2\end{array}
-$$
-
-[{ref}`Corrigé <ex2.4_sol>`]
-```
+1. [Température de l'eau](ex2.1)
+2. [Nombres impairs](ex2.2)
+3. [Triangle équilatéral](ex2.3)
+4. [Suite récurrente](ex2.4)

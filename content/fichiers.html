@@ -1,90 +1,127 @@
 
-
 <!DOCTYPE html>
 
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Interaction avec des fichiers &#8212; Introduction à Python</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="../_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/betterpythonpad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/vue.js"></script>
+    <script src="../_static/pythonpad.bundle.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Récupération de données à partir d’API web" href="api.html" />
     <link rel="prev" title="Les dictionnaires" href="dict.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
-
-
-
+    <!-- Google Analytics -->
+    
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/logo_ur2.svg" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Introduction à Python</h1>
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_ur2.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction à Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Introduction
-  </a>
- </li>
-</ul>
-<p class="caption">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Contenu du livre
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="struct.html">
    Structures de données et structures de contrôle
@@ -131,121 +168,195 @@
   </a>
  </li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  Corrigé des exercices
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="solutions.html">
-   Toutes les solutions
-  </a>
- </li>
-</ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Téléchargement
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference external" href="https://github.com/rtavenar/poly_python/raw/master/book.pdf">
    Version PDF
-   <i class="fas fa-external-link-alt">
-   </i>
   </a>
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
     </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../_sources/content/fichiers.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/content/fichiers.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-    
-</div>
-        <!-- Source interaction buttons -->
-
-
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
-
-        <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/fichiers.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/fichiers.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/content/fichiers.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/content/fichiers.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#manipulation-de-fichiers-en-python-avec-le-module-os">
    Manipulation de fichiers en Python avec le module
@@ -354,22 +465,147 @@
  </li>
 </ul>
 
-        </nav>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Interaction avec des fichiers</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manipulation-de-fichiers-en-python-avec-le-module-os">
+   Manipulation de fichiers en Python avec le module
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     os
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture-et-ecriture-de-fichiers-textuels">
+   Lecture et écriture de fichiers textuels
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#qu-est-ce-qu-un-fichier-textuel">
+     Qu’est-ce qu’un fichier textuel ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#encodage-des-fichiers">
+     Encodage des fichiers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lecture-de-fichiers-textuels">
+     Lecture de fichiers textuels
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fichiers-textuels-generiques">
+       Fichiers textuels génériques
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fichiers-comma-separated-values-csv">
+       Fichiers
+       <em>
+        Comma-Separated Values
+       </em>
+       (CSV)
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#cas-des-fichiers-a-en-tete">
+         Cas des fichiers à en-tête
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#un-peu-de-magie">
+         Un peu de magie…
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fichiers-javascript-object-notation-json">
+       Fichiers
+       <em>
+        JavaScript Object Notation
+       </em>
+       (JSON)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ecriture-de-fichiers-textuels">
+     Écriture de fichiers textuels
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Fichiers textuels génériques
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fichiers-csv">
+       Fichiers CSV
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fichiers-json">
+       Fichiers JSON
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-utilisation-de-with">
+   Bonus : utilisation de
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     with
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercices">
+   Exercices
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="interaction-avec-des-fichiers">
-<h1>Interaction avec des fichiers<a class="headerlink" href="#interaction-avec-des-fichiers" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="interaction-avec-des-fichiers">
+<h1>Interaction avec des fichiers<a class="headerlink" href="#interaction-avec-des-fichiers" title="Permalink to this headline">#</a></h1>
 <p>Dans ce chapitre, nous allons présenter des outils de manipulation de fichiers en Python.
 Un fichier est une unité logique d’informations placée sur une mémoire secondaire (un disque dur, une clef USB, <em>etc.</em>).</p>
 <p>Quand vous consultez une dossier à l’aide de votre gestionnaire de fichiers, ce dossier peut comprendre plusieurs fichiers.
 En accédant depuis un programme Python au contenu de fichiers de données, on va pouvoir alimenter le programme avec des données provenant d’un fichier de données indépendant du programme (et non plus seulement des données écrites en dur dans le programmes ou saisies par l’utilisateur directement).</p>
-<div class="section" id="manipulation-de-fichiers-en-python-avec-le-module-os">
-<h2>Manipulation de fichiers en Python avec le module <code class="docutils literal notranslate"><span class="pre">os</span></code><a class="headerlink" href="#manipulation-de-fichiers-en-python-avec-le-module-os" title="Permalink to this headline">¶</a></h2>
+<section id="manipulation-de-fichiers-en-python-avec-le-module-os">
+<h2>Manipulation de fichiers en Python avec le module <code class="docutils literal notranslate"><span class="pre">os</span></code><a class="headerlink" href="#manipulation-de-fichiers-en-python-avec-le-module-os" title="Permalink to this headline">#</a></h2>
 <p>Lorsque l’on lit ou écrit des fichiers, il est fréquent de vouloir répéter la même opération sur plusieurs fichiers, par exemple sur tous les fichiers avec l’extension <code class="docutils literal notranslate"><span class="pre">&quot;.txt&quot;</span></code> d’un répertoire donné.
 Pour ce faire, on peut utiliser en Python le module <code class="docutils literal notranslate"><span class="pre">os</span></code> qui propose un certain nombre de fonctions standard de manipulation de fichiers.
 On utilisera notamment la fonction <code class="docutils literal notranslate"><span class="pre">listdir</span></code> de ce module qui permet de lister l’ensemble des fichiers et sous-répertoires contenus dans un répertoire donné :</p>
@@ -406,11 +642,11 @@ Pour cela, on utilisera la syntaxe suivante :</p>
 </div>
 <p>La fonction <code class="docutils literal notranslate"><span class="pre">path.join</span></code> du module <code class="docutils literal notranslate"><span class="pre">os</span></code> permet d’obtenir le chemin complet vers le fichier à partir du nom du répertoire dans lequel il se trouve et du nom du fichier isolé.
 Il est préférable d’utiliser cette fonction plutôt que d’effectuer la concaténation des chaînes de caractères correspondantes car la forme des chemins complets dépend du système d’exploitation utilisé, ce que gère intelligemment <code class="docutils literal notranslate"><span class="pre">path.join</span></code>.</p>
-</div>
-<div class="section" id="lecture-et-ecriture-de-fichiers-textuels">
-<h2>Lecture et écriture de fichiers textuels<a class="headerlink" href="#lecture-et-ecriture-de-fichiers-textuels" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="qu-est-ce-qu-un-fichier-textuel">
-<h3>Qu’est-ce qu’un fichier textuel ?<a class="headerlink" href="#qu-est-ce-qu-un-fichier-textuel" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="lecture-et-ecriture-de-fichiers-textuels">
+<h2>Lecture et écriture de fichiers textuels<a class="headerlink" href="#lecture-et-ecriture-de-fichiers-textuels" title="Permalink to this headline">#</a></h2>
+<section id="qu-est-ce-qu-un-fichier-textuel">
+<h3>Qu’est-ce qu’un fichier textuel ?<a class="headerlink" href="#qu-est-ce-qu-un-fichier-textuel" title="Permalink to this headline">#</a></h3>
 <p>Dans ce qui suit, nous traiterons uniquement de la lecture de fichiers textuels.
 Pour faire simple, nous appellerons dans ce qui suit “fichier textuel” tout fichier dont le contenu est lisible en clair en ouvrant le fichier avec un éditeur de fichiers bruts (comme Notepad++ sous windows, ou gedit sous linux).
 Pour se faire une idée, nous pouvons (sous unix) utiliser la commande <code class="docutils literal notranslate"><span class="pre">head</span></code> qui permet d’afficher le début d’un fichier :</p>
@@ -436,24 +672,24 @@ Trias;Anne;
 </div>
 </div>
 <div class="cell_output docutils container">
-<pre class="output stream literal-block">ELF&gt;п&#64;h�7&#64;8	&#64;&#64;&#64;&#64;��888�c0�c0�r0�rP�rP�tЯ	p�0p�Pp�P&#64;&#64;TTTDDP�td��+��+��+4�4�Q�tdR�td�r0�rP�rPPP/lib64/ld-linux-x86-64.so.2GNUGNU+�?�:�ȵ��푕0=`^��E�G�B�YdI��(&lt;�4�3 )_���*���2a����9؎
-A�&#64;����zB�D��&amp;*�Qa7�QG�&#64;�(&quot; ��a1�&#64;8$ĸ�0����!D�&#64;�R
-��P`�d0�F,�b9&lt;��LFp�DON.��(�&quot;�  &amp;`�HhS�G�(&#64;a`�� F��ɠJ���iD&lt;�8�`P��p�(��µ��&#64;[w&#64;&#64;H$�M	���Ӷ�H�q�&#64;
-Q��DTH��&#64;4&#64;���([&#64; �B-#P�� ��8��ЅB�&#64;� B	1ЀVP�Z&lt;� �����H�����X�A���KbP&#64;�P�&#64;0�6�	B&#64;�
-�0B(!��HH&#64;���%D$Da#z��0(��`&quot;&#64;9H�2
-�w	A d&#64;�4ɳ0��[�9�xA�P 	Bh���0���p��CA�UMd�(T��BAu�B��0a!|��b&#64;�H���!$�`�q	P��&#64;p�i`��$!Q��0�%RF��?��+��F��h`$Ȟ&quot;CdkD`C &quot;hT&#64;�a�q &#64;��Hq$Q��&#64;��&quot;x���*�4���B����&#64;�����pA �H&#64;)B�	��$��$$��&quot; &#64;a�`&#64;�&amp;J13���5DN(:�&quot;P���[�����&#64;�&quot;�� �Gh$�����B�$ �D���� �(���m�h�&#64;HD	�!4s�&#64;�h$�&#64;&#64;�1E&#64;A�$��M�Az�C�P�&#64;!&#64;�&#64;A� ��V�!2qH��!\�&#64; #��&quot;�%H�&quot;������D!ِ��$�&#64;
-1,�V:&quot;�ш���9 ��JX$�ȃ�P#$�b��mEGHIKNPQRSUVXY\]^_`abcefghiklstuvwyz|}~�����������������������������������������������������������������������	
-!#$&amp;),12457:;&lt;?BCDHJNQRTUWYZ[\^_`acefgikmnoprswyz{|}~��������������������������������������������������������������������������	
-!&quot;$')*-./35678&lt;=?ABCEFHIKMNOPSVYZ[]aeghijklpsvxz{|����������������������������������������������������������������������������	
-#$%')*+,.024579:;&#64;ABFHJMORSTUWXZ\_bdefghjknopruvwxy|������������������������������������������������������������������������
+<pre class="output stream literal-block">ELF&gt;��_&#64;�S&#64;8&#64;&#64;&#64;&#64;&#64;&#64;��&#64;&#64;&#64;&#64;�)�)00B0BUq)Uq)�+�k�k��#��#�}O������hm8��}O������0088&#64;8&#64;XX&#64;X&#64;DDS�td88&#64;8&#64;P�td��H����D#D#Q�tdR�td�}O������PP/lib64/ld-linux-x86-64.so.2GNU�GNU�A����U`t��H���&gt;4�GNU��&amp;،Q�MP$&#64;��F��`D%�!����&quot;1QHB��&#64;�2H&quot;��SA��Q���!C��*Q�
+
+� x��&#64;���!!
+5B�B&#64;�8XX �CH0����� 2 � &quot;tB� �(&#64;��Pb!��pC�	D�
+
+�� �P��Z���Ph����&#64;�,x*��#�j�Ђ�B�0� �pE��M��R �	2� h$&#64;��0&amp;B�0 ��!H�� Ѐ 	&#64; �D�&amp;���xd���2D�f�
+ � BX�A31`&#64;�
+&quot;	�QDP0͎B�C#	�XR����&#64;4�.&#64;���#(�5.��E&#64;�2R(BP��&#64;��0�H�  L�JQ� �P�R��		j�&quot;(�� B�&#64;B&#64;�I�&#64;H	�`&amp;J��&#64;1��� �A����A�&#64;Cx�� $�HB#�pr� �(
+$HB=0�2h��JW��B�P(����E0*MS��&quot;�Q�$&#64;�	)��A��A��!JEq!��=!RȀ$�&quot;��%PH|B���P A0�N
+ &quot;��H0D!&amp; )逕p�1�����&#64;�&#64;
 </pre>
 </div>
 </div>
 <p>En effet, le fichier situé à l’adresse <code class="docutils literal notranslate"><span class="pre">/usr/bin/python</span></code> sur l’ordinateur qui a généré ce polycopié est un fichier binaire qui, s’il contient bien des morceaux qui semblent correspondre à du texte en clair, ne se résume pas à cela.</p>
 <p>Dans ce chapitre, nous ne nous intéressons donc pas à ce dernier type de fichiers mais nous nous concentrerons sur la lecture/écriture de fichiers textuels par un programme Python.</p>
-</div>
-<div class="section" id="encodage-des-fichiers">
-<h3>Encodage des fichiers<a class="headerlink" href="#encodage-des-fichiers" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="encodage-des-fichiers">
+<h3>Encodage des fichiers<a class="headerlink" href="#encodage-des-fichiers" title="Permalink to this headline">#</a></h3>
 <p>Un premier élément qu’il est nécessaire de maîtriser pour lire ou écrire des fichiers textuels est la notion d’encodage.
 Il faut savoir qu’il existe plusieurs façons d’encoder un texte.
 Nous nous focaliserons ici sur les deux encodages que vous êtes les plus susceptibles de rencontrer (mais sachez qu’il en existe bien d’autres) :</p>
@@ -467,9 +703,9 @@ Au contraire, s’il est possible que vous utilisiez de tels caractères, il fau
 Si votre programme doit lire un fichier, il faudra donc vous assurer de l’encodage associé à ce fichier (en l’ouvrant par exemple avec un éditeur de texte qui soit suffisamment avancé pour vous fournir cette information).
 Si vous écrivez un programme qui écrit un fichier, il faudra vous poser la question de l’utilisation future qui sera faite de ce fichier : s’il est amené à être ouvert par un autre utilisateur, il serait pertinent de vous demander quel encodage sera le moins problématique pour cet utilisateur, par exemple.</p>
 <p>Si vous n’avez pas de contrainte extérieure pour ce qui est de l’encodage, vous utiliserez l’encodage UTF-8 par défaut.</p>
-</div>
-<div class="section" id="lecture-de-fichiers-textuels">
-<h3>Lecture de fichiers textuels<a class="headerlink" href="#lecture-de-fichiers-textuels" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="lecture-de-fichiers-textuels">
+<h3>Lecture de fichiers textuels<a class="headerlink" href="#lecture-de-fichiers-textuels" title="Permalink to this headline">#</a></h3>
 <p>Ce que nous appelons lecture de fichiers textuels en Python consiste à copier le contenu d’un fichier dans une (ou plusieurs) chaîne(s) de caractères.
 Cela implique deux étapes en Python :</p>
 <ol class="simple">
@@ -482,8 +718,8 @@ En supposant que le nom du fichier à ouvrir soit stocké sous forme de chaîne 
 </pre></div>
 </div>
 <p>Le second argument (<code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code>) indique que le fichier doit être ouvert en mode <em>read</em>, donc en lecture.</p>
-<div class="section" id="fichiers-textuels-generiques">
-<h4>Fichiers textuels génériques<a class="headerlink" href="#fichiers-textuels-generiques" title="Permalink to this headline">¶</a></h4>
+<section id="fichiers-textuels-generiques">
+<h4>Fichiers textuels génériques<a class="headerlink" href="#fichiers-textuels-generiques" title="Permalink to this headline">#</a></h4>
 <p>Nous appelons ici “fichier textuel générique” un fichier dont le contenu n’a pas de structure particulière (par opposition aux fichiers CSV ou JSON présentés plus bas, par exemple).
 C’est le cas par exemple de fichiers contenant du texte libre.
 Ces fichiers, une fois ouverts en lecture, peuvent être lus ligne par ligne à l’aide de la boucle suivante :</p>
@@ -493,9 +729,9 @@ Ces fichiers, une fois ouverts en lecture, peuvent être lus ligne par ligne à 
 </pre></div>
 </div>
 <p>Ici, la variable <code class="docutils literal notranslate"><span class="pre">ligne</span></code>, de type chaîne de caractères, contiendra successivement le texte de chacune des lignes du fichier considéré.</p>
-</div>
-<div class="section" id="fichiers-comma-separated-values-csv">
-<h4>Fichiers <em>Comma-Separated Values</em> (CSV)<a class="headerlink" href="#fichiers-comma-separated-values-csv" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="fichiers-comma-separated-values-csv">
+<h4>Fichiers <em>Comma-Separated Values</em> (CSV)<a class="headerlink" href="#fichiers-comma-separated-values-csv" title="Permalink to this headline">#</a></h4>
 <p>Les fichiers <em>Comma-Separated Values</em> (CSV) permettent de stocker des données organisées sous la forme de tableaux dans des fichiers textuels.
 À l’origine, ces fichiers étaient organisés par ligne et au sein de chaque ligne les cellules du tableau (correspondant aux différentes colonnes) étaient séparées par des virgules (d’où le nom de ce type de fichiers).
 Aujourd’hui, la définition de ce format (<a class="reference external" href="https://tools.ietf.org/html/rfc4180">lien</a>) est plus générale que cela et différents délimiteurs sont acceptés.
@@ -553,12 +789,12 @@ Fin de ligne
 </div>
 <p>On remarque ici que, contrairement au cas de fichiers textuels génériques, la variable de boucle <code class="docutils literal notranslate"><span class="pre">ligne</span></code> n’est plus une chaîne de caractères mais une liste de chaînes de caractères.
 Les éléments de cette liste sont les cellules du tableau représenté par le fichier CSV.</p>
-<div class="section" id="cas-des-fichiers-a-en-tete">
-<h5>Cas des fichiers à en-tête<a class="headerlink" href="#cas-des-fichiers-a-en-tete" title="Permalink to this headline">¶</a></h5>
+<section id="cas-des-fichiers-a-en-tete">
+<h5>Cas des fichiers à en-tête<a class="headerlink" href="#cas-des-fichiers-a-en-tete" title="Permalink to this headline">#</a></h5>
 <p>Souvent, les fichiers CSV comprennent une première ligne d’en-tête, comme dans l’exemple suivant :</p>
-<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span>NOM;PRENOM;AGE
-Lemarchand;John;23
-Trias;Anne;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NOM</span><span class="p">;</span><span class="n">PRENOM</span><span class="p">;</span><span class="n">AGE</span>
+<span class="n">Lemarchand</span><span class="p">;</span><span class="n">John</span><span class="p">;</span><span class="mi">23</span>
+<span class="n">Trias</span><span class="p">;</span><span class="n">Anne</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Si l’on souhaite que, lors de la lecture du fichier CSV, chaque ligne soit représentée par un dictionnaire dont les clés sont les noms de colonnes (lus dans l’en-tête) et les valeurs associées sont celles lues dans la ligne courante, on utilisera <code class="docutils literal notranslate"><span class="pre">csv.DictReader</span></code> au lieu de <code class="docutils literal notranslate"><span class="pre">csv.reader</span></code> :</p>
@@ -594,9 +830,9 @@ AGE
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="un-peu-de-magie">
-<h5>Un peu de magie…<a class="headerlink" href="#un-peu-de-magie" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="un-peu-de-magie">
+<h5>Un peu de magie…<a class="headerlink" href="#un-peu-de-magie" title="Permalink to this headline">#</a></h5>
 <p>Dans certains cas, on ne sait pas à l’avance quel délimiteur est utilisé pour le fichier CSV à lire. On peut demander au module CSV de deviner le <em>dialecte</em><a class="footnote-reference brackets" href="#dialect" id="id1">1</a> d’un fichier en lisant le début de ce fichier.
 Dans ce cas, la lecture du fichier se fera en 4 étapes :</p>
 <ol class="simple">
@@ -657,21 +893,21 @@ Fin de ligne
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="fichiers-javascript-object-notation-json">
-<h4>Fichiers <em>JavaScript Object Notation</em> (JSON)<a class="headerlink" href="#fichiers-javascript-object-notation-json" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="fichiers-javascript-object-notation-json">
+<h4>Fichiers <em>JavaScript Object Notation</em> (JSON)<a class="headerlink" href="#fichiers-javascript-object-notation-json" title="Permalink to this headline">#</a></h4>
 <p>Les fichiers <em>JavaScript Object Notation</em> (JSON) permettent de stocker des données structurées (par exemple avec une organisation hiérarchique). Un document JSON s’apparente à un dictionnaire en Python (à la nuance près que les clés d’un document JSON sont forcément des chaînes de caractères).
 Voici un exemple de document JSON :</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;num_etudiant&quot;</span><span class="p">:</span> <span class="s2">&quot;21300000&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;notes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">14</span><span class="p">],</span>
-    <span class="nt">&quot;date_de_naissance&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;jour&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&quot;mois&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&quot;annee&quot;</span><span class="p">:</span> <span class="mi">1995</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;num_etudiant&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;21300000&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;notes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;date_de_naissance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;jour&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;mois&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;annee&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1995</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>En Python, pour lire de tels fichiers, on dispose du module <code class="docutils literal notranslate"><span class="pre">json</span></code> qui contient une fonction <code class="docutils literal notranslate"><span class="pre">load</span></code> :</p>
@@ -705,24 +941,24 @@ Voici un exemple de document JSON :</p>
 </div>
 </div>
 <p>Il est à noter qu’un fichier JSON peut également contenir une liste de dictionnaires, comme dans l’exemple suivant :</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span>
-    <span class="nt">&quot;num_etudiant&quot;</span><span class="p">:</span> <span class="s2">&quot;21300000&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;notes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">14</span><span class="p">],</span>
-    <span class="nt">&quot;date_de_naissance&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;jour&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&quot;mois&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&quot;annee&quot;</span><span class="p">:</span> <span class="mi">1995</span>
-    <span class="p">}</span>
-<span class="p">},</span>
-<span class="p">{</span>
-    <span class="nt">&quot;num_etudiant&quot;</span><span class="p">:</span> <span class="s2">&quot;21300001&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;notes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">14</span><span class="p">],</span>
-    <span class="nt">&quot;date_de_naissance&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;jour&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&quot;mois&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
-        <span class="nt">&quot;annee&quot;</span><span class="p">:</span> <span class="mi">1989</span>
-    <span class="p">}</span>
-<span class="p">}]</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;num_etudiant&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;21300000&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;notes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;date_de_naissance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;jour&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;mois&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;annee&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1995</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">},</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;num_etudiant&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;21300001&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;notes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">14</span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;date_de_naissance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;jour&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;mois&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;annee&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1989</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}]</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Dans ce cas, <code class="docutils literal notranslate"><span class="pre">json.load</span></code> retournera une liste de dictionnaires au lieu d’un dictionnaire, bien évidemment.</p>
@@ -741,10 +977,10 @@ Voici un exemple de document JSON :</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="ecriture-de-fichiers-textuels">
-<h3>Écriture de fichiers textuels<a class="headerlink" href="#ecriture-de-fichiers-textuels" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="ecriture-de-fichiers-textuels">
+<h3>Écriture de fichiers textuels<a class="headerlink" href="#ecriture-de-fichiers-textuels" title="Permalink to this headline">#</a></h3>
 <p>Ce que nous appellons écriture de fichiers textuels en Python consiste à copier le contenu d’une (ou plusieurs) chaîne(s) de caractères dans un fichier.
 Cela implique trois étapes en Python :</p>
 <ol class="simple">
@@ -769,16 +1005,16 @@ Si l’on souhaite au contraire ajouter du texte à la fin d’un fichier exista
 </div>
 <p>Il est à noter que l’on peut, dans certains cas, se dispenser de fermer explicitement le fichier.
 Par exemple, si notre code est inclus dans un script Python, dès la fin de l’exécution du script, tous les fichiers ouverts en écriture par le script sont automatiquement fermés.</p>
-<div class="section" id="id2">
-<h4>Fichiers textuels génériques<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<section id="id2">
+<h4>Fichiers textuels génériques<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
 <p>Pour ajouter du contenu à un fichier pointé par la variable <code class="docutils literal notranslate"><span class="pre">fp</span></code>, il suffit ensuite d’utiliser la méthode <code class="docutils literal notranslate"><span class="pre">write</span></code> :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;La vie est belle</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Notez que, contrairement à la fonction <code class="docutils literal notranslate"><span class="pre">print</span></code> à laquelle vous êtes habitué, la méthode <code class="docutils literal notranslate"><span class="pre">write</span></code> ne rajoute pas de caractère de fin de ligne après la chaîne de caractères passée en argument, il faut donc inclure ce caractère <code class="docutils literal notranslate"><span class="pre">&quot;\n&quot;</span></code> à la fin de la chaîne de caractères passée en argument, si vous souhaitez inclure un retour à la ligne.</p>
-</div>
-<div class="section" id="fichiers-csv">
-<h4>Fichiers CSV<a class="headerlink" href="#fichiers-csv" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="fichiers-csv">
+<h4>Fichiers CSV<a class="headerlink" href="#fichiers-csv" title="Permalink to this headline">#</a></h4>
 <p>Le module <code class="docutils literal notranslate"><span class="pre">csv</span></code> déjà cité plus haut contient également une fonction <code class="docutils literal notranslate"><span class="pre">writer</span></code> permettant de simplifier l’écriture de fichiers CSV.
 La syntaxe d’utilisation de cette fonction est la suivante :</p>
 <div class="cell docutils container">
@@ -801,9 +1037,9 @@ La syntaxe d’utilisation de cette fonction est la suivante :</p>
 </div>
 <p>La méthode <code class="docutils literal notranslate"><span class="pre">writerow</span></code> prend donc une liste en argument et écrit dans le fichier les éléments de cette liste, séparés par le délimiteur <code class="docutils literal notranslate"><span class="pre">&quot;;&quot;</span></code> spécifié lors de l’appel à la fonction <code class="docutils literal notranslate"><span class="pre">writer</span></code>.
 Le retour à la ligne est écrit directement par la méthode <code class="docutils literal notranslate"><span class="pre">writerow</span></code>, vous n’avez pas à vous en occuper.</p>
-</div>
-<div class="section" id="fichiers-json">
-<h4>Fichiers JSON<a class="headerlink" href="#fichiers-json" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="fichiers-json">
+<h4>Fichiers JSON<a class="headerlink" href="#fichiers-json" title="Permalink to this headline">#</a></h4>
 <p>Le module <code class="docutils literal notranslate"><span class="pre">json</span></code> déjà cité plus haut contient également une fonction <code class="docutils literal notranslate"><span class="pre">dump</span></code> permettant d’écrire le contenu d’un dictionnaire (ou d’une liste de dictionnaires) dans un fichier JSON.
 La syntaxe d’utilisation de cette fonction est la suivante :</p>
 <div class="cell docutils container">
@@ -827,11 +1063,11 @@ La syntaxe d’utilisation de cette fonction est la suivante :</p>
 </div>
 </div>
 <p>Vous pouvez vous référer à <a class="reference external" href="https://docs.python.org/fr/3/library/json.html#basic-usage">la documentation de cette fonction</a> pour maîtriser plus finement la mise en forme du contenu du fichier de sortie.</p>
-</div>
-</div>
-</div>
-<div class="section" id="bonus-utilisation-de-with">
-<h2>Bonus : utilisation de <code class="docutils literal notranslate"><span class="pre">with</span></code><a class="headerlink" href="#bonus-utilisation-de-with" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="bonus-utilisation-de-with">
+<h2>Bonus : utilisation de <code class="docutils literal notranslate"><span class="pre">with</span></code><a class="headerlink" href="#bonus-utilisation-de-with" title="Permalink to this headline">#</a></h2>
 <p>Il existe en Python un moyen très efficace de maîtriser la durée de vie d’une variable : il s’agit de la directive <code class="docutils literal notranslate"><span class="pre">with</span></code>, dont la syntaxe est la suivante :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">EXPRESSION</span> <span class="k">as</span> <span class="n">VARIABLE</span><span class="p">:</span>
     <span class="n">BLOC_DE_CODE</span>
@@ -861,28 +1097,63 @@ xx;xx;xx;xx;xx
 </div>
 </div>
 <p>et le fichier sera tout de même fermé correctement dès que l’on sortira du bloc <code class="docutils literal notranslate"><span class="pre">with</span></code>.</p>
-</div>
-<div class="section" id="exercices">
-<h2>Exercices<a class="headerlink" href="#exercices" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="exercices">
+<h2>Exercices<a class="headerlink" href="#exercices" title="Permalink to this headline">#</a></h2>
 <div class="admonition-exercice-7-1 admonition">
-<p class="admonition-title"><strong>Exercice 7.1</strong></p>
+<p class="admonition-title">Exercice 7.1</p>
 <p>Écrivez une fonction qui affiche, pour chaque fichier d’extension <code class="docutils literal notranslate"><span class="pre">&quot;.txt&quot;</span></code> d’un répertoire passé en argument, le nom du fichier ainsi que son nombre de lignes.</p>
-<p>[<a class="reference internal" href="solutions.html#ex7-1-sol"><span class="std std-ref">Corrigé</span></a>]</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">def</span> <span class="nf">nb_lignes</span><span class="p">(</span><span class="n">nom_fichier</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">nom_fichier</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+        <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n</span>
+
+<span class="k">def</span> <span class="nf">nb_lignes_repertoire</span><span class="p">(</span><span class="n">repertoire</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">nom_fichier</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">repertoire</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">nom_fichier</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.txt&quot;</span><span class="p">):</span>
+            <span class="n">nom_complet_fichier</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">repertoire</span><span class="p">,</span> <span class="n">nom_fichier</span><span class="p">)</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">nb_lignes</span><span class="p">(</span><span class="n">nom_complet_fichier</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">nom_complet_fichier</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+<span class="n">nb_lignes_repertoire</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="admonition-exercice-7-2 admonition">
-<p class="admonition-title"><strong>Exercice 7.2</strong></p>
+<p class="admonition-title">Exercice 7.2</p>
 <p>Écrivez une fonction qui retourne le nombre de fichiers présents dans un répertoire dont le nom est passé en argument.
 Vous pourrez vous aider pour cela de la documentation du sous-module <code class="docutils literal notranslate"><span class="pre">path</span></code> du module <code class="docutils literal notranslate"><span class="pre">os</span></code> (<a class="reference external" href="https://docs.python.org/3.5/library/os.path.html">lien</a>).</p>
-<p>[<a class="reference internal" href="solutions.html#ex7-2-sol"><span class="std std-ref">Corrigé</span></a>]</p>
 </div>
-<hr class="docutils" />
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">def</span> <span class="nf">compte_fichiers</span><span class="p">(</span><span class="n">repertoire</span><span class="p">):</span>
+    <span class="n">compteur</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">repertoire</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">repertoire</span><span class="p">,</span> <span class="n">f</span><span class="p">)):</span>
+            <span class="n">compteur</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">compteur</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">compte_fichiers</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="dialect"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Le <em>dialecte</em> d’un fichier CSV définit, en fait, bien plus que le caractère de séparation des cellules, comme décrit dans <a class="reference external" href="https://tools.ietf.org/html/rfc4180">ce document</a>.</p>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -906,33 +1177,48 @@ Vous pourrez vous aider pour cela de la documentation du sous-module <code class
 
               </div>
               
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="dict.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Les dictionnaires</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="api.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Récupération de données à partir d’API web</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
         </div>
     </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="dict.html" title="previous page">Les dictionnaires</a>
-    <a class='right-next' id="next-link" href="api.html" title="next page">Récupération de données à partir d’API web</a>
-
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Romain Tavenard<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Romain Tavenard<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-    <script src="../_static/js/index.js"></script>
-    
+
   </body>
 </html>

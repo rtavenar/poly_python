@@ -1,0 +1,12 @@
+div.pad {
+    font-size: 14px;
+    height: 20em;
+}
+
+.CodeMirror pre.CodeMirror-line {
+    box-shadow: unset;
+}
+
+.CodeMirror .CodeMirror-scroll {
+    height: 100%;
+}

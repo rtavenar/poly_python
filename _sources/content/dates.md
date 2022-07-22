@@ -154,7 +154,12 @@ Voici deux exemples d'utilisation de cette fonction :
 
 ```{code-cell}
 d1 = datetime.datetime.strptime("2020/8/27, 17:23", "%Y/%m/%d, %H:%M")
+print(d1)
+```
+
+```{code-cell}
 d2 = datetime.datetime.strptime("27-08-2020", "%d-%m-%Y")
+print(d2)
 ```
 
 ## Attributs des objets `datetime`
@@ -202,6 +207,13 @@ intervalle_de_temps = d1 - d2
 print(type(intervalle_de_temps))
 ```
 
+Une autre façon de créer une durée au format `timedelta` est d'utiliser la fonction du même nom :
+
+```{code-cell}
+duree = datetime.timedelta(weeks=0, days=10, hours=3, minutes=10, seconds=23)
+print(duree)
+```
+
 Très souvent, il est utile pour manipuler une durée de la convertir en un nombre de secondes et de manipuler ce nombre ensuite.
 Cela se fait à l'aide de la commande :
 
@@ -226,14 +238,66 @@ print(d3 + intervalle_de_temps)
 
 ## Exercices
 
-```{admonition} **Exercice 3.1**
+```{admonition} Exercice 3.1
 S'est-il écoulé plus de temps (i) entre le 2 Janvier 1920 à 7h32 et le 4 Mars 1920 à 5h53 ou bien (ii) entre le 30 Décembre 1999 à 17h12 et le 1er Mars 2000 à 15h53 ?
-
-[{ref}`Corrigé <ex3.1_sol>`]
 ```
 
-```{admonition} **Exercice 3.2**
+<div id="pad_3.1" class="pad"></div>
+<script>
+    Pythonpad('pad_3.1', 
+              {'id': '3.1', 
+               'title': 'Testez votre solution ici', 
+               'src': 'import datetime\n# Complétez ce code'})
+</script>
+
+````{admonition} Solution
+:class: tip, dropdown
+
+```python
+import datetime
+
+interv1_date1 = datetime.datetime(1920, 1, 2, 7, 32)
+interv1_date2 = datetime.datetime(1920, 3, 4, 5, 53)
+duree1 = interv1_date2 - interv1_date1
+
+interv2_date1 = datetime.datetime(1999, 12, 30, 17, 12)
+interv2_date2 = datetime.datetime(2000, 3, 1, 15, 53)
+duree2 = interv2_date2 - interv2_date1
+
+if duree1 > duree2:
+    print("Le premier intervalle est le plus grand.")
+else:
+    print("Le second intervalle est le plus grand.")
+```
+````
+
+```{admonition} Exercice 3.2
 À l'aide des fonctions du module `datetime` vues plus haut, affichez, pour chaque année civile comprise entre 2010 et 2030, si elle est bissextile ou non.
-
-[{ref}`Corrigé <ex3.2_sol>`]
 ```
+
+<div id="pad_3.2" class="pad"></div>
+<script>
+    Pythonpad('pad_3.2', 
+              {'id': '3.2', 
+               'title': 'Testez votre solution ici', 
+               'src': 'import datetime\n# Complétez ce code'})
+</script>
+
+````{admonition} Solution
+:class: tip, dropdown
+
+```python
+import datetime
+
+duree_annee_normale = 365 * 24 * 60 * 60
+
+for annee in range(2010, 2031):
+    date_debut = datetime.datetime(annee, 1, 1)
+    date_fin = datetime.datetime(annee + 1, 1, 1)
+    duree_anne_courante = date_fin - date_debut
+    if duree_anne_courante.total_seconds() > duree_annee_normale:
+        print(annee, "est bissextile")
+    else:
+        print(annee, "n'est pas bissextile")
+```
+````
