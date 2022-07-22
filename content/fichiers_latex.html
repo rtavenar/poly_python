@@ -769,9 +769,9 @@ Les éléments de cette liste sont les cellules du tableau représenté par le f
 <section id="cas-des-fichiers-a-en-tete">
 <h5>Cas des fichiers à en-tête<a class="headerlink" href="#cas-des-fichiers-a-en-tete" title="Permalink to this headline">#</a></h5>
 <p>Souvent, les fichiers CSV comprennent une première ligne d’en-tête, comme dans l’exemple suivant :</p>
-<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span>NOM;PRENOM;AGE
-Lemarchand;John;23
-Trias;Anne;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NOM</span><span class="p">;</span><span class="n">PRENOM</span><span class="p">;</span><span class="n">AGE</span>
+<span class="n">Lemarchand</span><span class="p">;</span><span class="n">John</span><span class="p">;</span><span class="mi">23</span>
+<span class="n">Trias</span><span class="p">;</span><span class="n">Anne</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Si l’on souhaite que, lors de la lecture du fichier CSV, chaque ligne soit représentée par un dictionnaire dont les clés sont les noms de colonnes (lus dans l’en-tête) et les valeurs associées sont celles lues dans la ligne courante, on utilisera <code class="docutils literal notranslate"><span class="pre">csv.DictReader</span></code> au lieu de <code class="docutils literal notranslate"><span class="pre">csv.reader</span></code> :</p>
@@ -843,9 +843,7 @@ En pratique, lire les 1000 premiers caractères d’un fichier est souvent suffi
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+2
 3
 4
 5
