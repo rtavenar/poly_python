@@ -56,15 +56,3 @@ L'autre façon de programmer en Python, plus adaptée dès lors que l'on souhait
 $ python nom_de_mon_fichier.py
 [...]
 ```
-
-Enfin, pour vous faciliter la vie, dans ce polycopié, vous trouverez des fenêtres intégrées d'éditeurs de code vous permettant de vous essayer simplement aux exercices proposés.
-Vous avez un exemple d'une telle fenêtre ci-dessous.
-Appuyez sur "Run" pour exécuter le code, puis modifiez ce code et observez le résultat en le ré-exécutant.
-
-<div id="pad_intro" class="pad"></div>
-<script>
-    Pythonpad('pad_intro', 
-              {'id': 'intro', 
-               'title': 'Testez votre solution ici', 
-               'src': 'a = 12 * 5\nprint(a)'})
-</script>

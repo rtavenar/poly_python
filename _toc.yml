@@ -12,9 +12,6 @@ parts:
   - file: content/api
   - file: content/test
   - file: content/conclusion
-- caption: "Corrig\xE9 des exercices"
-  chapters:
-  - file: content/solutions
 - caption: "T\xE9l\xE9chargement"
   chapters:
   - url: https://github.com/rtavenar/poly_python/raw/master/book.pdf

@@ -138,7 +138,7 @@ Si l'on souhaite stocker une **série ordonnée de valeurs**, on préférera l'u
 
 ## Exercices
 
-````{admonition} **Exercice 6.1**
+````{admonition} Exercice 6.1
 Écrivez une fonction qui compte le nombre d'occurrences de chacun des mots d'une chaîne de caractères et retourne le résultat sous forme de dictionnaire :
 
 ```
@@ -146,12 +146,52 @@ Si l'on souhaite stocker une **série ordonnée de valeurs**, on préférera l'u
 print(compte_occurrences("la vie est belle c'est la vie"))
 # [Sortie] {"c'est": 1, 'la': 2, 'belle': 1, 'est': 1, 'vie': 2}
 ```
-
-[{ref}`Corrigé <ex6.1_sol>`]
 ````
 
-```{admonition} **Exercice 6.2**
-Écrivez une fonction qui retourne la somme des *valeurs* d'un dictionnaire fourni en argument, en supposant que toutes les valeurs stockées dans ce dictionnaire soient numériques.
+<div id="pad_6.1" class="pad"></div>
+<script>
+    Pythonpad('pad_6.1', 
+              {'id': '6.1', 
+               'title': 'Testez votre solution ici', 
+               'src': '# Complétez ce code'})
+</script>
 
-[{ref}`Corrigé <ex6.2_sol>`]
+````{admonition} Solution
+:class: tip, dropdown
+
+```python
+def compte_occurrences(s):
+    d = {}
+    for mot in s.split():
+        d[mot] = d.get(mot, 0) + 1
+    return d
+
+print(compte_occurrences("la vie est belle c'est la vie"))
 ```
+````
+
+```{admonition} Exercice 6.2
+Écrivez une fonction qui retourne la somme des *valeurs* d'un dictionnaire fourni en argument, en supposant que toutes les valeurs stockées dans ce dictionnaire soient numériques.
+```
+
+<div id="pad_6.2" class="pad"></div>
+<script>
+    Pythonpad('pad_6.2', 
+              {'id': '6.2', 
+               'title': 'Testez votre solution ici', 
+               'src': '# Complétez ce code'})
+</script>
+
+````{admonition} Solution
+:class: tip, dropdown
+
+```python
+def somme_valeurs(d):
+    s = 0
+    for v in d.values():
+        s += v
+    return s
+
+print(somme_valeurs({"a": 12, "zz": 1.5, "AAA": 0}))
+```
+````

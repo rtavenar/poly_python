@@ -250,7 +250,7 @@ S'est-il écoulé plus de temps (i) entre le 2 Janvier 1920 à 7h32 et le 4 Mars
                'src': 'import datetime\n# Complétez ce code'})
 </script>
 
-````{admonition} Cliquez ici pour voir la solution
+````{admonition} Solution
 :class: tip, dropdown
 
 ```python
@@ -283,7 +283,7 @@ else:
                'src': 'import datetime\n# Complétez ce code'})
 </script>
 
-````{admonition} Cliquez ici pour voir la solution
+````{admonition} Solution
 :class: tip, dropdown
 
 ```python

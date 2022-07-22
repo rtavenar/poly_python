@@ -236,19 +236,62 @@ for longdeci in range(5):
 
 ## Exercices
 
-```{admonition} **Exercice 5.1**
+```{admonition} Exercice 5.1
 Écrivez une fonction qui prenne en argument deux chaînes de caractères `s` et `prefix` et retourne le nombre de mots de la chaîne `s` qui débutent par la chaîne `prefix`.
-
-[{ref}`Corrigé <ex5.1_sol>`]
 ```
 
-```{admonition} **Exercice 5.2**
+<div id="pad_5.1" class="pad"></div>
+<script>
+    Pythonpad('pad_5.1', 
+              {'id': '5.1', 
+               'title': 'Testez votre solution ici', 
+               'src': '# Complétez ce code'})
+</script>
+
+````{admonition} Solution
+:class: tip, dropdown
+
+```python
+def compte_prefix(s, prefix):
+    compteur = 0
+    for mot in s.split():
+        if mot.startswith(prefix):
+            compteur += 1
+    return compteur
+
+print(compte_prefix("la vie est belle au bord du lac", "la"))
+```
+````
+
+```{admonition} Exercice 5.2
 Écrivez une fonction qui prenne en argument deux chaînes de caractères `s` et `mot_cible` et retourne le nombre d'occurrences du mot `mot_cible` dans la chaîne `s` en ne tenant pas compte de la casse.
-
-[{ref}`Corrigé <ex5.2_sol>`]
 ```
 
-````{admonition} **Exercice 5.3**
+<div id="pad_5.2" class="pad"></div>
+<script>
+    Pythonpad('pad_5.2', 
+              {'id': '5.2', 
+               'title': 'Testez votre solution ici', 
+               'src': '# Complétez ce code'})
+</script>
+
+````{admonition} Solution
+:class: tip, dropdown
+
+```python
+def compte_sans_casse(s, mot_cible):
+    compteur = 0
+    mot_cible_minuscules = mot_cible.lower()
+    for mot in s.split():
+        if mot.lower() == mot_cible_minuscules:
+            compteur += 1
+    return compteur
+
+print(compte_sans_casse("la vie est LA aussi", "la"))
+```
+````
+
+````{admonition} Exercice 5.3
 Écrivez une fonction qui prenne en argument une liste d'entiers et l'affiche sous le format suivant :
 
 ```text
@@ -267,6 +310,25 @@ L'entier d'indice 10 est | 12345678901|
 
 Cet affichage correspond à la liste
 `[1, 12, 123, 1234, 12345, 123456, 1234567, 12345678, 123456789, 1234567890, 12345678901]`
+````
 
-[{ref}`Corrigé <ex5.3_sol>`]
+<div id="pad_5.3" class="pad"></div>
+<script>
+    Pythonpad('pad_5.3', 
+              {'id': '5.3', 
+               'title': 'Testez votre solution ici', 
+               'src': '# Complétez ce code'})
+</script>
+
+````{admonition} Solution
+:class: tip, dropdown
+
+```python
+def affiche_liste(liste):
+    for i, elt in enumerate(listent):
+        print(f"L'entier d'indice {i:2n} est |{elt:12n}|")
+
+listent = [1, 12, 123, 1234, 12345, 123456, 1234567, 12345678, 123456789, 1234567890, 12345678901]
+affiche_liste(listent)
+```
 ````

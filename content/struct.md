@@ -282,7 +282,7 @@ Il est notamment important de remarquer que, lorsque l'on souhaite tester l'éga
 </script>
 
 
-````{admonition} Cliquez ici pour voir la solution
+````{admonition} Solution
 :class: tip, dropdown
 
 ```python
@@ -384,7 +384,7 @@ Comme son nom l'indique, la boucle `while` sera utilisée dès lors que l'on sou
                'src': 'n = 20\n# Complétez ce code'})
 </script>
 
-````{admonition} Cliquez ici pour voir la solution
+````{admonition} Solution
 :class: tip, dropdown
 
 * Version avec utilisation du modulo
@@ -548,7 +548,7 @@ def f(x, y=0, z):
                'src': '# Complétez ce code'})
 </script>
 
-````{admonition} Cliquez ici pour voir la solution
+````{admonition} Solution
 :class: tip, dropdown
 
 ```python
@@ -581,7 +581,7 @@ $$
                'src': '# Complétez ce code'})
 </script>
 
-````{admonition} Cliquez ici pour voir la solution
+````{admonition} Solution
 :class: tip, dropdown
 
 * Version itérative (avec une boucle)

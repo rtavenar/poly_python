@@ -208,7 +208,7 @@ Si cette valeur maximale est présente plusieurs fois dans la liste, on retourne
                'src': '# Complétez ce code'})
 </script>
 
-````{admonition} Cliquez ici pour voir la solution
+````{admonition} Solution
 :class: tip, dropdown
 
 ```python
@@ -370,7 +370,7 @@ print(sorted(liste))
                'src': '# Complétez ce code'})
 </script>
 
-````{admonition} Cliquez ici pour voir la solution
+````{admonition} Solution
 :class: tip, dropdown
 
 ```python
@@ -398,7 +398,7 @@ print(intersection([1, 6, 2, 4], [2, 7, 6]))
                'src': '# Complétez ce code'})
 </script>
 
-````{admonition} Cliquez ici pour voir la solution
+````{admonition} Solution
 :class: tip, dropdown
 
 ```python

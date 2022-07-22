@@ -114,13 +114,69 @@ def bissextile(annee):
 ## Exercices
 
 
-```{admonition} **Exercice 9.1**
+```{admonition} Exercice 9.1
 En utilisant les méthodes de développement préconisées dans ce chapitre, rédigez le code et les tests d'un programme permettant de déterminer le lendemain d'une date fournie sous la forme de trois entiers (jour, mois, année).
-
-[{ref}`Corrigé <ex9.1_sol>`]
 ```
 
-````{admonition} **Exercice 9.2**
+<div id="pad_9.1" class="pad"></div>
+<script>
+    Pythonpad('pad_9.1', 
+              {'id': '9.1', 
+               'title': 'Testez votre solution ici', 
+               'src': '# Complétez ce code'})
+</script>
+
+````{admonition} Solution
+:class: tip, dropdown
+
+```python
+def bissextile(annee):
+    if annee % 4 == 0 and annee % 100 != 0:
+        return True
+    elif annee % 400 == 0:
+        return True
+    else:
+        return False
+
+def nb_jours(mois, annee):
+    if mois in [1, 3, 5, 7, 8, 10, 12]:
+        return 31
+    elif mois in [4, 6, 9, 11]:
+        return 30
+    else:  # Mois de février
+        if bissextile(annee):
+            return 29
+        else:
+            return 28
+
+def lendemain(jour, mois, annee):
+    if jour < nb_jours(mois, annee):
+        return jour + 1, mois, annee
+    elif mois < 12:  # Dernier jour du mois mais pas de l'année
+        return 1, mois + 1, annee
+    else:  # Dernier jour de l'année
+        return 1, 1, annee + 1
+
+# Tests de la fonction bissextile
+print(bissextile(2004))  # True car divisible par 4 et non par 100
+print(bissextile(1900))  # False car divisible par 100 et non par 400
+print(bissextile(2000))  # True car divisible par 400
+print(bissextile(1999))  # False car divisible ni par 4 ni par 100
+
+# Tests de la fonction nb_jours
+print(nb_jours(3, 2010))  # Mars : 31
+print(nb_jours(4, 2010))  # Avril : 30
+print(nb_jours(2, 2010))  # Février d'une année non bissextile : 28
+print(nb_jours(2, 2004))  # Février d'une année bissextile : 29
+
+# Tests de la fonction lendemain
+print(lendemain(12, 2, 2010))  # 13, 2, 2010
+print(lendemain(28, 2, 2010))  #  1, 3, 2010
+print(lendemain(31, 12, 2010)) #  1, 1, 2011
+```
+````
+
+````{admonition} Exercice 9.2
 Proposez une ré-écriture de la fonction bissextile ci-dessus qui tienne en une ligne de la forme :
 
 ```python
@@ -130,6 +186,26 @@ def bissextile(annee):
 
 où `CONDITION_COMPLEXE` est un booléen calculé à partir de la valeur de `annee`.
 Assurez-vous que cette nouvelle fonction passe bien les tests énoncés ci-dessus.
+````
 
-[{ref}`Corrigé <ex9.2_sol>`]
+<div id="pad_9.2" class="pad"></div>
+<script>
+    Pythonpad('pad_9.2', 
+              {'id': '9.2', 
+               'title': 'Testez votre solution ici', 
+               'src': '# Complétez ce code'})
+</script>
+
+````{admonition} Solution
+:class: tip, dropdown
+
+```python
+def bissextile(annee):
+    return (annee % 4 == 0 and annee % 100 != 0) or (annee % 400 == 0)
+
+print(bissextile(2004))  # True car divisible par 4 et non par 100
+print(bissextile(1900))  # False car divisible par 100 et non par 400
+print(bissextile(2000))  # True car divisible par 400
+print(bissextile(1999))  # False car divisible ni par 4 ni par 100
+```
 ````
