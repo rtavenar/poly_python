@@ -153,7 +153,7 @@ Les éléments de cette liste sont les cellules du tableau représenté par le f
 
 Souvent, les fichiers CSV comprennent une première ligne d'en-tête, comme dans l'exemple suivant :
 
-```csv
+```
 NOM;PRENOM;AGE
 Lemarchand;John;23
 Trias;Anne;
