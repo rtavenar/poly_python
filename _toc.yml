@@ -1,5 +1,7 @@
-- file: content/intro
-- part: "Contenu du livre"
+format: jb-book
+root: content/intro
+parts:
+- caption: Contenu du livre
   chapters:
   - file: content/struct
   - file: content/dates
@@ -10,10 +12,10 @@
   - file: content/api
   - file: content/test
   - file: content/conclusion
-- part: "Corrigé des exercices"
+- caption: "Corrig\xE9 des exercices"
   chapters:
   - file: content/solutions
-- part: "Téléchargement"
+- caption: "T\xE9l\xE9chargement"
   chapters:
   - url: https://github.com/rtavenar/poly_python/raw/master/book.pdf
-    title: "Version PDF"
+    title: Version PDF

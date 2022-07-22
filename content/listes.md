@@ -192,14 +192,41 @@ On a donc ici une boucle `for` pour laquelle, à chaque itération, on met à jo
 
 Pour tous ces parcours de listes, il est conseillé d'utiliser des noms de variables pertinents, afin de limiter les confusions dans la nature des éléments manipulés. Par exemple, on pourra utiliser `i` ou `j` pour noter des indices, mais on préfèrera `elem` ou `val` pour désigner les éléments de la liste.
 
+(ex4.1)=
 ### Exercice
 
-```{admonition} **Exercice 4.1**
+```{admonition} Exercice 4.1 : Argmax
 Écrivez une fonction en Python qui permette de calculer l'argmax d'une liste, c'est-à-dire l'indice auquel est stockée la valeur maximale de la liste.
 Si cette valeur maximale est présente plusieurs fois dans la liste, on retournera l'indice de sa première occurrence.
-
-[{ref}`Corrigé <ex4.1_sol>`]
 ```
+
+<div id="pad_4.1" class="pad"></div>
+<script>
+    Pythonpad('pad_4.1', 
+              {'id': '4.1', 
+               'title': 'Testez votre solution ici', 
+               'src': '# Complétez ce code'})
+</script>
+
+````{admonition} Cliquez ici pour voir la solution
+:class: tip, dropdown
+
+```python
+def argmax(liste):
+    i_max = None
+    # On initialise elem_max à une valeur
+    # qui n'est clairement pas le max
+    if len(liste) > 0:
+        elem_max = liste[0] - 1  
+    for i, elem in enumerate(liste):
+        if elem > elem_max:
+            i_max = i
+            elem_max = elem
+    return i_max
+
+print(argmax([1, 6, 2, 4]))
+```
+````
 
 ## Manipulations de listes
 
@@ -330,17 +357,61 @@ print(sorted(liste))
 
 ### Exercices
 
-```{admonition} **Exercice 4.2**
+```{admonition} Exercice 4.2 : Intersection de listes
+:name: ex4.2
 Écrivez une fonction qui prenne deux listes en entrée et retourne l'intersection des deux listes (c'est-à-dire une liste contenant tous les éléments présents dans les deux listes).
-
-[{ref}`Corrigé <ex4.2_sol>`]
 ```
 
-```{admonition} **Exercice 4.3**
+<div id="pad_4.2" class="pad"></div>
+<script>
+    Pythonpad('pad_4.2', 
+              {'id': '4.2', 
+               'title': 'Testez votre solution ici', 
+               'src': '# Complétez ce code'})
+</script>
+
+````{admonition} Cliquez ici pour voir la solution
+:class: tip, dropdown
+
+```python
+def intersection(liste1, liste2):
+    liste_intersection = []
+    for elem in liste1:
+        if elem in liste2 and not elem in liste_intersection:
+            liste_intersection.append(elem)
+    return liste_intersection
+
+print(intersection([1, 6, 2, 4], [2, 7, 6]))
+```
+````
+
+```{admonition} Exercice 4.3 : Union de listes
+:name: ex4.3
 Écrivez une fonction qui prenne deux listes en entrée et retourne l'union des deux listes (c'est-à-dire une liste contenant tous les éléments présents dans au moins une des deux listes) sans doublon.
-
-[{ref}`Corrigé <ex4.3_sol>`]
 ```
+
+<div id="pad_4.3" class="pad"></div>
+<script>
+    Pythonpad('pad_4.3', 
+              {'id': '4.3', 
+               'title': 'Testez votre solution ici', 
+               'src': '# Complétez ce code'})
+</script>
+
+````{admonition} Cliquez ici pour voir la solution
+:class: tip, dropdown
+
+```python
+def union_sans_doublon(liste1, liste2):
+    liste_union = []
+    for elem in liste1 + liste2:
+        if elem not in liste_union:
+            liste_union.append(elem)
+    return liste_union
+
+print(union_sans_doublon([1, 6, 2, 4], [2, 7, 6, 2]))
+```
+````
 
 ## Copie de liste
 
@@ -447,3 +518,11 @@ for p, n, a in zip(prenoms, noms, ages):
 
 
 Bien entendu, pour pouvoir utiliser `zip()`, il faut que les listes soient de même taille.
+
+
+
+## Liste des exercices de ce chapitre
+
+1. [Argmax](ex4.1)
+2. [Intersection de listes](ex4.2)
+3. [Union de listes](ex4.3)
