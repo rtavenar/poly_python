@@ -8,8 +8,11 @@ parts:
   - file: content/listes
   - file: content/chaines
   - file: content/dict
+  - file: content/sets_tuples
   - file: content/fichiers
   - file: content/api
+  - file: content/numpy
+  - file: content/poo
   - file: content/test
   - file: content/conclusion
 - caption: "T\xE9l\xE9chargement"

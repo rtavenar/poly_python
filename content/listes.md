@@ -259,35 +259,18 @@ print(liste)
 Si l'on souhaite, maintenant, supprimer un élément dans une liste, deux cas de figures peuvent se présenter.
 On peut souhaiter :
 
-* supprimer l'élément situé à l'indice `i` dans la liste, à l'aide de la méthode `pop` ;
+* supprimer l'élément situé à l'indice `i` dans la liste, à l'aide de l'instruction `del` ;
 * supprimer la première occurrence d'une valeur donnée dans la liste à l'aide de la méthode `remove`.
 
 ```{code-cell}
 liste = [1, 5, 7]
-liste.pop(1)  # l'élément d'indice 1 est le deuxième élément de la liste !
-print(liste)
-```
-
-```{code-cell}
-liste.pop()  # par défaut, supprime le dernier élément de la liste
+del liste[1]  # l'élément d'indice 1 est le deuxième élément de la liste !
 print(liste)
 ```
 
 ```{code-cell}
 liste = [7, 1, 5, 1]
 liste.remove(1) # supprime la première occurrence de 1 dans la liste
-print(liste)
-```
-
-On peut noter que la méthode `pop` retourne la valeur supprimée, ce qui peut s'avérer utile :
-
-```{code-cell}
-liste = [1, 5, 7]
-v = liste.pop(1)
-print(v)
-```
-
-```{code-cell}
 print(liste)
 ```
 
