@@ -407,7 +407,7 @@ et le fichier sera tout de même fermé correctement dès que l'on sortira du bl
 
 ## Exercices
 
-```{admonition} Exercice 7.1
+```{admonition} Exercice 8.1
 Écrivez une fonction qui affiche, pour chaque fichier d'extension `".txt"` d'un répertoire passé en argument, le nom du fichier ainsi que son nombre de lignes.
 ```
 
@@ -435,7 +435,7 @@ nb_lignes_repertoire(".")
 ```
 ````
 
-```{admonition} Exercice 7.2
+```{admonition} Exercice 8.2
 Écrivez une fonction qui retourne le nombre de fichiers présents dans un répertoire dont le nom est passé en argument.
 Vous pourrez vous aider pour cela de la documentation du sous-module `path` du module `os` ([lien](https://docs.python.org/3.5/library/os.path.html)).
 ```

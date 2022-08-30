@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Interaction avec des fichiers" href="fichiers.html" />
+    <link rel="next" title="Les sets et les tuples" href="sets_tuples.html" />
     <link rel="prev" title="Les chaînes de caractères" href="chaines.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -148,6 +148,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="sets_tuples.html">
+   Les
+   <em>
+    sets
+   </em>
+   et les
+   <em>
+    tuples
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="fichiers.html">
    Interaction avec des fichiers
   </a>
@@ -155,6 +167,21 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="api.html">
    Récupération de données à partir d’API web
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy
+    </span>
+   </code>
+   et le calcul matriciel
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="poo.html">
+   La Programmation Orientée Objet
   </a>
  </li>
  <li class="toctree-l1">
@@ -495,7 +522,7 @@ Notamment, ces clés ne sont pas nécessairement des entiers, on utilisera en ef
 </div>
 </div>
 </div>
-<p>On remarque ici que l’ordre dans lequel on a entré des paires clé-valeur n’est pas conservé lors de l’affichage.</p>
+<p>Attention, pour toutes les versions de Python antérieures à 3.7, l’ordre dans lequel on a entré des paires clé-valeur n’est pas conservé lors de l’affichage ni lors du parcours.</p>
 <section id="modification-du-contenu-d-un-dictionnaire">
 <h2>Modification du contenu d’un dictionnaire<a class="headerlink" href="#modification-du-contenu-d-un-dictionnaire" title="Permalink to this headline">#</a></h2>
 <p>Pour modifier la valeur associée à une clé d’un dictionnaire, la syntaxe est similaire à celle utilisée pour les listes, en remplaçant les indices par les clés :</p>
@@ -754,10 +781,10 @@ En pratique, on utilisera un dictionnaire dès lors que l’on souhaitera mettre
             <p class="prev-next-title">Les chaînes de caractères</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="fichiers.html" title="next page">
+    <a class='right-next' id="next-link" href="sets_tuples.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Interaction avec des fichiers</p>
+        <p class="prev-next-title">Les <em>sets</em> et les <em>tuples</em></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

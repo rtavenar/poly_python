@@ -175,7 +175,7 @@ C'est par exemple le cas des modules [`tweepy`](http://docs.tweepy.org/en/latest
 
 ## Exercice
 
-```{admonition} **Exercice 8.1**
+```{admonition} **Exercice 9.1**
 Écrivez une fonction qui prenne en entrée une liste de `userId` et affiche l'ensemble des entrées de l'API <http://my-json-server.typicode.com/rtavenar/fake_api/tasks> pour lesquelles l'attribut `completed` vaut `True`.
 ```
 

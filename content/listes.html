@@ -150,6 +150,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="sets_tuples.html">
+   Les
+   <em>
+    sets
+   </em>
+   et les
+   <em>
+    tuples
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="fichiers.html">
    Interaction avec des fichiers
   </a>
@@ -157,6 +169,21 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="api.html">
    Récupération de données à partir d’API web
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     numpy
+    </span>
+   </code>
+   et le calcul matriciel
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="poo.html">
+   La Programmation Orientée Objet
   </a>
  </li>
  <li class="toctree-l1">
@@ -944,32 +971,19 @@ L’appel de ces méthodes est un peu particulier, comme vous pouvez le remarque
 <p>Si l’on souhaite, maintenant, supprimer un élément dans une liste, deux cas de figures peuvent se présenter.
 On peut souhaiter :</p>
 <ul class="simple">
-<li><p>supprimer l’élément situé à l’indice <code class="docutils literal notranslate"><span class="pre">i</span></code> dans la liste, à l’aide de la méthode <code class="docutils literal notranslate"><span class="pre">pop</span></code> ;</p></li>
+<li><p>supprimer l’élément situé à l’indice <code class="docutils literal notranslate"><span class="pre">i</span></code> dans la liste, à l’aide de l’instruction <code class="docutils literal notranslate"><span class="pre">del</span></code> ;</p></li>
 <li><p>supprimer la première occurrence d’une valeur donnée dans la liste à l’aide de la méthode <code class="docutils literal notranslate"><span class="pre">remove</span></code>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-<span class="n">liste</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># l&#39;élément d&#39;indice 1 est le deuxième élément de la liste !</span>
+<span class="k">del</span> <span class="n">liste</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># l&#39;élément d&#39;indice 1 est le deuxième élément de la liste !</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 7]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>  <span class="c1"># par défaut, supprime le dernier élément de la liste</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1]
 </pre></div>
 </div>
 </div>
@@ -984,33 +998,6 @@ On peut souhaiter :</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7, 5, 1]
-</pre></div>
-</div>
-</div>
-</div>
-<p>On peut noter que la méthode <code class="docutils literal notranslate"><span class="pre">pop</span></code> retourne la valeur supprimée, ce qui peut s’avérer utile :</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-<span class="n">v</span> <span class="o">=</span> <span class="n">liste</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 7]
 </pre></div>
 </div>
 </div>

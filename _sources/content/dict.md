@@ -35,7 +35,7 @@ mon_dico = {}
 print(mon_dico)
 ```
 
-On remarque ici que l'ordre dans lequel on a entré des paires clé-valeur n'est pas conservé lors de l'affichage.
+Attention, pour toutes les versions de Python antérieures à 3.7, l'ordre dans lequel on a entré des paires clé-valeur n'est pas conservé lors de l'affichage ni lors du parcours.
 
 ## Modification du contenu d'un dictionnaire
 

@@ -114,14 +114,14 @@ def bissextile(annee):
 ## Exercices
 
 
-```{admonition} Exercice 9.1
+```{admonition} Exercice 11.1
 En utilisant les méthodes de développement préconisées dans ce chapitre, rédigez le code et les tests d'un programme permettant de déterminer le lendemain d'une date fournie sous la forme de trois entiers (jour, mois, année).
 ```
 
-<div id="pad_9.1" class="pad"></div>
+<div id="pad_11.1" class="pad"></div>
 <script>
-    Pythonpad('pad_9.1', 
-              {'id': '9.1', 
+    Pythonpad('pad_11.1', 
+              {'id': '11.1', 
                'title': 'Testez votre solution ici', 
                'src': '# Complétez ce code'})
 </script>
@@ -176,7 +176,7 @@ print(lendemain(31, 12, 2010)) #  1, 1, 2011
 ```
 ````
 
-````{admonition} Exercice 9.2
+````{admonition} Exercice 11.2
 Proposez une ré-écriture de la fonction bissextile ci-dessus qui tienne en une ligne de la forme :
 
 ```python
@@ -188,10 +188,10 @@ où `CONDITION_COMPLEXE` est un booléen calculé à partir de la valeur de `ann
 Assurez-vous que cette nouvelle fonction passe bien les tests énoncés ci-dessus.
 ````
 
-<div id="pad_9.2" class="pad"></div>
+<div id="pad_11.2" class="pad"></div>
 <script>
-    Pythonpad('pad_9.2', 
-              {'id': '9.2', 
+    Pythonpad('pad_11.2', 
+              {'id': '11.2', 
                'title': 'Testez votre solution ici', 
                'src': '# Complétez ce code'})
 </script>
