@@ -33,7 +33,7 @@ De plus, sachez que ce chapitre est très succinct et très loin de couvrir l'en
 ## Tableaux multi-dimensionnels
 
 Les tableaux multi-dimensionnels sont les objets de base en `numpy`.
-Onn peut créer un vecteur comme suit :
+On peut créer un vecteur comme suit :
 
 ```{code-cell}
 vec = np.array([1, 4, 6, 7])
