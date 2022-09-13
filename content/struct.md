@@ -641,6 +641,15 @@ print(math.sqrt(2))
 Vous remarquerez ici que l'instruction d'import du module se trouve nécessairement avant les instructions faisant référence aux fonctions et variables de ce module, faute de quoi ces dernières ne seraient pas définies.
 De manière générale, vous prendrez la bonne habitude d'écrire les instructions d'import en tout début de vos fichiers Python, pour éviter tout souci.
 
+Enfin, il est possible de renommer le module au moment où vous l'importez, ce qui peut être pratique pour les modules dont le nom est long ou ceux que vous allez utiliser de manière particulièrement fréquente dans votre code.
+Typiquement, il est de coutume de renommer le module `numpy` en `np` (_cf._ [ce chapitre](sec:numpy) pour plus de détails sur ce module) lorsqu'on l'importe :
+
+```{code-cell}
+import numpy as np
+
+print(np.zeros(5))  # Ici on utilise alors la forme abrégée
+```
+
 ## Liste des exercices de ce chapitre
 
 1. [Température de l'eau](ex2.1)

@@ -13,6 +13,7 @@ kernelspec:
   name: python3
 ---
 
+(sec:numpy)=
 # `numpy` et le calcul matriciel
 
 Ce chapitre traite d'un module en particulier : le module `numpy`.
