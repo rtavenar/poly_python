@@ -495,16 +495,6 @@ Ce module permet donc de manipuler des vecteurs et des matrices (voire des tense
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5085</span><span class="o">/</span><span class="mf">3593848235.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Vous remarquez ici que lors de l’import, le nom du module est renommé en <code class="docutils literal notranslate"><span class="pre">np</span></code> : il s’agit d’une habitude très répandue qui permet de ne pas surcharger inutilement la suite de votre code.</p>
 <p>De plus, sachez que ce chapitre est très succinct et très loin de couvrir l’ensemble des fonctionnalités <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, vous êtes donc fortement incités à utiliser <a class="reference external" href="https://numpy.org/doc/stable/">la documentation <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a> pour trouver ce qui pourrait vous être utile pour votre usage.</p>
@@ -517,6 +507,11 @@ Onn peut créer un vecteur comme suit :</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">vec</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -543,6 +538,17 @@ Onn peut créer un vecteur comme suit :</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 2.5 10.  15.  17.5]
+int64
+(4,)
+[[0 1]
+ [2 3]]
+[[0 2]
+ [1 3]]
+</pre></div>
+</div>
+</div>
 </div>
 <p>On remarque d’ores et déjà que les tableaux <code class="docutils literal notranslate"><span class="pre">numpy</span></code> ont un type associé.
 On ne pourra donc pas stocker dans un tableau <code class="docutils literal notranslate"><span class="pre">numpy</span></code> des données de types hétérogènes, comme on peut le faire dans le cas des listes Python par exemple.</p>
@@ -557,6 +563,12 @@ On ne pourra donc pas stocker dans un tableau <code class="docutils literal notr
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 1]
+ [2 3]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -565,10 +577,22 @@ On ne pourra donc pas stocker dans un tableau <code class="docutils literal notr
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 0]
+ [0 1]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">*</span> <span class="n">I</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 0],
+       [0, 3]])
 </pre></div>
 </div>
 </div>
@@ -580,11 +604,23 @@ On ne pourra donc pas stocker dans un tableau <code class="docutils literal notr
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 1],
+       [2, 3]])
+</pre></div>
+</div>
+</div>
 </div>
 <p>De même, lorsqu’on écrit <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">**</span> <span class="pre">2</span></code>, on obtient l’élévation au carré de chacun des éléments de <code class="docutils literal notranslate"><span class="pre">A</span></code> et non pas le produit de <code class="docutils literal notranslate"><span class="pre">A</span></code> par lui-même :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 1],
+       [4, 9]])
 </pre></div>
 </div>
 </div>
@@ -595,11 +631,23 @@ On ne pourra donc pas stocker dans un tableau <code class="docutils literal notr
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 2,  3],
+       [ 6, 11]])
+</pre></div>
+</div>
+</div>
 </div>
 <p>Les choses sont plus simples pour l’addition puisqu’il n’y a alors pas de confusion possible :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">+</span> <span class="n">A</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 2],
+       [4, 6]])
 </pre></div>
 </div>
 </div>
@@ -614,10 +662,22 @@ On ne pourra donc pas stocker dans un tableau <code class="docutils literal notr
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 0., 0.],
+       [0., 0., 0.]])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># (2, 3) est la taille de la matrice à produire</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1., 1., 1.],
+       [1., 1., 1.]])
 </pre></div>
 </div>
 </div>
@@ -628,10 +688,21 @@ On ne pourra donc pas stocker dans un tableau <code class="docutils literal notr
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1., 0.],
+       [0., 1.]])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># arange -&gt; équivalent de range pour les listes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 </pre></div>
 </div>
 </div>
@@ -640,6 +711,11 @@ On ne pourra donc pas stocker dans un tableau <code class="docutils literal notr
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vecteur de 11 valeurs espacées régulièrement entre 0 et 1</span>
 <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])
 </pre></div>
 </div>
 </div>
@@ -655,6 +731,14 @@ On ne pourra donc pas stocker dans un tableau <code class="docutils literal notr
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0,  1,  2,  3,  4],
+       [ 5,  6,  7,  8,  9],
+       [10, 11, 12, 13, 14],
+       [15, 16, 17, 18, 19]])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -664,12 +748,24 @@ On ne pourra donc pas stocker dans un tableau <code class="docutils literal notr
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3, 4],
+       [8, 9]])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Indices de colonne de 1 (inclus) à 3 (exclu)</span>
 <span class="c1"># Tous les indices de colonne</span>
 <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 5,  6,  7,  8,  9],
+       [10, 11, 12, 13, 14]])
 </pre></div>
 </div>
 </div>
@@ -687,6 +783,11 @@ On ne pourra donc pas stocker dans un tableau <code class="docutils literal notr
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>190
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>sa plus petite / plus grande valeur :</p></li>
@@ -697,10 +798,20 @@ On ne pourra donc pas stocker dans un tableau <code class="docutils literal notr
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>  <span class="c1"># Peut aussi s&#39;écrire M.max()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
 </pre></div>
 </div>
 </div>
@@ -714,10 +825,20 @@ On ne pourra donc pas stocker dans un tableau <code class="docutils literal notr
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.5
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>  <span class="c1"># Peut aussi s&#39;écrire M.std()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.766281297335398
 </pre></div>
 </div>
 </div>
@@ -731,6 +852,11 @@ On ne pourra donc pas stocker dans un tableau <code class="docutils literal notr
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([30, 34, 38, 42, 46])
+</pre></div>
+</div>
+</div>
 </div>
 <p>Enfin, on peut très facilement créer des masques binaires, tels que :</p>
 <div class="cell docutils container">
@@ -739,11 +865,24 @@ On ne pourra donc pas stocker dans un tableau <code class="docutils literal notr
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[False, False, False, False, False],
+       [False,  True,  True,  True,  True],
+       [ True,  True,  True,  True,  True],
+       [ True,  True,  True,  True,  True]])
+</pre></div>
+</div>
+</div>
 </div>
 <p>Ce qui permet de compter simplement le nombre de valeurs d’un tableau vérifiant une condition :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">M</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
 </pre></div>
 </div>
 </div>
@@ -768,6 +907,11 @@ Il est notamment fortement déconseillé de parcourir les valeurs d’un tableau
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.44 µs ± 12.3 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -776,6 +920,11 @@ Il est notamment fortement déconseillé de parcourir les valeurs d’un tableau
 <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vec</span><span class="p">:</span>  <span class="c1"># À ne JAMAIS faire !</span>
     <span class="n">s</span> <span class="o">+=</span> <span class="n">v</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>85.7 µs ± 41.3 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
 </div>
