@@ -182,7 +182,14 @@ np.mean(M)  # Peut aussi s'écrire M.mean()
 np.std(M)  # Peut aussi s'écrire M.std()
 ```
 
-Il est à noter que l'on peut également effectuer ces opérations ligne par ligne, ou colonne par colonne, comme ci-dessous :
+Il est à noter que pour toutes ces opérations, deux syntaxes co-existent :
+
+```{code-cell}
+print(np.min(M))
+print(M.min())
+```
+
+De plus, on peut également effectuer ces opérations ligne par ligne, ou colonne par colonne, comme ci-dessous :
 
 ```{code-cell}
 # On somme sur les lignes (dimension numéro 0)

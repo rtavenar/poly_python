@@ -843,7 +843,22 @@ On ne pourra donc pas stocker dans un tableau <code class="docutils literal notr
 </div>
 </div>
 </div>
-<p>Il est à noter que l’on peut également effectuer ces opérations ligne par ligne, ou colonne par colonne, comme ci-dessous :</p>
+<p>Il est à noter que pour toutes ces opérations, deux syntaxes co-existent :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">M</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
+</pre></div>
+</div>
+</div>
+</div>
+<p>De plus, on peut également effectuer ces opérations ligne par ligne, ou colonne par colonne, comme ci-dessous :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># On somme sur les lignes (dimension numéro 0)</span>
@@ -908,7 +923,7 @@ Il est notamment fortement déconseillé de parcourir les valeurs d’un tableau
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.98 µs ± 72.5 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.29 µs ± 17 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
@@ -924,7 +939,7 @@ Il est notamment fortement déconseillé de parcourir les valeurs d’un tableau
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>133 µs ± 986 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>86.7 µs ± 127 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
 </div>
