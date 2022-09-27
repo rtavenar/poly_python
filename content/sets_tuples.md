@@ -91,7 +91,7 @@ print(mon_set)
 
 Voici un tableau de ce qu'on peut / ne peut pas faire avec l'un ou l'autre des types de base pour les collections de données :
 
-|   | Listes | Dictionnaires | _Sets_ | _Tuples_ |
+|   | Listes | Dictionnaires | _Tuples_ | _Sets_ |
 |---|---|---|---|---|
 | Définition | `[1, 4]` | `{"a": 1, "b": 4}` | `(1, 4)` | `{1, 4}` |
 | Possibilité d'insérer / <br> supprimer des éléments | ✅ | ✅ | ❌ | ✅ |
