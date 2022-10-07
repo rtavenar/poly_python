@@ -106,7 +106,8 @@ Le module `requests` ne fait pas partie de la librairie standard en Python.
 Il faut donc l'installer avant de pouvoir l'utiliser.
 Pour ce faire, on peut utiliser le gestionnaire de paquets `pip`.
 
-Si vous utilisez l'IDE PyCharm, vous pourrez trouver une documentation [à cette adresse](https://www.jetbrains.com/help/pycharm/installing-uninstalling-and-upgrading-packages.html) concernant la marche à suivre pour installer un module via votre éditeur directement.
+Si vous utilisez Anaconda, la documentation en ligne disponible à [cette adresse](https://docs.anaconda.com/anaconda/navigator/tutorials/manage-packages/) explique la marche à suivre pour installer de nouveaux paquets dans votre version de Python fournie par Anaconda.
+Si vous utilisez plutôt l'IDE PyCharm et une version de Python non fournie par Anaconda, vous pourrez trouver de la documentation [à cette adresse](https://www.jetbrains.com/help/pycharm/installing-uninstalling-and-upgrading-packages.html).
 ```
 ````
 
