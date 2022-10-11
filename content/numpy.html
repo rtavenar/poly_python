@@ -788,6 +788,43 @@ On ne pourra donc pas stocker dans un tableau <code class="docutils literal notr
 </div>
 </div>
 </div>
+<p>On peut également utiliser des listes (ou des <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>) d’indices pour accéder aux éléments d’un tableau situés aux indices correspondants :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste_indices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
+<span class="n">v</span><span class="p">[</span><span class="n">liste_indices</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1, 12])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ici, <code class="docutils literal notranslate"><span class="pre">v[liste_indices]</span></code> est un <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> constitué des éléments <code class="docutils literal notranslate"><span class="pre">[v[0],</span> <span class="pre">v[4]]</span></code>.
+De la même façon, si les indices sont stockés dans une structure à deux dimensions :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+<span class="n">v</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1, 12],
+       [ 5,  9]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>On voit que, ici, <code class="docutils literal notranslate"><span class="pre">v[indices]</span></code> est un <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> à 2 dimensions constitué des éléments</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+ <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="mi">3</span><span class="p">]]</span>
+</pre></div>
+</div>
 </section>
 <section id="operations-elementaires-sur-les-tableaux">
 <h2>Opérations élémentaires sur les tableaux<a class="headerlink" href="#operations-elementaires-sur-les-tableaux" title="Permalink to this headline">#</a></h2>
@@ -941,7 +978,7 @@ Il est notamment fortement déconseillé de parcourir les valeurs d’un tableau
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.03 µs ± 6.5 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.71 µs ± 56.7 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
@@ -957,7 +994,7 @@ Il est notamment fortement déconseillé de parcourir les valeurs d’un tableau
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>87.4 µs ± 118 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>145 µs ± 2.33 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
 </div>
