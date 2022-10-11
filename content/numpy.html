@@ -742,7 +742,7 @@ On ne pourra donc pas stocker dans un tableau <code class="docutils literal notr
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Indices de colonne jusqu&#39;à 2 (exclu)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Indices de ligne jusqu&#39;à 2 (exclu)</span>
 <span class="c1"># Indices de colonne à partir de 3 (inclus)</span>
 <span class="n">M</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">:]</span>
 </pre></div>
@@ -923,7 +923,7 @@ Il est notamment fortement déconseillé de parcourir les valeurs d’un tableau
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.01 µs ± 68.2 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.38 µs ± 95.6 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
@@ -939,7 +939,7 @@ Il est notamment fortement déconseillé de parcourir les valeurs d’un tableau
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>123 µs ± 977 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>122 µs ± 1.71 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
 </div>
@@ -985,7 +985,7 @@ Il est notamment fortement déconseillé de parcourir les valeurs d’un tableau
    <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">12</span><span class="p">]]</span>
 <span class="p">)</span>
 
-<span class="n">moyennes</span> <span class="o">=</span> <span class="n">notes</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">moyennes</span> <span class="o">=</span> <span class="n">notes</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">n_notes_sup_12</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">notes</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">)</span>
 </pre></div>
 </div>
