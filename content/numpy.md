@@ -131,6 +131,12 @@ np.arange(10)  # arange -> équivalent de range pour les listes
 np.linspace(0, 1, 11)
 ```
 
+```{code-cell} ipython3
+m = np.arange(10)
+# Redimensionner m pour qu'il ait 5 lignes et 2 colonnes
+m.reshape((5, 2))
+```
+
 ## Accès à des sous-parties des tableaux
 
 Comme pour les listes, les tableaux `numpy` peuvent être accédés par "tranches" (_slice_), comme dans les exemples suivants :

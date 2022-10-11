@@ -86,7 +86,7 @@ Nous nous focaliserons ici sur les deux encodages que vous êtes les plus suscep
 * l'encodage Unicode 8 bits (UTF-8), dont le code en python est `"utf-8"` ;
 * l'encodage Latin-1 (ISO-8859-1) dont le code en python est `"iso-8859-1"`.
 
-La principale différence entre ces deux encodage réside dans leur façon de coder les accents.
+La principale différence entre ces deux encodages réside dans leur façon de coder les accents.
 Ainsi, si le texte que vous lisez/écrivez ne contient aucun accent ou caractère spécial, il est probable que la question de l'encodage ne soit pas problématique dans votre cas.
 Au contraire, s'il est possible que vous utilisiez de tels caractères, il faudra bien faire attention à l'encodage utilisé, que vous spécifierez à l'ouverture du fichier.
 Si votre programme doit lire un fichier, il faudra donc vous assurer de l'encodage associé à ce fichier (en l'ouvrant par exemple avec un éditeur de texte qui soit suffisamment avancé pour vous fournir cette information).
