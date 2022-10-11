@@ -177,8 +177,8 @@ v[indices]
 
 On voit que, ici, `v[indices]` est un `ndarray` à 2 dimensions constitué des éléments 
 ```
-[v[0], v[4]
- v[1], v[3]]
+v[0] v[4]
+v[1] v[3]
 ````
 
 ## Opérations élémentaires sur les tableaux
