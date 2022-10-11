@@ -720,6 +720,24 @@ On ne pourra donc pas stocker dans un tableau <code class="docutils literal notr
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># Redimensionner m pour qu&#39;il ait 5 lignes et 2 colonnes</span>
+<span class="n">m</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 1],
+       [2, 3],
+       [4, 5],
+       [6, 7],
+       [8, 9]])
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="acces-a-des-sous-parties-des-tableaux">
 <h2>Accès à des sous-parties des tableaux<a class="headerlink" href="#acces-a-des-sous-parties-des-tableaux" title="Permalink to this headline">#</a></h2>
@@ -923,7 +941,7 @@ Il est notamment fortement déconseillé de parcourir les valeurs d’un tableau
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.38 µs ± 95.6 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.03 µs ± 6.5 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
@@ -939,7 +957,7 @@ Il est notamment fortement déconseillé de parcourir les valeurs d’un tableau
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>122 µs ± 1.71 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>87.4 µs ± 118 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
 </div>
