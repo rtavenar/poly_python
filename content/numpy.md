@@ -158,6 +158,29 @@ M[:2, 3:]
 M[1:3, :]
 ```
 
+On peut également utiliser des listes (ou des `ndarray`) d'indices pour accéder aux éléments d'un tableau situés aux indices correspondants :
+
+```{code-cell} ipython3
+liste_indices = [0, 4]
+v = np.array([1, 5, 7, 9, 12])
+v[liste_indices]
+```
+
+Ici, `v[liste_indices]` est un `ndarray` constitué des éléments `[v[0], v[4]]`.
+De la même façon, si les indices sont stockés dans une structure à deux dimensions :
+
+```{code-cell} ipython3
+indices = np.array([[0, 4],
+                    [1, 3]])
+v[indices]
+```
+
+On voit que, ici, `v[indices]` est un `ndarray` à 2 dimensions constitué des éléments 
+```
+[v[0], v[4]
+ v[1], v[3]]
+````
+
 ## Opérations élémentaires sur les tableaux
 
 Une fois un tableau défini, on peut très facilement calculer :
