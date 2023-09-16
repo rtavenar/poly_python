@@ -27,7 +27,7 @@ En termes de vocabulaire, on dit que `"abc"` est un **objet** de la **classe** `
 
 Nous avons vu dans le chapitre dédié que l'on disposait, pour les chaînes de caractères, de fonctions permettant des manipulations élémentaires, comme par exemple passer la chaîne de caractères en minuscule :
 
-```{code-cell}}
+```{code-cell}
 s = "abcDEf"
 print(s.upper())
 ```
@@ -146,10 +146,12 @@ class Velo(Vehicule):
         self.couleur = nouvelle_couleur
 ```
 
-Dans le code ci-dessous, on décide que lors de la construction d'un nouveau véhicule, sa couleur sera `"rouge"` et on disposera d'une méthode pour le repeindre.
+Dans le code ci-dessus, on décide que lors de la construction d'un nouveau véhicule, sa couleur sera `"rouge"` et on disposera d'une méthode pour le repeindre.
 On fait aussi le choix de dire que les classes `Voiture` et `Velo` **héritent** de la classe `Vehicule` (on le spécifie en écrivant `class Voiture(Vehicule)`).
 En héritant de cette classe, elles récupèrent tout ce qui existait pour cette classe (la couleur par défaut et la méthode pour repeindre).
 Chacune des classes définit en outre un attribut `nombre_roues`.
+
+Enfin, les instructions `super().__init__()` sont à comprendre comme "exécuter la méthode `__init__` de la classe parente", le mot-clé `super()` étant l'équivalent de `self` pour la classe parente.
 
 Pour créer un nouvel objet `Voiture` ou `Velo`, on peut alors faire :
 
@@ -194,6 +196,78 @@ mon_vtt.repeindre("bleu")
 
 ```{code-cell}
 print(mon_vtt.couleur)
+```
+
+### L'héritage multiple
+
+Dans certains cas, on souhaitera qu'une classe hérite de deux (ou plus) classes parentes à la fois.
+Ce mécanisme s'appelle l'héritage multiple et il est tout à fait possible de le mettre en oeuvre en Python :
+
+```{code-cell}
+class A:
+    pass
+
+class B:
+    pass
+
+class C(A, B):
+    pass
+```
+
+Dans le code ci-dessus, on définit une classe `C` qui hérite des classes `A` et `B`.
+
+Dans le cas de l'héritage multiple, le rôle de `super()` est ambigu puisqu'on a plusieurs classes parentes.
+Développons un petit peu le code du dessus pour mieux voir comment tout cela se déroule :
+
+```{code-cell}
+class A:
+    def __init__(self):
+        print("Init A")
+        super().__init__()
+
+class B:
+    def __init__(self):
+        print("Init B")
+        super().__init__()
+
+class C(A, B):
+    def __init__(self):
+        print("Init C")
+        super().__init__()
+
+c = C()
+```
+
+L'affichage nous démontre que les constructeurs des deux classes parentes ont bien été appelés, dans l'ordre dans lequel elles ont été déclarées par `class C(A, B)` (donc le constructeur de `A` est appelé avant celui de `B`).
+
+Il est important de noter ici que, pour que cet ordre d'appel soit effectif, il faut que chacune des classes concernées fasse appel au constructeur de sa classe parente (`super().__init__()`) dans son propre constructeur.
+De plus, ce principe de fonctionnement s'étend aux méthodes autres que `__init__` :
+
+```{code-cell}
+class A:
+    def __init__(self):
+        super().__init__()
+    
+    def test(self):
+        print("test A")
+
+class B:
+    def __init__(self):
+        super().__init__()
+    
+    def test(self):
+        print("test B")
+
+class C(A, B):
+    def __init__(self):
+        super().__init__()
+    
+    def test(self):
+        print("test C")
+        super.test()
+
+c = C()
+c.test()
 ```
 
 
@@ -274,3 +348,7 @@ Méthode spéciale | Opérateur
 `__mul__(self, o)` | `*`
 `__truediv__(self, o)` | `/`
 `__pow__(self, o)` | `**`
+
+**TODO ici :** `@property`
+**TODO ici :** Classe abstraite, module `abc`, classe `ABC`, `@abstractmethod`, `@abstractproperty`
+**TODO ici :** Exercices
