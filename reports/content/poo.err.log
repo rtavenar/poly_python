@@ -17,16 +17,37 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-p = Polygone(cotes=[1, 1, 1, 1, 1])
-print(v.perimetre())
+from abc import abstractmethod
+
+class FormeGeometrique(ABC):
+    def __init__(self):
+        super().__init__()
+
+    @abstractmethod
+    def perimetre(self):
+        # Le code ci-dessous importe peu puisque 
+        # la méthode devra être redéfinie dans les 
+        # classes filles
+        pass
+
+
+class Polygone(FormeGeometrique):
+    def __init__(self, cotes):
+        self.cotes = cotes
+
+    def perimetre(self):
+        return sum(self.cotes)
+
+p = Polygone()
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_5191/1180810863.py[0m in [0;36m<module>[0;34m[0m
-[1;32m      1[0m [0mp[0m [0;34m=[0m [0mPolygone[0m[0;34m([0m[0mcotes[0m[0;34m=[0m[0;34m[[0m[0;36m1[0m[0;34m,[0m [0;36m1[0m[0;34m,[0m [0;36m1[0m[0;34m,[0m [0;36m1[0m[0;34m,[0m [0;36m1[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 2[0;31m [0mprint[0m[0;34m([0m[0mv[0m[0;34m.[0m[0mperimetre[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+[0;32m/tmp/ipykernel_5171/253266122.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     20[0m         [0;32mreturn[0m [0msum[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mcotes[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     21[0m [0;34m[0m[0m
+[0;32m---> 22[0;31m [0mp[0m [0;34m=[0m [0mPolygone[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
-[0;31mNameError[0m: name 'v' is not defined
-NameError: name 'v' is not defined
+[0;31mTypeError[0m: __init__() missing 1 required positional argument: 'cotes'
+TypeError: __init__() missing 1 required positional argument: 'cotes'
 

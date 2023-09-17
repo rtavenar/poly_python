@@ -346,7 +346,7 @@ Il est important de noter ici que, pour que cet ordre d'appel soit effectif, il 
 
 ### Classes abstraites
 
-Les classes abstraites sont des classes un peu spéciales au sens où on ne pourra pas les instancier.
+Les classes abstraites sont des classes un peu spéciales au sens elles ne sont pas faites pour être instanciées.
 Ces classes servent en conséquence à définir un modèle dont d'autres classes hériteront, et ce sont ces classes filles qui pourront être instanciées.
 
 En Python, pour définir une classe abstraite, il suffit de la faire hériter de la classe `ABC` (_Abstract Base Class_) du module `abc` :
@@ -360,26 +360,19 @@ from abc import ABC
 
 class FormeGeometrique(ABC):
     def __init__(self):
-        pass
+        super().__init__()
 
 
 class Polygone(FormeGeometrique):
     def __init__(self, cotes):
+        super().__init__()
         self.cotes = cotes
 
     def perimetre(self):
         return sum(self.cotes)
 
-f = FormeGeometrique()
-```
-
-Comme vous le voyez dans le code ci-dessus, si l'on tente d'instancier la classe abstraite `FormeGeometrique`, on obtient une erreur.
-
-Par contre, on peut toujours instancier la classe fille `Polygone` :
-
-```{code-cell}
 p = Polygone(cotes=[1, 1, 1, 1, 1])
-print(v.perimetre())
+print(p.perimetre())
 ```
 
 Dans certains cas, on voudra spécifier dans la classe mère abstraite des méthodes (ou attributs calculés) à implémenter dans la ou les classes filles.
@@ -391,7 +384,7 @@ from abc import abstractmethod
 
 class FormeGeometrique(ABC):
     def __init__(self):
-        pass
+        super().__init__()
 
     @abstractmethod
     def perimetre(self):

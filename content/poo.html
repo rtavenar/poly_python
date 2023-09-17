@@ -499,7 +499,7 @@ Pour cela, on fait appel à des <strong>méthodes spéciales</strong>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Vecteur object at 0x7fc7a00c73d0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Vecteur object at 0x7f572803d690&gt;
 </pre></div>
 </div>
 </div>
@@ -791,7 +791,7 @@ Init Losange
 </section>
 <section id="classes-abstraites">
 <h3>Classes abstraites<a class="headerlink" href="#classes-abstraites" title="Permalink to this heading">#</a></h3>
-<p>Les classes abstraites sont des classes un peu spéciales au sens où on ne pourra pas les instancier.
+<p>Les classes abstraites sont des classes un peu spéciales au sens elles ne sont pas faites pour être instanciées.
 Ces classes servent en conséquence à définir un modèle dont d’autres classes hériteront, et ce sont ces classes filles qui pourront être instanciées.</p>
 <p>En Python, pour définir une classe abstraite, il suffit de la faire hériter de la classe <code class="docutils literal notranslate"><span class="pre">ABC</span></code> (<em>Abstract Base Class</em>) du module <code class="docutils literal notranslate"><span class="pre">abc</span></code> :</p>
 <div class="cell tag_raises-exception docutils container">
@@ -800,38 +800,24 @@ Ces classes servent en conséquence à définir un modèle dont d’autres class
 
 <span class="k">class</span> <span class="nc">FormeGeometrique</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">pass</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
 
 <span class="k">class</span> <span class="nc">Polygone</span><span class="p">(</span><span class="n">FormeGeometrique</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cotes</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cotes</span> <span class="o">=</span> <span class="n">cotes</span>
 
     <span class="k">def</span> <span class="nf">perimetre</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cotes</span><span class="p">)</span>
 
-<span class="n">f</span> <span class="o">=</span> <span class="n">FormeGeometrique</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Comme vous le voyez dans le code ci-dessus, si l’on tente d’instancier la classe abstraite <code class="docutils literal notranslate"><span class="pre">FormeGeometrique</span></code>, on obtient une erreur.</p>
-<p>Par contre, on peut toujours instancier la classe fille <code class="docutils literal notranslate"><span class="pre">Polygone</span></code> :</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Polygone</span><span class="p">(</span><span class="n">cotes</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">perimetre</span><span class="p">())</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Polygone</span><span class="p">(</span><span class="n">cotes</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">perimetre</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5191</span><span class="o">/</span><span class="mf">1180810863.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Polygone</span><span class="p">(</span><span class="n">cotes</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">perimetre</span><span class="p">())</span>
-
-<span class="ne">NameError</span>: name &#39;v&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
 </div>
 </div>
@@ -844,7 +830,7 @@ Cela peut se faire en définissant ces méthodes dans la classe mère et en les 
 
 <span class="k">class</span> <span class="nc">FormeGeometrique</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">pass</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">perimetre</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -862,6 +848,18 @@ Cela peut se faire en définissant ces méthodes dans la classe mère et en les 
         <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cotes</span><span class="p">)</span>
 
 <span class="n">p</span> <span class="o">=</span> <span class="n">Polygone</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5171</span><span class="o">/</span><span class="mf">253266122.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>         <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cotes</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> 
+<span class="ne">---&gt; </span><span class="mi">22</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Polygone</span><span class="p">()</span>
+
+<span class="ne">TypeError</span>: __init__() missing 1 required positional argument: &#39;cotes&#39;
 </pre></div>
 </div>
 </div>
