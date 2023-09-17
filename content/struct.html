@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="fr" >
 
   <head>
     <meta charset="utf-8" />
@@ -56,6 +56,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/vue.js"></script>
     <script src="../_static/pythonpad.bundle.js"></script>
+    <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -68,11 +69,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/struct';</script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Les dates" href="dates.html" />
     <link rel="prev" title="Introduction" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="fr"/>
   </head>
   
   
@@ -80,7 +81,7 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -220,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -229,7 +230,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="../_sources/content/struct.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Télécharger le fichier source"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -247,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimer au format PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -267,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Mode plein écran"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -281,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
     <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
     <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
@@ -291,7 +292,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
@@ -315,7 +316,7 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> Contents </h2>
+                <h2> Contenu </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -358,16 +359,16 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="structures-de-donnees-et-structures-de-controle">
-<h1>Structures de données et structures de contrôle<a class="headerlink" href="#structures-de-donnees-et-structures-de-controle" title="Permalink to this heading">#</a></h1>
+<h1>Structures de données et structures de contrôle<a class="headerlink" href="#structures-de-donnees-et-structures-de-controle" title="Lien permanent vers cette rubrique">#</a></h1>
 <p>Dans ce chapitre, on s’intéresse aux éléments de base de la syntaxe Python : les structures de données d’une part et les structures de contrôle d’autre part.
 Les structures de données vont permettre de stocker dans la mémoire de l’ordinateur (dans le but de les traiter ensuite) des données tandis que les structures de contrôle vont servir à définir nos interactions avec ces données.</p>
 <section id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h2>
+<h2>Variables<a class="headerlink" href="#variables" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>En Python, les données sont stockées dans des variables.
 On ne peut pas, comme c’est le cas dans d’autres langages, définir de constante (qui sont, dans ces langages, des moyens de stocker des valeurs n’ayant pas vocation à être modifiées au cours de l’exécution du programme).
 Une variable est une association entre un symbole (le nom de la variable) et une valeur, cette dernière pouvant varier au cours de l’exécution du programme.</p>
 <section id="types-des-variables-python">
-<h3>Types des variables Python<a class="headerlink" href="#types-des-variables-python" title="Permalink to this heading">#</a></h3>
+<h3>Types des variables Python<a class="headerlink" href="#types-des-variables-python" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Les types de base existant en Python sont les suivants :</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">int</span></code> : entier ;</p></li>
@@ -376,7 +377,7 @@ Une variable est une association entre un symbole (le nom de la variable) et une
 <li><p><code class="docutils literal notranslate"><span class="pre">str</span></code> : chaîne de caractères ;</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">bool</span></code> : booléen (pouvant prendre les valeurs <code class="docutils literal notranslate"><span class="pre">True</span></code> ou <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p></li>
 </ul>
-<p>De plus, il existe un type spécial (<code class="docutils literal notranslate"><span class="pre">NoneType</span></code>) ne permettant qu’une seule valeur : la valeur <code class="docutils literal notranslate"><span class="pre">None</span></code> qui signifie “pas de valeur” ou “valeur manquante”.</p>
+<p>De plus, il existe un type spécial (<code class="docutils literal notranslate"><span class="pre">NoneType</span></code>) ne permettant qu’une seule valeur : la valeur <code class="docutils literal notranslate"><span class="pre">None</span></code> qui signifie « pas de valeur » ou « valeur manquante ».</p>
 <p>Le choix du type utilisé pour une variable impliquera :</p>
 <ul class="simple">
 <li><p>une certaine façon d’encoder les données en mémoire (mais cette partie vous sera largement masquée, c’est l’interpréteur qui s’en chargera) ;</p></li>
@@ -420,7 +421,7 @@ En Python, le type d’une variable n’est pas déclaré par l’utilisateur : 
 </div>
 </section>
 <section id="operation-d-affectation">
-<h3>Opération d’affectation<a class="headerlink" href="#operation-d-affectation" title="Permalink to this heading">#</a></h3>
+<h3>Opération d’affectation<a class="headerlink" href="#operation-d-affectation" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Comme le montrent les exemples précédents, pour pouvoir utiliser des variables, on doit leur donner un nom (placé à gauche du signe égal dans l’opération d’affectation).
 Ces noms de variables doivent respecter certaines contraintes :</p>
 <ul class="simple">
@@ -464,7 +465,7 @@ Ces noms de variables doivent respecter certaines contraintes :</p>
 </div>
 </div>
 <p>Comme on l’a vu plus haut, on utilise en Python l’opérateur <code class="docutils literal notranslate"><span class="pre">=</span></code> pour affecter une valeur à une variable.
-La sémantique de cet opérateur est la suivante : “affecter la valeur contenue dans le membre de droite à la variable du membre de gauche”.
+La sémantique de cet opérateur est la suivante : « affecter la valeur contenue dans le membre de droite à la variable du membre de gauche ».
 Ainsi, il est tout à fait valide d’écrire, en Python :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">3.9</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
@@ -514,7 +515,7 @@ Ainsi, il est tout à fait valide d’écrire, en Python :</p>
 </div>
 </section>
 <section id="operateurs-et-priorite">
-<h3>Opérateurs et priorité<a class="headerlink" href="#operateurs-et-priorite" title="Permalink to this heading">#</a></h3>
+<h3>Opérateurs et priorité<a class="headerlink" href="#operateurs-et-priorite" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>On le voit dans l’exemple précédent, pour manipuler des variables, on utilisera des opérateurs (dont les plus connus sont les opérateurs arithmétiques).
 Le tableau suivant dresse une liste des opérateurs définis pour les variables dont le type est l’un des types numériques (entier, nombre à virgule, nombre complexe) :</p>
 <table class="table">
@@ -608,7 +609,7 @@ En Python 3, si l’on souhaite effectuer une division entière, on pourra utili
 </section>
 </section>
 <section id="structures-de-controle">
-<h2>Structures de contrôle<a class="headerlink" href="#structures-de-controle" title="Permalink to this heading">#</a></h2>
+<h2>Structures de contrôle<a class="headerlink" href="#structures-de-controle" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Un programme est une séquence d’instructions dont l’ordre doit être respecté.
 Au-delà de cet aspect séquentiel, on peut souhaiter :</p>
 <ul class="simple">
@@ -618,7 +619,7 @@ Au-delà de cet aspect séquentiel, on peut souhaiter :</p>
 </ul>
 <p>Les structures de contrôle associées à ces différents comportements sont décrits dans la suite de cette section.</p>
 <section id="structures-conditionnelles">
-<h3>Structures conditionnelles<a class="headerlink" href="#structures-conditionnelles" title="Permalink to this heading">#</a></h3>
+<h3>Structures conditionnelles<a class="headerlink" href="#structures-conditionnelles" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>On peut indiquer à un programme de n’exécuter une instruction (ou une séquence d’instructions) que si une certaine condition est remplie, à l’aide du mot-clé <code class="docutils literal notranslate"><span class="pre">if</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -636,7 +637,7 @@ X n&#39;est pas négatif
 </div>
 </div>
 </div>
-<p>On remarque ici que la condition est terminée par le symbole <code class="docutils literal notranslate"><span class="pre">:</span></code>, de plus, la séquence d’instructions à exécuter si la condition est remplie est <strong>indentée</strong>, cela signifie qu’elle est décalée d’un “cran” (généralement une tabulation ou 4 espaces) vers la droite.
+<p>On remarque ici que la condition est terminée par le symbole <code class="docutils literal notranslate"><span class="pre">:</span></code>, de plus, la séquence d’instructions à exécuter si la condition est remplie est <strong>indentée</strong>, cela signifie qu’elle est décalée d’un « cran » (généralement une tabulation ou 4 espaces) vers la droite.
 Cette indentation est une bonne pratique recommandée quel que soit le langage que vous utilisez, mais en Python, c’est même une obligation (sinon, l’interpréteur Python ne saura pas où commence et où se termine la séquence à exécuter sous condition).</p>
 <p>Dans certains cas, on souhaite exécuter une série d’instructions si la condition est vérifiée et une autre série d’instructions si elle ne l’est pas.
 Pour cela, on utilise le mot-clé <code class="docutils literal notranslate"><span class="pre">else</span></code> comme suit :</p>
@@ -730,7 +731,7 @@ On note également que le mot-clé <code class="docutils literal notranslate"><s
 </table>
 <p>Il est notamment important de remarquer que, lorsque l’on souhaite tester l’égalité entre deux valeurs, l’opérateur à utiliser est <code class="docutils literal notranslate"><span class="pre">==</span></code> et non <code class="docutils literal notranslate"><span class="pre">=</span></code> (qui sert à affecter une valeur à une variable).</p>
 <section id="exercice">
-<span id="ex2-1"></span><h4>Exercice<a class="headerlink" href="#exercice" title="Permalink to this heading">#</a></h4>
+<span id="ex2-1"></span><h4>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers cette rubrique">#</a></h4>
 <div class="admonition-exercice-2-1-temperature-de-l-eau admonition">
 <p class="admonition-title">Exercice 2.1 : Température de l’eau</p>
 <p>Écrivez une expression conditionnelle, qui à partir d’une température d’eau stockée dans une variable <code class="docutils literal notranslate"><span class="pre">t</span></code> affiche dans le terminal si l’eau à cette température est à l’état liquide, solide ou gazeux.</p>
@@ -757,14 +758,14 @@ On note également que le mot-clé <code class="docutils literal notranslate"><s
 </section>
 </section>
 <section id="boucles">
-<h3>Boucles<a class="headerlink" href="#boucles" title="Permalink to this heading">#</a></h3>
+<h3>Boucles<a class="headerlink" href="#boucles" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Il existe, en Python comme dans une grande majorité des langages de programmation, deux types de boucles :</p>
 <ul class="simple">
 <li><p>les boucles qui s’exécutent tant qu’une condition est vraie ;</p></li>
 <li><p>les boucles qui répètent la même série d’instructions pour différentes valeurs d’une variable (appelée <strong>variable de boucle</strong>).</p></li>
 </ul>
 <section id="boucles-while">
-<h4>Boucles <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#boucles-while" title="Permalink to this heading">#</a></h4>
+<h4>Boucles <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#boucles-while" title="Lien permanent vers cette rubrique">#</a></h4>
 <p>Les premières ont une syntaxe très similaire à celle des structures conditionnelles simples :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -798,7 +799,7 @@ Il faut être très prudent avec ces boucles <code class="docutils literal notra
 Pour information, si vous vous retrouvez dans un tel cas, vous pourrez interrompre l’exécution du programme à l’aide de la combinaison de touches <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code>.</p>
 </section>
 <section id="boucles-for">
-<h4>Boucles <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#boucles-for" title="Permalink to this heading">#</a></h4>
+<h4>Boucles <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#boucles-for" title="Lien permanent vers cette rubrique">#</a></h4>
 <div class="tip admonition">
 <p class="admonition-title">Information</p>
 <p>Si vous avez appris à programmer dans un autre langage que Python, il est possible que vous ayez été habitué(e) à ce que les boucles <code class="docutils literal notranslate"><span class="pre">for</span></code> soient utilisées pour itérer sur des entiers (par exemple les indices des éléments d’une liste).
@@ -853,11 +854,11 @@ Cela peut se faire à l’aide de la fonction <code class="docutils literal notr
 <p>Lorsque l’on débute la programmation en Python, il peut être difficile de choisir, pour un problème donné, entre les boucles <code class="docutils literal notranslate"><span class="pre">for</span></code> et <code class="docutils literal notranslate"><span class="pre">while</span></code> présentées ici.
 De manière générale, dès lors que l’on souhaite parcourir les éléments d’une liste ou d’un dictionnaire, on utilisera la boucle <code class="docutils literal notranslate"><span class="pre">for</span></code>.
 De même, si l’on connait à l’avance le nombre d’itérations que l’on souhaite effectuer, on utilisera une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> (couplée avec un appel à la fonction <code class="docutils literal notranslate"><span class="pre">range</span></code>).
-Comme son nom l’indique, la boucle <code class="docutils literal notranslate"><span class="pre">while</span></code> sera utilisée dès lors que l’on souhaite répéter une action <strong>tant qu’</strong> une condition est vérifiée.</p>
+Comme son nom l’indique, la boucle <code class="docutils literal notranslate"><span class="pre">while</span></code> sera utilisée dès lors que l’on souhaite répéter une action <strong>tant qu”</strong> une condition est vérifiée.</p>
 </div>
 </section>
 <section id="ex2-2">
-<span id="id1"></span><h4>Exercice<a class="headerlink" href="#ex2-2" title="Permalink to this heading">#</a></h4>
+<span id="id1"></span><h4>Exercice<a class="headerlink" href="#ex2-2" title="Lien permanent vers cette rubrique">#</a></h4>
 <div class="admonition-exercice-2-2-nombres-impairs admonition">
 <p class="admonition-title">Exercice 2.2 : Nombres impairs</p>
 <p>Écrivez une boucle permettant d’afficher tous les nombres impairs inférieurs à une valeur <code class="docutils literal notranslate"><span class="pre">n</span></code> initialement fixée.</p>
@@ -896,7 +897,7 @@ Comme son nom l’indique, la boucle <code class="docutils literal notranslate">
 </section>
 </section>
 <section id="fonctions">
-<h3>Fonctions<a class="headerlink" href="#fonctions" title="Permalink to this heading">#</a></h3>
+<h3>Fonctions<a class="headerlink" href="#fonctions" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Nous avons déjà vu dans ce qui précède, sans le dire, des fonctions.
 Par exemple, lorsque l’on écrit :</p>
 <div class="cell docutils container">
@@ -933,7 +934,7 @@ D’autres fonctions, comme <code class="docutils literal notranslate"><span cla
 </div>
 <p>En pratique, dans un programme, on aura recours à la définition de fonctions pour décomposer un problème global en sous-problèmes, chaque sous-problème étant géré par une fonction qui pourra elle-même, au besoin, faire appel à d’autres fonctions.</p>
 <section id="definition-d-une-fonction">
-<h4>Définition d’une fonction<a class="headerlink" href="#definition-d-une-fonction" title="Permalink to this heading">#</a></h4>
+<h4>Définition d’une fonction<a class="headerlink" href="#definition-d-une-fonction" title="Lien permanent vers cette rubrique">#</a></h4>
 <p>Lorsqu’un ensemble d’instructions est susceptible d’être utilisé à plusieurs occasions dans un ou plusieurs programmes, il est recommandé de l’isoler au sein d’une fonction.
 Cela présentera les avantages suivants :</p>
 <ul class="simple">
@@ -1025,7 +1026,7 @@ Taille:  180
 Évidemment, pour que cela soit vraiment utile, il est hautement recommandé d’utiliser des <strong>noms d’arguments explicites</strong> lors de la définition de vos fonctions.</p>
 </section>
 <section id="argument-s-optionnel-s-d-une-fonction">
-<h4>Argument(s) optionnel(s) d’une fonction<a class="headerlink" href="#argument-s-optionnel-s-d-une-fonction" title="Permalink to this heading">#</a></h4>
+<h4>Argument(s) optionnel(s) d’une fonction<a class="headerlink" href="#argument-s-optionnel-s-d-une-fonction" title="Lien permanent vers cette rubrique">#</a></h4>
 <p>Certains arguments d’une fonction peuvent avoir une valeur par défaut, décidée par la personne qui a écrit la fonction.
 Dans ce cas, si l’utilisateur ne spécifie pas explicitement de valeur pour ces arguments lors de l’appel à la fonction, c’est la valeur par défaut qui sera utilisée dans la fonction, dans le cas contraire, la valeur spécifiée sera utilisée.</p>
 <p>Par exemple, la fonction <code class="docutils literal notranslate"><span class="pre">print</span></code> dispose de plusieurs arguments facultatifs, comme le caractère par lequel terminer l’affichage (par défaut, un retour à la ligne, <code class="docutils literal notranslate"><span class="pre">&quot;\n&quot;</span></code>) :</p>
@@ -1095,7 +1096,7 @@ Ainsi, la définition de fonction suivante <strong>n’est pas correcte</strong>
 </section>
 </section>
 <section id="exercices">
-<span id="ex2-3"></span><h3>Exercices<a class="headerlink" href="#exercices" title="Permalink to this heading">#</a></h3>
+<span id="ex2-3"></span><h3>Exercices<a class="headerlink" href="#exercices" title="Lien permanent vers cette rubrique">#</a></h3>
 <div class="admonition-exercice-2-3-triangle-equilateral admonition">
 <p class="admonition-title">Exercice 2.3 : Triangle équilatéral</p>
 <p>Écrivez une fonction en Python qui prenne en argument une longueur <code class="docutils literal notranslate"><span class="pre">long</span></code> et retourne l’aire du triangle équilatéral de côté <code class="docutils literal notranslate"><span class="pre">long</span></code>.</p>
@@ -1166,7 +1167,7 @@ Ainsi, la définition de fonction suivante <strong>n’est pas correcte</strong>
 </section>
 </section>
 <section id="les-modules-en-python">
-<h2>Les modules en Python<a class="headerlink" href="#les-modules-en-python" title="Permalink to this heading">#</a></h2>
+<h2>Les modules en Python<a class="headerlink" href="#les-modules-en-python" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Jusqu’à présent, nous avons utilisé des fonctions (comme <code class="docutils literal notranslate"><span class="pre">print</span></code>) issues de la librairie standard de Python.
 Celles-ci sont donc chargées par défaut lorsque l’on exécute un script Python.
 Toutefois, il peut être nécessaire d’avoir accès à d’autres fonctions et/ou variables, définies dans d’autres librairies.
@@ -1243,7 +1244,7 @@ Typiquement, il est de coutume de renommer le module <code class="docutils liter
 </div>
 </section>
 <section id="liste-des-exercices-de-ce-chapitre">
-<h2>Liste des exercices de ce chapitre<a class="headerlink" href="#liste-des-exercices-de-ce-chapitre" title="Permalink to this heading">#</a></h2>
+<h2>Liste des exercices de ce chapitre<a class="headerlink" href="#liste-des-exercices-de-ce-chapitre" title="Lien permanent vers cette rubrique">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference internal" href="#ex2-1"><span class="std std-ref">Température de l’eau</span></a></p></li>
 <li><p><a class="reference internal" href="#ex2-2"><span class="std std-ref">Nombres impairs</span></a></p></li>
@@ -1286,18 +1287,18 @@ Typiquement, il est de coutume de renommer le module <code class="docutils liter
 <div class="prev-next-area">
     <a class="left-prev"
        href="intro.html"
-       title="previous page">
+       title="page précédente">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-subtitle">précédent</p>
         <p class="prev-next-title">Introduction</p>
       </div>
     </a>
     <a class="right-next"
        href="dates.html"
-       title="next page">
+       title="page suivante">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">suivant</p>
         <p class="prev-next-title">Les dates</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
@@ -1316,7 +1317,7 @@ Typiquement, il est de coutume de renommer le module <code class="docutils liter
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> Contenu
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -1361,7 +1362,7 @@ Typiquement, il est de coutume de renommer le module <code class="docutils liter
   <div class="footer-item">
     
 <p class="component-author">
-By Romain Tavenard
+Par Romain Tavenard
 </p>
 
   </div>

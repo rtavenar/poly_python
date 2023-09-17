@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="fr" >
 
   <head>
     <meta charset="utf-8" />
@@ -56,6 +56,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/vue.js"></script>
     <script src="../_static/pythonpad.bundle.js"></script>
+    <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -68,11 +69,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chaines';</script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Les dictionnaires" href="dict.html" />
     <link rel="prev" title="Les listes" href="listes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="fr"/>
   </head>
   
   
@@ -80,7 +81,7 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -220,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -229,7 +230,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="../_sources/content/chaines.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Télécharger le fichier source"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -247,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimer au format PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -267,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Mode plein écran"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -281,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
     <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
     <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
@@ -291,7 +292,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
@@ -315,7 +316,7 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> Contents </h2>
+                <h2> Contenu </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -339,7 +340,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="les-chaines-de-caracteres">
-<h1>Les chaînes de caractères<a class="headerlink" href="#les-chaines-de-caracteres" title="Permalink to this heading">#</a></h1>
+<h1>Les chaînes de caractères<a class="headerlink" href="#les-chaines-de-caracteres" title="Lien permanent vers cette rubrique">#</a></h1>
 <p>Nous nous intéressons maintenant à un autre type de données particulier du langage Python : les chaînes de caractères (type <code class="docutils literal notranslate"><span class="pre">str</span></code>).
 Pour créer une chaîne de caractères, il suffit d’utiliser des guillemets, simples ou doubles (les deux sont équivalents) :</p>
 <div class="cell docutils container">
@@ -353,7 +354,7 @@ Pour créer une chaîne de caractères, il suffit d’utiliser des guillemets, s
 <p>Comme pour les listes (et peut-être même plus encore), il est fortement conseillé de se reporter à l’aide en ligne dédiée lorsque vous avez des doutes sur la manipulation de chaînes de caractères :
 <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">https://docs.python.org/3/library/stdtypes.html#string-methods</a></p>
 <section id="conversion-d-une-chaine-en-nombre">
-<h2>Conversion d’une chaîne en nombre<a class="headerlink" href="#conversion-d-une-chaine-en-nombre" title="Permalink to this heading">#</a></h2>
+<h2>Conversion d’une chaîne en nombre<a class="headerlink" href="#conversion-d-une-chaine-en-nombre" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Si une chaîne de caractères représente une valeur numérique (comme la chaîne <code class="docutils literal notranslate"><span class="pre">&quot;10.2&quot;</span></code> par exemple), on peut la transformer en un entier ou un nombre à virgule, afin de l’utiliser ensuite pour des opérations arithmétiques. On utilise pour cela les fonctions de conversion, respectivement <code class="docutils literal notranslate"><span class="pre">int</span></code> et <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -433,7 +434,7 @@ Pour créer une chaîne de caractères, il suffit d’utiliser des guillemets, s
 </div>
 </section>
 <section id="analogie-avec-les-listes">
-<h2>Analogie avec les listes<a class="headerlink" href="#analogie-avec-les-listes" title="Permalink to this heading">#</a></h2>
+<h2>Analogie avec les listes<a class="headerlink" href="#analogie-avec-les-listes" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Les chaînes de caractères se manipulent en partie comme des listes.
 On peut ainsi obtenir la taille d’une chaîne de caractères à l’aide de la fonction <code class="docutils literal notranslate"><span class="pre">len</span></code>, ou accéder à la <span class="math notranslate nohighlight">\(i\)</span>-ème lettre d’une chaîne de caractères avec la notation <code class="docutils literal notranslate"><span class="pre">s[i]</span></code>.
 Comme pour les listes, il est possible d’indicer une chaîne de caractères en partant de la fin, en utilisant des indices négatifs :</p>
@@ -546,7 +547,7 @@ Par exemple, on peut accéder au <span class="math notranslate nohighlight">\(i\
 Si <code class="docutils literal notranslate"><span class="pre">s</span></code> est une chaîne de caractères, on ne peut pas exécuter <code class="docutils literal notranslate"><span class="pre">s[2]</span> <span class="pre">=</span> <span class="pre">&quot;c&quot;</span></code> par exemple.</p>
 </section>
 <section id="principales-methodes-de-la-classe-str">
-<h2>Principales méthodes de la classe <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#principales-methodes-de-la-classe-str" title="Permalink to this heading">#</a></h2>
+<h2>Principales méthodes de la classe <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#principales-methodes-de-la-classe-str" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>La liste de méthodes de la classe <code class="docutils literal notranslate"><span class="pre">str</span></code> qui suit n’est pas exhaustive, il est conseillé de consulter l’aide en ligne de Python pour plus d’informations.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ch.count(sub)</span></code>: Retourne le nombre d’occurrences de <code class="docutils literal notranslate"><span class="pre">sub</span></code> dans <code class="docutils literal notranslate"><span class="pre">ch</span></code></p></li>
@@ -561,12 +562,12 @@ Si <code class="docutils literal notranslate"><span class="pre">s</span></code> 
 <li><p><code class="docutils literal notranslate"><span class="pre">ch.upper()</span></code>: Retourne la version majuscule de <code class="docutils literal notranslate"><span class="pre">ch</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ch.replace(old,</span> <span class="pre">new)</span></code>: Retourne une copie de <code class="docutils literal notranslate"><span class="pre">ch</span></code> dans laquelle toutes les occurrences de <code class="docutils literal notranslate"><span class="pre">old</span></code> ont été remplacées par <code class="docutils literal notranslate"><span class="pre">new</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ch.split(sep=None)</span></code>: Retourne une liste contenant des morceaux de <code class="docutils literal notranslate"><span class="pre">ch</span></code> découpée à chaque occurrence de <code class="docutils literal notranslate"><span class="pre">sep</span></code> (par défaut, la chaîne est decoupée à chaque espace ou retour à la ligne)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ch.strip()</span></code>: Retourne une version “nettoyée” de <code class="docutils literal notranslate"><span class="pre">ch</span></code> dans laquelle on a enlevé tous les espaces en début et en fin de chaîne</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch.strip()</span></code>: Retourne une version « nettoyée » de <code class="docutils literal notranslate"><span class="pre">ch</span></code> dans laquelle on a enlevé tous les espaces en début et en fin de chaîne</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ch.format(...)</span></code>: Remplace les caractères <code class="docutils literal notranslate"><span class="pre">{}</span></code> dans la chaîne <code class="docutils literal notranslate"><span class="pre">ch</span></code> par le contenu des variables passées en argument</p></li>
 </ul>
 </section>
 <section id="formatage-des-chaines-de-caracteres">
-<h2>Formatage des chaînes de caractères<a class="headerlink" href="#formatage-des-chaines-de-caracteres" title="Permalink to this heading">#</a></h2>
+<h2>Formatage des chaînes de caractères<a class="headerlink" href="#formatage-des-chaines-de-caracteres" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Lorsque l’on souhaite ajouter, dans une chaîne de caractères, du contenu stocké dans une variable, on pourra utiliser la méthode format listée ci-dessus.</p>
 <p>Commençons par un exemple :</p>
 <div class="cell docutils container">
@@ -619,7 +620,7 @@ Il est possible de maîtriser plus finement la mise en forme de ces variables, e
 </div>
 <p>Vous trouverez une présentation plus exhaustive de ces questions dans la <a class="reference external" href="https://docs.python.org/fr/3.5/library/string.html#format-string-syntax">documentation Python sur ce point</a>.</p>
 <section id="pour-aller-plus-loin-les-f-strings">
-<h3>Pour aller plus loin : les f-strings<a class="headerlink" href="#pour-aller-plus-loin-les-f-strings" title="Permalink to this heading">#</a></h3>
+<h3>Pour aller plus loin : les f-strings<a class="headerlink" href="#pour-aller-plus-loin-les-f-strings" title="Lien permanent vers cette rubrique">#</a></h3>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="tip admonition">
@@ -740,7 +741,7 @@ Avec 4 décimales, le 1er nombre est | 3.3333| le second est| 3.5714|
 </section>
 </section>
 <section id="exercices">
-<h2>Exercices<a class="headerlink" href="#exercices" title="Permalink to this heading">#</a></h2>
+<h2>Exercices<a class="headerlink" href="#exercices" title="Lien permanent vers cette rubrique">#</a></h2>
 <div class="admonition-exercice-5-1 admonition">
 <p class="admonition-title">Exercice 5.1</p>
 <p>Écrivez une fonction qui prenne en argument deux chaînes de caractères <code class="docutils literal notranslate"><span class="pre">s</span></code> et <code class="docutils literal notranslate"><span class="pre">prefix</span></code> et retourne le nombre de mots de la chaîne <code class="docutils literal notranslate"><span class="pre">s</span></code> qui débutent par la chaîne <code class="docutils literal notranslate"><span class="pre">prefix</span></code>.</p>
@@ -863,18 +864,18 @@ L&#39;entier d&#39;indice 10 est | 12345678901|
 <div class="prev-next-area">
     <a class="left-prev"
        href="listes.html"
-       title="previous page">
+       title="page précédente">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-subtitle">précédent</p>
         <p class="prev-next-title">Les listes</p>
       </div>
     </a>
     <a class="right-next"
        href="dict.html"
-       title="next page">
+       title="page suivante">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">suivant</p>
         <p class="prev-next-title">Les dictionnaires</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
@@ -893,7 +894,7 @@ L&#39;entier d&#39;indice 10 est | 12345678901|
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> Contenu
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -919,7 +920,7 @@ L&#39;entier d&#39;indice 10 est | 12345678901|
   <div class="footer-item">
     
 <p class="component-author">
-By Romain Tavenard
+Par Romain Tavenard
 </p>
 
   </div>

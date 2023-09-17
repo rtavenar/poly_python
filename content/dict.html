@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="fr" >
 
   <head>
     <meta charset="utf-8" />
@@ -56,6 +56,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/vue.js"></script>
     <script src="../_static/pythonpad.bundle.js"></script>
+    <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -66,11 +67,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/dict';</script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Les sets et les tuples" href="sets_tuples.html" />
     <link rel="prev" title="Les chaînes de caractères" href="chaines.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="fr"/>
   </head>
   
   
@@ -78,7 +79,7 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -218,7 +219,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -227,7 +228,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="../_sources/content/dict.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Télécharger le fichier source"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -245,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimer au format PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -265,7 +266,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Mode plein écran"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -279,7 +280,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
     <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
     <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
@@ -289,7 +290,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
@@ -313,7 +314,7 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> Contents </h2>
+                <h2> Contenu </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -338,7 +339,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="les-dictionnaires">
-<h1>Les dictionnaires<a class="headerlink" href="#les-dictionnaires" title="Permalink to this heading">#</a></h1>
+<h1>Les dictionnaires<a class="headerlink" href="#les-dictionnaires" title="Lien permanent vers cette rubrique">#</a></h1>
 <p>Comme une liste, un dictionnaire est une collection de données.
 Mais, à la différence des listes, les dictionnaires ne sont pas ordonnés (ou, tout du moins, ils le sont dans un ordre qui ne nous est pas naturel).
 Chaque entrée dans un dictionnaire est une association entre une <strong>clé</strong> (équivalente à un indice pour une liste) et une <strong>valeur</strong>.
@@ -374,7 +375,7 @@ Notamment, ces clés ne sont pas nécessairement des entiers, on utilisera en ef
 </div>
 <p>Attention, pour toutes les versions de Python antérieures à 3.7, l’ordre dans lequel on a entré des paires clé-valeur n’est pas conservé lors de l’affichage ni lors du parcours.</p>
 <section id="modification-du-contenu-d-un-dictionnaire">
-<h2>Modification du contenu d’un dictionnaire<a class="headerlink" href="#modification-du-contenu-d-un-dictionnaire" title="Permalink to this heading">#</a></h2>
+<h2>Modification du contenu d’un dictionnaire<a class="headerlink" href="#modification-du-contenu-d-un-dictionnaire" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Pour modifier la valeur associée à une clé d’un dictionnaire, la syntaxe est similaire à celle utilisée pour les listes, en remplaçant les indices par les clés :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -422,7 +423,7 @@ Notamment, ces clés ne sont pas nécessairement des entiers, on utilisera en ef
 </div>
 </section>
 <section id="lecture-du-contenu-d-un-dictionnaire">
-<h2>Lecture du contenu d’un dictionnaire<a class="headerlink" href="#lecture-du-contenu-d-un-dictionnaire" title="Permalink to this heading">#</a></h2>
+<h2>Lecture du contenu d’un dictionnaire<a class="headerlink" href="#lecture-du-contenu-d-un-dictionnaire" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Pour lire la valeur associée à une clé du dictionnaire, on peut utiliser la même syntaxe que pour les listes :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -466,10 +467,10 @@ Pour éviter cela, on peut utiliser la méthode <code class="docutils literal no
 </div>
 </section>
 <section id="parcours-d-un-dictionnaire">
-<h2>Parcours d’un dictionnaire<a class="headerlink" href="#parcours-d-un-dictionnaire" title="Permalink to this heading">#</a></h2>
+<h2>Parcours d’un dictionnaire<a class="headerlink" href="#parcours-d-un-dictionnaire" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Pour parcourir le contenu d’un dictionnaire, il existe, comme pour les listes, trois possibilités.</p>
 <section id="parcours-par-valeurs">
-<h3>Parcours par valeurs<a class="headerlink" href="#parcours-par-valeurs" title="Permalink to this heading">#</a></h3>
+<h3>Parcours par valeurs<a class="headerlink" href="#parcours-par-valeurs" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Si l’on souhaite uniquement accéder aux valeurs stockées dans le dictionnaire, on utilisera la méthode <code class="docutils literal notranslate"><span class="pre">values</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -489,7 +490,7 @@ None
 </div>
 </section>
 <section id="parcours-par-cles">
-<h3>Parcours par clés<a class="headerlink" href="#parcours-par-cles" title="Permalink to this heading">#</a></h3>
+<h3>Parcours par clés<a class="headerlink" href="#parcours-par-cles" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Si l’on souhaite uniquement accéder aux clés stockées dans le dictionnaire, on utilisera la méthode <code class="docutils literal notranslate"><span class="pre">keys</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -509,7 +510,7 @@ bbb
 </div>
 </section>
 <section id="parcours-par-couples-cles-valeurs">
-<h3>Parcours par couples clés/valeurs<a class="headerlink" href="#parcours-par-couples-cles-valeurs" title="Permalink to this heading">#</a></h3>
+<h3>Parcours par couples clés/valeurs<a class="headerlink" href="#parcours-par-couples-cles-valeurs" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Si l’on souhaite accéder simultanément aux clés stockées dans le dictionnaire et aux valeurs associées, on utilisera la méthode <code class="docutils literal notranslate"><span class="pre">items</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -542,7 +543,7 @@ En pratique, on utilisera un dictionnaire dès lors que l’on souhaitera mettre
 </section>
 </section>
 <section id="exercices">
-<h2>Exercices<a class="headerlink" href="#exercices" title="Permalink to this heading">#</a></h2>
+<h2>Exercices<a class="headerlink" href="#exercices" title="Lien permanent vers cette rubrique">#</a></h2>
 <div class="admonition-exercice-6-1 admonition">
 <p class="admonition-title">Exercice 6.1</p>
 <p>Écrivez une fonction qui compte le nombre d’occurrences de chacun des mots d’une chaîne de caractères et retourne le résultat sous forme de dictionnaire :</p>
@@ -630,18 +631,18 @@ En pratique, on utilisera un dictionnaire dès lors que l’on souhaitera mettre
 <div class="prev-next-area">
     <a class="left-prev"
        href="chaines.html"
-       title="previous page">
+       title="page précédente">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-subtitle">précédent</p>
         <p class="prev-next-title">Les chaînes de caractères</p>
       </div>
     </a>
     <a class="right-next"
        href="sets_tuples.html"
-       title="next page">
+       title="page suivante">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">suivant</p>
         <p class="prev-next-title">Les <em>sets</em> et les <em>tuples</em></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
@@ -660,7 +661,7 @@ En pratique, on utilisera un dictionnaire dès lors que l’on souhaitera mettre
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> Contenu
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -687,7 +688,7 @@ En pratique, on utilisera un dictionnaire dès lors que l’on souhaitera mettre
   <div class="footer-item">
     
 <p class="component-author">
-By Romain Tavenard
+Par Romain Tavenard
 </p>
 
   </div>

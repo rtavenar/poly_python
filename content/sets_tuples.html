@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="fr" >
 
   <head>
     <meta charset="utf-8" />
@@ -56,6 +56,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/vue.js"></script>
     <script src="../_static/pythonpad.bundle.js"></script>
+    <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -68,11 +69,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/sets_tuples';</script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Interaction avec des fichiers" href="fichiers.html" />
     <link rel="prev" title="Les dictionnaires" href="dict.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="fr"/>
   </head>
   
   
@@ -80,7 +81,7 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -220,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -229,7 +230,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="../_sources/content/sets_tuples.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Télécharger le fichier source"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -247,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimer au format PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -267,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Mode plein écran"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -281,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
     <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
     <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
@@ -291,7 +292,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
@@ -315,7 +316,7 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> Contents </h2>
+                <h2> Contenu </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -334,11 +335,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="les-sets-et-les-tuples">
-<h1>Les <em>sets</em> et les <em>tuples</em><a class="headerlink" href="#les-sets-et-les-tuples" title="Permalink to this heading">#</a></h1>
+<h1>Les <em>sets</em> et les <em>tuples</em><a class="headerlink" href="#les-sets-et-les-tuples" title="Lien permanent vers cette rubrique">#</a></h1>
 <p>Nous avons vu jusqu’à présent deux types qui permettent de stocker des collections de données : les listes et les dictionnaires.
 Dans ce chapitre, nous nous intéressons à deux autres structures qui permettent elles aussi de stocker des collections : les <em>sets</em> et les <em>tuples</em>.</p>
 <section id="les-tuples">
-<h2>Les <em>tuples</em><a class="headerlink" href="#les-tuples" title="Permalink to this heading">#</a></h2>
+<h2>Les <em>tuples</em><a class="headerlink" href="#les-tuples" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Commençons par les tuples, car vous en avez déjà manipulé sans même vous en rendre compte.
 Prenons l’exemple de la fonction suivante :</p>
 <div class="cell docutils container">
@@ -377,7 +378,7 @@ Il n’est donc pas possible d’ajouter / supprimer des données (comme on le f
 Il n’est pas non plus possible de modifier un élément d’un <em>tuple</em> (si <code class="docutils literal notranslate"><span class="pre">a</span></code> est un <em>tuple</em>, on ne peut donc pas écrire <code class="docutils literal notranslate"><span class="pre">a[0]</span> <span class="pre">=</span> <span class="pre">5</span></code> comme on l’aurait fait pour une liste).</p>
 </section>
 <section id="les-sets">
-<h2>Les <em>sets</em><a class="headerlink" href="#les-sets" title="Permalink to this heading">#</a></h2>
+<h2>Les <em>sets</em><a class="headerlink" href="#les-sets" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Les <em>sets</em>, pour leur part, permettent de stocker des ensemble de valeurs, sans ordre et sans répétition.
 On peut ainsi voir les <em>sets</em> comme des dictionnaires qui auraient des clés, mais pas de valeurs associées.
 Cela fait d’ailleurs écho à la syntaxe utilisée en Python pour définir un set, qui utilise les accolades, comme pour les dictionnaires :</p>
@@ -393,7 +394,7 @@ Cela fait d’ailleurs écho à la syntaxe utilisée en Python pour définir un 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3}
-{&#39;chose&#39;, &#39;truc&#39;, &#39;machin&#39;}
+{&#39;machin&#39;, &#39;chose&#39;, &#39;truc&#39;}
 </pre></div>
 </div>
 </div>
@@ -410,7 +411,7 @@ Cela fait d’ailleurs écho à la syntaxe utilisée en Python pour définir un 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;chose&#39;, &#39;truc&#39;, &#39;machin&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;machin&#39;, &#39;chose&#39;, &#39;truc&#39;}
 </pre></div>
 </div>
 </div>
@@ -431,14 +432,14 @@ Cela fait d’ailleurs écho à la syntaxe utilisée en Python pour définir un 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;chose&#39;, &#39;bidule&#39;, &#39;machin&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;machin&#39;, &#39;chose&#39;, &#39;bidule&#39;}
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="tableau-recapitulatif">
-<h2>Tableau récapitulatif<a class="headerlink" href="#tableau-recapitulatif" title="Permalink to this heading">#</a></h2>
+<h2>Tableau récapitulatif<a class="headerlink" href="#tableau-recapitulatif" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Voici un tableau de ce qu’on peut / ne peut pas faire avec l’un ou l’autre des types de base pour les collections de données :</p>
 <table class="table">
 <thead>
@@ -522,18 +523,18 @@ Cela fait d’ailleurs écho à la syntaxe utilisée en Python pour définir un 
 <div class="prev-next-area">
     <a class="left-prev"
        href="dict.html"
-       title="previous page">
+       title="page précédente">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-subtitle">précédent</p>
         <p class="prev-next-title">Les dictionnaires</p>
       </div>
     </a>
     <a class="right-next"
        href="fichiers.html"
-       title="next page">
+       title="page suivante">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">suivant</p>
         <p class="prev-next-title">Interaction avec des fichiers</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
@@ -552,7 +553,7 @@ Cela fait d’ailleurs écho à la syntaxe utilisée en Python pour définir un 
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> Contenu
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -573,7 +574,7 @@ Cela fait d’ailleurs écho à la syntaxe utilisée en Python pour définir un 
   <div class="footer-item">
     
 <p class="component-author">
-By Romain Tavenard
+Par Romain Tavenard
 </p>
 
   </div>

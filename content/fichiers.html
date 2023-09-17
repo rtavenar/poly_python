@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="fr" >
 
   <head>
     <meta charset="utf-8" />
@@ -56,6 +56,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/vue.js"></script>
     <script src="../_static/pythonpad.bundle.js"></script>
+    <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -66,11 +67,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/fichiers';</script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Récupération de données à partir d’API web" href="api.html" />
     <link rel="prev" title="Les sets et les tuples" href="sets_tuples.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="fr"/>
   </head>
   
   
@@ -78,7 +79,7 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -218,7 +219,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -227,7 +228,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="../_sources/content/fichiers.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Télécharger le fichier source"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -245,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimer au format PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -265,7 +266,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Mode plein écran"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -279,7 +280,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
     <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
     <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
@@ -289,7 +290,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
@@ -313,7 +314,7 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> Contents </h2>
+                <h2> Contenu </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -353,13 +354,13 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="interaction-avec-des-fichiers">
-<h1>Interaction avec des fichiers<a class="headerlink" href="#interaction-avec-des-fichiers" title="Permalink to this heading">#</a></h1>
+<h1>Interaction avec des fichiers<a class="headerlink" href="#interaction-avec-des-fichiers" title="Lien permanent vers cette rubrique">#</a></h1>
 <p>Dans ce chapitre, nous allons présenter des outils de manipulation de fichiers en Python.
 Un fichier est une unité logique d’informations placée sur une mémoire secondaire (un disque dur, une clef USB, <em>etc.</em>).</p>
 <p>Quand vous consultez une dossier à l’aide de votre gestionnaire de fichiers, ce dossier peut comprendre plusieurs fichiers.
 En accédant depuis un programme Python au contenu de fichiers de données, on va pouvoir alimenter le programme avec des données provenant d’un fichier de données indépendant du programme (et non plus seulement des données écrites en dur dans le programmes ou saisies par l’utilisateur directement).</p>
 <section id="manipulation-de-fichiers-en-python-avec-le-module-os">
-<h2>Manipulation de fichiers en Python avec le module <code class="docutils literal notranslate"><span class="pre">os</span></code><a class="headerlink" href="#manipulation-de-fichiers-en-python-avec-le-module-os" title="Permalink to this heading">#</a></h2>
+<h2>Manipulation de fichiers en Python avec le module <code class="docutils literal notranslate"><span class="pre">os</span></code><a class="headerlink" href="#manipulation-de-fichiers-en-python-avec-le-module-os" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Lorsque l’on lit ou écrit des fichiers, il est fréquent de vouloir répéter la même opération sur plusieurs fichiers, par exemple sur tous les fichiers avec l’extension <code class="docutils literal notranslate"><span class="pre">&quot;.txt&quot;</span></code> d’un répertoire donné.
 Pour ce faire, on peut utiliser en Python le module <code class="docutils literal notranslate"><span class="pre">os</span></code> qui propose un certain nombre de fonctions standard de manipulation de fichiers.
 On utilisera notamment la fonction <code class="docutils literal notranslate"><span class="pre">listdir</span></code> de ce module qui permet de lister l’ensemble des fichiers et sous-répertoires contenus dans un répertoire donné :</p>
@@ -398,11 +399,11 @@ Pour cela, on utilisera la syntaxe suivante :</p>
 Il est préférable d’utiliser cette fonction plutôt que d’effectuer la concaténation des chaînes de caractères correspondantes car la forme des chemins complets dépend du système d’exploitation utilisé, ce que gère intelligemment <code class="docutils literal notranslate"><span class="pre">path.join</span></code>.</p>
 </section>
 <section id="lecture-et-ecriture-de-fichiers-textuels">
-<h2>Lecture et écriture de fichiers textuels<a class="headerlink" href="#lecture-et-ecriture-de-fichiers-textuels" title="Permalink to this heading">#</a></h2>
+<h2>Lecture et écriture de fichiers textuels<a class="headerlink" href="#lecture-et-ecriture-de-fichiers-textuels" title="Lien permanent vers cette rubrique">#</a></h2>
 <section id="qu-est-ce-qu-un-fichier-textuel">
-<h3>Qu’est-ce qu’un fichier textuel ?<a class="headerlink" href="#qu-est-ce-qu-un-fichier-textuel" title="Permalink to this heading">#</a></h3>
+<h3>Qu’est-ce qu’un fichier textuel ?<a class="headerlink" href="#qu-est-ce-qu-un-fichier-textuel" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Dans ce qui suit, nous traiterons uniquement de la lecture de fichiers textuels.
-Pour faire simple, nous appellerons dans ce qui suit “fichier textuel” tout fichier dont le contenu est lisible en clair en ouvrant le fichier avec un éditeur de fichiers bruts (comme Notepad++ sous windows, ou gedit sous linux).
+Pour faire simple, nous appellerons dans ce qui suit « fichier textuel » tout fichier dont le contenu est lisible en clair en ouvrant le fichier avec un éditeur de fichiers bruts (comme Notepad++ sous windows, ou gedit sous linux).
 Pour se faire une idée, nous pouvons (sous unix) utiliser la commande <code class="docutils literal notranslate"><span class="pre">head</span></code> qui permet d’afficher le début d’un fichier :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -443,7 +444,7 @@ _�fm��\��M��GNU����QH&amp;A�B�`D%� 
 <p>Dans ce chapitre, nous ne nous intéressons donc pas à ce dernier type de fichiers mais nous nous concentrerons sur la lecture/écriture de fichiers textuels par un programme Python.</p>
 </section>
 <section id="encodage-des-fichiers">
-<h3>Encodage des fichiers<a class="headerlink" href="#encodage-des-fichiers" title="Permalink to this heading">#</a></h3>
+<h3>Encodage des fichiers<a class="headerlink" href="#encodage-des-fichiers" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Un premier élément qu’il est nécessaire de maîtriser pour lire ou écrire des fichiers textuels est la notion d’encodage.
 Il faut savoir qu’il existe plusieurs façons d’encoder un texte.
 Nous nous focaliserons ici sur les deux encodages que vous êtes les plus susceptibles de rencontrer (mais sachez qu’il en existe bien d’autres) :</p>
@@ -459,7 +460,7 @@ Si vous écrivez un programme qui écrit un fichier, il faudra vous poser la que
 <p>Si vous n’avez pas de contrainte extérieure pour ce qui est de l’encodage, vous utiliserez l’encodage UTF-8 par défaut.</p>
 </section>
 <section id="lecture-de-fichiers-textuels">
-<h3>Lecture de fichiers textuels<a class="headerlink" href="#lecture-de-fichiers-textuels" title="Permalink to this heading">#</a></h3>
+<h3>Lecture de fichiers textuels<a class="headerlink" href="#lecture-de-fichiers-textuels" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Ce que nous appelons lecture de fichiers textuels en Python consiste à copier le contenu d’un fichier dans une (ou plusieurs) chaîne(s) de caractères.
 Cela implique deux étapes en Python :</p>
 <ol class="arabic simple">
@@ -473,8 +474,8 @@ En supposant que le nom du fichier à ouvrir soit stocké sous forme de chaîne 
 </div>
 <p>Le second argument (<code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code>) indique que le fichier doit être ouvert en mode <em>read</em>, donc en lecture.</p>
 <section id="fichiers-textuels-generiques">
-<h4>Fichiers textuels génériques<a class="headerlink" href="#fichiers-textuels-generiques" title="Permalink to this heading">#</a></h4>
-<p>Nous appelons ici “fichier textuel générique” un fichier dont le contenu n’a pas de structure particulière (par opposition aux fichiers CSV ou JSON présentés plus bas, par exemple).
+<h4>Fichiers textuels génériques<a class="headerlink" href="#fichiers-textuels-generiques" title="Lien permanent vers cette rubrique">#</a></h4>
+<p>Nous appelons ici « fichier textuel générique » un fichier dont le contenu n’a pas de structure particulière (par opposition aux fichiers CSV ou JSON présentés plus bas, par exemple).
 C’est le cas par exemple de fichiers contenant du texte libre.
 Ces fichiers, une fois ouverts en lecture, peuvent être lus ligne par ligne à l’aide de la boucle suivante :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">nom_fichier</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
@@ -485,7 +486,7 @@ Ces fichiers, une fois ouverts en lecture, peuvent être lus ligne par ligne à 
 <p>Ici, la variable <code class="docutils literal notranslate"><span class="pre">ligne</span></code>, de type chaîne de caractères, contiendra successivement le texte de chacune des lignes du fichier considéré.</p>
 </section>
 <section id="fichiers-comma-separated-values-csv">
-<h4>Fichiers <em>Comma-Separated Values</em> (CSV)<a class="headerlink" href="#fichiers-comma-separated-values-csv" title="Permalink to this heading">#</a></h4>
+<h4>Fichiers <em>Comma-Separated Values</em> (CSV)<a class="headerlink" href="#fichiers-comma-separated-values-csv" title="Lien permanent vers cette rubrique">#</a></h4>
 <p>Les fichiers <em>Comma-Separated Values</em> (CSV) permettent de stocker des données organisées sous la forme de tableaux dans des fichiers textuels.
 À l’origine, ces fichiers étaient organisés par ligne et au sein de chaque ligne les cellules du tableau (correspondant aux différentes colonnes) étaient séparées par des virgules (d’où le nom de ce type de fichiers).
 Aujourd’hui, la définition de ce format (<a class="reference external" href="https://tools.ietf.org/html/rfc4180">lien</a>) est plus générale que cela et différents délimiteurs sont acceptés.
@@ -544,7 +545,7 @@ Fin de ligne
 <p>On remarque ici que, contrairement au cas de fichiers textuels génériques, la variable de boucle <code class="docutils literal notranslate"><span class="pre">ligne</span></code> n’est plus une chaîne de caractères mais une liste de chaînes de caractères.
 Les éléments de cette liste sont les cellules du tableau représenté par le fichier CSV.</p>
 <section id="cas-des-fichiers-a-en-tete">
-<h5>Cas des fichiers à en-tête<a class="headerlink" href="#cas-des-fichiers-a-en-tete" title="Permalink to this heading">#</a></h5>
+<h5>Cas des fichiers à en-tête<a class="headerlink" href="#cas-des-fichiers-a-en-tete" title="Lien permanent vers cette rubrique">#</a></h5>
 <p>Souvent, les fichiers CSV comprennent une première ligne d’en-tête, comme dans l’exemple suivant :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NOM</span><span class="p">;</span><span class="n">PRENOM</span><span class="p">;</span><span class="n">AGE</span>
 <span class="n">Lemarchand</span><span class="p">;</span><span class="n">John</span><span class="p">;</span><span class="mi">23</span>
@@ -586,13 +587,13 @@ AGE
 </div>
 </section>
 <section id="un-peu-de-magie">
-<h5>Un peu de magie…<a class="headerlink" href="#un-peu-de-magie" title="Permalink to this heading">#</a></h5>
+<h5>Un peu de magie…<a class="headerlink" href="#un-peu-de-magie" title="Lien permanent vers cette rubrique">#</a></h5>
 <p>Dans certains cas, on ne sait pas à l’avance quel délimiteur est utilisé pour le fichier CSV à lire. On peut demander au module CSV de deviner le <em>dialecte</em><a class="footnote-reference brackets" href="#dialect" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> d’un fichier en lisant le début de ce fichier.
 Dans ce cas, la lecture du fichier se fera en 4 étapes :</p>
 <ol class="arabic simple">
 <li><p>Ouverture du fichier en lecture ;</p></li>
 <li><p>Lecture des <em>n</em> premiers caractères du fichier pour tenter de deviner son dialecte ;</p></li>
-<li><p>“Rembobinage” du fichier pour recommencer la lecture au début ;</p></li>
+<li><p>« Rembobinage » du fichier pour recommencer la lecture au début ;</p></li>
 <li><p>Lecture du fichier en utilisant le dialecte détecté à l’étape 2.</p></li>
 </ol>
 <p>Le choix du paramètre <em>n</em> doit être un compromis : il faut lire suffisamment de caractères pour que la détection de dialecte soit fiable, tout en sachant que lire beaucoup de caractères prendra du temps.
@@ -650,7 +651,7 @@ Fin de ligne
 </section>
 </section>
 <section id="fichiers-javascript-object-notation-json">
-<h4>Fichiers <em>JavaScript Object Notation</em> (JSON)<a class="headerlink" href="#fichiers-javascript-object-notation-json" title="Permalink to this heading">#</a></h4>
+<h4>Fichiers <em>JavaScript Object Notation</em> (JSON)<a class="headerlink" href="#fichiers-javascript-object-notation-json" title="Lien permanent vers cette rubrique">#</a></h4>
 <p>Les fichiers <em>JavaScript Object Notation</em> (JSON) permettent de stocker des données structurées (par exemple avec une organisation hiérarchique). Un document JSON s’apparente à un dictionnaire en Python (à la nuance près que les clés d’un document JSON sont forcément des chaînes de caractères).
 Voici un exemple de document JSON :</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -716,7 +717,7 @@ Voici un exemple de document JSON :</p>
 </pre></div>
 </div>
 <p>Dans ce cas, <code class="docutils literal notranslate"><span class="pre">json.load</span></code> retournera une liste de dictionnaires au lieu d’un dictionnaire, bien évidemment.</p>
-<p>Enfin, si l’on a stocké dans une variable une chaîne de caractères dont le contenu correspond à un document JSON, on peut également la transformer en dictionnaire (ou en liste de dictionnaires) à l’aide de la fonction <code class="docutils literal notranslate"><span class="pre">json.loads</span></code> (attention au “s” final) :</p>
+<p>Enfin, si l’on a stocké dans une variable une chaîne de caractères dont le contenu correspond à un document JSON, on peut également la transformer en dictionnaire (ou en liste de dictionnaires) à l’aide de la fonction <code class="docutils literal notranslate"><span class="pre">json.loads</span></code> (attention au « s » final) :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ch</span> <span class="o">=</span> <span class="s1">&#39;{&quot;num_etudiant&quot;: &quot;21300000&quot;,  &quot;notes&quot;: [12, 5, 14]}&#39;</span>
@@ -734,7 +735,7 @@ Voici un exemple de document JSON :</p>
 </section>
 </section>
 <section id="ecriture-de-fichiers-textuels">
-<h3>Écriture de fichiers textuels<a class="headerlink" href="#ecriture-de-fichiers-textuels" title="Permalink to this heading">#</a></h3>
+<h3>Écriture de fichiers textuels<a class="headerlink" href="#ecriture-de-fichiers-textuels" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Ce que nous appellons écriture de fichiers textuels en Python consiste à copier le contenu d’une (ou plusieurs) chaîne(s) de caractères dans un fichier.
 Cela implique trois étapes en Python :</p>
 <ol class="arabic simple">
@@ -760,7 +761,7 @@ Si l’on souhaite au contraire ajouter du texte à la fin d’un fichier exista
 <p>Il est à noter que l’on peut, dans certains cas, se dispenser de fermer explicitement le fichier.
 Par exemple, si notre code est inclus dans un script Python, dès la fin de l’exécution du script, tous les fichiers ouverts en écriture par le script sont automatiquement fermés.</p>
 <section id="id2">
-<h4>Fichiers textuels génériques<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<h4>Fichiers textuels génériques<a class="headerlink" href="#id2" title="Lien permanent vers cette rubrique">#</a></h4>
 <p>Pour ajouter du contenu à un fichier pointé par la variable <code class="docutils literal notranslate"><span class="pre">fp</span></code>, il suffit ensuite d’utiliser la méthode <code class="docutils literal notranslate"><span class="pre">write</span></code> :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;La vie est belle</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
@@ -768,7 +769,7 @@ Par exemple, si notre code est inclus dans un script Python, dès la fin de l’
 <p>Notez que, contrairement à la fonction <code class="docutils literal notranslate"><span class="pre">print</span></code> à laquelle vous êtes habitué, la méthode <code class="docutils literal notranslate"><span class="pre">write</span></code> ne rajoute pas de caractère de fin de ligne après la chaîne de caractères passée en argument, il faut donc inclure ce caractère <code class="docutils literal notranslate"><span class="pre">&quot;\n&quot;</span></code> à la fin de la chaîne de caractères passée en argument, si vous souhaitez inclure un retour à la ligne.</p>
 </section>
 <section id="fichiers-csv">
-<h4>Fichiers CSV<a class="headerlink" href="#fichiers-csv" title="Permalink to this heading">#</a></h4>
+<h4>Fichiers CSV<a class="headerlink" href="#fichiers-csv" title="Lien permanent vers cette rubrique">#</a></h4>
 <p>Le module <code class="docutils literal notranslate"><span class="pre">csv</span></code> déjà cité plus haut contient également une fonction <code class="docutils literal notranslate"><span class="pre">writer</span></code> permettant de simplifier l’écriture de fichiers CSV.
 La syntaxe d’utilisation de cette fonction est la suivante :</p>
 <div class="cell docutils container">
@@ -793,7 +794,7 @@ La syntaxe d’utilisation de cette fonction est la suivante :</p>
 Le retour à la ligne est écrit directement par la méthode <code class="docutils literal notranslate"><span class="pre">writerow</span></code>, vous n’avez pas à vous en occuper.</p>
 </section>
 <section id="fichiers-json">
-<h4>Fichiers JSON<a class="headerlink" href="#fichiers-json" title="Permalink to this heading">#</a></h4>
+<h4>Fichiers JSON<a class="headerlink" href="#fichiers-json" title="Lien permanent vers cette rubrique">#</a></h4>
 <p>Le module <code class="docutils literal notranslate"><span class="pre">json</span></code> déjà cité plus haut contient également une fonction <code class="docutils literal notranslate"><span class="pre">dump</span></code> permettant d’écrire le contenu d’un dictionnaire (ou d’une liste de dictionnaires) dans un fichier JSON.
 La syntaxe d’utilisation de cette fonction est la suivante :</p>
 <div class="cell docutils container">
@@ -821,7 +822,7 @@ La syntaxe d’utilisation de cette fonction est la suivante :</p>
 </section>
 </section>
 <section id="bonus-utilisation-de-with">
-<h2>Bonus : utilisation de <code class="docutils literal notranslate"><span class="pre">with</span></code><a class="headerlink" href="#bonus-utilisation-de-with" title="Permalink to this heading">#</a></h2>
+<h2>Bonus : utilisation de <code class="docutils literal notranslate"><span class="pre">with</span></code><a class="headerlink" href="#bonus-utilisation-de-with" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Il existe en Python un moyen très efficace de maîtriser la durée de vie d’une variable : il s’agit de la directive <code class="docutils literal notranslate"><span class="pre">with</span></code>, dont la syntaxe est la suivante :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">EXPRESSION</span> <span class="k">as</span> <span class="n">VARIABLE</span><span class="p">:</span>
     <span class="n">BLOC_DE_CODE</span>
@@ -853,7 +854,7 @@ xx;xx;xx;xx;xx
 <p>et le fichier sera tout de même fermé correctement dès que l’on sortira du bloc <code class="docutils literal notranslate"><span class="pre">with</span></code>.</p>
 </section>
 <section id="exercices">
-<h2>Exercices<a class="headerlink" href="#exercices" title="Permalink to this heading">#</a></h2>
+<h2>Exercices<a class="headerlink" href="#exercices" title="Lien permanent vers cette rubrique">#</a></h2>
 <div class="admonition-exercice-8-1 admonition">
 <p class="admonition-title">Exercice 8.1</p>
 <p>Écrivez une fonction qui affiche, pour chaque fichier d’extension <code class="docutils literal notranslate"><span class="pre">&quot;.txt&quot;</span></code> d’un répertoire passé en argument, le nom du fichier ainsi que son nombre de lignes.</p>
@@ -941,18 +942,18 @@ Vous pourrez vous aider pour cela de la documentation du sous-module <code class
 <div class="prev-next-area">
     <a class="left-prev"
        href="sets_tuples.html"
-       title="previous page">
+       title="page précédente">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-subtitle">précédent</p>
         <p class="prev-next-title">Les <em>sets</em> et les <em>tuples</em></p>
       </div>
     </a>
     <a class="right-next"
        href="api.html"
-       title="next page">
+       title="page suivante">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">suivant</p>
         <p class="prev-next-title">Récupération de données à partir d’API web</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
@@ -971,7 +972,7 @@ Vous pourrez vous aider pour cela de la documentation du sous-module <code class
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> Contenu
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -1013,7 +1014,7 @@ Vous pourrez vous aider pour cela de la documentation du sous-module <code class
   <div class="footer-item">
     
 <p class="component-author">
-By Romain Tavenard
+Par Romain Tavenard
 </p>
 
   </div>

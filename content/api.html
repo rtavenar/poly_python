@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="fr" >
 
   <head>
     <meta charset="utf-8" />
@@ -56,6 +56,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/vue.js"></script>
     <script src="../_static/pythonpad.bundle.js"></script>
+    <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -66,11 +67,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/api';</script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="numpy et le calcul matriciel" href="numpy.html" />
     <link rel="prev" title="Interaction avec des fichiers" href="fichiers.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="fr"/>
   </head>
   
   
@@ -78,7 +79,7 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -218,7 +219,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -227,7 +228,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="../_sources/content/api.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Télécharger le fichier source"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -245,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimer au format PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -265,7 +266,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Mode plein écran"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -279,7 +280,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
     <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
     <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
@@ -289,7 +290,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
@@ -313,7 +314,7 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> Contents </h2>
+                <h2> Contenu </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -335,7 +336,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="recuperation-de-donnees-a-partir-d-api-web">
-<h1>Récupération de données à partir d’API web<a class="headerlink" href="#recuperation-de-donnees-a-partir-d-api-web" title="Permalink to this heading">#</a></h1>
+<h1>Récupération de données à partir d’API web<a class="headerlink" href="#recuperation-de-donnees-a-partir-d-api-web" title="Lien permanent vers cette rubrique">#</a></h1>
 <p>De nombreux services web fournissent des API (<em>Application Programming Interface</em>) pour mettre des données à disposition du grand public. Le principe de fonctionnement de ces API est le suivant : l’utilisateur effectue une requête sous la forme d’une requête HTTP, le service web met en forme les données correspondant à la requête et les renvoie à l’utilisateur, dans un format défini à l’avance.</p>
 <p>Voici une liste (très loin d’être exhaustive) d’API web d’accès aux données :</p>
 <ul class="simple">
@@ -373,9 +374,9 @@ document.write(`
 Nous avons vu précédemment dans ce cours que ce format était facilement manipulable en Python, notamment parce qu’il est très proche de la notion de dictionnaire.
 Ce chapitre se focalise donc sur la réalisation de requêtes HTTP en Python.</p>
 <section id="requetes-http-en-python">
-<h2>Requêtes HTTP en Python<a class="headerlink" href="#requetes-http-en-python" title="Permalink to this heading">#</a></h2>
+<h2>Requêtes HTTP en Python<a class="headerlink" href="#requetes-http-en-python" title="Lien permanent vers cette rubrique">#</a></h2>
 <section id="format-d-une-requete-http">
-<h3>Format d’une requête HTTP<a class="headerlink" href="#format-d-une-requete-http" title="Permalink to this heading">#</a></h3>
+<h3>Format d’une requête HTTP<a class="headerlink" href="#format-d-une-requete-http" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Dans un premier temps, étudions le format d’une requête HTTP, telle que vous en effectuez des dizaines chaque jour, par l’intermédiaire de votre navigateur web.
 Lorsque vous entrez dans la barre d’adresse de votre navigateur l’URL suivante :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://people.irisa.fr/Romain.Tavenard/index.php?page=3
@@ -408,13 +409,13 @@ Ainsi, la requête précédente deviendrait :</p>
 Pour créer une clef d’API, il faut se rendre sur l’interface développeur de l’API concernée (<a class="reference external" href="https://developers.google.com/maps/documentation/directions/start?hl=fr">ici</a> pour l’API <em>Google Maps Directions</em> par exemple).</p>
 </section>
 <section id="utilisation-du-module-requests">
-<h3>Utilisation du module <code class="docutils literal notranslate"><span class="pre">requests</span></code><a class="headerlink" href="#utilisation-du-module-requests" title="Permalink to this heading">#</a></h3>
+<h3>Utilisation du module <code class="docutils literal notranslate"><span class="pre">requests</span></code><a class="headerlink" href="#utilisation-du-module-requests" title="Lien permanent vers cette rubrique">#</a></h3>
 <div class="tip admonition">
 <p class="admonition-title">Les requêtes HTTP en (très) bref</p>
 <p>Dans le protocole HTTP, il existe plusieurs types de requêtes pour réaliser l’échange entre le client et le serveur.
 En particulier les requêtes de type GET sont très utilisées lorsque le client demande une ressource au serveur.
 Il s’agit d’une requête de téléchargement d’un document.
-Il est possible de transmettre des paramètres pour filtrer la réponse ; dans ce cas, les paramètres seront transférés “en clair” (dans l’URL utilisée pour la requête).</p>
+Il est possible de transmettre des paramètres pour filtrer la réponse ; dans ce cas, les paramètres seront transférés « en clair » (dans l’URL utilisée pour la requête).</p>
 <p>Les requêtes de type POST permettent comme GET de télécharger un document du serveur vers le client mais avec un plus de sophistication : les paramètres sont masqués et il est possible de demander de mettre à jour des données sur le serveur à l’occasion de la requête.</p>
 <p>Il existe d’autres requêtes HTTP que nous ne détaillons pas ici.</p>
 </div>
@@ -460,12 +461,12 @@ Ce module contient notamment une fonction <code class="docutils literal notransl
 <li><p><em>ex.</em> 200 : la requête s’est effectuée correctement</p></li>
 </ul>
 </li>
-<li><p>40x : erreur “due au client”</p>
+<li><p>40x : erreur « due au client »</p>
 <ul>
 <li><p><em>ex.</em> 404 : page non trouvée</p></li>
 </ul>
 </li>
-<li><p>50x : erreur “due au serveur”</p>
+<li><p>50x : erreur « due au serveur »</p>
 <ul>
 <li><p><em>ex.</em> 504 : Temps imparti écoulé</p></li>
 </ul>
@@ -536,7 +537,7 @@ C’est par exemple le cas des modules <a class="reference external" href="http:
 </section>
 </section>
 <section id="exercice">
-<h2>Exercice<a class="headerlink" href="#exercice" title="Permalink to this heading">#</a></h2>
+<h2>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers cette rubrique">#</a></h2>
 <div class="admonition-exercice-9-1 admonition">
 <p class="admonition-title"><strong>Exercice 9.1</strong></p>
 <p>Écrivez une fonction qui prenne en entrée une liste de <code class="docutils literal notranslate"><span class="pre">userId</span></code> et affiche l’ensemble des entrées de l’API <a class="reference external" href="http://my-json-server.typicode.com/rtavenar/fake_api/tasks">http://my-json-server.typicode.com/rtavenar/fake_api/tasks</a> pour lesquelles l’attribut <code class="docutils literal notranslate"><span class="pre">completed</span></code> vaut <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
@@ -617,18 +618,18 @@ C’est par exemple le cas des modules <a class="reference external" href="http:
 <div class="prev-next-area">
     <a class="left-prev"
        href="fichiers.html"
-       title="previous page">
+       title="page précédente">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-subtitle">précédent</p>
         <p class="prev-next-title">Interaction avec des fichiers</p>
       </div>
     </a>
     <a class="right-next"
        href="numpy.html"
-       title="next page">
+       title="page suivante">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">suivant</p>
         <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> et le calcul matriciel</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
@@ -647,7 +648,7 @@ C’est par exemple le cas des modules <a class="reference external" href="http:
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> Contenu
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -671,7 +672,7 @@ C’est par exemple le cas des modules <a class="reference external" href="http:
   <div class="footer-item">
     
 <p class="component-author">
-By Romain Tavenard
+Par Romain Tavenard
 </p>
 
   </div>

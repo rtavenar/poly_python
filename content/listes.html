@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="fr" >
 
   <head>
     <meta charset="utf-8" />
@@ -56,6 +56,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/vue.js"></script>
     <script src="../_static/pythonpad.bundle.js"></script>
+    <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -68,11 +69,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/listes';</script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Les chaînes de caractères" href="chaines.html" />
     <link rel="prev" title="Les dates" href="dates.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="fr"/>
   </head>
   
   
@@ -80,7 +81,7 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -220,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -229,7 +230,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="../_sources/content/listes.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Télécharger le fichier source"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -247,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimer au format PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -267,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Mode plein écran"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -281,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
     <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
     <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
@@ -291,7 +292,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
@@ -315,7 +316,7 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> Contents </h2>
+                <h2> Contenu </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -354,7 +355,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="les-listes">
-<h1>Les listes<a class="headerlink" href="#les-listes" title="Permalink to this heading">#</a></h1>
+<h1>Les listes<a class="headerlink" href="#les-listes" title="Lien permanent vers cette rubrique">#</a></h1>
 <div class="admonition-definition admonition">
 <p class="admonition-title">Définition</p>
 <p>Une liste est une collection ordonnée de valeurs.
@@ -365,7 +366,7 @@ Une liste a une longueur (<em>i.e.</em> un nombre d’éléments) finie, ainsi l
 <p>En Python, il n’est pas nécessaire que tous les éléments d’une liste soient du même type, même si dans les exemples que nous considérerons, ce sera souvent le cas.</p>
 <p>On peut trouver des informations précieuses sur le sujet des listes dans l’aide en ligne de Python disponible à l’adresse : <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html">https://docs.python.org/3/tutorial/datastructures.html</a>.</p>
 <section id="avant-propos-listes-et-iterables">
-<h2>Avant-propos : listes et itérables<a class="headerlink" href="#avant-propos-listes-et-iterables" title="Permalink to this heading">#</a></h2>
+<h2>Avant-propos : listes et itérables<a class="headerlink" href="#avant-propos-listes-et-iterables" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Dans la suite, nous parlerons de listes, qui est un type de données bien spécifique en Python. Toutefois, une grande partie de notre propos pourra se transposer à l’ensemble des itérables en Python (c’est-à-dire l’ensemble des objets Python dont on peut parcourir les éléments un à un).</p>
 <p>Il existe toutefois une différence majeure entre listes et itérables : nous verrons dans la suite de ce chapitre que l’on peut accéder au <span class="math notranslate nohighlight">\(i\)</span>-ème élément d’une liste simplement, alors que ce n’est généralement pas possible pour un itérable (pour ce dernier, il faudra parcourir l’ensemble de ses éléments et s’arrêter lorsque l’on est effectivement rendu au <span class="math notranslate nohighlight">\(i\)</span>-ème).</p>
 <p>Toutefois, si l’on a un itérable <code class="docutils literal notranslate"><span class="pre">iterable</span></code>, il est possible de le transformer en liste simplement à l’aide de la fonction <code class="docutils literal notranslate"><span class="pre">list</span></code> :</p>
@@ -374,7 +375,7 @@ Une liste a une longueur (<em>i.e.</em> un nombre d’éléments) finie, ainsi l
 </div>
 </section>
 <section id="creation-de-liste">
-<span id="creation-liste"></span><h2>Création de liste<a class="headerlink" href="#creation-de-liste" title="Permalink to this heading">#</a></h2>
+<span id="creation-liste"></span><h2>Création de liste<a class="headerlink" href="#creation-de-liste" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Pour créer une liste contenant des éléments définis (par exemple la liste contenant les entiers 1, 5 et 7), il est possible d’utiliser la syntaxe suivante :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -414,7 +415,7 @@ Par exemple, la fonction <code class="docutils literal notranslate"><span class=
 Si, au contraire, on passe un troisième argument à la fonction <code class="docutils literal notranslate"><span class="pre">range</span></code>, cet argument correspond au pas utilisé entre deux éléments successifs.</p>
 </section>
 <section id="acces-aux-elements-d-une-liste">
-<h2>Accès aux éléments d’une liste<a class="headerlink" href="#acces-aux-elements-d-une-liste" title="Permalink to this heading">#</a></h2>
+<h2>Accès aux éléments d’une liste<a class="headerlink" href="#acces-aux-elements-d-une-liste" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Pour accéder au <span class="math notranslate nohighlight">\(i\)</span>-ème élément d’une liste, on utilise la syntaxe :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
 </pre></div>
@@ -554,7 +555,7 @@ Si, au contraire, on passe un troisième argument à la fonction <code class="do
 </div>
 </section>
 <section id="parcours-d-une-liste">
-<span id="parcours-liste"></span><h2>Parcours d’une liste<a class="headerlink" href="#parcours-d-une-liste" title="Permalink to this heading">#</a></h2>
+<span id="parcours-liste"></span><h2>Parcours d’une liste<a class="headerlink" href="#parcours-d-une-liste" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Lorsque l’on parcourt une liste, on peut vouloir accéder :</p>
 <ul class="simple">
 <li><p>aux éléments stockés dans la liste uniquement ;</p></li>
@@ -565,7 +566,7 @@ Si, au contraire, on passe un troisième argument à la fonction <code class="do
 <p><strong>Attention.</strong>
 Quel que soit le parcours de liste utilisé, il est fortement déconseillé de supprimer ou d’insérer des éléments dans une liste pendant le parcours de celle-ci.</p>
 <section id="parcours-des-elements">
-<h3>Parcours des éléments<a class="headerlink" href="#parcours-des-elements" title="Permalink to this heading">#</a></h3>
+<h3>Parcours des éléments<a class="headerlink" href="#parcours-des-elements" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Pour parcourir les éléments d’une liste, on utilise une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -586,7 +587,7 @@ Quel que soit le parcours de liste utilisé, il est fortement déconseillé de s
 <p>Dans cet exemple, la variable <code class="docutils literal notranslate"><span class="pre">elem</span></code> va prendre successivement pour valeur chacun des éléments de la liste.</p>
 </section>
 <section id="parcours-par-indices">
-<h3>Parcours par indices<a class="headerlink" href="#parcours-par-indices" title="Permalink to this heading">#</a></h3>
+<h3>Parcours par indices<a class="headerlink" href="#parcours-par-indices" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Pour avoir accès aux indices (positifs) de la liste, on devra utiliser un subterfuge.
 On sait que les indices d’une liste sont les entiers compris entre 0 (inclus) et la taille de la liste (exclu).
 On va donc utiliser la fonction <code class="docutils literal notranslate"><span class="pre">range</span></code> pour cela :</p>
@@ -609,7 +610,7 @@ On va donc utiliser la fonction <code class="docutils literal notranslate"><span
 </div>
 </section>
 <section id="parcours-par-elements-et-indices">
-<h3>Parcours par éléments et indices<a class="headerlink" href="#parcours-par-elements-et-indices" title="Permalink to this heading">#</a></h3>
+<h3>Parcours par éléments et indices<a class="headerlink" href="#parcours-par-elements-et-indices" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Dans certains cas, enfin, on a besoin de manipuler simultanément les indices d’une liste et les éléments associés.
 Cela se fait à l’aide de la fonction <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> :</p>
 <div class="cell docutils container">
@@ -632,7 +633,7 @@ Cela se fait à l’aide de la fonction <code class="docutils literal notranslat
 <p>Pour tous ces parcours de listes, il est conseillé d’utiliser des noms de variables pertinents, afin de limiter les confusions dans la nature des éléments manipulés. Par exemple, on pourra utiliser <code class="docutils literal notranslate"><span class="pre">i</span></code> ou <code class="docutils literal notranslate"><span class="pre">j</span></code> pour noter des indices, mais on préfèrera <code class="docutils literal notranslate"><span class="pre">elem</span></code> ou <code class="docutils literal notranslate"><span class="pre">val</span></code> pour désigner les éléments de la liste.</p>
 </section>
 <section id="exercice">
-<span id="ex4-1"></span><h3>Exercice<a class="headerlink" href="#exercice" title="Permalink to this heading">#</a></h3>
+<span id="ex4-1"></span><h3>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers cette rubrique">#</a></h3>
 <div class="admonition-exercice-4-1-argmax admonition">
 <p class="admonition-title">Exercice 4.1 : Argmax</p>
 <p>Écrivez une fonction en Python qui permette de calculer l’argmax d’une liste, c’est-à-dire l’indice auquel est stockée la valeur maximale de la liste.
@@ -666,10 +667,10 @@ Si cette valeur maximale est présente plusieurs fois dans la liste, on retourne
 </section>
 </section>
 <section id="manipulations-de-listes">
-<h2>Manipulations de listes<a class="headerlink" href="#manipulations-de-listes" title="Permalink to this heading">#</a></h2>
+<h2>Manipulations de listes<a class="headerlink" href="#manipulations-de-listes" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Nous présentons dans ce qui suit les opérations élémentaires de manipulation de listes.</p>
 <section id="insertion-d-element">
-<h3>Insertion d’élément<a class="headerlink" href="#insertion-d-element" title="Permalink to this heading">#</a></h3>
+<h3>Insertion d’élément<a class="headerlink" href="#insertion-d-element" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Pour insérer un nouvel élément dans une liste, on peut :</p>
 <ul class="simple">
 <li><p>rajouter un élément à la fin de la liste à l’aide de la méthode <code class="docutils literal notranslate"><span class="pre">append</span></code> ;</p></li>
@@ -707,7 +708,7 @@ L’appel de ces méthodes est un peu particulier, comme vous pouvez le remarque
 </div>
 </section>
 <section id="suppression-d-element">
-<h3>Suppression d’élément<a class="headerlink" href="#suppression-d-element" title="Permalink to this heading">#</a></h3>
+<h3>Suppression d’élément<a class="headerlink" href="#suppression-d-element" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Si l’on souhaite, maintenant, supprimer un élément dans une liste, deux cas de figures peuvent se présenter.
 On peut souhaiter :</p>
 <ul class="simple">
@@ -744,7 +745,7 @@ On peut souhaiter :</p>
 </div>
 </section>
 <section id="recherche-d-element">
-<h3>Recherche d’élément<a class="headerlink" href="#recherche-d-element" title="Permalink to this heading">#</a></h3>
+<h3>Recherche d’élément<a class="headerlink" href="#recherche-d-element" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Pour trouver l’indice de la première occurrence d’une valeur dans une liste, on utilisera la méthode <code class="docutils literal notranslate"><span class="pre">index</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -776,7 +777,7 @@ On peut souhaiter :</p>
 </div>
 </section>
 <section id="creation-de-listes-composites">
-<h3>Création de listes composites<a class="headerlink" href="#creation-de-listes-composites" title="Permalink to this heading">#</a></h3>
+<h3>Création de listes composites<a class="headerlink" href="#creation-de-listes-composites" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>On peut également concaténer deux listes (c’est-à-dire mettre bout à bout leur contenu) à l’aide de l’opérateur <code class="docutils literal notranslate"><span class="pre">+</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -811,7 +812,7 @@ On peut souhaiter :</p>
 <p>Bien entendu, vu le sens de cet opérateur, on ne peut multiplier une liste que par un entier.</p>
 </section>
 <section id="tri-de-liste">
-<h3>Tri de liste<a class="headerlink" href="#tri-de-liste" title="Permalink to this heading">#</a></h3>
+<h3>Tri de liste<a class="headerlink" href="#tri-de-liste" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Enfin, on peut trier les éléments contenus dans une liste à l’aide de la fonction <code class="docutils literal notranslate"><span class="pre">sorted</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -858,7 +859,7 @@ On peut donc par exemple trier des listes de chaînes de caractères :</p>
 </div>
 </section>
 <section id="exercices">
-<h3>Exercices<a class="headerlink" href="#exercices" title="Permalink to this heading">#</a></h3>
+<h3>Exercices<a class="headerlink" href="#exercices" title="Lien permanent vers cette rubrique">#</a></h3>
 <div class="admonition-exercice-4-2-intersection-de-listes admonition" id="ex4-2">
 <p class="admonition-title">Exercice 4.2 : Intersection de listes</p>
 <p>Écrivez une fonction qui prenne deux listes en entrée et retourne l’intersection des deux listes (c’est-à-dire une liste contenant tous les éléments présents dans les deux listes).</p>
@@ -910,7 +911,7 @@ On peut donc par exemple trier des listes de chaînes de caractères :</p>
 </section>
 </section>
 <section id="copie-de-liste">
-<h2>Copie de liste<a class="headerlink" href="#copie-de-liste" title="Permalink to this heading">#</a></h2>
+<h2>Copie de liste<a class="headerlink" href="#copie-de-liste" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Pour la plupart des variables, en Python, la copie ne pose pas de problème :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -936,7 +937,7 @@ En effet, si <code class="docutils literal notranslate"><span class="pre">liste<
 </div>
 </div>
 </div>
-<p>on ne recopie pas le contenu de <code class="docutils literal notranslate"><span class="pre">liste</span></code> dans <code class="docutils literal notranslate"><span class="pre">liste2</span></code>, mais on crée une variable <code class="docutils literal notranslate"><span class="pre">liste2</span></code> qui va “pointer” vers la même position dans la mémoire de votre ordinateur que <code class="docutils literal notranslate"><span class="pre">liste</span></code>.
+<p>on ne recopie pas le contenu de <code class="docutils literal notranslate"><span class="pre">liste</span></code> dans <code class="docutils literal notranslate"><span class="pre">liste2</span></code>, mais on crée une variable <code class="docutils literal notranslate"><span class="pre">liste2</span></code> qui va « pointer » vers la même position dans la mémoire de votre ordinateur que <code class="docutils literal notranslate"><span class="pre">liste</span></code>.
 La différence peut sembler mince, mais cela signifie que si l’on modifie <code class="docutils literal notranslate"><span class="pre">liste</span></code> même après l’instruction <code class="docutils literal notranslate"><span class="pre">liste2</span> <span class="pre">=</span> <span class="pre">liste</span></code>, la modification sera répercutée sur <code class="docutils literal notranslate"><span class="pre">liste2</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -948,10 +949,7 @@ La différence peut sembler mince, mais cela signifie que si l’on modifie <cod
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 7]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> [1, 2, 7]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 7] [1, 2, 7]
 </pre></div>
 </div>
 </div>
@@ -967,17 +965,14 @@ La différence peut sembler mince, mais cela signifie que si l’on modifie <cod
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 7]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> [1, 5, 7]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 7] [1, 5, 7]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="bonus-listes-en-comprehension">
-<h2>Bonus : listes en compréhension<a class="headerlink" href="#bonus-listes-en-comprehension" title="Permalink to this heading">#</a></h2>
+<h2>Bonus : listes en compréhension<a class="headerlink" href="#bonus-listes-en-comprehension" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Il est possible de créer des listes en filtrant et/ou modifiant certains éléments d’autres listes ou itérables.
 Supposons par exemple que l’on souhaite créer la liste des carrés des 10 premiers entiers naturels.
 Le code qui suit présente deux façons équivalentes de créer une telle liste :</p>
@@ -995,9 +990,6 @@ Le code qui suit présente deux façons équivalentes de créer une telle liste 
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1010,9 +1002,6 @@ Le code qui suit présente deux façons équivalentes de créer une telle liste 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1035,7 +1024,7 @@ On peut également appliquer un filtre sur les éléments de la liste de départ
 <p>Ici, on n’a considéré que les entiers pairs.</p>
 </section>
 <section id="super-bonus-le-parcours-simultane-de-plusieurs-listes">
-<h2>Super Bonus : le parcours simultané de plusieurs listes<a class="headerlink" href="#super-bonus-le-parcours-simultane-de-plusieurs-listes" title="Permalink to this heading">#</a></h2>
+<h2>Super Bonus : le parcours simultané de plusieurs listes<a class="headerlink" href="#super-bonus-le-parcours-simultane-de-plusieurs-listes" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Il peut arriver que l’on ait à parcourir simultanément plusieurs listes.
 Par exemple, supposons que l’on ait une liste stockant les prénoms d’enfants d’une classe et une autre liste contenant leurs noms.
 Si l’on veut afficher les noms et prénoms de ces enfants, on peut effectuer un parcours par indice :</p>
@@ -1100,7 +1089,7 @@ Camille Drogba 12
 <p>Bien entendu, pour pouvoir utiliser <code class="docutils literal notranslate"><span class="pre">zip()</span></code>, il faut que les listes soient de même taille.</p>
 </section>
 <section id="liste-des-exercices-de-ce-chapitre">
-<h2>Liste des exercices de ce chapitre<a class="headerlink" href="#liste-des-exercices-de-ce-chapitre" title="Permalink to this heading">#</a></h2>
+<h2>Liste des exercices de ce chapitre<a class="headerlink" href="#liste-des-exercices-de-ce-chapitre" title="Lien permanent vers cette rubrique">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference internal" href="#ex4-1"><span class="std std-ref">Argmax</span></a></p></li>
 <li><p><a class="reference internal" href="#ex4-2"><span class="std std-ref">Intersection de listes</span></a></p></li>
@@ -1142,18 +1131,18 @@ Camille Drogba 12
 <div class="prev-next-area">
     <a class="left-prev"
        href="dates.html"
-       title="previous page">
+       title="page précédente">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-subtitle">précédent</p>
         <p class="prev-next-title">Les dates</p>
       </div>
     </a>
     <a class="right-next"
        href="chaines.html"
-       title="next page">
+       title="page suivante">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">suivant</p>
         <p class="prev-next-title">Les chaînes de caractères</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
@@ -1172,7 +1161,7 @@ Camille Drogba 12
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> Contenu
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -1213,7 +1202,7 @@ Camille Drogba 12
   <div class="footer-item">
     
 <p class="component-author">
-By Romain Tavenard
+Par Romain Tavenard
 </p>
 
   </div>

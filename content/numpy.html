@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="fr" >
 
   <head>
     <meta charset="utf-8" />
@@ -56,6 +56,7 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/vue.js"></script>
     <script src="../_static/pythonpad.bundle.js"></script>
+    <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -66,11 +67,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/numpy';</script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="La Programmation Orientée Objet" href="poo.html" />
     <link rel="prev" title="Récupération de données à partir d’API web" href="api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="fr"/>
   </head>
   
   
@@ -78,7 +79,7 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -218,7 +219,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -227,7 +228,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="../_sources/content/numpy.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
+   title="Télécharger le fichier source"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -245,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
+  title="Imprimer au format PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -265,7 +266,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
+  title="Mode plein écran"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -279,7 +280,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
     <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
     <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
@@ -289,7 +290,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
@@ -313,12 +314,12 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> Contents </h2>
+                <h2> Contenu </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tableaux-multi-dimensionnels">Tableaux multi-dimensionnels</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#produit-matriciel-et-operations-element-a-element">Produit matriciel et opérations “élément à élément”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#produit-matriciel-et-operations-element-a-element">Produit matriciel et opérations « élément à élément »</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructeurs-de-tableaux-usuels">Constructeurs de tableaux usuels</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acces-a-des-sous-parties-des-tableaux">Accès à des sous-parties des tableaux</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-elementaires-sur-les-tableaux">Opérations élémentaires sur les tableaux</a></li>
@@ -336,7 +337,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numpy-et-le-calcul-matriciel">
-<span id="sec-numpy"></span><h1><code class="docutils literal notranslate"><span class="pre">numpy</span></code> et le calcul matriciel<a class="headerlink" href="#numpy-et-le-calcul-matriciel" title="Permalink to this heading">#</a></h1>
+<span id="sec-numpy"></span><h1><code class="docutils literal notranslate"><span class="pre">numpy</span></code> et le calcul matriciel<a class="headerlink" href="#numpy-et-le-calcul-matriciel" title="Lien permanent vers cette rubrique">#</a></h1>
 <p>Ce chapitre traite d’un module en particulier : le module <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.
 <code class="docutils literal notranslate"><span class="pre">numpy</span></code> est un raccourci pour <em>Numerical Python</em> : cette librairie a donc pour vocation de fournir des outils de calcul numérique en Python.
 Ce module permet donc de manipuler des vecteurs et des matrices (voire des tenseurs d’ordre supérieur).</p>
@@ -351,7 +352,7 @@ Ce module permet donc de manipuler des vecteurs et des matrices (voire des tense
 <p>Vous remarquez ici que lors de l’import, le nom du module est renommé en <code class="docutils literal notranslate"><span class="pre">np</span></code> : il s’agit d’une habitude très répandue qui permet de ne pas surcharger inutilement la suite de votre code.</p>
 <p>De plus, sachez que ce chapitre est très succinct et très loin de couvrir l’ensemble des fonctionnalités <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, vous êtes donc fortement incités à utiliser <a class="reference external" href="https://numpy.org/doc/stable/">la documentation <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a> pour trouver ce qui pourrait vous être utile pour votre usage.</p>
 <section id="tableaux-multi-dimensionnels">
-<h2>Tableaux multi-dimensionnels<a class="headerlink" href="#tableaux-multi-dimensionnels" title="Permalink to this heading">#</a></h2>
+<h2>Tableaux multi-dimensionnels<a class="headerlink" href="#tableaux-multi-dimensionnels" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Les tableaux multi-dimensionnels sont les objets de base en <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.
 On peut créer un vecteur comme suit :</p>
 <div class="cell docutils container">
@@ -406,7 +407,7 @@ int64
 On ne pourra donc pas stocker dans un tableau <code class="docutils literal notranslate"><span class="pre">numpy</span></code> des données de types hétérogènes, comme on peut le faire dans le cas des listes Python par exemple.</p>
 </section>
 <section id="produit-matriciel-et-operations-element-a-element">
-<h2>Produit matriciel et opérations “élément à élément”<a class="headerlink" href="#produit-matriciel-et-operations-element-a-element" title="Permalink to this heading">#</a></h2>
+<h2>Produit matriciel et opérations « élément à élément »<a class="headerlink" href="#produit-matriciel-et-operations-element-a-element" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Une chose importante à comprendre en <code class="docutils literal notranslate"><span class="pre">numpy</span></code> est que le produit par défaut entre deux tableaux est le produit élément à élément, et non pas le produit matriciel, comme on peut le voir dans cet exemple :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -506,7 +507,7 @@ On ne pourra donc pas stocker dans un tableau <code class="docutils literal notr
 </div>
 </section>
 <section id="constructeurs-de-tableaux-usuels">
-<h2>Constructeurs de tableaux usuels<a class="headerlink" href="#constructeurs-de-tableaux-usuels" title="Permalink to this heading">#</a></h2>
+<h2>Constructeurs de tableaux usuels<a class="headerlink" href="#constructeurs-de-tableaux-usuels" title="Lien permanent vers cette rubrique">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> permet de définir très simplement des tableaux remplis de 0, de 1, la matrice identité, ou des séquences de valeurs :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -592,8 +593,8 @@ On ne pourra donc pas stocker dans un tableau <code class="docutils literal notr
 </div>
 </section>
 <section id="acces-a-des-sous-parties-des-tableaux">
-<h2>Accès à des sous-parties des tableaux<a class="headerlink" href="#acces-a-des-sous-parties-des-tableaux" title="Permalink to this heading">#</a></h2>
-<p>Comme pour les listes, les tableaux <code class="docutils literal notranslate"><span class="pre">numpy</span></code> peuvent être accédés par “tranches” (<em>slice</em>), comme dans les exemples suivants :</p>
+<h2>Accès à des sous-parties des tableaux<a class="headerlink" href="#acces-a-des-sous-parties-des-tableaux" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Comme pour les listes, les tableaux <code class="docutils literal notranslate"><span class="pre">numpy</span></code> peuvent être accédés par « tranches » (<em>slice</em>), comme dans les exemples suivants :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">],</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">]])</span>
@@ -679,7 +680,7 @@ De la même façon, si les indices sont stockés dans une structure à deux dime
 </div>
 </section>
 <section id="operations-elementaires-sur-les-tableaux">
-<h2>Opérations élémentaires sur les tableaux<a class="headerlink" href="#operations-elementaires-sur-les-tableaux" title="Permalink to this heading">#</a></h2>
+<h2>Opérations élémentaires sur les tableaux<a class="headerlink" href="#operations-elementaires-sur-les-tableaux" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Une fois un tableau défini, on peut très facilement calculer :</p>
 <ul class="simple">
 <li><p>la somme de ses éléments :</p></li>
@@ -811,7 +812,7 @@ De la même façon, si les indices sont stockés dans une structure à deux dime
 </div>
 </section>
 <section id="bonnes-pratiques">
-<h2>Bonnes pratiques<a class="headerlink" href="#bonnes-pratiques" title="Permalink to this heading">#</a></h2>
+<h2>Bonnes pratiques<a class="headerlink" href="#bonnes-pratiques" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Vous devrez, tant que faire se peut, utiliser les fonctions prédéfinies en <code class="docutils literal notranslate"><span class="pre">numpy</span></code> pour vos manipulations de tableaux multi-dimensionnels, plutôt que de recoder les opérations élémentaires.
 Il est notamment fortement déconseillé de parcourir les valeurs d’un tableau <code class="docutils literal notranslate"><span class="pre">numpy</span></code> au sein d’une boucle, pour des raisons d’efficacité (autrement dit, de temps de calcul), comme illustré ci-dessous :</p>
 <div class="cell docutils container">
@@ -830,7 +831,7 @@ Il est notamment fortement déconseillé de parcourir les valeurs d’un tableau
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.76 µs ± 68.9 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.3 µs ± 10.2 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
@@ -846,14 +847,14 @@ Il est notamment fortement déconseillé de parcourir les valeurs d’un tableau
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>132 µs ± 935 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>87.5 µs ± 758 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="exercices">
-<h2>Exercices<a class="headerlink" href="#exercices" title="Permalink to this heading">#</a></h2>
+<h2>Exercices<a class="headerlink" href="#exercices" title="Lien permanent vers cette rubrique">#</a></h2>
 <div class="admonition-exercice-10-1 admonition">
 <p class="admonition-title">Exercice 10.1</p>
 <p>Calculez, en <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, la somme des <code class="docutils literal notranslate"><span class="pre">n</span></code> premiers entiers, pour <code class="docutils literal notranslate"><span class="pre">n</span></code> fixé.</p>
@@ -933,18 +934,18 @@ Il est notamment fortement déconseillé de parcourir les valeurs d’un tableau
 <div class="prev-next-area">
     <a class="left-prev"
        href="api.html"
-       title="previous page">
+       title="page précédente">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-subtitle">précédent</p>
         <p class="prev-next-title">Récupération de données à partir d’API web</p>
       </div>
     </a>
     <a class="right-next"
        href="poo.html"
-       title="next page">
+       title="page suivante">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">suivant</p>
         <p class="prev-next-title">La Programmation Orientée Objet</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
@@ -963,12 +964,12 @@ Il est notamment fortement déconseillé de parcourir les valeurs d’un tableau
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+    <i class="fa-solid fa-list"></i> Contenu
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tableaux-multi-dimensionnels">Tableaux multi-dimensionnels</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#produit-matriciel-et-operations-element-a-element">Produit matriciel et opérations “élément à élément”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#produit-matriciel-et-operations-element-a-element">Produit matriciel et opérations « élément à élément »</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructeurs-de-tableaux-usuels">Constructeurs de tableaux usuels</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acces-a-des-sous-parties-des-tableaux">Accès à des sous-parties des tableaux</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-elementaires-sur-les-tableaux">Opérations élémentaires sur les tableaux</a></li>
@@ -988,7 +989,7 @@ Il est notamment fortement déconseillé de parcourir les valeurs d’un tableau
   <div class="footer-item">
     
 <p class="component-author">
-By Romain Tavenard
+Par Romain Tavenard
 </p>
 
   </div>
