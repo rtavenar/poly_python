@@ -401,7 +401,7 @@ class Polygone(FormeGeometrique):
     def perimetre(self):
         return sum(self.cotes)
 
-p = Polygone()
+p = Polygone([1, 4, 4, 5, 5])
 ```
 
 Si, par contre, on n'implémente pas la méthode abstraite dans l'une des classes filles, cette classe ne pourra pas être instanciée :
