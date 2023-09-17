@@ -35,6 +35,7 @@ jobs:
     # Install the latex things to create the pdf
     - name: install latex dependencies
       run: |
+        sudo apt-get update
         sudo apt-get install texlive-latex-recommended texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra texlive-xetex latexmk 
     # Build the html version of the book
     - name: Build the html-book
