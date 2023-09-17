@@ -1,7 +1,7 @@
 # Book settings
 title: Introduction à Python
 author: Romain Tavenard
-logo: img/logo_ur2.svg
+# logo: img/logo_ur2.svg
 
 latex:
   latex_documents:
