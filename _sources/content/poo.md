@@ -27,7 +27,7 @@ En termes de vocabulaire, on dit que `"abc"` est un **objet** de la **classe** `
 
 Nous avons vu dans le chapitre dédié que l'on disposait, pour les chaînes de caractères, de fonctions permettant des manipulations élémentaires, comme par exemple passer la chaîne de caractères en minuscule :
 
-```{code-cell}}
+```{code-cell}
 s = "abcDEf"
 print(s.upper())
 ```
@@ -66,36 +66,37 @@ La librairie Python standard propose déjà un nombre important de classes (c'es
 Pour définir une nouvelle classe, on utilise la syntaxe suivante :
 
 ```{code-cell}
-class Voiture:
-    def __init__(self):
-        self.couleur = "rouge"
-        self.nombre_roues = 4
+class Vecteur:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
     
-    def repeindre(self, nouvelle_couleur):
-        self.couleur = nouvelle_couleur
+    def translation(self, delta_x, delta_y):
+        self.x += delta_x
+        self.y += delta_y
 ```
 
-On a défini ici une nouvelle classe : la classe `Voiture`.
-Les objets de cette classe ont deux attribut : `couleur` et `nombre_roues` et une méthode `repeindre(nouvelle_couleur)`.
+On a défini ici une nouvelle classe : la classe `Vecteur`.
+Les objets de cette classe ont deux attribut : `x` et `y` et une méthode `translation(self, delta_x, delta_y)`.
 
 Voyons comment créer un nouvel objet de cette classe :
 
 ```{code-cell}
-ma_twingo = Voiture()
+mon_vecteur = Vecteur(0., 2.)
 ```
 
 Lors de la définition d'un nouvel objet, la méthode `__init__()` est appelée pour "construire" ce nouvel objet, et lui attribuer les bonnes propriétés.
-On peut accéder à la couleur de `ma_twingo` pour s'en convaincre :
+On peut accéder aux attributs de `mon_vecteur` pour s'en convaincre :
 
 ```{code-cell}
-print(ma_twingo.couleur)
+print(mon_vecteur.x, mon_vecteur.y)
 ```
 
 De même, on peut utiliser ses méthodes :
 
 ```{code-cell}
-ma_twingo.repeindre("rose")
-print(ma_twingo.couleur)
+mon_vecteur.translation(delta_x=1., delta_y=0.)
+print(mon_vecteur.x, mon_vecteur.y)
 ```
 
 ````{admonition} Le mot-clé self
@@ -106,96 +107,16 @@ Cet argument dénote l'objet sur lequel on est en train de travailler.
 Ainsi, lorsqu'on écrit :
 
 ```python
-    def repeindre(self, nouvelle_couleur):
-        self.couleur = nouvelle_couleur
+    def translation(self, delta_x, delta_y):
+        self.x += delta_x
+        self.y += delta_y
 ```
 
 le sens de ce code est le suivant : 
 
-* on définit une méthode `repeindre` qui aura **un seul** argument (il ne faut pas compter `self` qui est un argument spécial)
-* lorsque l'on appelle cette méthode avec une syntaxe du type `ma_twingo.repeindre("rose")`, cette méthode a pour effet de modifier la valeur de l'attribut `couleur` de l'objet `ma_twingo` (celui sur lequel la méthode est appelée)
+* on définit une méthode `translation` qui aura **deux** arguments (il ne faut pas compter `self` qui est un argument spécial)
+* lorsque l'on appelle cette méthode avec une syntaxe du type `mon_vecteur.translation(delta_x=1., delta_y=0.)`, cette méthode a pour effet de modifier la valeur des attributs `x` et `y` de l'objet `mon_vecteur` (celui sur lequel la méthode est appelée)
 ````
-
-### La notion d'héritage
-
-Dès lors que l'on va introduire plusieurs nouvelles classes dans nos programmes, il arrivera que nos classes partagent un certain nombre d'attributs, voire de méthodes.
-Si l'on reprend l'exemple de notre classe `Voiture` et que l'on imagine qu'il doive exister une classe `Velo`, il peut s'avérer pertinent de définir une classe **mère**, nommée `Vehicule`, comme suit :
-
-```{code-cell}
-class Vehicule:
-    def __init__(self):
-        self.couleur = "rouge"
-
-    def repeindre(self, nouvelle_couleur):
-        self.couleur = nouvelle_couleur
-
-
-class Voiture(Vehicule):
-    def __init__(self):
-        super().__init__()
-        self.nombre_roues = 4
-
-
-class Velo(Vehicule):
-    def __init__(self):
-        super().__init__()
-        self.nombre_roues = 2
-    
-    def repeindre(self, nouvelle_couleur):
-        print("Quelle joie de repeindre mon vélo !")
-        self.couleur = nouvelle_couleur
-```
-
-Dans le code ci-dessous, on décide que lors de la construction d'un nouveau véhicule, sa couleur sera `"rouge"` et on disposera d'une méthode pour le repeindre.
-On fait aussi le choix de dire que les classes `Voiture` et `Velo` **héritent** de la classe `Vehicule` (on le spécifie en écrivant `class Voiture(Vehicule)`).
-En héritant de cette classe, elles récupèrent tout ce qui existait pour cette classe (la couleur par défaut et la méthode pour repeindre).
-Chacune des classes définit en outre un attribut `nombre_roues`.
-
-Pour créer un nouvel objet `Voiture` ou `Velo`, on peut alors faire :
-
-```{code-cell}
-ma_twingo = Voiture()
-mon_vtt = Velo()
-
-print(ma_twingo.couleur, ma_twingo.nombre_roues)
-print(mon_vtt.couleur, mon_vtt.nombre_roues)
-```
-
-De plus, même si on ne le voit pas directement dans le code, grâce à l'héritage, la méthode `repeindre` existe pour les objets de ces classes :
-
-```{code-cell}
-ma_twingo.repeindre("bleu")
-print(ma_twingo.couleur)
-```
-
-Regardons de plus près ce qui se passe lorsqu'on crée un nouvel objet `Velo`.
-
-```python
-class Velo(Vehicule):
-    def __init__(self):
-        super().__init__()
-        self.nombre_roues = 2
-```
-
-Lors de la création d'un nouvel objet, comme pour n'importe quelle classe, la méthode `__init__` est appelée.
-À l'intérieur de cette méthode, deux choses sont faites :
-
-1. `super().__init__()` signifie que l'on appelle le constructeur de la classe mère, soit `Vehicule` : cela permet de définir un attribut `couleur` dont la valeur sera `"rouge"`
-2. `self.nombre_roues = 2` permet de définir un nouvel attribut `nombre_roues` dont la valeur est fixée à 2
-
-De plus, vous remarquez que la classe `Velo` redéfinit la méthode `repeindre`.
-On dit que la classe `Velo` **surcharge** la méthode `repeindre`.
-
-Dans ce cas, au lieu de réutiliser la méthode `repeindre` de `Vehicule`, si l'on appelle la méthode `repeindre` pour un objet de la classe `Velo`, c'est cette nouvelle version qui sera utilisée :
-
-```{code-cell}
-mon_vtt.repeindre("bleu")
-```
-
-```{code-cell}
-print(mon_vtt.couleur)
-```
-
 
 ### Les méthodes spéciales
 
@@ -203,17 +124,7 @@ Il existe des opérations "spéciales" que l'on peut vouloir effectuer sur des o
 On peut par exemple vouloir les afficher via `print()`, ou les sommer.
 Pour cela, on fait appel à des **méthodes spéciales**.
 
-Prenons un nouvel exemple : supposons que l'on veuille créer une classe pour stocker des vecteurs du plan (des paires de flottants, autrement dit).
-Une première définition pour la classe `Vecteur` correspondante pourrait être la suivante :
-
-```{code-cell}
-class Vecteur:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-```
-
-En d'autres termes, on définit un nouveau vecteur en spécifiant ses coordonnées dans le plan, ce qui donne :
+Définissons par exemple un nouveau vecteur en spécifiant ses coordonnées dans le plan, et affichons-le :
 
 ```{code-cell}
 v0 = Vecteur(1.5, -1.)
@@ -274,3 +185,243 @@ Méthode spéciale | Opérateur
 `__mul__(self, o)` | `*`
 `__truediv__(self, o)` | `/`
 `__pow__(self, o)` | `**`
+
+### Les attributs calculés
+
+Dans certains cas, on aimerait rajouter à nos objets des attributs qui pourraient être calculés à la volée.
+Si l'on reprend l'exemple de la classe `Vecteur` plus haut, on peut d'ores et déjà accéder à ses attributs `x` et `y` :
+
+```{code-cell}
+v1 = Vecteur(1., 0.)
+print(v1.x, v1.y)
+```
+
+On pourrait vouloir accéder à la norme de ce vecteur _via_ un attribut qui serait calculé à la volée, en fonction des valeurs des attributs `x` et `y`, et cela est possible en Python.
+Pour cela, il faut définir une méthode `norme` qui ne prenne que `self` comme argument et la "décorer" avec le décorateur `@property` (on rappelle que les attributs peuvent également être qualifiés de propriétés) :
+
+```{code-cell}
+from math import sqrt
+
+class Vecteur:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    @property
+    def norme(self):
+        return sqrt(self.x ** 2 + self.y ** 2)
+
+    def __repr__(self):
+        return f"Vecteur({self.x}, {self.y})"
+    
+    def __add__(self, autre_vecteur):
+        nouveau_vecteur = Vecteur(x=self.x + autre_vecteur.x,
+                                  y=self.y + autre_vecteur.y)
+        return nouveau_vecteur
+
+
+v1 = Vecteur(1., 0.)
+print(v1.norme)
+```
+
+## La notion d'héritage
+
+Dès lors que l'on va introduire plusieurs nouvelles classes dans nos programmes, il arrivera que nos classes partagent un certain nombre d'attributs, voire de méthodes.
+
+Prenons pour cela un nouvel exemple.
+Imaginons que l'on souhaite représenter des véhicules, qui pourront être des vélos ou bien des voitures.
+Dans ce cas, on va définir une classe **mère**, nommée `Polygone`, et deux classes filles `Rectangle` et `Triangle` comme suit :
+
+```{code-cell}
+class Polygone:
+    def __init__(self, cotes):
+        self.cotes = cotes
+
+    def perimetre(self):
+        return sum(self.cotes)
+
+
+class Triangle(Polygone):
+    def __init__(self, cotes):
+        super().__init__(cotes)
+
+
+class Rectangle(Polygone):
+    def __init__(self, largeur, longueur):
+        super().__init__(cotes=[largeur, longueur, largeur, longueur])
+    
+    def perimetre(self):
+        return 2 * sum(self.cotes[:2])
+```
+
+Dans le code ci-dessus, on décide que lors de la construction d'un nouveau polygone, la liste des longueurs de ses côtés sera initialisée vide.
+On fait aussi le choix de dire que les classes `Triangle` et `Rectangle` **héritent** de la classe `Polygone` (on le spécifie en écrivant `class Triangle(Polygone)`).
+En héritant de cette classe, elles récupèrent tout ce qui existait pour cette classe (l'initialisation par défaut et la méthode pour calculer le périmètre).
+La classe `Rectangle` redéfinit en outre la méthode périmètre car dans le cas des rectangles, on n'a pas besoin d'accéder aux longueurs des 4 côtés pour le calcul.
+
+Enfin, les instructions `super().__init__()` sont à comprendre comme "exécuter la méthode `__init__` de la classe parente", le mot-clé `super()` étant l'équivalent de `self` pour la classe parente.
+
+Pour créer un nouvel objet `Triangle` ou `Rectangle`, on peut alors faire :
+
+```{code-cell}
+t = Triangle([2, 2, 3])
+r = Rectangle(2, 4)
+
+print(t.cotes)
+print(r.cotes)
+```
+
+De plus, même si on ne le voit pas directement dans le code, grâce à l'héritage, la méthode `perimetre` existe pour les objets de ces classes :
+
+```{code-cell}
+print(t.perimetre())
+print(r.perimetre())
+```
+
+Regardons de plus près ce qui se passe lorsqu'on crée un nouvel objet `Rectangle`.
+
+```python
+class Rectangle(Polygone):
+    def __init__(self, largeur, longueur):
+        super().__init__([largeur, longueur, largeur, longueur])
+```
+
+Lors de la création d'un nouvel objet, comme pour n'importe quelle classe, la méthode `__init__` est appelée.
+À l'intérieur de cette méthode, deux choses sont faites :
+
+1. `super().__init__()` signifie que l'on appelle le constructeur de la classe mère, soit `Polygone` : cela permet de définir un attribut `cotes` dont la valeur sera la liste `[largeur, longueur, largeur, longueur]` ici.
+
+De plus, vous remarquez que la classe `Rectangle` redéfinit la méthode `perimetre`.
+On dit que la classe `Rectangle` **surcharge** la méthode `perimetre`.
+
+Dans ce cas, au lieu de réutiliser la méthode `perimetre` de `Polygone`, si l'on appelle la méthode `perimetre` pour un objet de la classe `Rectangle`, c'est cette nouvelle version qui sera utilisée :
+
+```{code-cell}
+print(r.perimetre())
+```
+
+### L'héritage multiple
+
+Dans certains cas, on souhaitera qu'une classe hérite de deux (ou plus) classes parentes à la fois.
+Ce mécanisme s'appelle l'héritage multiple et il est tout à fait possible de le mettre en oeuvre en Python :
+
+```{code-cell}
+class Rectangle:
+    pass
+
+class Losange:
+    pass
+
+class Carre(Rectangle, Losange):
+    pass
+```
+
+Dans le code ci-dessus, on définit une classe `Carre` qui hérite des classes `Rectangle` et `Losange`.
+
+Dans le cas de l'héritage multiple, le rôle de `super()` est ambigu puisqu'on a plusieurs classes parentes.
+Développons un petit peu le code du dessus pour mieux voir comment tout cela se déroule :
+
+```{code-cell}
+class Rectangle:
+    def __init__(self):
+        print("Init Rectangle")
+        super().__init__()
+
+class Losange:
+    def __init__(self):
+        print("Init Losange")
+        super().__init__()
+
+class Carre(Rectangle, Losange):
+    def __init__(self):
+        print("Init Carre")
+        super().__init__()
+
+c = Carre()
+```
+
+L'affichage nous démontre que les constructeurs des deux classes parentes ont bien été appelés, dans l'ordre dans lequel elles ont été déclarées par `class Carre(Rectangle, Losange)` (donc le constructeur de `Rectangle` est appelé avant celui de `Losange`).
+
+Il est important de noter ici que, pour que cet ordre d'appel soit effectif, il faut que chacune des classes concernées fasse appel au constructeur de sa classe parente (`super().__init__()`) dans son propre constructeur.
+
+### Classes abstraites
+
+Les classes abstraites sont des classes un peu spéciales au sens où on ne pourra pas les instancier.
+Ces classes servent en conséquence à définir un modèle dont d'autres classes hériteront, et ce sont ces classes filles qui pourront être instanciées.
+
+En Python, pour définir une classe abstraite, il suffit de la faire hériter de la classe `ABC` (_Abstract Base Class_) du module `abc` :
+
+```{code-cell}
+---
+tags: [raises-exception]
+---
+
+from abc import ABC
+
+class FormeGeometrique(ABC):
+    def __init__(self):
+        pass
+
+
+class Polygone(FormeGeometrique):
+    def __init__(self, cotes):
+        self.cotes = cotes
+
+    def perimetre(self):
+        return sum(self.cotes)
+
+f = FormeGeometrique()
+```
+
+Comme vous le voyez dans le code ci-dessus, si l'on tente d'instancier la classe abstraite `FormeGeometrique`, on obtient une erreur.
+
+Par contre, on peut toujours instancier la classe fille `Polygone` :
+
+```{code-cell}
+p = Polygone(cotes=[1, 1, 1, 1, 1])
+print(v.perimetre())
+```
+
+Dans certains cas, on voudra spécifier dans la classe mère abstraite des méthodes (ou attributs calculés) à implémenter dans la ou les classes filles.
+Cela peut se faire en définissant ces méthodes dans la classe mère et en les décorant avec les décorateurs `@abstractmethod` (ou `@abstractproperty`, selon le cas) comme dans l'exemple suivant :
+
+```{code-cell}
+
+from abc import abstractmethod
+
+class FormeGeometrique(ABC):
+    def __init__(self):
+        pass
+
+    @abstractmethod
+    def perimetre(self):
+        # Le code ci-dessous importe peu puisque 
+        # la méthode devra être redéfinie dans les 
+        # classes filles
+        pass
+
+
+class Polygone(FormeGeometrique):
+    def __init__(self, cotes):
+        self.cotes = cotes
+
+    def perimetre(self):
+        return sum(self.cotes)
+
+p = Polygone()
+```
+
+Si, par contre, on n'implémente pas la méthode abstraite dans l'une des classes filles, cette classe ne pourra pas être instanciée :
+
+```{code-cell}
+---
+tags: [raises-exception]
+---
+
+class Cercle(FormeGeometrique):
+    def __init__(self, rayon):
+        super().__init__()
+        self.rayon = rayon
+
+mon_cercle = Cercle()
+```

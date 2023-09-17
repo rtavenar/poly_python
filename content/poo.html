@@ -1,51 +1,62 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>La Programmation Orientée Objet &#8212; Introduction à Python</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/betterpythonpad.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/pythonpad.bundle.js"></script>
     <script src="../_static/vue.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/pythonpad.bundle.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -53,61 +64,93 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/poo';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Tester son code" href="test.html" />
     <link rel="prev" title="numpy et le calcul matriciel" href="numpy.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo_ur2.svg" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Introduction à Python</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo_ur2.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo_ur2.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -116,354 +159,199 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Contenu du livre
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenu du livre</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="struct.html">
-   Structures de données et structures de contrôle
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="dates.html">
-   Les dates
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="listes.html">
-   Les listes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chaines.html">
-   Les chaînes de caractères
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="dict.html">
-   Les dictionnaires
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="sets_tuples.html">
-   Les
-   <em>
-    sets
-   </em>
-   et les
-   <em>
-    tuples
-   </em>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="fichiers.html">
-   Interaction avec des fichiers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="api.html">
-   Récupération de données à partir d’API web
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="numpy.html">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     numpy
-    </span>
-   </code>
-   et le calcul matriciel
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   La Programmation Orientée Objet
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="test.html">
-   Tester son code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="conclusion.html">
-   Conclusion
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="struct.html">Structures de données et structures de contrôle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dates.html">Les dates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="listes.html">Les listes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chaines.html">Les chaînes de caractères</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dict.html">Les dictionnaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sets_tuples.html">Les <em>sets</em> et les <em>tuples</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="fichiers.html">Interaction avec des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Récupération de données à partir d’API web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.html"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> et le calcul matriciel</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">La Programmation Orientée Objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html">Tester son code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conclusion.html">Conclusion</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Téléchargement
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Téléchargement</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/rtavenar/poly_python/raw/master/book.pdf">
-   Version PDF
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/rtavenar/poly_python/raw/master/book.pdf">Version PDF</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/poo.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/content/poo.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/content/poo.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download notebook file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="../_sources/content/poo.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#les-objets-du-quotidien">
-   Les objets du quotidien
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#definir-vos-propres-objets">
-   Définir vos propres objets
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#la-notion-d-heritage">
-     La notion d’héritage
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#les-methodes-speciales">
-     Les méthodes spéciales
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>La Programmation Orientée Objet</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#les-objets-du-quotidien">
-   Les objets du quotidien
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#definir-vos-propres-objets">
-   Définir vos propres objets
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#la-notion-d-heritage">
-     La notion d’héritage
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#les-methodes-speciales">
-     Les méthodes spéciales
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>La Programmation Orientée Objet</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-objets-du-quotidien">Les objets du quotidien</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definir-vos-propres-objets">Définir vos propres objets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-methodes-speciales">Les méthodes spéciales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-attributs-calcules">Les attributs calculés</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-notion-d-heritage">La notion d’héritage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-heritage-multiple">L’héritage multiple</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-abstraites">Classes abstraites</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="la-programmation-orientee-objet">
-<h1>La Programmation Orientée Objet<a class="headerlink" href="#la-programmation-orientee-objet" title="Permalink to this headline">#</a></h1>
+<h1>La Programmation Orientée Objet<a class="headerlink" href="#la-programmation-orientee-objet" title="Permalink to this heading">#</a></h1>
 <p>Dans ce chapitre, nous allons parler de programmation orientée objet.
 Pour cela, nous allons tout d’abord donner une description de ce qu’est un objet et revenir sur des objets que vous avez déjà manipulé en Python.
 Nous verrons ensuite comment définir vos propres objets et les utiliser.</p>
 <section id="les-objets-du-quotidien">
-<h2>Les objets du quotidien<a class="headerlink" href="#les-objets-du-quotidien" title="Permalink to this headline">#</a></h2>
+<h2>Les objets du quotidien<a class="headerlink" href="#les-objets-du-quotidien" title="Permalink to this heading">#</a></h2>
 <p>En Python, toutes les variables que vous manipulez sont en fait des objets.
 Dans la suite de ce chapitre, nous allons prendre l’exemple d’un type que vous utilisez souvent, le type <em>chaîne de caractères</em> (<code class="docutils literal notranslate"><span class="pre">str</span></code>).
 En termes de vocabulaire, on dit que <code class="docutils literal notranslate"><span class="pre">&quot;abc&quot;</span></code> est un <strong>objet</strong> de la <strong>classe</strong> <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
@@ -526,42 +414,43 @@ Il est à noter qu’une méthode peut avoir des arguments, comme toute fonction
 </div>
 </section>
 <section id="definir-vos-propres-objets">
-<h2>Définir vos propres objets<a class="headerlink" href="#definir-vos-propres-objets" title="Permalink to this headline">#</a></h2>
+<h2>Définir vos propres objets<a class="headerlink" href="#definir-vos-propres-objets" title="Permalink to this heading">#</a></h2>
 <p>La librairie Python standard propose déjà un nombre important de classes (c’est-à-dire de types) pré-définies.
 Pour définir une nouvelle classe, on utilise la syntaxe suivante :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Voiture</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">couleur</span> <span class="o">=</span> <span class="s2">&quot;rouge&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">nombre_roues</span> <span class="o">=</span> <span class="mi">4</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Vecteur</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
     
-    <span class="k">def</span> <span class="nf">repeindre</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nouvelle_couleur</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">couleur</span> <span class="o">=</span> <span class="n">nouvelle_couleur</span>
+    <span class="k">def</span> <span class="nf">translation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delta_x</span><span class="p">,</span> <span class="n">delta_y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">delta_x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">delta_y</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>On a défini ici une nouvelle classe : la classe <code class="docutils literal notranslate"><span class="pre">Voiture</span></code>.
-Les objets de cette classe ont deux attribut : <code class="docutils literal notranslate"><span class="pre">couleur</span></code> et <code class="docutils literal notranslate"><span class="pre">nombre_roues</span></code> et une méthode <code class="docutils literal notranslate"><span class="pre">repeindre(nouvelle_couleur)</span></code>.</p>
+<p>On a défini ici une nouvelle classe : la classe <code class="docutils literal notranslate"><span class="pre">Vecteur</span></code>.
+Les objets de cette classe ont deux attribut : <code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">y</span></code> et une méthode <code class="docutils literal notranslate"><span class="pre">translation(self,</span> <span class="pre">delta_x,</span> <span class="pre">delta_y)</span></code>.</p>
 <p>Voyons comment créer un nouvel objet de cette classe :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_twingo</span> <span class="o">=</span> <span class="n">Voiture</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mon_vecteur</span> <span class="o">=</span> <span class="n">Vecteur</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Lors de la définition d’un nouvel objet, la méthode <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> est appelée pour “construire” ce nouvel objet, et lui attribuer les bonnes propriétés.
-On peut accéder à la couleur de <code class="docutils literal notranslate"><span class="pre">ma_twingo</span></code> pour s’en convaincre :</p>
+On peut accéder aux attributs de <code class="docutils literal notranslate"><span class="pre">mon_vecteur</span></code> pour s’en convaincre :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ma_twingo</span><span class="o">.</span><span class="n">couleur</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mon_vecteur</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">mon_vecteur</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rouge
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0 2.0
 </pre></div>
 </div>
 </div>
@@ -569,13 +458,13 @@ On peut accéder à la couleur de <code class="docutils literal notranslate"><sp
 <p>De même, on peut utiliser ses méthodes :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_twingo</span><span class="o">.</span><span class="n">repeindre</span><span class="p">(</span><span class="s2">&quot;rose&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ma_twingo</span><span class="o">.</span><span class="n">couleur</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mon_vecteur</span><span class="o">.</span><span class="n">translation</span><span class="p">(</span><span class="n">delta_x</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">delta_y</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_vecteur</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">mon_vecteur</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rose
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0 2.0
 </pre></div>
 </div>
 </div>
@@ -585,143 +474,23 @@ On peut accéder à la couleur de <code class="docutils literal notranslate"><sp
 <p>Dans tous les cas que vous rencontrerez dans ce cours, le premier argument d’une méthode sera <code class="docutils literal notranslate"><span class="pre">self</span></code>.
 Cet argument dénote l’objet sur lequel on est en train de travailler.
 Ainsi, lorsqu’on écrit :</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">repeindre</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nouvelle_couleur</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">couleur</span> <span class="o">=</span> <span class="n">nouvelle_couleur</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">translation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delta_x</span><span class="p">,</span> <span class="n">delta_y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">delta_x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">delta_y</span>
 </pre></div>
 </div>
 <p>le sens de ce code est le suivant :</p>
 <ul class="simple">
-<li><p>on définit une méthode <code class="docutils literal notranslate"><span class="pre">repeindre</span></code> qui aura <strong>un seul</strong> argument (il ne faut pas compter <code class="docutils literal notranslate"><span class="pre">self</span></code> qui est un argument spécial)</p></li>
-<li><p>lorsque l’on appelle cette méthode avec une syntaxe du type <code class="docutils literal notranslate"><span class="pre">ma_twingo.repeindre(&quot;rose&quot;)</span></code>, cette méthode a pour effet de modifier la valeur de l’attribut <code class="docutils literal notranslate"><span class="pre">couleur</span></code> de l’objet <code class="docutils literal notranslate"><span class="pre">ma_twingo</span></code> (celui sur lequel la méthode est appelée)</p></li>
+<li><p>on définit une méthode <code class="docutils literal notranslate"><span class="pre">translation</span></code> qui aura <strong>deux</strong> arguments (il ne faut pas compter <code class="docutils literal notranslate"><span class="pre">self</span></code> qui est un argument spécial)</p></li>
+<li><p>lorsque l’on appelle cette méthode avec une syntaxe du type <code class="docutils literal notranslate"><span class="pre">mon_vecteur.translation(delta_x=1.,</span> <span class="pre">delta_y=0.)</span></code>, cette méthode a pour effet de modifier la valeur des attributs <code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">y</span></code> de l’objet <code class="docutils literal notranslate"><span class="pre">mon_vecteur</span></code> (celui sur lequel la méthode est appelée)</p></li>
 </ul>
 </div>
-<section id="la-notion-d-heritage">
-<h3>La notion d’héritage<a class="headerlink" href="#la-notion-d-heritage" title="Permalink to this headline">#</a></h3>
-<p>Dès lors que l’on va introduire plusieurs nouvelles classes dans nos programmes, il arrivera que nos classes partagent un certain nombre d’attributs, voire de méthodes.
-Si l’on reprend l’exemple de notre classe <code class="docutils literal notranslate"><span class="pre">Voiture</span></code> et que l’on imagine qu’il doive exister une classe <code class="docutils literal notranslate"><span class="pre">Velo</span></code>, il peut s’avérer pertinent de définir une classe <strong>mère</strong>, nommée <code class="docutils literal notranslate"><span class="pre">Vehicule</span></code>, comme suit :</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Vehicule</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">couleur</span> <span class="o">=</span> <span class="s2">&quot;rouge&quot;</span>
-
-    <span class="k">def</span> <span class="nf">repeindre</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nouvelle_couleur</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">couleur</span> <span class="o">=</span> <span class="n">nouvelle_couleur</span>
-
-
-<span class="k">class</span> <span class="nc">Voiture</span><span class="p">(</span><span class="n">Vehicule</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">nombre_roues</span> <span class="o">=</span> <span class="mi">4</span>
-
-
-<span class="k">class</span> <span class="nc">Velo</span><span class="p">(</span><span class="n">Vehicule</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">nombre_roues</span> <span class="o">=</span> <span class="mi">2</span>
-    
-    <span class="k">def</span> <span class="nf">repeindre</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nouvelle_couleur</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quelle joie de repeindre mon vélo !&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">couleur</span> <span class="o">=</span> <span class="n">nouvelle_couleur</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Dans le code ci-dessous, on décide que lors de la construction d’un nouveau véhicule, sa couleur sera <code class="docutils literal notranslate"><span class="pre">&quot;rouge&quot;</span></code> et on disposera d’une méthode pour le repeindre.
-On fait aussi le choix de dire que les classes <code class="docutils literal notranslate"><span class="pre">Voiture</span></code> et <code class="docutils literal notranslate"><span class="pre">Velo</span></code> <strong>héritent</strong> de la classe <code class="docutils literal notranslate"><span class="pre">Vehicule</span></code> (on le spécifie en écrivant <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Voiture(Vehicule)</span></code>).
-En héritant de cette classe, elles récupèrent tout ce qui existait pour cette classe (la couleur par défaut et la méthode pour repeindre).
-Chacune des classes définit en outre un attribut <code class="docutils literal notranslate"><span class="pre">nombre_roues</span></code>.</p>
-<p>Pour créer un nouvel objet <code class="docutils literal notranslate"><span class="pre">Voiture</span></code> ou <code class="docutils literal notranslate"><span class="pre">Velo</span></code>, on peut alors faire :</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_twingo</span> <span class="o">=</span> <span class="n">Voiture</span><span class="p">()</span>
-<span class="n">mon_vtt</span> <span class="o">=</span> <span class="n">Velo</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">ma_twingo</span><span class="o">.</span><span class="n">couleur</span><span class="p">,</span> <span class="n">ma_twingo</span><span class="o">.</span><span class="n">nombre_roues</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mon_vtt</span><span class="o">.</span><span class="n">couleur</span><span class="p">,</span> <span class="n">mon_vtt</span><span class="o">.</span><span class="n">nombre_roues</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rouge 4
-rouge 2
-</pre></div>
-</div>
-</div>
-</div>
-<p>De plus, même si on ne le voit pas directement dans le code, grâce à l’héritage, la méthode <code class="docutils literal notranslate"><span class="pre">repeindre</span></code> existe pour les objets de ces classes :</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma_twingo</span><span class="o">.</span><span class="n">repeindre</span><span class="p">(</span><span class="s2">&quot;bleu&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ma_twingo</span><span class="o">.</span><span class="n">couleur</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bleu
-</pre></div>
-</div>
-</div>
-</div>
-<p>Regardons de plus près ce qui se passe lorsqu’on crée un nouvel objet <code class="docutils literal notranslate"><span class="pre">Velo</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Velo</span><span class="p">(</span><span class="n">Vehicule</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">nombre_roues</span> <span class="o">=</span> <span class="mi">2</span>
-</pre></div>
-</div>
-<p>Lors de la création d’un nouvel objet, comme pour n’importe quelle classe, la méthode <code class="docutils literal notranslate"><span class="pre">__init__</span></code> est appelée.
-À l’intérieur de cette méthode, deux choses sont faites :</p>
-<ol class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">super().__init__()</span></code> signifie que l’on appelle le constructeur de la classe mère, soit <code class="docutils literal notranslate"><span class="pre">Vehicule</span></code> : cela permet de définir un attribut <code class="docutils literal notranslate"><span class="pre">couleur</span></code> dont la valeur sera <code class="docutils literal notranslate"><span class="pre">&quot;rouge&quot;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">self.nombre_roues</span> <span class="pre">=</span> <span class="pre">2</span></code> permet de définir un nouvel attribut <code class="docutils literal notranslate"><span class="pre">nombre_roues</span></code> dont la valeur est fixée à 2</p></li>
-</ol>
-<p>De plus, vous remarquez que la classe <code class="docutils literal notranslate"><span class="pre">Velo</span></code> redéfinit la méthode <code class="docutils literal notranslate"><span class="pre">repeindre</span></code>.
-On dit que la classe <code class="docutils literal notranslate"><span class="pre">Velo</span></code> <strong>surcharge</strong> la méthode <code class="docutils literal notranslate"><span class="pre">repeindre</span></code>.</p>
-<p>Dans ce cas, au lieu de réutiliser la méthode <code class="docutils literal notranslate"><span class="pre">repeindre</span></code> de <code class="docutils literal notranslate"><span class="pre">Vehicule</span></code>, si l’on appelle la méthode <code class="docutils literal notranslate"><span class="pre">repeindre</span></code> pour un objet de la classe <code class="docutils literal notranslate"><span class="pre">Velo</span></code>, c’est cette nouvelle version qui sera utilisée :</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mon_vtt</span><span class="o">.</span><span class="n">repeindre</span><span class="p">(</span><span class="s2">&quot;bleu&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quelle joie de repeindre mon vélo !
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mon_vtt</span><span class="o">.</span><span class="n">couleur</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bleu
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <section id="les-methodes-speciales">
-<h3>Les méthodes spéciales<a class="headerlink" href="#les-methodes-speciales" title="Permalink to this headline">#</a></h3>
+<h3>Les méthodes spéciales<a class="headerlink" href="#les-methodes-speciales" title="Permalink to this heading">#</a></h3>
 <p>Il existe des opérations “spéciales” que l’on peut vouloir effectuer sur des objets.
 On peut par exemple vouloir les afficher via <code class="docutils literal notranslate"><span class="pre">print()</span></code>, ou les sommer.
 Pour cela, on fait appel à des <strong>méthodes spéciales</strong>.</p>
-<p>Prenons un nouvel exemple : supposons que l’on veuille créer une classe pour stocker des vecteurs du plan (des paires de flottants, autrement dit).
-Une première définition pour la classe <code class="docutils literal notranslate"><span class="pre">Vecteur</span></code> correspondante pourrait être la suivante :</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Vecteur</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>En d’autres termes, on définit un nouveau vecteur en spécifiant ses coordonnées dans le plan, ce qui donne :</p>
+<p>Définissons par exemple un nouveau vecteur en spécifiant ses coordonnées dans le plan, et affichons-le :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v0</span> <span class="o">=</span> <span class="n">Vecteur</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.</span><span class="p">)</span>
@@ -730,7 +499,7 @@ Une première définition pour la classe <code class="docutils literal notransla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Vecteur object at 0x7f1d48694b90&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Vecteur object at 0x7fc7a00c73d0&gt;
 </pre></div>
 </div>
 </div>
@@ -793,7 +562,7 @@ On devra pour cela définir une méthode <code class="docutils literal notransla
 </div>
 <p>Ici, lorsque l’on écrit <code class="docutils literal notranslate"><span class="pre">v0</span> <span class="pre">+</span> <span class="pre">v1</span></code>, tout se passe comme si cette expression était remplacée par <code class="docutils literal notranslate"><span class="pre">v0.__add__(v1)</span></code>.</p>
 <p>De nombreuses méthodes spéciales peuvent ainsi être définies :</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Méthode spéciale</p></th>
 <th class="head"><p>Opérateur</p></th>
@@ -818,6 +587,299 @@ On devra pour cela définir une méthode <code class="docutils literal notransla
 </tbody>
 </table>
 </section>
+<section id="les-attributs-calcules">
+<h3>Les attributs calculés<a class="headerlink" href="#les-attributs-calcules" title="Permalink to this heading">#</a></h3>
+<p>Dans certains cas, on aimerait rajouter à nos objets des attributs qui pourraient être calculés à la volée.
+Si l’on reprend l’exemple de la classe <code class="docutils literal notranslate"><span class="pre">Vecteur</span></code> plus haut, on peut d’ores et déjà accéder à ses attributs <code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">y</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="n">Vecteur</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">v1</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0 0.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>On pourrait vouloir accéder à la norme de ce vecteur <em>via</em> un attribut qui serait calculé à la volée, en fonction des valeurs des attributs <code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">y</span></code>, et cela est possible en Python.
+Pour cela, il faut définir une méthode <code class="docutils literal notranslate"><span class="pre">norme</span></code> qui ne prenne que <code class="docutils literal notranslate"><span class="pre">self</span></code> comme argument et la “décorer” avec le décorateur <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code> (on rappelle que les attributs peuvent également être qualifiés de propriétés) :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="k">class</span> <span class="nc">Vecteur</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">norme</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Vecteur(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span>
+    
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">autre_vecteur</span><span class="p">):</span>
+        <span class="n">nouveau_vecteur</span> <span class="o">=</span> <span class="n">Vecteur</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">autre_vecteur</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+                                  <span class="n">y</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">autre_vecteur</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">nouveau_vecteur</span>
+
+
+<span class="n">v1</span> <span class="o">=</span> <span class="n">Vecteur</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">norme</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="la-notion-d-heritage">
+<h2>La notion d’héritage<a class="headerlink" href="#la-notion-d-heritage" title="Permalink to this heading">#</a></h2>
+<p>Dès lors que l’on va introduire plusieurs nouvelles classes dans nos programmes, il arrivera que nos classes partagent un certain nombre d’attributs, voire de méthodes.</p>
+<p>Prenons pour cela un nouvel exemple.
+Imaginons que l’on souhaite représenter des véhicules, qui pourront être des vélos ou bien des voitures.
+Dans ce cas, on va définir une classe <strong>mère</strong>, nommée <code class="docutils literal notranslate"><span class="pre">Polygone</span></code>, et deux classes filles <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> et <code class="docutils literal notranslate"><span class="pre">Triangle</span></code> comme suit :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Polygone</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cotes</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cotes</span> <span class="o">=</span> <span class="n">cotes</span>
+
+    <span class="k">def</span> <span class="nf">perimetre</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cotes</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Triangle</span><span class="p">(</span><span class="n">Polygone</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cotes</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">cotes</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Rectangle</span><span class="p">(</span><span class="n">Polygone</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">largeur</span><span class="p">,</span> <span class="n">longueur</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">cotes</span><span class="o">=</span><span class="p">[</span><span class="n">largeur</span><span class="p">,</span> <span class="n">longueur</span><span class="p">,</span> <span class="n">largeur</span><span class="p">,</span> <span class="n">longueur</span><span class="p">])</span>
+    
+    <span class="k">def</span> <span class="nf">perimetre</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cotes</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dans le code ci-dessus, on décide que lors de la construction d’un nouveau polygone, la liste des longueurs de ses côtés sera initialisée vide.
+On fait aussi le choix de dire que les classes <code class="docutils literal notranslate"><span class="pre">Triangle</span></code> et <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> <strong>héritent</strong> de la classe <code class="docutils literal notranslate"><span class="pre">Polygone</span></code> (on le spécifie en écrivant <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Triangle(Polygone)</span></code>).
+En héritant de cette classe, elles récupèrent tout ce qui existait pour cette classe (l’initialisation par défaut et la méthode pour calculer le périmètre).
+La classe <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> redéfinit en outre la méthode périmètre car dans le cas des rectangles, on n’a pas besoin d’accéder aux longueurs des 4 côtés pour le calcul.</p>
+<p>Enfin, les instructions <code class="docutils literal notranslate"><span class="pre">super().__init__()</span></code> sont à comprendre comme “exécuter la méthode <code class="docutils literal notranslate"><span class="pre">__init__</span></code> de la classe parente”, le mot-clé <code class="docutils literal notranslate"><span class="pre">super()</span></code> étant l’équivalent de <code class="docutils literal notranslate"><span class="pre">self</span></code> pour la classe parente.</p>
+<p>Pour créer un nouvel objet <code class="docutils literal notranslate"><span class="pre">Triangle</span></code> ou <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>, on peut alors faire :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Triangle</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">cotes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">cotes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 2, 3]
+[2, 4, 2, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<p>De plus, même si on ne le voit pas directement dans le code, grâce à l’héritage, la méthode <code class="docutils literal notranslate"><span class="pre">perimetre</span></code> existe pour les objets de ces classes :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">perimetre</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">perimetre</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+12
+</pre></div>
+</div>
+</div>
+</div>
+<p>Regardons de plus près ce qui se passe lorsqu’on crée un nouvel objet <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">(</span><span class="n">Polygone</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">largeur</span><span class="p">,</span> <span class="n">longueur</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">([</span><span class="n">largeur</span><span class="p">,</span> <span class="n">longueur</span><span class="p">,</span> <span class="n">largeur</span><span class="p">,</span> <span class="n">longueur</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Lors de la création d’un nouvel objet, comme pour n’importe quelle classe, la méthode <code class="docutils literal notranslate"><span class="pre">__init__</span></code> est appelée.
+À l’intérieur de cette méthode, deux choses sont faites :</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">super().__init__()</span></code> signifie que l’on appelle le constructeur de la classe mère, soit <code class="docutils literal notranslate"><span class="pre">Polygone</span></code> : cela permet de définir un attribut <code class="docutils literal notranslate"><span class="pre">cotes</span></code> dont la valeur sera la liste <code class="docutils literal notranslate"><span class="pre">[largeur,</span> <span class="pre">longueur,</span> <span class="pre">largeur,</span> <span class="pre">longueur]</span></code> ici.</p></li>
+</ol>
+<p>De plus, vous remarquez que la classe <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> redéfinit la méthode <code class="docutils literal notranslate"><span class="pre">perimetre</span></code>.
+On dit que la classe <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> <strong>surcharge</strong> la méthode <code class="docutils literal notranslate"><span class="pre">perimetre</span></code>.</p>
+<p>Dans ce cas, au lieu de réutiliser la méthode <code class="docutils literal notranslate"><span class="pre">perimetre</span></code> de <code class="docutils literal notranslate"><span class="pre">Polygone</span></code>, si l’on appelle la méthode <code class="docutils literal notranslate"><span class="pre">perimetre</span></code> pour un objet de la classe <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>, c’est cette nouvelle version qui sera utilisée :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">perimetre</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+</pre></div>
+</div>
+</div>
+</div>
+<section id="l-heritage-multiple">
+<h3>L’héritage multiple<a class="headerlink" href="#l-heritage-multiple" title="Permalink to this heading">#</a></h3>
+<p>Dans certains cas, on souhaitera qu’une classe hérite de deux (ou plus) classes parentes à la fois.
+Ce mécanisme s’appelle l’héritage multiple et il est tout à fait possible de le mettre en oeuvre en Python :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Losange</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Carre</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">,</span> <span class="n">Losange</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dans le code ci-dessus, on définit une classe <code class="docutils literal notranslate"><span class="pre">Carre</span></code> qui hérite des classes <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> et <code class="docutils literal notranslate"><span class="pre">Losange</span></code>.</p>
+<p>Dans le cas de l’héritage multiple, le rôle de <code class="docutils literal notranslate"><span class="pre">super()</span></code> est ambigu puisqu’on a plusieurs classes parentes.
+Développons un petit peu le code du dessus pour mieux voir comment tout cela se déroule :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Init Rectangle&quot;</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">Losange</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Init Losange&quot;</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">Carre</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">,</span> <span class="n">Losange</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Init Carre&quot;</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">Carre</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Init Carre
+Init Rectangle
+Init Losange
+</pre></div>
+</div>
+</div>
+</div>
+<p>L’affichage nous démontre que les constructeurs des deux classes parentes ont bien été appelés, dans l’ordre dans lequel elles ont été déclarées par <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Carre(Rectangle,</span> <span class="pre">Losange)</span></code> (donc le constructeur de <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> est appelé avant celui de <code class="docutils literal notranslate"><span class="pre">Losange</span></code>).</p>
+<p>Il est important de noter ici que, pour que cet ordre d’appel soit effectif, il faut que chacune des classes concernées fasse appel au constructeur de sa classe parente (<code class="docutils literal notranslate"><span class="pre">super().__init__()</span></code>) dans son propre constructeur.</p>
+</section>
+<section id="classes-abstraites">
+<h3>Classes abstraites<a class="headerlink" href="#classes-abstraites" title="Permalink to this heading">#</a></h3>
+<p>Les classes abstraites sont des classes un peu spéciales au sens où on ne pourra pas les instancier.
+Ces classes servent en conséquence à définir un modèle dont d’autres classes hériteront, et ce sont ces classes filles qui pourront être instanciées.</p>
+<p>En Python, pour définir une classe abstraite, il suffit de la faire hériter de la classe <code class="docutils literal notranslate"><span class="pre">ABC</span></code> (<em>Abstract Base Class</em>) du module <code class="docutils literal notranslate"><span class="pre">abc</span></code> :</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span>
+
+<span class="k">class</span> <span class="nc">FormeGeometrique</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">Polygone</span><span class="p">(</span><span class="n">FormeGeometrique</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cotes</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cotes</span> <span class="o">=</span> <span class="n">cotes</span>
+
+    <span class="k">def</span> <span class="nf">perimetre</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cotes</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">FormeGeometrique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Comme vous le voyez dans le code ci-dessus, si l’on tente d’instancier la classe abstraite <code class="docutils literal notranslate"><span class="pre">FormeGeometrique</span></code>, on obtient une erreur.</p>
+<p>Par contre, on peut toujours instancier la classe fille <code class="docutils literal notranslate"><span class="pre">Polygone</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Polygone</span><span class="p">(</span><span class="n">cotes</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">perimetre</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5191</span><span class="o">/</span><span class="mf">1180810863.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Polygone</span><span class="p">(</span><span class="n">cotes</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">perimetre</span><span class="p">())</span>
+
+<span class="ne">NameError</span>: name &#39;v&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dans certains cas, on voudra spécifier dans la classe mère abstraite des méthodes (ou attributs calculés) à implémenter dans la ou les classes filles.
+Cela peut se faire en définissant ces méthodes dans la classe mère et en les décorant avec les décorateurs <code class="docutils literal notranslate"><span class="pre">&#64;abstractmethod</span></code> (ou <code class="docutils literal notranslate"><span class="pre">&#64;abstractproperty</span></code>, selon le cas) comme dans l’exemple suivant :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">abstractmethod</span>
+
+<span class="k">class</span> <span class="nc">FormeGeometrique</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">perimetre</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Le code ci-dessous importe peu puisque </span>
+        <span class="c1"># la méthode devra être redéfinie dans les </span>
+        <span class="c1"># classes filles</span>
+        <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">Polygone</span><span class="p">(</span><span class="n">FormeGeometrique</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cotes</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cotes</span> <span class="o">=</span> <span class="n">cotes</span>
+
+    <span class="k">def</span> <span class="nf">perimetre</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cotes</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Polygone</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si, par contre, on n’implémente pas la méthode abstraite dans l’une des classes filles, cette classe ne pourra pas être instanciée :</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Cercle</span><span class="p">(</span><span class="n">FormeGeometrique</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rayon</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rayon</span> <span class="o">=</span> <span class="n">rayon</span>
+
+<span class="n">mon_cercle</span> <span class="o">=</span> <span class="n">Cercle</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -833,7 +895,7 @@ On devra pour cela définir une méthode <code class="docutils literal notransla
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./content"
         },
         predefinedOutput: true
@@ -841,50 +903,115 @@ On devra pour cela définir une méthode <code class="docutils literal notransla
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="numpy.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> et le calcul matriciel</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="numpy.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">numpy</span></code> et le calcul matriciel</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="test.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="test.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Tester son code</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Romain Tavenard<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-objets-du-quotidien">Les objets du quotidien</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definir-vos-propres-objets">Définir vos propres objets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-methodes-speciales">Les méthodes spéciales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-attributs-calcules">Les attributs calculés</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-notion-d-heritage">La notion d’héritage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-heritage-multiple">L’héritage multiple</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-abstraites">Classes abstraites</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Romain Tavenard
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
