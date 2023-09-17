@@ -14,3 +14,10 @@ latex:
 #
 # launch_buttons:
 #   binderhub_url: "https://mybinder.org"
+
+sphinx:
+  config:
+    latex_elements:
+      fncychap: "\\usepackage[Conny]{fncychap}"
+      printindex: ""
+    language: "fr"
