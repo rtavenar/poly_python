@@ -230,83 +230,74 @@ Dès lors que l'on va introduire plusieurs nouvelles classes dans nos programmes
 
 Prenons pour cela un nouvel exemple.
 Imaginons que l'on souhaite représenter des véhicules, qui pourront être des vélos ou bien des voitures.
-Dans ce cas, on va définir une classe **mère**, nommée `Vehicule`, et deux classes filles `Voiture` et `Velo` comme suit :
+Dans ce cas, on va définir une classe **mère**, nommée `Polygone`, et deux classes filles `Rectangle` et `Triangle` comme suit :
 
 ```{code-cell}
-class Vehicule:
-    def __init__(self):
-        self.couleur = "rouge"
+class Polygone:
+    def __init__(self, cotes):
+        self.cotes = cotes
 
-    def repeindre(self, nouvelle_couleur):
-        self.couleur = nouvelle_couleur
-
-
-class Voiture(Vehicule):
-    def __init__(self):
-        super().__init__()
-        self.nombre_roues = 4
+    def perimetre(self):
+        return sum(self.cotes)
 
 
-class Velo(Vehicule):
-    def __init__(self):
-        super().__init__()
-        self.nombre_roues = 2
+class Triangle(Polygone):
+    def __init__(self, cotes):
+        super().__init__(cotes)
+
+
+class Rectangle(Polygone):
+    def __init__(self, largeur, longueur):
+        super().__init__(cotes=[largeur, longueur, largeur, longueur])
     
-    def repeindre(self, nouvelle_couleur):
-        print("Quelle joie de repeindre mon vélo !")
-        self.couleur = nouvelle_couleur
+    def perimetre(self):
+        return 2 * sum(self.cotes[:2])
 ```
 
-Dans le code ci-dessus, on décide que lors de la construction d'un nouveau véhicule, sa couleur sera `"rouge"` et on disposera d'une méthode pour le repeindre.
-On fait aussi le choix de dire que les classes `Voiture` et `Velo` **héritent** de la classe `Vehicule` (on le spécifie en écrivant `class Voiture(Vehicule)`).
-En héritant de cette classe, elles récupèrent tout ce qui existait pour cette classe (la couleur par défaut et la méthode pour repeindre).
-Chacune des classes définit en outre un attribut `nombre_roues`.
+Dans le code ci-dessus, on décide que lors de la construction d'un nouveau polygone, la liste des longueurs de ses côtés sera initialisée vide.
+On fait aussi le choix de dire que les classes `Triangle` et `Rectangle` **héritent** de la classe `Polygone` (on le spécifie en écrivant `class Triangle(Polygone)`).
+En héritant de cette classe, elles récupèrent tout ce qui existait pour cette classe (l'initialisation par défaut et la méthode pour calculer le périmètre).
+La classe `Rectangle` redéfinit en outre la méthode périmètre car dans le cas des rectangles, on n'a pas besoin d'accéder aux longueurs des 4 côtés pour le calcul.
 
 Enfin, les instructions `super().__init__()` sont à comprendre comme "exécuter la méthode `__init__` de la classe parente", le mot-clé `super()` étant l'équivalent de `self` pour la classe parente.
 
-Pour créer un nouvel objet `Voiture` ou `Velo`, on peut alors faire :
+Pour créer un nouvel objet `Triangle` ou `Rectangle`, on peut alors faire :
 
 ```{code-cell}
-ma_twingo = Voiture()
-mon_vtt = Velo()
+t = Triangle([2, 2, 3])
+r = Rectangle(2, 4)
 
-print(ma_twingo.couleur, ma_twingo.nombre_roues)
-print(mon_vtt.couleur, mon_vtt.nombre_roues)
+print(t.cotes)
+print(r.cotes)
 ```
 
-De plus, même si on ne le voit pas directement dans le code, grâce à l'héritage, la méthode `repeindre` existe pour les objets de ces classes :
+De plus, même si on ne le voit pas directement dans le code, grâce à l'héritage, la méthode `perimetre` existe pour les objets de ces classes :
 
 ```{code-cell}
-ma_twingo.repeindre("bleu")
-print(ma_twingo.couleur)
+print(t.perimetre())
+print(r.perimetre())
 ```
 
-Regardons de plus près ce qui se passe lorsqu'on crée un nouvel objet `Velo`.
+Regardons de plus près ce qui se passe lorsqu'on crée un nouvel objet `Rectangle`.
 
 ```python
-class Velo(Vehicule):
-    def __init__(self):
-        super().__init__()
-        self.nombre_roues = 2
+class Rectangle(Polygone):
+    def __init__(self, largeur, longueur):
+        super().__init__([largeur, longueur, largeur, longueur])
 ```
 
 Lors de la création d'un nouvel objet, comme pour n'importe quelle classe, la méthode `__init__` est appelée.
 À l'intérieur de cette méthode, deux choses sont faites :
 
-1. `super().__init__()` signifie que l'on appelle le constructeur de la classe mère, soit `Vehicule` : cela permet de définir un attribut `couleur` dont la valeur sera `"rouge"`
-2. `self.nombre_roues = 2` permet de définir un nouvel attribut `nombre_roues` dont la valeur est fixée à 2
+1. `super().__init__()` signifie que l'on appelle le constructeur de la classe mère, soit `Polygone` : cela permet de définir un attribut `cotes` dont la valeur sera la liste `[largeur, longueur, largeur, longueur]` ici.
 
-De plus, vous remarquez que la classe `Velo` redéfinit la méthode `repeindre`.
-On dit que la classe `Velo` **surcharge** la méthode `repeindre`.
+De plus, vous remarquez que la classe `Rectangle` redéfinit la méthode `perimetre`.
+On dit que la classe `Rectangle` **surcharge** la méthode `perimetre`.
 
-Dans ce cas, au lieu de réutiliser la méthode `repeindre` de `Vehicule`, si l'on appelle la méthode `repeindre` pour un objet de la classe `Velo`, c'est cette nouvelle version qui sera utilisée :
-
-```{code-cell}
-mon_vtt.repeindre("bleu")
-```
+Dans ce cas, au lieu de réutiliser la méthode `perimetre` de `Polygone`, si l'on appelle la méthode `perimetre` pour un objet de la classe `Rectangle`, c'est cette nouvelle version qui sera utilisée :
 
 ```{code-cell}
-print(mon_vtt.couleur)
+print(r.perimetre())
 ```
 
 ### L'héritage multiple
@@ -315,41 +306,41 @@ Dans certains cas, on souhaitera qu'une classe hérite de deux (ou plus) classes
 Ce mécanisme s'appelle l'héritage multiple et il est tout à fait possible de le mettre en oeuvre en Python :
 
 ```{code-cell}
-class A:
+class Rectangle:
     pass
 
-class B:
+class Losange:
     pass
 
-class C(A, B):
+class Carre(Rectangle, Losange):
     pass
 ```
 
-Dans le code ci-dessus, on définit une classe `C` qui hérite des classes `A` et `B`.
+Dans le code ci-dessus, on définit une classe `Carre` qui hérite des classes `Rectangle` et `Losange`.
 
 Dans le cas de l'héritage multiple, le rôle de `super()` est ambigu puisqu'on a plusieurs classes parentes.
 Développons un petit peu le code du dessus pour mieux voir comment tout cela se déroule :
 
 ```{code-cell}
-class A:
+class Rectangle:
     def __init__(self):
-        print("Init A")
+        print("Init Rectangle")
         super().__init__()
 
-class B:
+class Losange:
     def __init__(self):
-        print("Init B")
+        print("Init Losange")
         super().__init__()
 
-class C(A, B):
+class Carre(Rectangle, Losange):
     def __init__(self):
-        print("Init C")
+        print("Init Carre")
         super().__init__()
 
-c = C()
+c = Carre()
 ```
 
-L'affichage nous démontre que les constructeurs des deux classes parentes ont bien été appelés, dans l'ordre dans lequel elles ont été déclarées par `class C(A, B)` (donc le constructeur de `A` est appelé avant celui de `B`).
+L'affichage nous démontre que les constructeurs des deux classes parentes ont bien été appelés, dans l'ordre dans lequel elles ont été déclarées par `class Carre(Rectangle, Losange)` (donc le constructeur de `Rectangle` est appelé avant celui de `Losange`).
 
 Il est important de noter ici que, pour que cet ordre d'appel soit effectif, il faut que chacune des classes concernées fasse appel au constructeur de sa classe parente (`super().__init__()`) dans son propre constructeur.
 
@@ -367,30 +358,28 @@ tags: [raises-exception]
 
 from abc import ABC
 
-class Vehicule(ABC):
+class FormeGeometrique(ABC):
     def __init__(self):
-        self.couleur = "rouge"
-
-    def repeindre(self, nouvelle_couleur):
-        self.couleur = nouvelle_couleur
+        pass
 
 
-class Voiture(Vehicule):
-    def __init__(self):
-        super().__init__()
-        self.nombre_roues = 4
+class Polygone(FormeGeometrique):
+    def __init__(self, cotes):
+        self.cotes = cotes
 
-v = Vehicule()
+    def perimetre(self):
+        return sum(self.cotes)
+
+f = FormeGeometrique()
 ```
 
-Comme vous le voyez dans le code ci-dessus, si l'on tente d'instancier la classe abstraite `Vehicule`, on obtient une erreur.
+Comme vous le voyez dans le code ci-dessus, si l'on tente d'instancier la classe abstraite `FormeGeometrique`, on obtient une erreur.
 
-Par contre, on peut toujours instancier la classe fille `Voiture` :
+Par contre, on peut toujours instancier la classe fille `Polygone` :
 
 ```{code-cell}
-v = Voiture()
-v.repeindre("bleu")
-print(v.nombre_roues, v.couleur)
+p = Polygone(cotes=[1, 1, 1, 1, 1])
+print(v.perimetre())
 ```
 
 Dans certains cas, on voudra spécifier dans la classe mère abstraite des méthodes (ou attributs calculés) à implémenter dans la ou les classes filles.
@@ -400,31 +389,26 @@ Cela peut se faire en définissant ces méthodes dans la classe mère et en les 
 
 from abc import abstractmethod
 
-class Vehicule(ABC):
+class FormeGeometrique(ABC):
     def __init__(self):
-        self.couleur = "rouge"
-
-    def repeindre(self, nouvelle_couleur):
-        self.couleur = nouvelle_couleur
+        pass
 
     @abstractmethod
-    def reinitialiser(self):
+    def perimetre(self):
         # Le code ci-dessous importe peu puisque 
         # la méthode devra être redéfinie dans les 
         # classes filles
         pass
 
 
-class Voiture(Vehicule):
-    def __init__(self):
-        super().__init__()
-        self.nombre_roues = 4
-    
-    def reinitialiser(self):
-        self.nombre_roues = 4
-        self.repeindre("rouge")
+class Polygone(FormeGeometrique):
+    def __init__(self, cotes):
+        self.cotes = cotes
 
-v = Voiture()
+    def perimetre(self):
+        return sum(self.cotes)
+
+p = Polygone()
 ```
 
 Si, par contre, on n'implémente pas la méthode abstraite dans l'une des classes filles, cette classe ne pourra pas être instanciée :
@@ -434,10 +418,10 @@ Si, par contre, on n'implémente pas la méthode abstraite dans l'une des classe
 tags: [raises-exception]
 ---
 
-class Velo(Vehicule):
-    def __init__(self):
+class Cercle(FormeGeometrique):
+    def __init__(self, rayon):
         super().__init__()
-        self.nombre_roues = 2
+        self.rayon = rayon
 
-v = Velo()
+mon_cercle = Cercle()
 ```
