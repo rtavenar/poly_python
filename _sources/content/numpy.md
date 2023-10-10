@@ -153,7 +153,7 @@ M[:2, 3:]
 ```
 
 ```{code-cell} ipython3
-# Indices de colonne de 1 (inclus) à 3 (exclu)
+# Indices de ligne de 1 (inclus) à 3 (exclu)
 # Tous les indices de colonne
 M[1:3, :]
 ```
