@@ -1,5 +1,5 @@
 format: jb-book
-root: content/intro_latex
+root: content/intro
 options:
   caption: Contenu du livre
 chapters:
@@ -9,7 +9,7 @@ chapters:
 - file: content/chaines
 - file: content/dict
 - file: content/sets_tuples
-- file: content/fichiers_latex
+- file: content/fichiers
 - file: content/api
 - file: content/numpy
 - file: content/poo

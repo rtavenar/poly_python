@@ -138,7 +138,7 @@ Si l'on souhaite stocker une **série ordonnée de valeurs**, on préférera l'u
 
 ## Exercices
 
-````{admonition} Exercice 6.1
+````{admonition} Exercice 5.1
 Écrivez une fonction qui compte le nombre d'occurrences de chacun des mots d'une chaîne de caractères et retourne le résultat sous forme de dictionnaire :
 
 ```
@@ -156,6 +156,10 @@ print(compte_occurrences("la vie est belle c'est la vie"))
                'src': '# Complétez ce code'})
 </script>
 
+```{raw} latex
+\iffalse
+```
+
 ````{admonition} Solution
 :class: tip, dropdown
 
@@ -170,7 +174,11 @@ print(compte_occurrences("la vie est belle c'est la vie"))
 ```
 ````
 
-```{admonition} Exercice 6.2
+```{raw} latex
+\fi
+```
+
+```{admonition} Exercice 5.2
 Écrivez une fonction qui retourne la somme des *valeurs* d'un dictionnaire fourni en argument, en supposant que toutes les valeurs stockées dans ce dictionnaire soient numériques.
 ```
 
@@ -181,6 +189,10 @@ print(compte_occurrences("la vie est belle c'est la vie"))
                'title': 'Testez votre solution ici', 
                'src': '# Complétez ce code'})
 </script>
+
+```{raw} latex
+\iffalse
+```
 
 ````{admonition} Solution
 :class: tip, dropdown
@@ -195,3 +207,7 @@ def somme_valeurs(d):
 print(somme_valeurs({"a": 12, "zz": 1.5, "AAA": 0}))
 ```
 ````
+
+```{raw} latex
+\fi
+```

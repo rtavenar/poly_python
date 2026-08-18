@@ -17,7 +17,88 @@ latex:
 
 sphinx:
   config:
+    today_fmt: "%B %Y"
     latex_elements:
       fncychap: "\\usepackage[Conny]{fncychap}"
       printindex: ""
+      papersize: "a4paper"
+      pointsize: "11pt"
+      fontpkg: |
+        \setmainfont{texgyrepagella}[
+          Extension = .otf,
+          UprightFont = *-regular,
+          ItalicFont = *-italic,
+          BoldFont = *-bold,
+          BoldItalicFont = *-bolditalic
+        ]
+        \setsansfont{texgyreheros}[
+          Extension = .otf,
+          UprightFont = *-regular,
+          ItalicFont = *-italic,
+          BoldFont = *-bold,
+          BoldItalicFont = *-bolditalic
+        ]
+        \setmonofont{texgyrecursor}[
+          Extension = .otf,
+          UprightFont = *-regular,
+          ItalicFont = *-italic,
+          BoldFont = *-bold,
+          BoldItalicFont = *-bolditalic,
+          Scale = MatchLowercase
+        ]
+      preamble: |
+        \usepackage{newunicodechar}
+        \newfontfamily\emojifont{NotoEmoji-Regular.ttf}
+        \newunicodechar{🐔}{{\emojifont 🐔}}
+        \newunicodechar{🍳}{{\emojifont 🍳}}
+        \newunicodechar{✅}{{\emojifont ✅}}
+        \newunicodechar{❌}{{\emojifont ❌}}
+        \setlength{\headheight}{14pt}
+        \addtolength{\topmargin}{-2pt}
+        \makeatletter
+        \fancypagestyle{normal}{
+          \fancyhf{}
+          \fancyfoot[RO]{{\py@HeaderFamily\thepage}}
+          \fancyfoot[LO]{{\py@HeaderFamily\nouppercase{\rightmark}}}
+          \fancyhead[RO]{{\py@HeaderFamily\color{TitleColor}\nouppercase{\leftmark}}}
+          \if@twoside
+           \fancyfoot[LE]{{\py@HeaderFamily\thepage}}
+           \fancyfoot[RE]{{\py@HeaderFamily\nouppercase{\leftmark}}}
+           \fancyhead[LE]{{\py@HeaderFamily\color{TitleColor}\nouppercase{\leftmark}}}
+          \fi
+          \renewcommand{\headrulewidth}{1pt}
+          \renewcommand{\footrulewidth}{0.4pt}
+          \let\sphinx@old@headrule\headrule
+          \renewcommand{\headrule}{{\color{TitleColor}\sphinx@old@headrule}}
+        }
+        \makeatother
+      maketitle: |
+        \begin{titlepage}
+        \makeatletter
+        \let\footnotesize\small
+        \let\footnoterule\relax
+        \begingroup
+          \def\endgraf{ }\def\and{\& }%
+          \pdfstringdefDisableCommands{\def\\{, }}%
+          \hypersetup{pdfauthor={\@author}, pdftitle={\@title}}%
+        \endgroup
+        \noindent{\color{TitleColor}\rule{\textwidth}{4pt}}\par
+        \vspace{2.2cm}
+        \begin{flushleft}
+          {\sffamily\bfseries\fontsize{34}{40}\selectfont\color{TitleColor} \@title \par}
+          \vspace{0.6cm}
+          {\Large\itshape Filière MIASHS — Université Rennes 2\par}
+        \end{flushleft}
+        \vspace{1.2cm}
+        \noindent{\color{TitleColor}\rule{\textwidth}{0.6pt}}\par
+        \vfill
+        \begin{flushright}
+          {\Large\sffamily\bfseries \@author \par}
+          \vspace{0.4cm}
+          {\large\sffamily \@date \par}
+        \end{flushright}
+        \vfill
+        \noindent{\color{TitleColor}\rule{\textwidth}{4pt}}\par
+        \makeatother
+        \end{titlepage}
     language: "fr"

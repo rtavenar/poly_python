@@ -238,7 +238,7 @@ print(d3 + intervalle_de_temps)
 
 ## Exercices
 
-```{admonition} Exercice 3.1
+```{admonition} Exercice 2.1
 S'est-il écoulé plus de temps (i) entre le 2 Janvier 1920 à 7h32 et le 4 Mars 1920 à 5h53 ou bien (ii) entre le 30 Décembre 1999 à 17h12 et le 1er Mars 2000 à 15h53 ?
 ```
 
@@ -249,6 +249,10 @@ S'est-il écoulé plus de temps (i) entre le 2 Janvier 1920 à 7h32 et le 4 Mars
                'title': 'Testez votre solution ici', 
                'src': 'import datetime\n# Complétez ce code'})
 </script>
+
+```{raw} latex
+\iffalse
+```
 
 ````{admonition} Solution
 :class: tip, dropdown
@@ -271,7 +275,11 @@ else:
 ```
 ````
 
-```{admonition} Exercice 3.2
+```{raw} latex
+\fi
+```
+
+```{admonition} Exercice 2.2
 À l'aide des fonctions du module `datetime` vues plus haut, affichez, pour chaque année civile comprise entre 2010 et 2030, si elle est bissextile ou non.
 ```
 
@@ -282,6 +290,10 @@ else:
                'title': 'Testez votre solution ici', 
                'src': 'import datetime\n# Complétez ce code'})
 </script>
+
+```{raw} latex
+\iffalse
+```
 
 ````{admonition} Solution
 :class: tip, dropdown
@@ -301,3 +313,6 @@ for annee in range(2010, 2031):
         print(annee, "n'est pas bissextile")
 ```
 ````
+```{raw} latex
+\fi
+```
