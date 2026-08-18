@@ -75,4 +75,6 @@ Appuyez sur "Run" pour exécuter le code, puis modifiez ce code et observez le r
 
 ```{raw} latex
 \fi
+
+Enfin, vous trouverez les corrigés des exercices proposés dans ce polycopié en ligne à l'adresse \url{https://rtavenar.github.io/poly_python/}.
 ```

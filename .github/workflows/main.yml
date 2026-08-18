@@ -23,10 +23,10 @@ jobs:
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 
     # Install Python
-    - name: Set up Python 3.7
+    - name: Set up Python 3.11
       uses: actions/setup-python@v1
       with:
-        python-version: 3.7
+        python-version: 3.11
     # Install the python packages (from requirements.txt)
     - name: Install python packages
       run: |
