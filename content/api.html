@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="fr" >
+<html lang="fr" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Récupération de données à partir d’API web &#8212; Introduction à Python</title>
   
@@ -15,87 +14,88 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/betterpythonpad.css?v=a38d527a" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/betterpythonpad.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
+    <script src="../_static/documentation_options.js?v=72dce1d2"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Cliquez pour afficher';</script>
+    <script>let toggleHintHide = 'Cliquez pour masquer';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/pythonpad.bundle.js"></script>
-    <script src="../_static/vue.js"></script>
-    <script src="../_static/translations.js"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../_static/translations.js?v=041d0952"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/api';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../_static/vue.js?v=c303d72a"></script>
+    <script src="../_static/pythonpad.bundle.js?v=d5cee81d"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="numpy et le calcul matriciel" href="numpy.html" />
     <link rel="prev" title="Interaction avec des fichiers" href="fichiers.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="fr"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
+  <body data-default-mode="">
   
   
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Passer au contenu principal</a></div>
 
   
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Haut de page</button>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -103,7 +103,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -111,16 +110,69 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Alerte de version"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Navigation dans le site">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Recherche</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
   
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Recherche</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="Sur cette page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -133,6 +185,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
@@ -141,10 +196,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     <p class="title logo__title">Introduction à Python</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Recherche</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -180,14 +243,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -196,14 +264,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -265,7 +333,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Mode plein écran"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -278,26 +346,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Thème" data-bs-title="Thème"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Clair"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Sombre"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Paramètres système"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -317,7 +379,7 @@ document.write(`
                 <h2> Contenu </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requetes-http-en-python">Requêtes HTTP en Python</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#format-d-une-requete-http">Format d’une requête HTTP</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilisation-du-module-requests">Utilisation du module <code class="docutils literal notranslate"><span class="pre">requests</span></code></a></li>
@@ -333,10 +395,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="recuperation-de-donnees-a-partir-d-api-web">
-<h1>Récupération de données à partir d’API web<a class="headerlink" href="#recuperation-de-donnees-a-partir-d-api-web" title="Lien permanent vers cette rubrique">#</a></h1>
+<h1>Récupération de données à partir d’API web<a class="headerlink" href="#recuperation-de-donnees-a-partir-d-api-web" title="Lien vers cette rubrique">#</a></h1>
 <p>De nombreux services web fournissent des API (<em>Application Programming Interface</em>) pour mettre des données à disposition du grand public. Le principe de fonctionnement de ces API est le suivant : l’utilisateur effectue une requête sous la forme d’une requête HTTP, le service web met en forme les données correspondant à la requête et les renvoie à l’utilisateur, dans un format défini à l’avance.</p>
 <p>Voici une liste (très loin d’être exhaustive) d’API web d’accès aux données :</p>
 <ul class="simple">
@@ -374,9 +436,9 @@ document.write(`
 Nous avons vu précédemment dans ce cours que ce format était facilement manipulable en Python, notamment parce qu’il est très proche de la notion de dictionnaire.
 Ce chapitre se focalise donc sur la réalisation de requêtes HTTP en Python.</p>
 <section id="requetes-http-en-python">
-<h2>Requêtes HTTP en Python<a class="headerlink" href="#requetes-http-en-python" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Requêtes HTTP en Python<a class="headerlink" href="#requetes-http-en-python" title="Lien vers cette rubrique">#</a></h2>
 <section id="format-d-une-requete-http">
-<h3>Format d’une requête HTTP<a class="headerlink" href="#format-d-une-requete-http" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3>Format d’une requête HTTP<a class="headerlink" href="#format-d-une-requete-http" title="Lien vers cette rubrique">#</a></h3>
 <p>Dans un premier temps, étudions le format d’une requête HTTP, telle que vous en effectuez des dizaines chaque jour, par l’intermédiaire de votre navigateur web.
 Lorsque vous entrez dans la barre d’adresse de votre navigateur l’URL suivante :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://people.irisa.fr/Romain.Tavenard/index.php?page=3
@@ -409,7 +471,7 @@ Ainsi, la requête précédente deviendrait :</p>
 Pour créer une clef d’API, il faut se rendre sur l’interface développeur de l’API concernée (<a class="reference external" href="https://developers.google.com/maps/documentation/directions/start?hl=fr">ici</a> pour l’API <em>Google Maps Directions</em> par exemple).</p>
 </section>
 <section id="utilisation-du-module-requests">
-<h3>Utilisation du module <code class="docutils literal notranslate"><span class="pre">requests</span></code><a class="headerlink" href="#utilisation-du-module-requests" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3>Utilisation du module <code class="docutils literal notranslate"><span class="pre">requests</span></code><a class="headerlink" href="#utilisation-du-module-requests" title="Lien vers cette rubrique">#</a></h3>
 <div class="tip admonition">
 <p class="admonition-title">Les requêtes HTTP en (très) bref</p>
 <p>Dans le protocole HTTP, il existe plusieurs types de requêtes pour réaliser l’échange entre le client et le serveur.
@@ -426,8 +488,7 @@ Il est possible de transmettre des paramètres pour filtrer la réponse ; dans 
 <p>Le module <code class="docutils literal notranslate"><span class="pre">requests</span></code> ne fait pas partie de la librairie standard en Python.
 Il faut donc l’installer avant de pouvoir l’utiliser.
 Pour ce faire, on peut utiliser le gestionnaire de paquets <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
-<p>Si vous utilisez Anaconda, la documentation en ligne disponible à <a class="reference external" href="https://docs.anaconda.com/anaconda/navigator/tutorials/manage-packages/">cette adresse</a> explique la marche à suivre pour installer de nouveaux paquets dans votre version de Python fournie par Anaconda.
-Si vous utilisez plutôt l’IDE PyCharm et une version de Python non fournie par Anaconda, vous pourrez trouver de la documentation <a class="reference external" href="https://www.jetbrains.com/help/pycharm/installing-uninstalling-and-upgrading-packages.html">à cette adresse</a>.</p>
+<p>Si vous utilisez Anaconda, la documentation en ligne disponible à <a class="reference external" href="https://docs.anaconda.com/anaconda/navigator/tutorials/manage-packages/">cette adresse</a> explique la marche à suivre pour installer de nouveaux paquets dans votre version de Python fournie par Anaconda.</p>
 </div>
 </aside>
 <p>La section précédente proposait un rappel sur le format des requêtes HTTP et vous avez été invités à effectuer des requêtes HTTP à l’aide de votre navigateur.
@@ -436,9 +497,9 @@ Pour cela, on utilise le module <code class="docutils literal notranslate"><span
 Ce module contient notamment une fonction <code class="docutils literal notranslate"><span class="pre">get</span></code> qui permet d’effectuer des requêtes HTTP de type GET (je vous laisse deviner le nom de la fonction qui permet d’effectuer des requêtes HTTP POST :) :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://my-json-server.typicode.com/rtavenar/fake_api/tasks&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"http://my-json-server.typicode.com/rtavenar/fake_api/tasks"</span>
 
 <span class="n">reponse</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">reponse</span><span class="p">)</span>
@@ -481,7 +542,7 @@ Ce module contient notamment une fonction <code class="docutils literal notransl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class 'str'&gt;
 </pre></div>
 </div>
 </div>
@@ -494,7 +555,7 @@ Ce module contient notamment une fonction <code class="docutils literal notransl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;list&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class 'list'&gt;
 </pre></div>
 </div>
 </div>
@@ -506,7 +567,7 @@ Ce module contient notamment une fonction <code class="docutils literal notransl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;userId&#39;: 1, &#39;id&#39;: 1, &#39;title&#39;: &#39;delectus aut autem&#39;, &#39;completed&#39;: False}, {&#39;userId&#39;: 1, &#39;id&#39;: 2, &#39;title&#39;: &#39;quis ut nam facilis et officia qui&#39;, &#39;completed&#39;: False}, {&#39;userId&#39;: 1, &#39;id&#39;: 3, &#39;title&#39;: &#39;fugiat veniam minus&#39;, &#39;completed&#39;: False}, {&#39;userId&#39;: 1, &#39;id&#39;: 4, &#39;title&#39;: &#39;et porro tempora&#39;, &#39;completed&#39;: True}, {&#39;userId&#39;: 1, &#39;id&#39;: 8, &#39;title&#39;: &#39;quo adipisci enim quam ut ab&#39;, &#39;completed&#39;: True}, {&#39;userId&#39;: 3, &#39;id&#39;: 44, &#39;title&#39;: &#39;cum debitis quis accusamus doloremque ipsa natus sapiente omnis&#39;, &#39;completed&#39;: True}, {&#39;userId&#39;: 3, &#39;id&#39;: 45, &#39;title&#39;: &#39;velit soluta adipisci molestias reiciendis harum&#39;, &#39;completed&#39;: False}, {&#39;userId&#39;: 3, &#39;id&#39;: 46, &#39;title&#39;: &#39;vel voluptatem repellat nihil placeat corporis&#39;, &#39;completed&#39;: False}]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{'userId': 1, 'id': 1, 'title': 'delectus aut autem', 'completed': False}, {'userId': 1, 'id': 2, 'title': 'quis ut nam facilis et officia qui', 'completed': False}, {'userId': 1, 'id': 3, 'title': 'fugiat veniam minus', 'completed': False}, {'userId': 1, 'id': 4, 'title': 'et porro tempora', 'completed': True}, {'userId': 1, 'id': 8, 'title': 'quo adipisci enim quam ut ab', 'completed': True}, {'userId': 3, 'id': 44, 'title': 'cum debitis quis accusamus doloremque ipsa natus sapiente omnis', 'completed': True}, {'userId': 3, 'id': 45, 'title': 'velit soluta adipisci molestias reiciendis harum', 'completed': False}, {'userId': 3, 'id': 46, 'title': 'vel voluptatem repellat nihil placeat corporis', 'completed': False}]
 </pre></div>
 </div>
 </div>
@@ -515,18 +576,18 @@ Ce module contient notamment une fonction <code class="docutils literal notransl
 <p>De plus, si l’on souhaite passer des paramètres à la requête HTTP (ce qui se trouvait après le symbole <code class="docutils literal notranslate"><span class="pre">?</span></code> dans les URL ci-dessus), il est possible de le faire lors de l’appel à <code class="docutils literal notranslate"><span class="pre">requests.get</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://my-json-server.typicode.com/rtavenar/fake_api/tasks&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"http://my-json-server.typicode.com/rtavenar/fake_api/tasks"</span>
 
-<span class="n">reponse</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="s2">&quot;userId=3&quot;</span><span class="p">)</span>
+<span class="n">reponse</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="s2">"userId=3"</span><span class="p">)</span>
 <span class="n">contenu</span> <span class="o">=</span> <span class="n">reponse</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">contenu</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;userId&#39;: 3, &#39;id&#39;: 44, &#39;title&#39;: &#39;cum debitis quis accusamus doloremque ipsa natus sapiente omnis&#39;, &#39;completed&#39;: True}, {&#39;userId&#39;: 3, &#39;id&#39;: 45, &#39;title&#39;: &#39;velit soluta adipisci molestias reiciendis harum&#39;, &#39;completed&#39;: False}, {&#39;userId&#39;: 3, &#39;id&#39;: 46, &#39;title&#39;: &#39;vel voluptatem repellat nihil placeat corporis&#39;, &#39;completed&#39;: False}]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{'userId': 3, 'id': 44, 'title': 'cum debitis quis accusamus doloremque ipsa natus sapiente omnis', 'completed': True}, {'userId': 3, 'id': 45, 'title': 'velit soluta adipisci molestias reiciendis harum', 'completed': False}, {'userId': 3, 'id': 46, 'title': 'vel voluptatem repellat nihil placeat corporis', 'completed': False}]
 </pre></div>
 </div>
 </div>
@@ -537,9 +598,9 @@ C’est par exemple le cas des modules <a class="reference external" href="http:
 </section>
 </section>
 <section id="exercice">
-<h2>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers cette rubrique">#</a></h2>
-<div class="admonition-exercice-9-1 admonition">
-<p class="admonition-title"><strong>Exercice 9.1</strong></p>
+<h2>Exercice<a class="headerlink" href="#exercice" title="Lien vers cette rubrique">#</a></h2>
+<div class="admonition-exercice-8-1 admonition">
+<p class="admonition-title"><strong>Exercice 8.1</strong></p>
 <p>Écrivez une fonction qui prenne en entrée une liste de <code class="docutils literal notranslate"><span class="pre">userId</span></code> et affiche l’ensemble des entrées de l’API <a class="reference external" href="http://my-json-server.typicode.com/rtavenar/fake_api/tasks">http://my-json-server.typicode.com/rtavenar/fake_api/tasks</a> pour lesquelles l’attribut <code class="docutils literal notranslate"><span class="pre">completed</span></code> vaut <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 </div>
 <div class="tip dropdown admonition">
@@ -547,14 +608,14 @@ C’est par exemple le cas des modules <a class="reference external" href="http:
 <ul class="simple">
 <li><p>Solution 1</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
-<span class="k">def</span> <span class="nf">affiche_api</span><span class="p">(</span><span class="n">liste_userId</span><span class="p">):</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://my-json-server.typicode.com/rtavenar/fake_api/tasks&quot;</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">affiche_api</span><span class="p">(</span><span class="n">liste_userId</span><span class="p">):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"http://my-json-server.typicode.com/rtavenar/fake_api/tasks"</span>
     <span class="n">contenu</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="n">list_taches</span> <span class="o">=</span> <span class="n">contenu</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">tache</span> <span class="ow">in</span> <span class="n">list_taches</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">tache</span><span class="p">[</span><span class="s2">&quot;completed&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">tache</span><span class="p">[</span><span class="s2">&quot;userId&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">liste_userId</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">tache</span><span class="p">[</span><span class="s2">"completed"</span><span class="p">]</span> <span class="ow">and</span> <span class="n">tache</span><span class="p">[</span><span class="s2">"userId"</span><span class="p">]</span> <span class="ow">in</span> <span class="n">liste_userId</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">tache</span><span class="p">)</span>
 
 <span class="n">affiche_api</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
@@ -563,14 +624,14 @@ C’est par exemple le cas des modules <a class="reference external" href="http:
 <ul class="simple">
 <li><p>Solution 2 : en utilisant les paramètres d’URL</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
-<span class="k">def</span> <span class="nf">affiche_api</span><span class="p">(</span><span class="n">liste_userId</span><span class="p">):</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://my-json-server.typicode.com/rtavenar/fake_api/tasks&quot;</span>
-    <span class="n">contenu</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="s2">&quot;completed=true&quot;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">affiche_api</span><span class="p">(</span><span class="n">liste_userId</span><span class="p">):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"http://my-json-server.typicode.com/rtavenar/fake_api/tasks"</span>
+    <span class="n">contenu</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="s2">"completed=true"</span><span class="p">)</span>
     <span class="n">list_taches</span> <span class="o">=</span> <span class="n">contenu</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">tache</span> <span class="ow">in</span> <span class="n">list_taches</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">tache</span><span class="p">[</span><span class="s2">&quot;userId&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">liste_userId</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">tache</span><span class="p">[</span><span class="s2">"userId"</span><span class="p">]</span> <span class="ow">in</span> <span class="n">liste_userId</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">tache</span><span class="p">)</span>
 
 <span class="n">affiche_api</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
@@ -578,9 +639,11 @@ C’est par exemple le cas des modules <a class="reference external" href="http:
 </div>
 </div>
 <hr class="footnotes docutils" />
-<aside class="footnote brackets" id="graphh" role="note">
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="graphh" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>Notez que le module <code class="docutils literal notranslate"><span class="pre">graphh</span></code> a été développé par d’anciens étudiants de Licence 2 et Licence 3 MIASHS de l’Université de Rennes 2.</p>
+</aside>
 </aside>
 </section>
 </section>
@@ -610,11 +673,10 @@ C’est par exemple le cas des modules <a class="reference external" href="http:
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="fichiers.html"
@@ -634,24 +696,24 @@ C’est par exemple le cas des modules <a class="reference external" href="http:
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contenu
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requetes-http-en-python">Requêtes HTTP en Python</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#format-d-une-requete-http">Format d’une requête HTTP</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilisation-du-module-requests">Utilisation du module <code class="docutils literal notranslate"><span class="pre">requests</span></code></a></li>
@@ -679,9 +741,10 @@ Par Romain Tavenard
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -705,8 +768,8 @@ Par Romain Tavenard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

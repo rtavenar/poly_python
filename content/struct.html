@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="fr" >
+<html lang="fr" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Structures de données et structures de contrôle &#8212; Introduction à Python</title>
   
@@ -15,89 +14,90 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/betterpythonpad.css?v=a38d527a" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/betterpythonpad.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
+    <script src="../_static/documentation_options.js?v=72dce1d2"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Cliquez pour afficher';</script>
+    <script>let toggleHintHide = 'Cliquez pour masquer';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/pythonpad.bundle.js"></script>
-    <script src="../_static/vue.js"></script>
-    <script src="../_static/translations.js"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../_static/translations.js?v=041d0952"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/struct';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../_static/vue.js?v=c303d72a"></script>
+    <script src="../_static/pythonpad.bundle.js?v=d5cee81d"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Les dates" href="dates.html" />
     <link rel="prev" title="Introduction" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="fr"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
+  <body data-default-mode="">
   
   
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Passer au contenu principal</a></div>
 
   
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Haut de page</button>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -105,7 +105,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -113,16 +112,69 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Alerte de version"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Navigation dans le site">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Recherche</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
   
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Recherche</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="Sur cette page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -135,6 +187,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
@@ -143,10 +198,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     <p class="title logo__title">Introduction à Python</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Recherche</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -182,14 +245,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -198,14 +266,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -267,7 +335,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Mode plein écran"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -280,26 +348,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Thème" data-bs-title="Thème"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Clair"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Sombre"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Paramètres système"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -319,7 +381,7 @@ document.write(`
                 <h2> Contenu </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-des-variables-python">Types des variables Python</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operation-d-affectation">Opération d’affectation</a></li>
@@ -334,7 +396,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boucles">Boucles</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boucles-while">Boucles <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boucles-for">Boucles <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ex2-2">Exercice</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ex1-2">Exercice</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fonctions">Fonctions</a><ul class="nav section-nav flex-column">
@@ -356,19 +418,19 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="structures-de-donnees-et-structures-de-controle">
-<h1>Structures de données et structures de contrôle<a class="headerlink" href="#structures-de-donnees-et-structures-de-controle" title="Lien permanent vers cette rubrique">#</a></h1>
+<h1>Structures de données et structures de contrôle<a class="headerlink" href="#structures-de-donnees-et-structures-de-controle" title="Lien vers cette rubrique">#</a></h1>
 <p>Dans ce chapitre, on s’intéresse aux éléments de base de la syntaxe Python : les structures de données d’une part et les structures de contrôle d’autre part.
 Les structures de données vont permettre de stocker dans la mémoire de l’ordinateur (dans le but de les traiter ensuite) des données tandis que les structures de contrôle vont servir à définir nos interactions avec ces données.</p>
 <section id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Variables<a class="headerlink" href="#variables" title="Lien vers cette rubrique">#</a></h2>
 <p>En Python, les données sont stockées dans des variables.
 On ne peut pas, comme c’est le cas dans d’autres langages, définir de constante (qui sont, dans ces langages, des moyens de stocker des valeurs n’ayant pas vocation à être modifiées au cours de l’exécution du programme).
 Une variable est une association entre un symbole (le nom de la variable) et une valeur, cette dernière pouvant varier au cours de l’exécution du programme.</p>
 <section id="types-des-variables-python">
-<h3>Types des variables Python<a class="headerlink" href="#types-des-variables-python" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3>Types des variables Python<a class="headerlink" href="#types-des-variables-python" title="Lien vers cette rubrique">#</a></h3>
 <p>Les types de base existant en Python sont les suivants :</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">int</span></code> : entier ;</p></li>
@@ -397,8 +459,8 @@ En Python, le type d’une variable n’est pas déclaré par l’utilisateur : 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="mi">12</span>     <span class="c1"># v est alors de type entier</span>
-<span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;abc&quot;</span>  <span class="c1"># c est de type chaîne de caractères</span>
-<span class="n">d</span> <span class="o">=</span> <span class="s1">&#39;abc&#39;</span>  <span class="c1"># d est également de type chaîne de caractères</span>
+<span class="n">c</span> <span class="o">=</span> <span class="s2">"abc"</span>  <span class="c1"># c est de type chaîne de caractères</span>
+<span class="n">d</span> <span class="o">=</span> <span class="s1">'abc'</span>  <span class="c1"># d est également de type chaîne de caractères</span>
            <span class="c1"># les contenus de c et d sont identiques</span>
 <span class="n">v</span> <span class="o">=</span> <span class="mf">12.</span>    <span class="c1"># v change de type et est désormais de type nombre à virgule</span>
 </pre></div>
@@ -408,20 +470,20 @@ En Python, le type d’une variable n’est pas déclaré par l’utilisateur : 
 <p>Pour vérifier le type d’une variable, il suffit d’utiliser la fonction <code class="docutils literal notranslate"><span class="pre">type</span></code> de la librairie standard :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>  <span class="c1"># la fonction print(.) permet d&#39;afficher</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>  <span class="c1"># la fonction print(.) permet d'afficher</span>
                 <span class="c1"># une information dans le terminal</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class 'float'&gt;
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="operation-d-affectation">
-<h3>Opération d’affectation<a class="headerlink" href="#operation-d-affectation" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3>Opération d’affectation<a class="headerlink" href="#operation-d-affectation" title="Lien vers cette rubrique">#</a></h3>
 <p>Comme le montrent les exemples précédents, pour pouvoir utiliser des variables, on doit leur donner un nom (placé à gauche du signe égal dans l’opération d’affectation).
 Ces noms de variables doivent respecter certaines contraintes :</p>
 <ul class="simple">
@@ -429,9 +491,9 @@ Ces noms de variables doivent respecter certaines contraintes :</p>
 <li><p>ils ne doivent contenir que des lettres, des chiffres et des symboles <code class="docutils literal notranslate"><span class="pre">_</span></code> ;</p></li>
 <li><p>ils ne doivent pas correspondre à un quelconque mot réservé du langage Python, dont voici la liste :</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ow">and</span> <span class="k">del</span> <span class="k">for</span> <span class="ow">is</span> <span class="k">raise</span> <span class="k">assert</span> <span class="k">elif</span> <span class="kn">from</span> <span class="nn">lambda</span> <span class="k">return</span> <span class="k">break</span> <span class="k">else</span> <span class="k">global</span>
-<span class="ow">not</span> <span class="k">try</span> <span class="k">nonlocal</span> <span class="kc">True</span> <span class="kc">False</span> <span class="k">class</span> <span class="nc">except</span> <span class="k">if</span> <span class="ow">or</span> <span class="k">while</span> <span class="k">continue</span> <span class="kn">import</span>
-<span class="nn">pass</span> <span class="k">yield</span> <span class="kc">None</span> <span class="k">def</span> <span class="nf">finally</span> <span class="ow">in</span> <span class="k">as</span> <span class="k">with</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ow">and</span> <span class="k">del</span> <span class="k">for</span> <span class="ow">is</span> <span class="k">raise</span> <span class="k">assert</span> <span class="k">elif</span> <span class="kn">from</span><span class="w"> </span><span class="nn">lambda</span> <span class="k">return</span> <span class="k">break</span> <span class="k">else</span> <span class="k">global</span>
+<span class="ow">not</span> <span class="k">try</span> <span class="k">nonlocal</span> <span class="kc">True</span> <span class="kc">False</span> <span class="k">class</span><span class="w"> </span><span class="nc">except</span> <span class="k">if</span> <span class="ow">or</span> <span class="k">while</span> <span class="k">continue</span> <span class="kn">import</span>
+<span class="nn">pass</span> <span class="k">yield</span> <span class="kc">None</span> <span class="k">def</span><span class="w"> </span><span class="nf">finally</span> <span class="ow">in</span> <span class="k">as</span> <span class="k">with</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -503,7 +565,7 @@ Ainsi, il est tout à fait valide d’écrire, en Python :</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mf">3.9</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La valeur courante de x est </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"La valeur courante de x est </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -515,10 +577,10 @@ Ainsi, il est tout à fait valide d’écrire, en Python :</p>
 </div>
 </section>
 <section id="operateurs-et-priorite">
-<h3>Opérateurs et priorité<a class="headerlink" href="#operateurs-et-priorite" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3>Opérateurs et priorité<a class="headerlink" href="#operateurs-et-priorite" title="Lien vers cette rubrique">#</a></h3>
 <p>On le voit dans l’exemple précédent, pour manipuler des variables, on utilisera des opérateurs (dont les plus connus sont les opérateurs arithmétiques).
 Le tableau suivant dresse une liste des opérateurs définis pour les variables dont le type est l’un des types numériques (entier, nombre à virgule, nombre complexe) :</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Opérateur</p></th>
 <th class="head text-center"><p>Opération</p></th>
@@ -548,6 +610,7 @@ Le tableau suivant dresse une liste des opérateurs définis pour les variables 
 </tr>
 </tbody>
 </table>
+</div>
 <p>De plus, pour chacun de ces opérateurs, il existe un opérateur associé qui réalise successivement l’opération demandée puis l’affectation de la nouvelle valeur à la variable en question.
 Ainsi, l’instruction suivante :</p>
 <div class="cell docutils container">
@@ -609,7 +672,7 @@ En Python 3, si l’on souhaite effectuer une division entière, on pourra utili
 </section>
 </section>
 <section id="structures-de-controle">
-<h2>Structures de contrôle<a class="headerlink" href="#structures-de-controle" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Structures de contrôle<a class="headerlink" href="#structures-de-controle" title="Lien vers cette rubrique">#</a></h2>
 <p>Un programme est une séquence d’instructions dont l’ordre doit être respecté.
 Au-delà de cet aspect séquentiel, on peut souhaiter :</p>
 <ul class="simple">
@@ -619,20 +682,20 @@ Au-delà de cet aspect séquentiel, on peut souhaiter :</p>
 </ul>
 <p>Les structures de contrôle associées à ces différents comportements sont décrits dans la suite de cette section.</p>
 <section id="structures-conditionnelles">
-<h3>Structures conditionnelles<a class="headerlink" href="#structures-conditionnelles" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3>Structures conditionnelles<a class="headerlink" href="#structures-conditionnelles" title="Lien vers cette rubrique">#</a></h3>
 <p>On peut indiquer à un programme de n’exécuter une instruction (ou une séquence d’instructions) que si une certaine condition est remplie, à l’aide du mot-clé <code class="docutils literal notranslate"><span class="pre">if</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">12</span>
 <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X est positif&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X n&#39;est pas négatif&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"X est positif"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"X n'est pas négatif"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X est positif
-X n&#39;est pas négatif
+X n'est pas négatif
 </pre></div>
 </div>
 </div>
@@ -645,10 +708,10 @@ Pour cela, on utilise le mot-clé <code class="docutils literal notranslate"><sp
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X est positif&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X n&#39;est pas négatif&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"X est positif"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"X n'est pas négatif"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X est négatif&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"X est négatif"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -665,14 +728,14 @@ On note également que le mot-clé <code class="docutils literal notranslate"><s
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X est positif&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"X est positif"</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X est compris entre -2 et 0&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"X est compris entre -2 et 0"</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">4</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X est compris entre -4 et -2&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"X est compris entre -4 et -2"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X est inférieur à -4&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"X est inférieur à -4"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -683,7 +746,7 @@ On note également que le mot-clé <code class="docutils literal notranslate"><s
 </div>
 </div>
 <p>Pour utiliser ces structures conditionnelles, il est important de maîtriser les différents opérateurs de comparaison à votre disposition en Python, dont voici une liste non exhaustive :</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Opérateur</p></th>
 <th class="head text-center"><p>Comparaison effectuée</p></th>
@@ -729,11 +792,12 @@ On note également que le mot-clé <code class="docutils literal notranslate"><s
 </tr>
 </tbody>
 </table>
+</div>
 <p>Il est notamment important de remarquer que, lorsque l’on souhaite tester l’égalité entre deux valeurs, l’opérateur à utiliser est <code class="docutils literal notranslate"><span class="pre">==</span></code> et non <code class="docutils literal notranslate"><span class="pre">=</span></code> (qui sert à affecter une valeur à une variable).</p>
 <section id="exercice">
-<span id="ex2-1"></span><h4>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers cette rubrique">#</a></h4>
-<div class="admonition-exercice-2-1-temperature-de-l-eau admonition">
-<p class="admonition-title">Exercice 2.1 : Température de l’eau</p>
+<span id="ex1-1"></span><h4>Exercice<a class="headerlink" href="#exercice" title="Lien vers cette rubrique">#</a></h4>
+<div class="admonition-exercice-1-1-temperature-de-l-eau admonition">
+<p class="admonition-title">Exercice 1.1 : Température de l’eau</p>
 <p>Écrivez une expression conditionnelle, qui à partir d’une température d’eau stockée dans une variable <code class="docutils literal notranslate"><span class="pre">t</span></code> affiche dans le terminal si l’eau à cette température est à l’état liquide, solide ou gazeux.</p>
 </div>
 <div id="pad_2.1" class="pad"></div>
@@ -747,25 +811,25 @@ On note également que le mot-clé <code class="docutils literal notranslate"><s
 <p class="admonition-title">Solution</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
 <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l&#39;eau est sous forme solide&quot;</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s2">"l'eau est sous forme solide"</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l&#39;eau est sous forme liquide&quot;</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s2">"l'eau est sous forme liquide"</span><span class="p">)</span>
 <span class="k">else</span> <span class="p">:</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l&#39;eau est sous forme gazeuse&quot;</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s2">"l'eau est sous forme gazeuse"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </section>
 </section>
 <section id="boucles">
-<h3>Boucles<a class="headerlink" href="#boucles" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3>Boucles<a class="headerlink" href="#boucles" title="Lien vers cette rubrique">#</a></h3>
 <p>Il existe, en Python comme dans une grande majorité des langages de programmation, deux types de boucles :</p>
 <ul class="simple">
 <li><p>les boucles qui s’exécutent tant qu’une condition est vraie ;</p></li>
 <li><p>les boucles qui répètent la même série d’instructions pour différentes valeurs d’une variable (appelée <strong>variable de boucle</strong>).</p></li>
 </ul>
 <section id="boucles-while">
-<h4>Boucles <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#boucles-while" title="Lien permanent vers cette rubrique">#</a></h4>
+<h4>Boucles <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#boucles-while" title="Lien vers cette rubrique">#</a></h4>
 <p>Les premières ont une syntaxe très similaire à celle des structures conditionnelles simples :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -792,14 +856,14 @@ Il faut être très prudent avec ces boucles <code class="docutils literal notra
 <span class="k">while</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">1</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Si on arrive ici, on a fini&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Si on arrive ici, on a fini"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>En effet, on a ici une boucle qui s’exécutera tant que <code class="docutils literal notranslate"><span class="pre">x</span></code> est positif, or la valeur de cette variable est initialisée à 2 et n’est pas modifiée au sein de la boucle, la condition sera donc toujours vérifiée et le programme ne sortira jamais de la boucle.
 Pour information, si vous vous retrouvez dans un tel cas, vous pourrez interrompre l’exécution du programme à l’aide de la combinaison de touches <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code>.</p>
 </section>
 <section id="boucles-for">
-<h4>Boucles <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#boucles-for" title="Lien permanent vers cette rubrique">#</a></h4>
+<h4>Boucles <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#boucles-for" title="Lien vers cette rubrique">#</a></h4>
 <div class="tip admonition">
 <p class="admonition-title">Information</p>
 <p>Si vous avez appris à programmer dans un autre langage que Python, il est possible que vous ayez été habitué(e) à ce que les boucles <code class="docutils literal notranslate"><span class="pre">for</span></code> soient utilisées pour itérer sur des entiers (par exemple les indices des éléments d’une liste).
@@ -812,7 +876,7 @@ On peut alors exécuter une série d’instructions pour toutes les valeurs d’
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fin de la boucle&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Fin de la boucle"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -857,10 +921,10 @@ De même, si l’on connait à l’avance le nombre d’itérations que l’on s
 Comme son nom l’indique, la boucle <code class="docutils literal notranslate"><span class="pre">while</span></code> sera utilisée dès lors que l’on souhaite répéter une action <strong>tant qu”</strong> une condition est vérifiée.</p>
 </div>
 </section>
-<section id="ex2-2">
-<span id="id1"></span><h4>Exercice<a class="headerlink" href="#ex2-2" title="Lien permanent vers cette rubrique">#</a></h4>
-<div class="admonition-exercice-2-2-nombres-impairs admonition">
-<p class="admonition-title">Exercice 2.2 : Nombres impairs</p>
+<section id="ex1-2">
+<span id="id1"></span><h4>Exercice<a class="headerlink" href="#ex1-2" title="Lien vers cette rubrique">#</a></h4>
+<div class="admonition-exercice-1-2-nombres-impairs admonition">
+<p class="admonition-title">Exercice 1.2 : Nombres impairs</p>
 <p>Écrivez une boucle permettant d’afficher tous les nombres impairs inférieurs à une valeur <code class="docutils literal notranslate"><span class="pre">n</span></code> initialement fixée.</p>
 </div>
 <div id="pad_2.2" class="pad"></div>
@@ -897,7 +961,7 @@ Comme son nom l’indique, la boucle <code class="docutils literal notranslate">
 </section>
 </section>
 <section id="fonctions">
-<h3>Fonctions<a class="headerlink" href="#fonctions" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3>Fonctions<a class="headerlink" href="#fonctions" title="Lien vers cette rubrique">#</a></h3>
 <p>Nous avons déjà vu dans ce qui précède, sans le dire, des fonctions.
 Par exemple, lorsque l’on écrit :</p>
 <div class="cell docutils container">
@@ -920,9 +984,9 @@ D’autres fonctions, comme <code class="docutils literal notranslate"><span cla
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># On stocke dans x la valeur retournée par type</span>
 <span class="n">y</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="mf">2.</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;types identiques&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"types identiques"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;types différents&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"types différents"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -934,7 +998,7 @@ D’autres fonctions, comme <code class="docutils literal notranslate"><span cla
 </div>
 <p>En pratique, dans un programme, on aura recours à la définition de fonctions pour décomposer un problème global en sous-problèmes, chaque sous-problème étant géré par une fonction qui pourra elle-même, au besoin, faire appel à d’autres fonctions.</p>
 <section id="definition-d-une-fonction">
-<h4>Définition d’une fonction<a class="headerlink" href="#definition-d-une-fonction" title="Lien permanent vers cette rubrique">#</a></h4>
+<h4>Définition d’une fonction<a class="headerlink" href="#definition-d-une-fonction" title="Lien vers cette rubrique">#</a></h4>
 <p>Lorsqu’un ensemble d’instructions est susceptible d’être utilisé à plusieurs occasions dans un ou plusieurs programmes, il est recommandé de l’isoler au sein d’une fonction.
 Cela présentera les avantages suivants :</p>
 <ul class="simple">
@@ -944,7 +1008,7 @@ Cela présentera les avantages suivants :</p>
 <p>Pour définir une fonction en Python, on utilise le mot-clé <code class="docutils literal notranslate"><span class="pre">def</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
     <span class="k">return</span> <span class="n">z</span> <span class="o">//</span> <span class="mi">2</span>
@@ -962,7 +1026,7 @@ Cela présentera les avantages suivants :</p>
 Pour ce faire, ces valeurs seront séparées par des virgules dans l’instruction <code class="docutils literal notranslate"><span class="pre">return</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
     <span class="k">return</span> <span class="n">z</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span>
@@ -975,9 +1039,9 @@ Pour ce faire, ces valeurs seront séparées par des virgules dans l’instructi
 Par exemple, si l’on a la fonction suivante :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">affiche_infos_personne</span><span class="p">(</span><span class="n">poids</span><span class="p">,</span> <span class="n">taille</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Poids: &quot;</span><span class="p">,</span> <span class="n">poids</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Taille: &quot;</span><span class="p">,</span> <span class="n">taille</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">affiche_infos_personne</span><span class="p">(</span><span class="n">poids</span><span class="p">,</span> <span class="n">taille</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Poids: "</span><span class="p">,</span> <span class="n">poids</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Taille: "</span><span class="p">,</span> <span class="n">taille</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1026,13 +1090,13 @@ Taille:  180
 Évidemment, pour que cela soit vraiment utile, il est hautement recommandé d’utiliser des <strong>noms d’arguments explicites</strong> lors de la définition de vos fonctions.</p>
 </section>
 <section id="argument-s-optionnel-s-d-une-fonction">
-<h4>Argument(s) optionnel(s) d’une fonction<a class="headerlink" href="#argument-s-optionnel-s-d-une-fonction" title="Lien permanent vers cette rubrique">#</a></h4>
+<h4>Argument(s) optionnel(s) d’une fonction<a class="headerlink" href="#argument-s-optionnel-s-d-une-fonction" title="Lien vers cette rubrique">#</a></h4>
 <p>Certains arguments d’une fonction peuvent avoir une valeur par défaut, décidée par la personne qui a écrit la fonction.
 Dans ce cas, si l’utilisateur ne spécifie pas explicitement de valeur pour ces arguments lors de l’appel à la fonction, c’est la valeur par défaut qui sera utilisée dans la fonction, dans le cas contraire, la valeur spécifiée sera utilisée.</p>
 <p>Par exemple, la fonction <code class="docutils literal notranslate"><span class="pre">print</span></code> dispose de plusieurs arguments facultatifs, comme le caractère par lequel terminer l’affichage (par défaut, un retour à la ligne, <code class="docutils literal notranslate"><span class="pre">&quot;\n&quot;</span></code>) :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La vie est belle&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"La vie est belle"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1044,7 +1108,7 @@ Dans ce cas, si l’utilisateur ne spécifie pas explicitement de valeur pour ce
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Life is beautiful&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Life is beautiful"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1056,7 +1120,7 @@ Dans ce cas, si l’utilisateur ne spécifie pas explicitement de valeur pour ce
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La vie est belle&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"La vie est belle"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">"--"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1068,7 +1132,7 @@ Dans ce cas, si l’utilisateur ne spécifie pas explicitement de valeur pour ce
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Life is beautiful&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;*-*&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Life is beautiful"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">"*-*"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1081,7 +1145,7 @@ Dans ce cas, si l’utilisateur ne spécifie pas explicitement de valeur pour ce
 <p>Lorsque vous définissez une fonction, la syntaxe à utiliser pour donner une valeur par défaut à un argument est la suivante :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>  <span class="c1"># La valeur par défaut pour y est 0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>  <span class="c1"># La valeur par défaut pour y est 0</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">y</span>
 </pre></div>
 </div>
@@ -1089,16 +1153,16 @@ Dans ce cas, si l’utilisateur ne spécifie pas explicitement de valeur pour ce
 </div>
 <p>Attention toutefois, les arguments facultatifs (<em>ie.</em> qui disposent d’une valeur par défaut) doivent impérativement se trouver, dans la liste des arguments, après le dernier argument obligatoire.
 Ainsi, la définition de fonction suivante <strong>n’est pas correcte</strong> :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="exercices">
-<span id="ex2-3"></span><h3>Exercices<a class="headerlink" href="#exercices" title="Lien permanent vers cette rubrique">#</a></h3>
-<div class="admonition-exercice-2-3-triangle-equilateral admonition">
-<p class="admonition-title">Exercice 2.3 : Triangle équilatéral</p>
+<span id="ex1-3"></span><h3>Exercices<a class="headerlink" href="#exercices" title="Lien vers cette rubrique">#</a></h3>
+<div class="admonition-exercice-1-3-triangle-equilateral admonition">
+<p class="admonition-title">Exercice 1.3 : Triangle équilatéral</p>
 <p>Écrivez une fonction en Python qui prenne en argument une longueur <code class="docutils literal notranslate"><span class="pre">long</span></code> et retourne l’aire du triangle équilatéral de côté <code class="docutils literal notranslate"><span class="pre">long</span></code>.</p>
 </div>
 <div id="pad_2.3" class="pad"></div>
@@ -1110,9 +1174,9 @@ Ainsi, la définition de fonction suivante <strong>n’est pas correcte</strong>
 </script>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Solution</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
-<span class="k">def</span> <span class="nf">aire_equi</span><span class="p">(</span><span class="n">long</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">aire_equi</span><span class="p">(</span><span class="n">long</span><span class="p">):</span>
     <span class="n">base</span> <span class="o">=</span> <span class="n">long</span>
     <span class="n">hauteur</span> <span class="o">=</span> <span class="n">long</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">base</span> <span class="o">*</span> <span class="n">hauteur</span> <span class="o">/</span> <span class="mi">2</span>
@@ -1121,8 +1185,8 @@ Ainsi, la définition de fonction suivante <strong>n’est pas correcte</strong>
 </pre></div>
 </div>
 </div>
-<div class="admonition-exercice-2-4-suite-recurrente admonition" id="ex2-4">
-<p class="admonition-title">Exercice 2.4 : Suite récurrente</p>
+<div class="admonition-exercice-1-4-suite-recurrente admonition" id="ex1-4">
+<p class="admonition-title">Exercice 1.4 : Suite récurrente</p>
 <p>Écrivez une fonction en Python qui affiche tous les termes plus petits que 1000 de la suite <span class="math notranslate nohighlight">\((u_n)\)</span> définie comme :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1142,7 +1206,7 @@ Ainsi, la définition de fonction suivante <strong>n’est pas correcte</strong>
 <ul class="simple">
 <li><p>Version itérative (avec une boucle)</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">affiche_u_n</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">affiche_u_n</span><span class="p">():</span>
     <span class="n">u</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="k">while</span> <span class="n">u</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
@@ -1154,7 +1218,7 @@ Ainsi, la définition de fonction suivante <strong>n’est pas correcte</strong>
 <ul class="simple">
 <li><p>Version récursive (avec des appels de fonction)</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">affiche_u_n</span><span class="p">(</span><span class="n">u</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">affiche_u_n</span><span class="p">(</span><span class="n">u</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">u</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
         <span class="n">affiche_u_n</span><span class="p">(</span><span class="n">u</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
@@ -1167,7 +1231,7 @@ Ainsi, la définition de fonction suivante <strong>n’est pas correcte</strong>
 </section>
 </section>
 <section id="les-modules-en-python">
-<h2>Les modules en Python<a class="headerlink" href="#les-modules-en-python" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Les modules en Python<a class="headerlink" href="#les-modules-en-python" title="Lien vers cette rubrique">#</a></h2>
 <p>Jusqu’à présent, nous avons utilisé des fonctions (comme <code class="docutils literal notranslate"><span class="pre">print</span></code>) issues de la librairie standard de Python.
 Celles-ci sont donc chargées par défaut lorsque l’on exécute un script Python.
 Toutefois, il peut être nécessaire d’avoir accès à d’autres fonctions et/ou variables, définies dans d’autres librairies.
@@ -1176,7 +1240,7 @@ Pour cela, il sera utile de charger le <strong>module</strong> correspondant.</p
 Le code suivant charge le module en mémoire puis fait appel à certaines de ses fonctions et/ou variables :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 </pre></div>
@@ -1230,7 +1294,7 @@ De manière générale, vous prendrez la bonne habitude d’écrire les instruct
 Typiquement, il est de coutume de renommer le module <code class="docutils literal notranslate"><span class="pre">numpy</span></code> en <code class="docutils literal notranslate"><span class="pre">np</span></code> (<em>cf.</em> <a class="reference internal" href="numpy.html#sec-numpy"><span class="std std-ref">ce chapitre</span></a> pour plus de détails sur ce module) lorsqu’on l’importe :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># Ici on utilise alors la forme abrégée</span>
 </pre></div>
@@ -1244,12 +1308,12 @@ Typiquement, il est de coutume de renommer le module <code class="docutils liter
 </div>
 </section>
 <section id="liste-des-exercices-de-ce-chapitre">
-<h2>Liste des exercices de ce chapitre<a class="headerlink" href="#liste-des-exercices-de-ce-chapitre" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Liste des exercices de ce chapitre<a class="headerlink" href="#liste-des-exercices-de-ce-chapitre" title="Lien vers cette rubrique">#</a></h2>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="#ex2-1"><span class="std std-ref">Température de l’eau</span></a></p></li>
-<li><p><a class="reference internal" href="#ex2-2"><span class="std std-ref">Nombres impairs</span></a></p></li>
-<li><p><a class="reference internal" href="#ex2-3"><span class="std std-ref">Triangle équilatéral</span></a></p></li>
-<li><p><a class="reference internal" href="#ex2-4"><span class="std std-ref">Suite récurrente</span></a></p></li>
+<li><p><a class="reference internal" href="#ex1-1"><span class="std std-ref">Température de l’eau</span></a></p></li>
+<li><p><a class="reference internal" href="#ex1-2"><span class="std std-ref">Nombres impairs</span></a></p></li>
+<li><p><a class="reference internal" href="#ex1-3"><span class="std std-ref">Triangle équilatéral</span></a></p></li>
+<li><p><a class="reference internal" href="#ex1-4"><span class="std std-ref">Suite récurrente</span></a></p></li>
 </ol>
 </section>
 </section>
@@ -1279,11 +1343,10 @@ Typiquement, il est de coutume de renommer le module <code class="docutils liter
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="intro.html"
@@ -1303,24 +1366,24 @@ Typiquement, il est de coutume de renommer le module <code class="docutils liter
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contenu
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-des-variables-python">Types des variables Python</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operation-d-affectation">Opération d’affectation</a></li>
@@ -1335,7 +1398,7 @@ Typiquement, il est de coutume de renommer le module <code class="docutils liter
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boucles">Boucles</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boucles-while">Boucles <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#boucles-for">Boucles <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ex2-2">Exercice</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ex1-2">Exercice</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fonctions">Fonctions</a><ul class="nav section-nav flex-column">
@@ -1369,9 +1432,10 @@ Par Romain Tavenard
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1395,8 +1459,8 @@ Par Romain Tavenard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="fr" >
+<html lang="fr" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Les chaînes de caractères &#8212; Introduction à Python</title>
   
@@ -15,89 +14,90 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/betterpythonpad.css?v=a38d527a" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/betterpythonpad.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
+    <script src="../_static/documentation_options.js?v=72dce1d2"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Cliquez pour afficher';</script>
+    <script>let toggleHintHide = 'Cliquez pour masquer';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/pythonpad.bundle.js"></script>
-    <script src="../_static/vue.js"></script>
-    <script src="../_static/translations.js"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../_static/translations.js?v=041d0952"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/chaines';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../_static/vue.js?v=c303d72a"></script>
+    <script src="../_static/pythonpad.bundle.js?v=d5cee81d"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Les dictionnaires" href="dict.html" />
     <link rel="prev" title="Les listes" href="listes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="fr"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
+  <body data-default-mode="">
   
   
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Passer au contenu principal</a></div>
 
   
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Haut de page</button>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -105,7 +105,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -113,16 +112,69 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Alerte de version"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Navigation dans le site">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Recherche</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
   
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Recherche</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="Sur cette page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -135,6 +187,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
@@ -143,10 +198,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     <p class="title logo__title">Introduction à Python</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Recherche</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -182,14 +245,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -198,14 +266,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -267,7 +335,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Mode plein écran"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -280,26 +348,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Thème" data-bs-title="Thème"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Clair"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Sombre"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="Paramètres système"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -319,7 +381,7 @@ document.write(`
                 <h2> Contenu </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-d-une-chaine-en-nombre">Conversion d’une chaîne en nombre</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analogie-avec-les-listes">Analogie avec les listes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principales-methodes-de-la-classe-str">Principales méthodes de la classe <code class="docutils literal notranslate"><span class="pre">str</span></code></a></li>
@@ -337,16 +399,16 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="les-chaines-de-caracteres">
-<h1>Les chaînes de caractères<a class="headerlink" href="#les-chaines-de-caracteres" title="Lien permanent vers cette rubrique">#</a></h1>
+<h1>Les chaînes de caractères<a class="headerlink" href="#les-chaines-de-caracteres" title="Lien vers cette rubrique">#</a></h1>
 <p>Nous nous intéressons maintenant à un autre type de données particulier du langage Python : les chaînes de caractères (type <code class="docutils literal notranslate"><span class="pre">str</span></code>).
 Pour créer une chaîne de caractères, il suffit d’utiliser des guillemets, simples ou doubles (les deux sont équivalents) :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;abc&quot;</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="s1">&#39;bde&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">"abc"</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s1">'bde'</span>
 </pre></div>
 </div>
 </div>
@@ -354,11 +416,11 @@ Pour créer une chaîne de caractères, il suffit d’utiliser des guillemets, s
 <p>Comme pour les listes (et peut-être même plus encore), il est fortement conseillé de se reporter à l’aide en ligne dédiée lorsque vous avez des doutes sur la manipulation de chaînes de caractères :
 <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">https://docs.python.org/3/library/stdtypes.html#string-methods</a></p>
 <section id="conversion-d-une-chaine-en-nombre">
-<h2>Conversion d’une chaîne en nombre<a class="headerlink" href="#conversion-d-une-chaine-en-nombre" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Conversion d’une chaîne en nombre<a class="headerlink" href="#conversion-d-une-chaine-en-nombre" title="Lien vers cette rubrique">#</a></h2>
 <p>Si une chaîne de caractères représente une valeur numérique (comme la chaîne <code class="docutils literal notranslate"><span class="pre">&quot;10.2&quot;</span></code> par exemple), on peut la transformer en un entier ou un nombre à virgule, afin de l’utiliser ensuite pour des opérations arithmétiques. On utilise pour cela les fonctions de conversion, respectivement <code class="docutils literal notranslate"><span class="pre">int</span></code> et <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;10.2&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">'10.2'</span>
 <span class="n">f</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
@@ -396,7 +458,7 @@ Pour créer une chaîne de caractères, il suffit d’utiliser des guillemets, s
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;10&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">'10'</span>
 <span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
@@ -434,13 +496,13 @@ Pour créer une chaîne de caractères, il suffit d’utiliser des guillemets, s
 </div>
 </section>
 <section id="analogie-avec-les-listes">
-<h2>Analogie avec les listes<a class="headerlink" href="#analogie-avec-les-listes" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Analogie avec les listes<a class="headerlink" href="#analogie-avec-les-listes" title="Lien vers cette rubrique">#</a></h2>
 <p>Les chaînes de caractères se manipulent en partie comme des listes.
 On peut ainsi obtenir la taille d’une chaîne de caractères à l’aide de la fonction <code class="docutils literal notranslate"><span class="pre">len</span></code>, ou accéder à la <span class="math notranslate nohighlight">\(i\)</span>-ème lettre d’une chaîne de caractères avec la notation <code class="docutils literal notranslate"><span class="pre">s[i]</span></code>.
 Comme pour les listes, il est possible d’indicer une chaîne de caractères en partant de la fin, en utilisant des indices négatifs :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;abcdef&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"abcdef"</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -478,7 +540,7 @@ Comme pour les listes, il est possible d’indicer une chaîne de caractères en
 <p>De même, on peut sélectionner des sous-parties de chaînes de caractères à partir des indices de début et de fin de la sélection. Comme pour les listes, l’indice de fin correspond au premier élément exclu de la sélection :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;abcdef&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"abcdef"</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -492,7 +554,7 @@ Comme pour les listes, il est possible d’indicer une chaîne de caractères en
 <p>Comme pour les listes, on peut concaténer deux chaînes de caractères à l’aide de l’opérateur <code class="docutils literal notranslate"><span class="pre">+</span></code> ou répéter une chaîne de caractères avec l’opérateur <code class="docutils literal notranslate"><span class="pre">*</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;ab&quot;</span> <span class="o">+</span> <span class="p">(</span><span class="s1">&#39;cde&#39;</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"ab"</span> <span class="o">+</span> <span class="p">(</span><span class="s1">'cde'</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -506,8 +568,8 @@ Comme pour les listes, il est possible d’indicer une chaîne de caractères en
 <p>On peut également tester la présence d’une sous-chaîne de caractères dans une chaîne avec le mot-clé <code class="docutils literal notranslate"><span class="pre">in</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;abcde&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="ow">in</span> <span class="n">s</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"abcde"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"a"</span> <span class="ow">in</span> <span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -519,7 +581,7 @@ Comme pour les listes, il est possible d’indicer une chaîne de caractères en
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bcd&quot;</span> <span class="ow">in</span> <span class="n">s</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"bcd"</span> <span class="ow">in</span> <span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -531,7 +593,7 @@ Comme pour les listes, il est possible d’indicer une chaîne de caractères en
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bCd&quot;</span> <span class="ow">in</span> <span class="n">s</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"bCd"</span> <span class="ow">in</span> <span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -547,7 +609,7 @@ Par exemple, on peut accéder au <span class="math notranslate nohighlight">\(i\
 Si <code class="docutils literal notranslate"><span class="pre">s</span></code> est une chaîne de caractères, on ne peut pas exécuter <code class="docutils literal notranslate"><span class="pre">s[2]</span> <span class="pre">=</span> <span class="pre">&quot;c&quot;</span></code> par exemple.</p>
 </section>
 <section id="principales-methodes-de-la-classe-str">
-<h2>Principales méthodes de la classe <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#principales-methodes-de-la-classe-str" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Principales méthodes de la classe <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#principales-methodes-de-la-classe-str" title="Lien vers cette rubrique">#</a></h2>
 <p>La liste de méthodes de la classe <code class="docutils literal notranslate"><span class="pre">str</span></code> qui suit n’est pas exhaustive, il est conseillé de consulter l’aide en ligne de Python pour plus d’informations.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ch.count(sub)</span></code>: Retourne le nombre d’occurrences de <code class="docutils literal notranslate"><span class="pre">sub</span></code> dans <code class="docutils literal notranslate"><span class="pre">ch</span></code></p></li>
@@ -567,14 +629,14 @@ Si <code class="docutils literal notranslate"><span class="pre">s</span></code> 
 </ul>
 </section>
 <section id="formatage-des-chaines-de-caracteres">
-<h2>Formatage des chaînes de caractères<a class="headerlink" href="#formatage-des-chaines-de-caracteres" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Formatage des chaînes de caractères<a class="headerlink" href="#formatage-des-chaines-de-caracteres" title="Lien vers cette rubrique">#</a></h2>
 <p>Lorsque l’on souhaite ajouter, dans une chaîne de caractères, du contenu stocké dans une variable, on pourra utiliser la méthode format listée ci-dessus.</p>
 <p>Commençons par un exemple :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">12</span>
-<span class="n">prenom</span> <span class="o">=</span> <span class="s2">&quot;Micheline&quot;</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> a </span><span class="si">{}</span><span class="s2"> ans&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prenom</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+<span class="n">prenom</span> <span class="o">=</span> <span class="s2">"Micheline"</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{}</span><span class="s2"> a </span><span class="si">{}</span><span class="s2"> ans"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prenom</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -591,8 +653,8 @@ Il est possible de maîtriser plus finement la mise en forme de ces variables, e
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age_enfant</span> <span class="o">=</span> <span class="mi">12</span>
-<span class="n">prenom_enfant</span> <span class="o">=</span> <span class="s2">&quot;Micheline&quot;</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{prenom}</span><span class="s2"> a </span><span class="si">{age}</span><span class="s2"> ans&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prenom</span><span class="o">=</span><span class="n">prenom_enfant</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">age_enfant</span><span class="p">)</span>
+<span class="n">prenom_enfant</span> <span class="o">=</span> <span class="s2">"Micheline"</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{prenom}</span><span class="s2"> a </span><span class="si">{age}</span><span class="s2"> ans"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prenom</span><span class="o">=</span><span class="n">prenom_enfant</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">age_enfant</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -606,8 +668,8 @@ Il est possible de maîtriser plus finement la mise en forme de ces variables, e
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age_enfant</span> <span class="o">=</span> <span class="mi">12</span>
-<span class="n">prenom_enfant</span> <span class="o">=</span> <span class="s2">&quot;Micheline&quot;</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{prenom}</span><span class="s2"> a </span><span class="si">{age:.3f}</span><span class="s2"> ans&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prenom</span><span class="o">=</span><span class="n">prenom_enfant</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">age_enfant</span><span class="p">)</span>
+<span class="n">prenom_enfant</span> <span class="o">=</span> <span class="s2">"Micheline"</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{prenom}</span><span class="s2"> a </span><span class="si">{age:.3f}</span><span class="s2"> ans"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prenom</span><span class="o">=</span><span class="n">prenom_enfant</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">age_enfant</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -620,7 +682,7 @@ Il est possible de maîtriser plus finement la mise en forme de ces variables, e
 </div>
 <p>Vous trouverez une présentation plus exhaustive de ces questions dans la <a class="reference external" href="https://docs.python.org/fr/3.5/library/string.html#format-string-syntax">documentation Python sur ce point</a>.</p>
 <section id="pour-aller-plus-loin-les-f-strings">
-<h3>Pour aller plus loin : les f-strings<a class="headerlink" href="#pour-aller-plus-loin-les-f-strings" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3>Pour aller plus loin : les f-strings<a class="headerlink" href="#pour-aller-plus-loin-les-f-strings" title="Lien vers cette rubrique">#</a></h3>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="tip admonition">
@@ -632,7 +694,7 @@ Il est possible de maîtriser plus finement la mise en forme de ces variables, e
 Pour définir une f-string, il suffit d’ajouter un f avant la chaîne de caractères :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Ceci est une f-string&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"Ceci est une f-string"</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -648,8 +710,8 @@ Mais ces f-strings deviennent fort pratiques dès lors que l’on souhaite ajout
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">12</span>
-<span class="n">prenom</span> <span class="o">=</span> <span class="s2">&quot;Micheline&quot;</span>
-<span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prenom</span><span class="si">}</span><span class="s2"> a </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> ans&quot;</span>
+<span class="n">prenom</span> <span class="o">=</span> <span class="s2">"Micheline"</span>
+<span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">prenom</span><span class="si">}</span><span class="s2"> a </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> ans"</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -665,7 +727,7 @@ On peut même effectuer des calculs à la volée dans les f-strings :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age_chat</span> <span class="o">=</span> <span class="mi">12</span>
-<span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Ce chat a </span><span class="si">{</span><span class="n">age_chat</span><span class="si">}</span><span class="s2"> ans, ce qui lui fait </span><span class="si">{</span><span class="n">age_chat</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">6</span><span class="si">}</span><span class="s2"> ans en âge équivalent humain&quot;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"Ce chat a </span><span class="si">{</span><span class="n">age_chat</span><span class="si">}</span><span class="s2"> ans, ce qui lui fait </span><span class="si">{</span><span class="n">age_chat</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">6</span><span class="si">}</span><span class="s2"> ans en âge équivalent humain"</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -682,10 +744,10 @@ On peut même effectuer des calculs à la volée dans les f-strings :</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exemple 1 : alignement</span>
 <span class="c1"># Syntaxe : {variable : alignement largeur}</span>
 <span class="c1"># Alignement &lt; gauche | &gt; droite | ^ centré|</span>
-<span class="n">ville</span> <span class="o">=</span> <span class="s2">&quot;Rennes&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La ville de </span><span class="si">{</span><span class="n">ville</span><span class="si">:</span><span class="s2">&lt;10</span><span class="si">}</span><span class="s2"> est en Bretagne.&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La ville de </span><span class="si">{</span><span class="n">ville</span><span class="si">:</span><span class="s2">&gt;10</span><span class="si">}</span><span class="s2"> est en Bretagne.&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La ville de </span><span class="si">{</span><span class="n">ville</span><span class="si">:</span><span class="s2">^10</span><span class="si">}</span><span class="s2"> est en Bretagne.&quot;</span><span class="p">)</span>
+<span class="n">ville</span> <span class="o">=</span> <span class="s2">"Rennes"</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"La ville de </span><span class="si">{</span><span class="n">ville</span><span class="si">:</span><span class="s2">&lt;10</span><span class="si">}</span><span class="s2"> est en Bretagne."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"La ville de </span><span class="si">{</span><span class="n">ville</span><span class="si">:</span><span class="s2">&gt;10</span><span class="si">}</span><span class="s2"> est en Bretagne."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"La ville de </span><span class="si">{</span><span class="n">ville</span><span class="si">:</span><span class="s2">^10</span><span class="si">}</span><span class="s2"> est en Bretagne."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -702,10 +764,10 @@ La ville de   Rennes   est en Bretagne.
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exemple 2 : Affichage des entiers</span>
 <span class="c1"># Syntaxe : {variable : largeur symbole}</span>
 <span class="c1"># le symbole d (digit) ou n (numeric) représente un entier</span>
-<span class="n">vils</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Rennes&quot;</span><span class="p">,</span> <span class="s2">&quot;Chantepie&quot;</span><span class="p">,</span> <span class="s2">&quot;Noyal-sur-Vilaine&quot;</span><span class="p">]</span>
+<span class="n">vils</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Rennes"</span><span class="p">,</span> <span class="s2">"Chantepie"</span><span class="p">,</span> <span class="s2">"Noyal-sur-Vilaine"</span><span class="p">]</span>
 <span class="n">pops</span> <span class="o">=</span> <span class="p">[</span><span class="mi">215346</span><span class="p">,</span> <span class="mi">10445</span><span class="p">,</span> <span class="mi">5820</span> <span class="p">]</span>
 <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">vils</span><span class="p">,</span> <span class="n">pops</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A </span><span class="si">{</span><span class="n">v</span><span class="si">:</span><span class="s2">&lt;17</span><span class="si">}</span><span class="s2"> : il y a </span><span class="si">{</span><span class="n">p</span><span class="si">:</span><span class="s2">7n</span><span class="si">}</span><span class="s2"> habitants.&quot;</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"A </span><span class="si">{</span><span class="n">v</span><span class="si">:</span><span class="s2">&lt;17</span><span class="si">}</span><span class="s2"> : il y a </span><span class="si">{</span><span class="n">p</span><span class="si">:</span><span class="s2">7n</span><span class="si">}</span><span class="s2"> habitants."</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -724,7 +786,7 @@ A Noyal-sur-Vilaine : il y a    5820 habitants.
 <span class="c1"># Remarque le nombre affiché est arrondi (et non tronqué)</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span><span class="mi">10</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">25</span><span class="o">/</span><span class="mi">7</span>
 <span class="k">for</span> <span class="n">longdeci</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Avec </span><span class="si">{</span><span class="n">longdeci</span><span class="si">}</span><span class="s2"> décimales, le 1er nombre est |</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">7.</span><span class="si">{</span><span class="n">longdeci</span><span class="si">}</span><span class="s2">f</span><span class="si">}</span><span class="s2">| le second est|</span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s2">7.</span><span class="si">{</span><span class="n">longdeci</span><span class="si">}</span><span class="s2">f</span><span class="si">}</span><span class="s2">|&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Avec </span><span class="si">{</span><span class="n">longdeci</span><span class="si">}</span><span class="s2"> décimales, le 1er nombre est |</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">7.</span><span class="si">{</span><span class="n">longdeci</span><span class="si">}</span><span class="s2">f</span><span class="si">}</span><span class="s2">| le second est|</span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s2">7.</span><span class="si">{</span><span class="n">longdeci</span><span class="si">}</span><span class="s2">f</span><span class="si">}</span><span class="s2">|"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -741,9 +803,9 @@ Avec 4 décimales, le 1er nombre est | 3.3333| le second est| 3.5714|
 </section>
 </section>
 <section id="exercices">
-<h2>Exercices<a class="headerlink" href="#exercices" title="Lien permanent vers cette rubrique">#</a></h2>
-<div class="admonition-exercice-5-1 admonition">
-<p class="admonition-title">Exercice 5.1</p>
+<h2>Exercices<a class="headerlink" href="#exercices" title="Lien vers cette rubrique">#</a></h2>
+<div class="admonition-exercice-4-1 admonition">
+<p class="admonition-title">Exercice 4.1</p>
 <p>Écrivez une fonction qui prenne en argument deux chaînes de caractères <code class="docutils literal notranslate"><span class="pre">s</span></code> et <code class="docutils literal notranslate"><span class="pre">prefix</span></code> et retourne le nombre de mots de la chaîne <code class="docutils literal notranslate"><span class="pre">s</span></code> qui débutent par la chaîne <code class="docutils literal notranslate"><span class="pre">prefix</span></code>.</p>
 </div>
 <div id="pad_5.1" class="pad"></div>
@@ -755,19 +817,19 @@ Avec 4 décimales, le 1er nombre est | 3.3333| le second est| 3.5714|
 </script>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Solution</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compte_prefix</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">prefix</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compte_prefix</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">prefix</span><span class="p">):</span>
     <span class="n">compteur</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">mot</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
         <span class="k">if</span> <span class="n">mot</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">prefix</span><span class="p">):</span>
             <span class="n">compteur</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">compteur</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">compte_prefix</span><span class="p">(</span><span class="s2">&quot;la vie est belle au bord du lac&quot;</span><span class="p">,</span> <span class="s2">&quot;la&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">compte_prefix</span><span class="p">(</span><span class="s2">"la vie est belle au bord du lac"</span><span class="p">,</span> <span class="s2">"la"</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="admonition-exercice-5-2 admonition">
-<p class="admonition-title">Exercice 5.2</p>
+<div class="admonition-exercice-4-2 admonition">
+<p class="admonition-title">Exercice 4.2</p>
 <p>Écrivez une fonction qui prenne en argument deux chaînes de caractères <code class="docutils literal notranslate"><span class="pre">s</span></code> et <code class="docutils literal notranslate"><span class="pre">mot_cible</span></code> et retourne le nombre d’occurrences du mot <code class="docutils literal notranslate"><span class="pre">mot_cible</span></code> dans la chaîne <code class="docutils literal notranslate"><span class="pre">s</span></code> en ne tenant pas compte de la casse.</p>
 </div>
 <div id="pad_5.2" class="pad"></div>
@@ -779,7 +841,7 @@ Avec 4 décimales, le 1er nombre est | 3.3333| le second est| 3.5714|
 </script>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Solution</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compte_sans_casse</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">mot_cible</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compte_sans_casse</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">mot_cible</span><span class="p">):</span>
     <span class="n">compteur</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">mot_cible_minuscules</span> <span class="o">=</span> <span class="n">mot_cible</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">mot</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
@@ -787,24 +849,24 @@ Avec 4 décimales, le 1er nombre est | 3.3333| le second est| 3.5714|
             <span class="n">compteur</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">compteur</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">compte_sans_casse</span><span class="p">(</span><span class="s2">&quot;la vie est LA aussi&quot;</span><span class="p">,</span> <span class="s2">&quot;la&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">compte_sans_casse</span><span class="p">(</span><span class="s2">"la vie est LA aussi"</span><span class="p">,</span> <span class="s2">"la"</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="admonition-exercice-5-3 admonition">
-<p class="admonition-title">Exercice 5.3</p>
+<div class="admonition-exercice-4-3 admonition">
+<p class="admonition-title">Exercice 4.3</p>
 <p>Écrivez une fonction qui prenne en argument une liste d’entiers et l’affiche sous le format suivant :</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>L&#39;entier d&#39;indice  0 est |           1|
-L&#39;entier d&#39;indice  1 est |          12|
-L&#39;entier d&#39;indice  2 est |         123|
-L&#39;entier d&#39;indice  3 est |        1234|
-L&#39;entier d&#39;indice  4 est |       12345|
-L&#39;entier d&#39;indice  5 est |      123456|
-L&#39;entier d&#39;indice  6 est |     1234567|
-L&#39;entier d&#39;indice  7 est |    12345678|
-L&#39;entier d&#39;indice  8 est |   123456789|
-L&#39;entier d&#39;indice  9 est |  1234567890|
-L&#39;entier d&#39;indice 10 est | 12345678901|
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>L'entier d'indice  0 est |           1|
+L'entier d'indice  1 est |          12|
+L'entier d'indice  2 est |         123|
+L'entier d'indice  3 est |        1234|
+L'entier d'indice  4 est |       12345|
+L'entier d'indice  5 est |      123456|
+L'entier d'indice  6 est |     1234567|
+L'entier d'indice  7 est |    12345678|
+L'entier d'indice  8 est |   123456789|
+L'entier d'indice  9 est |  1234567890|
+L'entier d'indice 10 est | 12345678901|
 </pre></div>
 </div>
 <p>Cet affichage correspond à la liste
@@ -819,9 +881,9 @@ L&#39;entier d&#39;indice 10 est | 12345678901|
 </script>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Solution</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">affiche_liste</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">affiche_liste</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">elt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">listent</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;L&#39;entier d&#39;indice </span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">2n</span><span class="si">}</span><span class="s2"> est |</span><span class="si">{</span><span class="n">elt</span><span class="si">:</span><span class="s2">12n</span><span class="si">}</span><span class="s2">|&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"L'entier d'indice </span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">2n</span><span class="si">}</span><span class="s2"> est |</span><span class="si">{</span><span class="n">elt</span><span class="si">:</span><span class="s2">12n</span><span class="si">}</span><span class="s2">|"</span><span class="p">)</span>
 
 <span class="n">listent</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">1234</span><span class="p">,</span> <span class="mi">12345</span><span class="p">,</span> <span class="mi">123456</span><span class="p">,</span> <span class="mi">1234567</span><span class="p">,</span> <span class="mi">12345678</span><span class="p">,</span> <span class="mi">123456789</span><span class="p">,</span> <span class="mi">1234567890</span><span class="p">,</span> <span class="mi">12345678901</span><span class="p">]</span>
 <span class="n">affiche_liste</span><span class="p">(</span><span class="n">listent</span><span class="p">)</span>
@@ -856,11 +918,10 @@ L&#39;entier d&#39;indice 10 est | 12345678901|
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="listes.html"
@@ -880,24 +941,24 @@ L&#39;entier d&#39;indice 10 est | 12345678901|
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contenu
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-d-une-chaine-en-nombre">Conversion d’une chaîne en nombre</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analogie-avec-les-listes">Analogie avec les listes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principales-methodes-de-la-classe-str">Principales méthodes de la classe <code class="docutils literal notranslate"><span class="pre">str</span></code></a></li>
@@ -927,9 +988,10 @@ Par Romain Tavenard
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -953,8 +1015,8 @@ Par Romain Tavenard
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

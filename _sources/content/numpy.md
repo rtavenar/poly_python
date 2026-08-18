@@ -263,8 +263,12 @@ for v in vec:  # À ne JAMAIS faire !
 
 ## Exercices
 
-```{admonition} Exercice 10.1
+```{admonition} Exercice 9.1
 Calculez, en `numpy`, la somme des `n` premiers entiers, pour `n` fixé.
+```
+
+```{raw} latex
+\iffalse
 ```
 
 ````{admonition} Solution
@@ -278,7 +282,11 @@ print(np.arange(n).sum())
 ```
 ````
 
-````{admonition} Exercice 10.2
+```{raw} latex
+\fi
+```
+
+````{admonition} Exercice 9.2
 Supposons qu'on ait stocké dans le tableau suivant les notes reçues par 2 étudiants à 3 examens :
 ```python
 notes = np.array(
@@ -291,6 +299,10 @@ notes = np.array(
 1. Calculez la moyenne de chacun des deux étudiants.
 2. Calculez le nombre de notes supérieures à 12 contenues dans ce tableau
 ````
+
+```{raw} latex
+\iffalse
+```
 
 ````{admonition} Solution
 :class: tip, dropdown
@@ -308,3 +320,6 @@ moyennes = notes.mean(axis=0)
 n_notes_sup_12 = np.sum(notes > 12)
 ```
 ````
+```{raw} latex
+\fi
+```

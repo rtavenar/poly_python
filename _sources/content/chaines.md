@@ -236,7 +236,7 @@ for longdeci in range(5):
 
 ## Exercices
 
-```{admonition} Exercice 5.1
+```{admonition} Exercice 4.1
 Écrivez une fonction qui prenne en argument deux chaînes de caractères `s` et `prefix` et retourne le nombre de mots de la chaîne `s` qui débutent par la chaîne `prefix`.
 ```
 
@@ -247,6 +247,10 @@ for longdeci in range(5):
                'title': 'Testez votre solution ici', 
                'src': '# Complétez ce code'})
 </script>
+
+```{raw} latex
+\iffalse
+```
 
 ````{admonition} Solution
 :class: tip, dropdown
@@ -263,7 +267,11 @@ print(compte_prefix("la vie est belle au bord du lac", "la"))
 ```
 ````
 
-```{admonition} Exercice 5.2
+```{raw} latex
+\fi
+```
+
+```{admonition} Exercice 4.2
 Écrivez une fonction qui prenne en argument deux chaînes de caractères `s` et `mot_cible` et retourne le nombre d'occurrences du mot `mot_cible` dans la chaîne `s` en ne tenant pas compte de la casse.
 ```
 
@@ -274,6 +282,10 @@ print(compte_prefix("la vie est belle au bord du lac", "la"))
                'title': 'Testez votre solution ici', 
                'src': '# Complétez ce code'})
 </script>
+
+```{raw} latex
+\iffalse
+```
 
 ````{admonition} Solution
 :class: tip, dropdown
@@ -291,7 +303,11 @@ print(compte_sans_casse("la vie est LA aussi", "la"))
 ```
 ````
 
-````{admonition} Exercice 5.3
+```{raw} latex
+\fi
+```
+
+````{admonition} Exercice 4.3
 Écrivez une fonction qui prenne en argument une liste d'entiers et l'affiche sous le format suivant :
 
 ```text
@@ -320,6 +336,10 @@ Cet affichage correspond à la liste
                'src': '# Complétez ce code'})
 </script>
 
+```{raw} latex
+\iffalse
+```
+
 ````{admonition} Solution
 :class: tip, dropdown
 
@@ -332,3 +352,7 @@ listent = [1, 12, 123, 1234, 12345, 123456, 1234567, 12345678, 123456789, 123456
 affiche_liste(listent)
 ```
 ````
+
+```{raw} latex
+\fi
+```

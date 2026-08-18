@@ -67,12 +67,14 @@ Pour se faire une idée, nous pouvons (sous unix) utiliser la commande `head` qu
 !head entete.csv
 ```
 
-Et si l'on avait cherché à lire le contenu d'un fichier non textuel, on aurait obtenu quelque chose du type :
+Et si l'on avait cherché à lire le contenu d'un fichier non textuel, on aurait obtenu quelque chose de largement incompréhensible.
+Pour s'en convaincre, on peut par exemple ouvrir un tel fichier directement en Python (on reviendra sur la syntaxe plus loin dans ce chapitre) :
 
 ```{code-cell}
-!head /usr/bin/python
+print(open("/usr/bin/python", "rb").read(50))
 ```
 
+On voit que le résultat n'a plus grand-chose à voir avec du texte lisible : Python affiche ce contenu comme une suite d'octets (précédée de `b`), certains d'entre eux étant représentés par leur code (par exemple `\x00`) car ils ne correspondent à aucun caractère affichable.
 En effet, le fichier situé à l'adresse `/usr/bin/python` sur l'ordinateur qui a généré ce polycopié est un fichier binaire qui, s'il contient bien des morceaux qui semblent correspondre à du texte en clair, ne se résume pas à cela.
 
 Dans ce chapitre, nous ne nous intéressons donc pas à ce dernier type de fichiers mais nous nous concentrerons sur la lecture/écriture de fichiers textuels par un programme Python.
@@ -407,8 +409,12 @@ et le fichier sera tout de même fermé correctement dès que l'on sortira du bl
 
 ## Exercices
 
-```{admonition} Exercice 8.1
+```{admonition} Exercice 7.1
 Écrivez une fonction qui affiche, pour chaque fichier d'extension `".txt"` d'un répertoire passé en argument, le nom du fichier ainsi que son nombre de lignes.
+```
+
+```{raw} latex
+\iffalse
 ```
 
 ````{admonition} Solution
@@ -435,9 +441,17 @@ nb_lignes_repertoire(".")
 ```
 ````
 
-```{admonition} Exercice 8.2
+```{raw} latex
+\fi
+```
+
+```{admonition} Exercice 7.2
 Écrivez une fonction qui retourne le nombre de fichiers présents dans un répertoire dont le nom est passé en argument.
 Vous pourrez vous aider pour cela de la documentation du sous-module `path` du module `os` ([lien](https://docs.python.org/3.5/library/os.path.html)).
+```
+
+```{raw} latex
+\iffalse
 ```
 
 ````{admonition} Solution
@@ -456,3 +470,7 @@ def compte_fichiers(repertoire):
 print(compte_fichiers("."))
 ```
 ````
+
+```{raw} latex
+\fi
+```

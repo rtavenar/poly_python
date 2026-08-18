@@ -126,6 +126,10 @@ En utilisant les méthodes de développement préconisées dans ce chapitre, ré
                'src': '# Complétez ce code'})
 </script>
 
+```{raw} latex
+\iffalse
+```
+
 ````{admonition} Solution
 :class: tip, dropdown
 
@@ -176,6 +180,10 @@ print(lendemain(31, 12, 2010)) #  1, 1, 2011
 ```
 ````
 
+```{raw} latex
+\fi
+```
+
 ````{admonition} Exercice 11.2
 Proposez une ré-écriture de la fonction bissextile ci-dessus qui tienne en une ligne de la forme :
 
@@ -196,6 +204,10 @@ Assurez-vous que cette nouvelle fonction passe bien les tests énoncés ci-dessu
                'src': '# Complétez ce code'})
 </script>
 
+```{raw} latex
+\iffalse
+```
+
 ````{admonition} Solution
 :class: tip, dropdown
 
@@ -209,3 +221,6 @@ print(bissextile(2000))  # True car divisible par 400
 print(bissextile(1999))  # False car divisible ni par 4 ni par 100
 ```
 ````
+```{raw} latex
+\fi
+```

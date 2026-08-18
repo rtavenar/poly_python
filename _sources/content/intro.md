@@ -57,6 +57,10 @@ $ python nom_de_mon_fichier.py
 [...]
 ```
 
+```{raw} latex
+\iffalse
+```
+
 Enfin, pour vous faciliter la vie, dans ce polycopié, vous trouverez des fenêtres intégrées d'éditeurs de code vous permettant de vous essayer simplement aux exercices proposés.
 Vous avez un exemple d'une telle fenêtre ci-dessous.
 Appuyez sur "Run" pour exécuter le code, puis modifiez ce code et observez le résultat en le ré-exécutant.
@@ -68,3 +72,9 @@ Appuyez sur "Run" pour exécuter le code, puis modifiez ce code et observez le r
                'title': 'Testez votre solution ici', 
                'src': 'a = 12 * 5\nprint(a)'})
 </script>
+
+```{raw} latex
+\fi
+
+Enfin, vous trouverez les corrigés des exercices proposés dans ce polycopié en ligne à l'adresse \url{https://rtavenar.github.io/poly_python/}.
+```

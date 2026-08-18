@@ -266,10 +266,10 @@ Pour utiliser ces structures conditionnelles, il est important de maîtriser les
 
 Il est notamment important de remarquer que, lorsque l'on souhaite tester l'égalité entre deux valeurs, l'opérateur à utiliser est `==` et non `=` (qui sert à affecter une valeur à une variable).
 
-(ex2.1)=
+(ex1.1)=
 #### Exercice
 
-```{admonition} Exercice 2.1 : Température de l'eau
+```{admonition} Exercice 1.1 : Température de l'eau
 Écrivez une expression conditionnelle, qui à partir d'une température d'eau stockée dans une variable `t` affiche dans le terminal si l'eau à cette température est à l'état liquide, solide ou gazeux.
 ```
 
@@ -281,6 +281,10 @@ Il est notamment important de remarquer que, lorsque l'on souhaite tester l'éga
                'src': 't = -3\n# Complétez ce code'})
 </script>
 
+
+```{raw} latex
+\iffalse
+```
 
 ````{admonition} Solution
 :class: tip, dropdown
@@ -295,6 +299,10 @@ else :
 	print("l'eau est sous forme gazeuse")
 ```
 ````
+
+```{raw} latex
+\fi
+```
 
 ### Boucles
 
@@ -369,10 +377,10 @@ De même, si l'on connait à l'avance le nombre d'itérations que l'on souhaite 
 Comme son nom l'indique, la boucle `while` sera utilisée dès lors que l'on souhaite répéter une action **tant qu'** une condition est vérifiée.
 ```
 
-(ex2.2)=
+(ex1.2)=
 #### Exercice
 
-```{admonition} Exercice 2.2 : Nombres impairs
+```{admonition} Exercice 1.2 : Nombres impairs
 Écrivez une boucle permettant d'afficher tous les nombres impairs inférieurs à une valeur `n` initialement fixée.
 ```
 
@@ -383,6 +391,10 @@ Comme son nom l'indique, la boucle `while` sera utilisée dès lors que l'on sou
                'title': 'Testez votre solution ici', 
                'src': 'n = 20\n# Complétez ce code'})
 </script>
+
+```{raw} latex
+\iffalse
+```
 
 ````{admonition} Solution
 :class: tip, dropdown
@@ -408,6 +420,10 @@ while(i < n):
     i += 2
 ```
 ````
+
+```{raw} latex
+\fi
+```
 
 ### Fonctions
 
@@ -533,10 +549,10 @@ def f(x, y=0, z):
     return x - 2 * y + z
 ```
 
-(ex2.3)=
+(ex1.3)=
 ### Exercices 
 
-```{admonition} Exercice 2.3 : Triangle équilatéral
+```{admonition} Exercice 1.3 : Triangle équilatéral
 Écrivez une fonction en Python qui prenne en argument une longueur `long` et retourne l'aire du triangle équilatéral de côté `long`.
 ```
 
@@ -547,6 +563,10 @@ def f(x, y=0, z):
                'title': 'Testez votre solution ici', 
                'src': '# Complétez ce code'})
 </script>
+
+```{raw} latex
+\iffalse
+```
 
 ````{admonition} Solution
 :class: tip, dropdown
@@ -563,8 +583,12 @@ print(aire_equi(1.))
 ```
 ````
 
-```{admonition} Exercice 2.4 : Suite récurrente
-:name: ex2.4
+```{raw} latex
+\fi
+```
+
+(ex1.4)=
+```{admonition} Exercice 1.4 : Suite récurrente
 Écrivez une fonction en Python qui affiche tous les termes plus petits que 1000 de la suite $(u_n)$ définie comme :
 
 $$
@@ -580,6 +604,10 @@ $$
                'title': 'Testez votre solution ici', 
                'src': '# Complétez ce code'})
 </script>
+
+```{raw} latex
+\iffalse
+```
 
 ````{admonition} Solution
 :class: tip, dropdown
@@ -609,6 +637,10 @@ affiche_u_n()
 
 Ici, on a fixé une valeur par défaut à l'argument `u` correspondant à l'initialisation de la suite, pour que l'appel initial se fasse comme pour la version itérative de la fonction (`affiche_u_n()`).
 ````
+
+```{raw} latex
+\fi
+```
 
 ## Les modules en Python
 
@@ -650,9 +682,17 @@ import numpy as np
 print(np.zeros(5))  # Ici on utilise alors la forme abrégée
 ```
 
+```{raw} latex
+\iffalse
+```
+
 ## Liste des exercices de ce chapitre
 
-1. [Température de l'eau](ex2.1)
-2. [Nombres impairs](ex2.2)
-3. [Triangle équilatéral](ex2.3)
-4. [Suite récurrente](ex2.4)
+1. [Température de l'eau](ex1.1)
+2. [Nombres impairs](ex1.2)
+3. [Triangle équilatéral](ex1.3)
+4. [Suite récurrente](ex1.4)
+
+```{raw} latex
+\fi
+```

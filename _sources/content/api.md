@@ -107,7 +107,6 @@ Il faut donc l'installer avant de pouvoir l'utiliser.
 Pour ce faire, on peut utiliser le gestionnaire de paquets `pip`.
 
 Si vous utilisez Anaconda, la documentation en ligne disponible à [cette adresse](https://docs.anaconda.com/anaconda/navigator/tutorials/manage-packages/) explique la marche à suivre pour installer de nouveaux paquets dans votre version de Python fournie par Anaconda.
-Si vous utilisez plutôt l'IDE PyCharm et une version de Python non fournie par Anaconda, vous pourrez trouver de la documentation [à cette adresse](https://www.jetbrains.com/help/pycharm/installing-uninstalling-and-upgrading-packages.html).
 ```
 ````
 
@@ -176,8 +175,12 @@ C'est par exemple le cas des modules [`tweepy`](http://docs.tweepy.org/en/latest
 
 ## Exercice
 
-```{admonition} **Exercice 9.1**
+```{admonition} **Exercice 8.1**
 Écrivez une fonction qui prenne en entrée une liste de `userId` et affiche l'ensemble des entrées de l'API <http://my-json-server.typicode.com/rtavenar/fake_api/tasks> pour lesquelles l'attribut `completed` vaut `True`.
+```
+
+```{raw} latex
+\iffalse
 ```
 
 ````{admonition} Solution
@@ -215,3 +218,6 @@ def affiche_api(liste_userId):
 affiche_api([1, 3])
 ```
 ````
+```{raw} latex
+\fi
+```

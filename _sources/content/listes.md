@@ -192,10 +192,10 @@ On a donc ici une boucle `for` pour laquelle, à chaque itération, on met à jo
 
 Pour tous ces parcours de listes, il est conseillé d'utiliser des noms de variables pertinents, afin de limiter les confusions dans la nature des éléments manipulés. Par exemple, on pourra utiliser `i` ou `j` pour noter des indices, mais on préfèrera `elem` ou `val` pour désigner les éléments de la liste.
 
-(ex4.1)=
+(ex3.1)=
 ### Exercice
 
-```{admonition} Exercice 4.1 : Argmax
+```{admonition} Exercice 3.1 : Argmax
 Écrivez une fonction en Python qui permette de calculer l'argmax d'une liste, c'est-à-dire l'indice auquel est stockée la valeur maximale de la liste.
 Si cette valeur maximale est présente plusieurs fois dans la liste, on retournera l'indice de sa première occurrence.
 ```
@@ -207,6 +207,10 @@ Si cette valeur maximale est présente plusieurs fois dans la liste, on retourne
                'title': 'Testez votre solution ici', 
                'src': '# Complétez ce code'})
 </script>
+
+```{raw} latex
+\iffalse
+```
 
 ````{admonition} Solution
 :class: tip, dropdown
@@ -227,6 +231,10 @@ def argmax(liste):
 print(argmax([1, 6, 2, 4]))
 ```
 ````
+
+```{raw} latex
+\fi
+```
 
 ## Manipulations de listes
 
@@ -333,15 +341,15 @@ print(sorted(liste))
 Sachant que les émoticones sont des caractères comme les autres, on peut ainsi (enfin) obtenir une réponse à un problème vieux comme le monde :
 
 ```{code-cell}
-liste = ["🐔", "🥚"]
+liste = ["🐔", "🍳"]
 print(sorted(liste))
 ```
 
 
 ### Exercices
 
-```{admonition} Exercice 4.2 : Intersection de listes
-:name: ex4.2
+(ex3.2)=
+```{admonition} Exercice 3.2 : Intersection de listes
 Écrivez une fonction qui prenne deux listes en entrée et retourne l'intersection des deux listes (c'est-à-dire une liste contenant tous les éléments présents dans les deux listes).
 ```
 
@@ -352,6 +360,10 @@ print(sorted(liste))
                'title': 'Testez votre solution ici', 
                'src': '# Complétez ce code'})
 </script>
+
+```{raw} latex
+\iffalse
+```
 
 ````{admonition} Solution
 :class: tip, dropdown
@@ -368,8 +380,12 @@ print(intersection([1, 6, 2, 4], [2, 7, 6]))
 ```
 ````
 
-```{admonition} Exercice 4.3 : Union de listes
-:name: ex4.3
+```{raw} latex
+\fi
+```
+
+(ex3.3)=
+```{admonition} Exercice 3.3 : Union de listes
 Écrivez une fonction qui prenne deux listes en entrée et retourne l'union des deux listes (c'est-à-dire une liste contenant tous les éléments présents dans au moins une des deux listes) sans doublon.
 ```
 
@@ -380,6 +396,10 @@ print(intersection([1, 6, 2, 4], [2, 7, 6]))
                'title': 'Testez votre solution ici', 
                'src': '# Complétez ce code'})
 </script>
+
+```{raw} latex
+\iffalse
+```
 
 ````{admonition} Solution
 :class: tip, dropdown
@@ -395,6 +415,10 @@ def union_sans_doublon(liste1, liste2):
 print(union_sans_doublon([1, 6, 2, 4], [2, 7, 6, 2]))
 ```
 ````
+
+```{raw} latex
+\fi
+```
 
 ## Copie de liste
 
@@ -502,10 +526,16 @@ for p, n, a in zip(prenoms, noms, ages):
 
 Bien entendu, pour pouvoir utiliser `zip()`, il faut que les listes soient de même taille.
 
-
+```{raw} latex
+\iffalse
+```
 
 ## Liste des exercices de ce chapitre
 
-1. [Argmax](ex4.1)
-2. [Intersection de listes](ex4.2)
-3. [Union de listes](ex4.3)
+1. [Argmax](ex3.1)
+2. [Intersection de listes](ex3.2)
+3. [Union de listes](ex3.3)
+
+```{raw} latex
+\fi
+```
