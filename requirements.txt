@@ -1,2 +1,2 @@
-jupyter-book
+jupyter-book==1.0.4.post1
 numpy
