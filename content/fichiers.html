@@ -64,8 +64,8 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/fichiers';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
-    <script src="../_static/vue.js?v=c303d72a"></script>
     <script src="../_static/pythonpad.bundle.js?v=d5cee81d"></script>
+    <script src="../_static/vue.js?v=c303d72a"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Récupération de données à partir d’API web" href="api.html" />
@@ -436,8 +436,8 @@ On utilisera notamment la fonction <code class="docutils literal notranslate"><s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>truc.txt
-machin.csv
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>machin.csv
+truc.txt
 </pre></div>
 </div>
 </div>
@@ -485,18 +485,20 @@ Trias;Anne;
 Pour s’en convaincre, on peut par exemple ouvrir un tel fichier directement en Python (on reviendra sur la syntaxe plus loin dans ce chapitre) :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">"/usr/bin/python"</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b'\x7fELF\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00&gt;\x00\x01\x00\x00\x00\xa0{e\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x00\x80[z\x00\x00\x00\x00\x00\x00\x00'
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b'\x7fELF\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00&gt;\x00\x01\x00\x00\x00p\x10\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x00\x90;\x00\x00\x00\x00\x00\x00\x00\x00'
 </pre></div>
 </div>
 </div>
 </div>
 <p>On voit que le résultat n’a plus grand-chose à voir avec du texte lisible : Python affiche ce contenu comme une suite d’octets (précédée de <code class="docutils literal notranslate"><span class="pre">b</span></code>), certains d’entre eux étant représentés par leur code (par exemple <code class="docutils literal notranslate"><span class="pre">\x00</span></code>) car ils ne correspondent à aucun caractère affichable.
-En effet, le fichier situé à l’adresse <code class="docutils literal notranslate"><span class="pre">/usr/bin/python</span></code> sur l’ordinateur qui a généré ce polycopié est un fichier binaire qui, s’il contient bien des morceaux qui semblent correspondre à du texte en clair, ne se résume pas à cela.</p>
+En effet, le fichier <code class="docutils literal notranslate"><span class="pre">sys.executable</span></code> (le programme Python lui-même, sur l’ordinateur qui a généré ce polycopié) est un fichier binaire qui, s’il contient bien des morceaux qui semblent correspondre à du texte en clair, ne se résume pas à cela.</p>
 <p>Dans ce chapitre, nous ne nous intéressons donc pas à ce dernier type de fichiers mais nous nous concentrerons sur la lecture/écriture de fichiers textuels par un programme Python.</p>
 </section>
 <section id="encodage-des-fichiers">

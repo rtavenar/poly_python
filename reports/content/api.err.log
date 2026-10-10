@@ -1,0 +1,72 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/nbclient/client.py", line 1323, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+contenu = reponse.json()
+print(type(contenu))
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mJSONDecodeError[39m                           Traceback (most recent call last)
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/requests/models.py:1116[39m, in [36mResponse.json[39m[34m(self, **kwargs)[39m
+[32m   1115[39m [38;5;28;01mtry[39;00m:
+[32m-> [39m[32m1116[39m     [38;5;28;01mreturn[39;00m [30;43mcomplexjson[39;49m[30;43m.[39;49m[30;43mloads[39;49m[30;43m([39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mtext[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m*[39;49m[30;43m*[39;49m[30;43mkwargs[39;49m[30;43m)[39;49m
+[32m   1117[39m [38;5;28;01mexcept[39;00m JSONDecodeError [38;5;28;01mas[39;00m e:
+[32m   1118[39m     [38;5;66;03m# Catch JSON-related errors and raise as requests.JSONDecodeError[39;00m
+[32m   1119[39m     [38;5;66;03m# This aliases json.JSONDecodeError and simplejson.JSONDecodeError[39;00m
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/json/__init__.py:346[39m, in [36mloads[39m[34m(s, cls, object_hook, parse_float, parse_int, parse_constant, object_pairs_hook, **kw)[39m
+[32m    343[39m [38;5;28;01mif[39;00m ([38;5;28mcls[39m [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m object_hook [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m
+[32m    344[39m         parse_int [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m parse_float [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m
+[32m    345[39m         parse_constant [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m object_pairs_hook [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m kw):
+[32m--> [39m[32m346[39m     [38;5;28;01mreturn[39;00m [30;43m_default_decoder[39;49m[30;43m.[39;49m[30;43mdecode[39;49m[30;43m([39;49m[30;43ms[39;49m[30;43m)[39;49m
+[32m    347[39m [38;5;28;01mif[39;00m [38;5;28mcls[39m [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/json/decoder.py:337[39m, in [36mJSONDecoder.decode[39m[34m(self, s, _w)[39m
+[32m    333[39m [38;5;250m[39m[33;03m"""Return the Python representation of ``s`` (a ``str`` instance[39;00m
+[32m    334[39m [33;03mcontaining a JSON document).[39;00m
+[32m    335[39m 
+[32m    336[39m [33;03m"""[39;00m
+[32m--> [39m[32m337[39m obj, end = [30;43mself[39;49m[30;43m.[39;49m[30;43mraw_decode[39;49m[30;43m([39;49m[30;43ms[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43midx[39;49m[30;43m=[39;49m[30;43m_w[39;49m[30;43m([39;49m[30;43ms[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43m0[39;49m[30;43m)[39;49m[30;43m.[39;49m[30;43mend[39;49m[30;43m([39;49m[30;43m)[39;49m[30;43m)[39;49m
+[32m    338[39m end = _w(s, end).end()
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/json/decoder.py:355[39m, in [36mJSONDecoder.raw_decode[39m[34m(self, s, idx)[39m
+[32m    354[39m [38;5;28;01mexcept[39;00m [38;5;167;01mStopIteration[39;00m [38;5;28;01mas[39;00m err:
+[32m--> [39m[32m355[39m     [38;5;28;01mraise[39;00m JSONDecodeError([33m"[39m[33mExpecting value[39m[33m"[39m, s, err.value) [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;28;01mNone[39;00m
+[32m    356[39m [38;5;28;01mreturn[39;00m obj, end
+
+[31mJSONDecodeError[39m: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+[31mJSONDecodeError[39m                           Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[3][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m contenu = reponse.json()
+[32m      2[39m print(type(contenu))
+
+[36mFile [39m[32m/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/requests/models.py:1120[39m, in [36mResponse.json[39m[34m(self, **kwargs)[39m
+[32m   1116[39m     [38;5;28;01mreturn[39;00m complexjson.loads([38;5;28mself[39m.text, **kwargs)
+[32m   1117[39m [38;5;28;01mexcept[39;00m JSONDecodeError [38;5;28;01mas[39;00m e:
+[32m   1118[39m     [38;5;66;03m# Catch JSON-related errors and raise as requests.JSONDecodeError[39;00m
+[32m   1119[39m     [38;5;66;03m# This aliases json.JSONDecodeError and simplejson.JSONDecodeError[39;00m
+[32m-> [39m[32m1120[39m     [38;5;28;01mraise[39;00m RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+
+[31mJSONDecodeError[39m: Expecting value: line 1 column 1 (char 0)
+

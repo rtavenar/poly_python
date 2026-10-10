@@ -64,8 +64,8 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/poo';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
-    <script src="../_static/vue.js?v=c303d72a"></script>
     <script src="../_static/pythonpad.bundle.js?v=d5cee81d"></script>
+    <script src="../_static/vue.js?v=c303d72a"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Tester son code" href="test.html" />
@@ -412,7 +412,7 @@ Nous verrons ensuite comment définir vos propres objets et les utiliser.</p>
 <p>En Python, toutes les variables que vous manipulez sont en fait des objets.
 Dans la suite de ce chapitre, nous allons prendre l’exemple d’un type que vous utilisez souvent, le type <em>chaîne de caractères</em> (<code class="docutils literal notranslate"><span class="pre">str</span></code>).
 En termes de vocabulaire, on dit que <code class="docutils literal notranslate"><span class="pre">&quot;abc&quot;</span></code> est un <strong>objet</strong> de la <strong>classe</strong> <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
-<p>Nous avons vu dans le chapitre dédié que l’on disposait, pour les chaînes de caractères, de fonctions permettant des manipulations élémentaires, comme par exemple passer la chaîne de caractères en minuscule :</p>
+<p>Nous avons vu dans le chapitre dédié que l’on disposait, pour les chaînes de caractères, de fonctions permettant des manipulations élémentaires, comme par exemple passer la chaîne de caractères en majuscules :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"abcDEf"</span>
@@ -439,7 +439,7 @@ Jetons un oeil à un type un peu particulier, le type <em>nombre complexe</em> :
 </div>
 </div>
 <p>Notez qu’ici <code class="docutils literal notranslate"><span class="pre">j</span></code> permet d’identifier la partie imaginaire.
-Les objets de ce type ont, en Python, un attribut qui stocke leur partie entière et un autre pour leur partie imaginaire :</p>
+Les objets de ce type ont, en Python, un attribut qui stocke leur partie réelle et un autre pour leur partie imaginaire :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">nombre_complexe</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
@@ -489,7 +489,7 @@ Pour définir une nouvelle classe, on utilise la syntaxe suivante :</p>
 </div>
 </div>
 <p>On a défini ici une nouvelle classe : la classe <code class="docutils literal notranslate"><span class="pre">Vecteur</span></code>.
-Les objets de cette classe ont deux attribut : <code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">y</span></code> et une méthode <code class="docutils literal notranslate"><span class="pre">translation(self,</span> <span class="pre">delta_x,</span> <span class="pre">delta_y)</span></code>.</p>
+Les objets de cette classe ont deux attributs : <code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">y</span></code> et une méthode <code class="docutils literal notranslate"><span class="pre">translation(self,</span> <span class="pre">delta_x,</span> <span class="pre">delta_y)</span></code>.</p>
 <p>Voyons comment créer un nouvel objet de cette classe :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -556,7 +556,7 @@ Pour cela, on fait appel à des <strong>méthodes spéciales</strong>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Vecteur object at 0x7f3ae1979b90&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Vecteur object at 0x7f85306e7250&gt;
 </pre></div>
 </div>
 </div>
@@ -703,7 +703,7 @@ Pour cela, il faut définir une méthode <code class="docutils literal notransla
 <h2>La notion d’héritage<a class="headerlink" href="#la-notion-d-heritage" title="Lien vers cette rubrique">#</a></h2>
 <p>Dès lors que l’on va introduire plusieurs nouvelles classes dans nos programmes, il arrivera que nos classes partagent un certain nombre d’attributs, voire de méthodes.</p>
 <p>Prenons pour cela un nouvel exemple.
-Imaginons que l’on souhaite représenter des véhicules, qui pourront être des vélos ou bien des voitures.
+Imaginons que l’on souhaite représenter des polygones, qui pourront être des triangles ou bien des rectangles.
 Dans ce cas, on va définir une classe <strong>mère</strong>, nommée <code class="docutils literal notranslate"><span class="pre">Polygone</span></code>, et deux classes filles <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> et <code class="docutils literal notranslate"><span class="pre">Triangle</span></code> comme suit :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -730,7 +730,7 @@ Dans ce cas, on va définir une classe <strong>mère</strong>, nommée <code cla
 </div>
 </div>
 </div>
-<p>Dans le code ci-dessus, on décide que lors de la construction d’un nouveau polygone, la liste des longueurs de ses côtés sera initialisée vide.
+<p>Dans le code ci-dessus, on décide que lors de la construction d’un nouveau polygone, la liste des longueurs de ses côtés est stockée dans l’attribut <code class="docutils literal notranslate"><span class="pre">cotes</span></code>.
 On fait aussi le choix de dire que les classes <code class="docutils literal notranslate"><span class="pre">Triangle</span></code> et <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> <strong>héritent</strong> de la classe <code class="docutils literal notranslate"><span class="pre">Polygone</span></code> (on le spécifie en écrivant <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Triangle(Polygone)</span></code>).
 En héritant de cette classe, elles récupèrent tout ce qui existait pour cette classe (l’initialisation par défaut et la méthode pour calculer le périmètre).
 La classe <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> redéfinit en outre la méthode périmètre car dans le cas des rectangles, on n’a pas besoin d’accéder aux longueurs des 4 côtés pour le calcul.</p>
@@ -852,7 +852,7 @@ Init Losange
 <p>Les classes abstraites sont des classes un peu spéciales au sens elles ne sont pas faites pour être instanciées.
 Ces classes servent en conséquence à définir un modèle dont d’autres classes hériteront, et ce sont ces classes filles qui pourront être instanciées.</p>
 <p>En Python, pour définir une classe abstraite, il suffit de la faire hériter de la classe <code class="docutils literal notranslate"><span class="pre">ABC</span></code> (<em>Abstract Base Class</em>) du module <code class="docutils literal notranslate"><span class="pre">abc</span></code> :</p>
-<div class="cell tag_raises-exception docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span>
 
@@ -918,7 +918,7 @@ Cela peut se faire en définissant ces méthodes dans la classe mère et en les 
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rayon</span> <span class="o">=</span> <span class="n">rayon</span>
 
-<span class="n">mon_cercle</span> <span class="o">=</span> <span class="n">Cercle</span><span class="p">()</span>
+<span class="n">mon_cercle</span> <span class="o">=</span> <span class="n">Cercle</span><span class="p">(</span><span class="n">rayon</span><span class="o">=</span><span class="mf">2.</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -930,7 +930,7 @@ Cela peut se faire en définissant ces méthodes dans la classe mère et en les 
 <span class="g g-Whitespace">      </span><span class="mi">3</span>         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="bp">self</span><span class="o">.</span><span class="n">rayon</span> <span class="o">=</span> <span class="n">rayon</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> 
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">mon_cercle</span> <span class="o">=</span> <span class="n">Cercle</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">mon_cercle</span> <span class="o">=</span> <span class="n">Cercle</span><span class="p">(</span><span class="n">rayon</span><span class="o">=</span><span class="mf">2.</span><span class="p">)</span>
 
 <span class="ne">TypeError</span>: Can't instantiate abstract class Cercle with abstract method perimetre
 </pre></div>
