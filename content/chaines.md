@@ -345,7 +345,7 @@ Cet affichage correspond à la liste
 
 ```python
 def affiche_liste(liste):
-    for i, elt in enumerate(listent):
+    for i, elt in enumerate(liste):
         print(f"L'entier d'indice {i:2n} est |{elt:12n}|")
 
 listent = [1, 12, 123, 1234, 12345, 123456, 1234567, 12345678, 123456789, 1234567890, 12345678901]

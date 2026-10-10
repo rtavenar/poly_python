@@ -25,7 +25,7 @@ En Python, toutes les variables que vous manipulez sont en fait des objets.
 Dans la suite de ce chapitre, nous allons prendre l'exemple d'un type que vous utilisez souvent, le type _chaîne de caractères_ (`str`).
 En termes de vocabulaire, on dit que `"abc"` est un **objet** de la **classe** `str`.
 
-Nous avons vu dans le chapitre dédié que l'on disposait, pour les chaînes de caractères, de fonctions permettant des manipulations élémentaires, comme par exemple passer la chaîne de caractères en minuscule :
+Nous avons vu dans le chapitre dédié que l'on disposait, pour les chaînes de caractères, de fonctions permettant des manipulations élémentaires, comme par exemple passer la chaîne de caractères en majuscules :
 
 ```{code-cell}
 s = "abcDEf"
@@ -44,7 +44,7 @@ nombre_complexe = 10 + 5j
 ```
 
 Notez qu'ici `j` permet d'identifier la partie imaginaire.
-Les objets de ce type ont, en Python, un attribut qui stocke leur partie entière et un autre pour leur partie imaginaire :
+Les objets de ce type ont, en Python, un attribut qui stocke leur partie réelle et un autre pour leur partie imaginaire :
 
 ```{code-cell}
 print(nombre_complexe.real)
@@ -77,7 +77,7 @@ class Vecteur:
 ```
 
 On a défini ici une nouvelle classe : la classe `Vecteur`.
-Les objets de cette classe ont deux attribut : `x` et `y` et une méthode `translation(self, delta_x, delta_y)`.
+Les objets de cette classe ont deux attributs : `x` et `y` et une méthode `translation(self, delta_x, delta_y)`.
 
 Voyons comment créer un nouvel objet de cette classe :
 
@@ -229,7 +229,7 @@ print(v1.norme)
 Dès lors que l'on va introduire plusieurs nouvelles classes dans nos programmes, il arrivera que nos classes partagent un certain nombre d'attributs, voire de méthodes.
 
 Prenons pour cela un nouvel exemple.
-Imaginons que l'on souhaite représenter des véhicules, qui pourront être des vélos ou bien des voitures.
+Imaginons que l'on souhaite représenter des polygones, qui pourront être des triangles ou bien des rectangles.
 Dans ce cas, on va définir une classe **mère**, nommée `Polygone`, et deux classes filles `Rectangle` et `Triangle` comme suit :
 
 ```{code-cell}
@@ -254,7 +254,7 @@ class Rectangle(Polygone):
         return 2 * sum(self.cotes[:2])
 ```
 
-Dans le code ci-dessus, on décide que lors de la construction d'un nouveau polygone, la liste des longueurs de ses côtés sera initialisée vide.
+Dans le code ci-dessus, on décide que lors de la construction d'un nouveau polygone, la liste des longueurs de ses côtés est stockée dans l'attribut `cotes`.
 On fait aussi le choix de dire que les classes `Triangle` et `Rectangle` **héritent** de la classe `Polygone` (on le spécifie en écrivant `class Triangle(Polygone)`).
 En héritant de cette classe, elles récupèrent tout ce qui existait pour cette classe (l'initialisation par défaut et la méthode pour calculer le périmètre).
 La classe `Rectangle` redéfinit en outre la méthode périmètre car dans le cas des rectangles, on n'a pas besoin d'accéder aux longueurs des 4 côtés pour le calcul.
@@ -352,10 +352,6 @@ Ces classes servent en conséquence à définir un modèle dont d'autres classes
 En Python, pour définir une classe abstraite, il suffit de la faire hériter de la classe `ABC` (_Abstract Base Class_) du module `abc` :
 
 ```{code-cell}
----
-tags: [raises-exception]
----
-
 from abc import ABC
 
 class FormeGeometrique(ABC):
@@ -416,5 +412,5 @@ class Cercle(FormeGeometrique):
         super().__init__()
         self.rayon = rayon
 
-mon_cercle = Cercle()
+mon_cercle = Cercle(rayon=2.)
 ```

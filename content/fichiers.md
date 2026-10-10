@@ -71,11 +71,13 @@ Et si l'on avait cherché à lire le contenu d'un fichier non textuel, on aurait
 Pour s'en convaincre, on peut par exemple ouvrir un tel fichier directement en Python (on reviendra sur la syntaxe plus loin dans ce chapitre) :
 
 ```{code-cell}
-print(open("/usr/bin/python", "rb").read(50))
+import sys
+
+print(open(sys.executable, "rb").read(50))
 ```
 
 On voit que le résultat n'a plus grand-chose à voir avec du texte lisible : Python affiche ce contenu comme une suite d'octets (précédée de `b`), certains d'entre eux étant représentés par leur code (par exemple `\x00`) car ils ne correspondent à aucun caractère affichable.
-En effet, le fichier situé à l'adresse `/usr/bin/python` sur l'ordinateur qui a généré ce polycopié est un fichier binaire qui, s'il contient bien des morceaux qui semblent correspondre à du texte en clair, ne se résume pas à cela.
+En effet, le fichier `sys.executable` (le programme Python lui-même, sur l'ordinateur qui a généré ce polycopié) est un fichier binaire qui, s'il contient bien des morceaux qui semblent correspondre à du texte en clair, ne se résume pas à cela.
 
 Dans ce chapitre, nous ne nous intéressons donc pas à ce dernier type de fichiers mais nous nous concentrerons sur la lecture/écriture de fichiers textuels par un programme Python.
 
